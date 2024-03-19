@@ -1,24 +1,27 @@
 .level{
-    width: 10vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;    
     padding: 20px 0;
-    margin: 0 15% 4% 15%;
     border-radius: 20px;
 }
 
-.difficulty-button-container a{
-    height: 20%;
-    text-align: center;
-    display: block;
-    -webkit-text-fill-color: #fff;
+.difficulty-button-container{
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    height: auto;
 }
 
-.difficulty-button-container a img{
-    max-height: 100%;
-    max-width: 100%;
-    display: block;
+.difficulty-button-container a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;    
 }
 
 .level span{
