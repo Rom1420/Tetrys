@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Difficulty } from 'src/models/difficulty.model';
 
 @Component({
     selector: 'difficulty-button',
@@ -7,6 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DifficultyButtonComponent implements OnInit {
-    constructor() {}
-    ngOnInit(): void {}
+    @Input()
+    difficulty!: Difficulty;
+
+    constructor() {}    
+    ngOnInit(): void {
+    }
+    getDifficultyClass(): string {
+        console.log(this.difficulty);
+        switch (this.difficulty.id) {
+            case 1:
+                return 'debutant';
+            case 2:
+                return 'intermediaire';
+            case 3:
+                return 'avance';
+            case 4:
+                return 'perso';
+            default:
+                return '';
+        }
+    }
+
 } 
