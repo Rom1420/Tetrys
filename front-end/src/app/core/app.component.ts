@@ -13,11 +13,20 @@ export class AppComponent {
 
   hideHomepage() {
     this.showHomepage = false;
-    this.router.navigateByUrl('./pregame');
   }
+  
   ngOnInit() {
     setTimeout(() => {
       this.hideHomepage();
     }, 1000);
   }
+
+  ngAfterViewInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd && event.url !== '/') {
+        this.hideHomepage();
+      }
+    });
+  }
+  
 }
