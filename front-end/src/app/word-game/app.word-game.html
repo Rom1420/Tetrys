@@ -1,5 +1,5 @@
 <div class="word-game-container">
-  <div class="word-container" *ngFor="let word of words">
-    {{word}}
+  <div class="word-container" (click)="redirection()" *ngFor="let word of words">
+    <h1>{{word}}</h1>
   </div>
 </div>

@@ -7,6 +7,7 @@ import {AppWordGame} from "./word-game/app.word-game";
 import { NavbarComponent } from './nav-bar/nav-bar.component';
 import { DifficultyButtonComponent } from './difficulty-button/difficulty-button.component';
 import { DifficultyListComponent } from './difficulty-list/difficulty-list.component';
+import {RouterOutlet} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -17,10 +18,11 @@ import { DifficultyListComponent } from './difficulty-list/difficulty-list.compo
     AppComponent,
     AppWordGame
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterOutlet
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

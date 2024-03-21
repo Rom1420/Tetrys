@@ -1,0 +1,24 @@
+.word-game-container{
+  margin-top: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.word-container{
+  text-align: center;
+  background-color: #F27F1B;
+  box-shadow: 0 0 5px #F27F1B;
+  border-radius: 10px;
+  justify-content: center;
+
+}
+
+.word-container h1{
+  color: #fff;
+  font-weight: bold;
+  font-size: 2.4vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
