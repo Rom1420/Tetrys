@@ -1,0 +1,98 @@
+.logo {
+    padding: 2px;
+    width: auto;
+    height: 50px;
+    margin-left: 60px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.nav-container {
+    z-index: 2;
+    box-sizing: border-box;
+    background-color: #4a5d83;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70px;
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0px;
+    box-shadow: 0px 1px 10px #6BCCF2;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.navbar a {
+    -webkit-text-fill-color: #fff;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.2); 
+    transform: scale(1.1); 
+    color: #FFF; 
+}
+
+.navbar a:active {
+    transform: scale(0.9);
+}
+
+.profil{
+    filter: invert(100%) sepia(17%) saturate(0%) hue-rotate(155deg) brightness(109%) contrast(102%);
+    display: flex;
+    width: 3vw;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.profil:hover {
+    transform: scale(1.1);
+}
+
+.profil-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 10px 60px 10px 0px;
+}
+
+.profil-name{
+    font-size: 1vw;
+    color: #FFF;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Roboto', sans-serif;  
+}
