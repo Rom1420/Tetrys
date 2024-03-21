@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DifficultyService } from "src/services/difficulty.services";
+import  { Component, OnInit } from '@angular/core';
+import { DifficultyServices } from "src/services/difficulty.services";
 import { Difficulty } from "src/models/difficulty.model";
 
 @Component({
@@ -12,13 +12,13 @@ export class DifficultyListComponent implements OnInit {
     public difficultyList: Difficulty[] = [];
     public basicDifficultyListWithTitles: { id: number, title: string }[] = [];
 
-    constructor(public difficultyService: DifficultyService) {
+    constructor(public difficultyService: DifficultyServices) {
         this.difficultyService.difficulties$.subscribe((difficultyList) => {
             this.difficultyList = difficultyList;
         });
     }
 
     ngOnInit(): void {
-        this.basicDifficultyListWithTitles = this.difficultyService.getBasicDifficultiesTitle(); 
+        this.basicDifficultyListWithTitles = this.difficultyService.getBasicDifficultiesTitle();
     }
 }

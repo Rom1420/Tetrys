@@ -1,5 +1,7 @@
 import {Component} from "@angular/core";
 import {Router} from "@angular/router"
+import {WordsServices} from "../../services/words.services";
+import {Word} from "../../models/word.model";
 
 
 @Component({
@@ -10,10 +12,17 @@ import {Router} from "@angular/router"
 
 export class AppWordGame {
 
-  public words: string[] = ["Hello", "Bonjour", "Salut"];
+  public words: Word[] = [];
   public urlBlock: string = "../../assets/block.png";
+  public nbRandom: number = 0;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public wordsService: WordsServices) {
+    this.wordsService.words$.subscribe((wordsList)=>{
+      const randomInt: number = Math.floor(Math.random() * (wordsList.length - 2));
+      console.log(randomInt);
+      this.words = wordsService.get3Word(randomInt);
+    })
+  }
 
   redirection(){
     this.router.navigate(["/page2"]).then(() => {
