@@ -5,12 +5,12 @@ import {Word} from "../../models/word.model";
 
 
 @Component({
-  selector: 'app-word-game',
-  templateUrl: './app.word-game.html',
-  styleUrls: ['./app.word-game.scss']
+  selector: 'word-game',
+  templateUrl: './word-game.component.html',
+  styleUrls: ['./word-game.component.scss']
 })
 
-export class AppWordGame {
+export class WordGameComponent{
 
   public words: Word[] = [];
   public urlBlock: string = "../../assets/block.png";

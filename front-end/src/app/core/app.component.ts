@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public title: string = 'Hello world!';
-  public showSuccess = false;
+  showHomepage: boolean = true;
 
-  constructor() {}
+  constructor(private router: Router){}
 
-  showHideSuccess() {
-    this.showSuccess = !this.showSuccess;
+  hideHomepage() {
+    this.showHomepage = false;
+    this.router.navigateByUrl('./pregame');
+  }
+  ngOnInit() {
+    setTimeout(() => {
+      this.hideHomepage();
+    }, 1000);
   }
 }
