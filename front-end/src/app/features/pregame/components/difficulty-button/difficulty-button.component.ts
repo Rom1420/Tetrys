@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Difficulty } from 'src/models/difficulty.model';
+import { Difficulty } from 'src/app/features/pregame/models/difficulty.model';
 
 @Component({
     selector: 'difficulty-button',
@@ -15,7 +15,6 @@ export class DifficultyButtonComponent implements OnInit {
     ngOnInit(): void {
     }
     getDifficultyClass(): string {
-        console.log(this.difficulty);
         switch (this.difficulty.id) {
             case 1:
                 return 'debutant';

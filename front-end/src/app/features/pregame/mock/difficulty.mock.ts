@@ -1,4 +1,4 @@
-import { Difficulty } from "src/models/difficulty.model";
+import { Difficulty } from "src/app/features/pregame/models/difficulty.model";
 export const DIFFICULTY_LIST: Difficulty[] = [
     {
         id: 1,

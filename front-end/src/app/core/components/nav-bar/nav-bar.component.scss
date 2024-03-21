@@ -48,13 +48,12 @@
     color: #FFF;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.4vw;
+    font-size: 2.5vh;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
     transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
-    
 }
 
 .navbar a:hover {
@@ -70,8 +69,7 @@
 .profil{
     filter: invert(100%) sepia(17%) saturate(0%) hue-rotate(155deg) brightness(109%) contrast(102%);
     display: flex;
-    width: 3vw;
-    height: auto;
+    height: 100%;
     transition: transform 0.3s ease;
 }
 
@@ -85,11 +83,15 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    margin: 10px 60px 10px 0px;
+    margin-right: 60px;
+
+    a {
+        height: 100%;
+    }
 }
 
 .profil-name{
-    font-size: 1vw;
+    width: fit-content;
     color: #FFF;
     margin: 0;
     display: flex;

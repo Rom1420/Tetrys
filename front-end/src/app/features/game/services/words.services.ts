@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject, Subject } from "rxjs";
 import {Word} from "../models/word.model";
 import {WORD_LIST} from "../mock/words.mock";
-import {Difficulty} from "../models/difficulty.model";
-import {DIFFICULTY_LIST} from "../mock/difficulty.mock";
+import {Difficulty} from "../../pregame/models/difficulty.model";
+import {DIFFICULTY_LIST} from "../../pregame/mock/difficulty.mock";
 
 
 @Injectable({

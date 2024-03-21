@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Subject } from "rxjs";
-import { Difficulty } from "src/models/difficulty.model";
-import { DIFFICULTY_LIST } from "src/mock/difficulty.mock";
+import { BehaviorSubject } from "rxjs";
+import { Difficulty } from "src/app/features/pregame/models/difficulty.model";
+import { DIFFICULTY_LIST } from "src/app/features/pregame/mock/difficulty.mock";
 
 @Injectable({
   providedIn: 'root'
