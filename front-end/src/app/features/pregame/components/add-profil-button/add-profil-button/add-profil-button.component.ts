@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-add-profil-button',
-  standalone: true,
-  imports: [],
+  selector: 'add-profil-button',
   templateUrl: './add-profil-button.component.html',
   styleUrl: './add-profil-button.component.scss'
 })
