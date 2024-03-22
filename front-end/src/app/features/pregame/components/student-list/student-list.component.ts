@@ -3,7 +3,7 @@ import { StudentService } from 'src/app/features/pregame/services/student.servic
 import { Student } from 'src/app/features/pregame/models/student.model';
 
 @Component({
-    selector: 'app-student-list',
+    selector: 'student-list',
     templateUrl: './student-list.component.html',
     styleUrls: ['./student-list.component.scss']
 })
