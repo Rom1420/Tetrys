@@ -1,0 +1,3 @@
+<home-page *ngIf="showHomepage"></home-page>
+<nav-bar *ngIf="!showHomepage"></nav-bar>
+<router-outlet *ngIf="!showHomepage"></router-outlet>

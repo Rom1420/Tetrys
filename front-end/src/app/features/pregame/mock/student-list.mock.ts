@@ -1,4 +1,4 @@
-import { Student } from "src/models/student.model";
+import { Student } from "src/app/features/pregame/models/student.model";
 
 export const STUDENT_LIST: Student[] = [
     {

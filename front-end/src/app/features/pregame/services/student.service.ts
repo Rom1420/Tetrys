@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import {Student} from '../models/student.model';
-import { STUDENT_LIST } from 'src/mocks/student-list.mock';
+import { STUDENT_LIST } from 'src/app/features/pregame/mock/student-list.mock';
 
 
 @Injectable({

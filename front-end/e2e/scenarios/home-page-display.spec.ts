@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { testUrl } from 'e2e/e2e.config';
-import { AppFixture } from 'src/app/app.fixture';
+import { AppFixture } from 'src/app/core/app.fixture';
 
 // https://playwright.dev/docs/locators
 test.describe('Home page display', () => {

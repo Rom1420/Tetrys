@@ -1,13 +1,19 @@
 html{
-    height: 100%;
     width: 100%;
-    margin: 0;
+    height: 100%;
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
+a{
+    text-decoration: none;
+    -webkit-text-fill-color: #fff;
+}
 
 body{
-    margin: 0;
     width: 100%;
     height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #304673;
 }

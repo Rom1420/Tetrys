@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from 'src/services/student.service';
-import { Student } from 'src/models/student.model';
+import { StudentService } from 'src/app/features/pregame/services/student.service';
+import { Student } from 'src/app/features/pregame/models/student.model';
 
 @Component({
     selector: 'app-student-list',
