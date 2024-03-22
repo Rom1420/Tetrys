@@ -6,5 +6,23 @@ export const STUDENT_LIST: Student[] = [
     },
     {
         name:'Eliot'
-    }
+    },
+    {
+        name: 'Mathias'
+    },
+    {
+        name:'Eliot'
+    },
+    {
+        name: 'Mathias'
+    },
+    {
+        name:'Eliot'
+    },
+    {
+        name: 'Mathias'
+    },
+    {
+        name:'Eliot'
+    },
 ];

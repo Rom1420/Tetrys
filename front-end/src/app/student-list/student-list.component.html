@@ -1,5 +1,5 @@
-<div class="student-list" style="box-shadow: 0 0 15px rgba(107, 204, 242,0.7);">
-    <div class="student" *ngFor="let student of studentList">
+<div class="student-list">
+    <div class="scroll-container-student">
+        <student *ngFor="let student of studentList" [student]=student></student>
     </div>
-    
 </div>
