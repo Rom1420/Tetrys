@@ -1,0 +1,73 @@
+.game-container{
+  display: flex;
+}
+
+.playable-zone{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.words{
+  margin-top: 2%;
+  flex-direction: row;
+  width: 100%;
+  height: 10%;
+}
+
+
+.writing-space {
+  margin-bottom: 15px;
+  margin-top: 5%;
+  width: 60%;
+}
+
+.writing-space label {
+  display: block;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1%;
+}
+
+.writing-space input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.writing-space button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.writing-space button:hover {
+  background-color: #0056b3;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: auto;
+  margin-bottom: 3%;
+}
+
+.input-container input{
+  flex: 5;
+}
+
+.input-container button{
+  flex: 1;
+}
+
+
+

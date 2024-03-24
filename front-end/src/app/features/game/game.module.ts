@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 import { GameComponent } from './game.component';
 import  { WordGameComponent } from './components/word-game/word-game.component';
+import { TetrysGamingComponent } from './components/tetrys-gaming/tetrys-gaming.component';
 
 
 @NgModule({
   declarations: [
     WordGameComponent,
-    GameComponent
+    GameComponent,
+    TetrysGamingComponent
   ],
-  imports: [
-    CommonModule,
-  ],
+    imports: [
+        CommonModule,
+        NgOptimizedImage,
+    ],
   exports: [
     GameComponent,
     WordGameComponent

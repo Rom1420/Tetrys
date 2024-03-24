@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class GameComponent {
 
+  public urlChronoImg: string = "../../assets/chrono.png";
+
+
 }

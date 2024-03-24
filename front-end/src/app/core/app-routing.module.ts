@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+  import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GameComponent } from '../features/game/game.component';
 import { PregameComponent } from '../features/pregame/pregame.component';
@@ -7,7 +7,8 @@ import { PregameComponent } from '../features/pregame/pregame.component';
 const routes: Routes = [
   /**{path: 'quiz', component: QuizComponent} To create route to this component*/
   {path: 'game', component: GameComponent},
-  {path: 'pre-game', component: PregameComponent}  
+  {path: 'pre-game', component: PregameComponent},
+  { path: '**', redirectTo: '/pre-game' } // Redirection pour les routes inexistantes
 ];
 
 @NgModule({

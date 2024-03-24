@@ -15,7 +15,7 @@ import {PregameModule} from '../features/pregame/pregame.module';
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
     imports: [
         BrowserModule,

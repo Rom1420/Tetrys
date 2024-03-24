@@ -1,5 +1,6 @@
 <div class="word-game-container">
   <div class="word-container" (click)="redirection()" *ngFor="let word of words">
+    <img [ngSrc]="urlBlock" alt="image block tetrys" height="140" width="100">
     <h1>{{word.name}}</h1>
   </div>
 </div>

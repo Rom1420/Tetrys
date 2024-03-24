@@ -11,7 +11,7 @@ export const WORD_LIST: Word[] = [
     name: "ScoobyDoo"
   },
   {
-    name: "brioche"
+    name: "slt"
   },
   {
     name: "caca"
