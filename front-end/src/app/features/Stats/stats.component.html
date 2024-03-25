@@ -1,0 +1,40 @@
+<div class="stat-container">
+  <div class="top-container">
+    <div class="student-container">
+      <div class="student-list">
+        <div class="scroll-container-student">
+          <img ngSrc="./assets/profil_icon.svg" alt="Profile" height="520" width="520">
+        </div>
+      </div>
+      <div class="add-student">
+        <button class="add-button">Ajouter un Profil</button>
+      </div>
+    </div>
+    <div class="progression-container">
+      <div class="scroll-container-progression">
+        <stat-graph></stat-graph>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-container">
+    <div class="historical-container">
+      <div class="historical-list">
+        <div class="headers-list">
+          <p>Date</p>
+          <p>Mode</p>
+          <p>Score</p>
+          <p>Note</p>
+          <p style="margin-right: 50px;">Detail</p>
+        </div>
+        <div class="scroll-container-historical">
+          <stat-game></stat-game>
+          <stat-game></stat-game>
+          <stat-game></stat-game>
+          <stat-game></stat-game>
+          <stat-game></stat-game>
+          <stat-game></stat-game>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

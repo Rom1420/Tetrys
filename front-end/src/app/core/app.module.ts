@@ -9,19 +9,21 @@ import { HomePageComponent } from './components/home-page/home-page.component'
 
 import { GameModule } from '../features/game/game.module';
 import {PregameModule} from '../features/pregame/pregame.module';
+import {StatsModule} from "../features/Stats/stats.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomePageComponent,
+    HomePageComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         GameModule,
-        PregameModule
+        PregameModule,
+        StatsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
