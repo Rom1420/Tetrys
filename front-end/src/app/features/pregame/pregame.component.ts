@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './pregame.component.scss'
 })
 export class PregameComponent {
-  
+
 }

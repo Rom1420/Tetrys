@@ -4,9 +4,9 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { GameComponent } from './game.component';
 import  { WordGameComponent } from './components/word-game/word-game.component';
 import { TetrysGamingComponent } from './components/tetrys-gaming/tetrys-gaming.component';
-import { BoardComponent } from './components/board/board.component';
-import { PieceComponent } from './components/piece/piece.component';
-import { GameEngineComponent } from './components/game-engine/game-engine.component';
+import { GameBoardComponent } from './components/game-board/game-board.component';
+import { GameEngine } from './services/game-engine';
+
 
 
 @NgModule({
@@ -14,18 +14,20 @@ import { GameEngineComponent } from './components/game-engine/game-engine.compon
     WordGameComponent,
     GameComponent,
     TetrysGamingComponent,
-    BoardComponent,
-    PieceComponent,
-    GameEngineComponent
+    GameBoardComponent,
   ],
     imports: [
         CommonModule,
         NgOptimizedImage,
     ],
+    providers: [
+      GameEngine,
+    ],
   exports: [
     GameComponent,
     WordGameComponent,
-    BoardComponent
+    GameBoardComponent,
   ]
 })
+
 export class GameModule { }

@@ -1,0 +1,32 @@
+.board-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 30vw;
+    border: solid 2px #0057b397;
+    background-color: #0f1d388b;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 40px); /* 10 colonnes de 30 pixels de large */
+  grid-template-rows: repeat(20, 40px); /* 20 lignes de 30 pixels de hauteur */
+  gap: 0px; /* Espacement entre les cellules */
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 40px; /* Largeur de chaque cellule */
+  height: 40px; /* Hauteur de chaque cellule */
+  border: 1px solid #ffffff42; /* Bordure de chaque cellule */
+  box-sizing: border-box;
+}
+
+.filled {
+  background-color: rgb(57, 183, 57);
+}
