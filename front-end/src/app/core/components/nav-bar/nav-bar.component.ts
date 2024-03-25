@@ -13,7 +13,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     public url: string = "";
     public configForm: FormGroup;
 
-    constructor(private renderer: Renderer2, private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService) {
+    constructor(private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService) {
         this.configForm = this.formBuilder.group({
             time: ['', [Validators.required, Validators.pattern('^\\d*\\.?\\d+$')]],
             length: ['', [Validators.required, Validators.pattern('^\\d+')]],
