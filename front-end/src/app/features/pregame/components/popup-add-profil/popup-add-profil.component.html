@@ -1,0 +1,11 @@
+<div class="popup" *ngIf="showPopup">
+    <h2>Ajouter un nouveau Profil</h2>
+    <form class="profil-form" [formGroup]="profilForm">
+
+        <label for="name">
+            <p>nom du nouveau profil</p>
+            <input class="input-custom" type="text" id="name" [formControlName]="'name'">
+        </label>
+        <button (click)="closePopup()">Fermer</button>
+    </form>
+</div>
