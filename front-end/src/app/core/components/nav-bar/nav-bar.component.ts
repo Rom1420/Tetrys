@@ -13,9 +13,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     public url: string = "";
     public configForm: FormGroup;
 
-    @ViewChild('popup', {static: false})  popup: ElementRef | undefined;
-    @ViewChild('popupContainer', {static: false})  popupContainer: ElementRef | undefined;
-
     constructor(private renderer: Renderer2, private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService) {
         this.configForm = this.formBuilder.group({
             time: ['', [Validators.required, Validators.pattern('^\\d*\\.?\\d+$')]],
@@ -46,20 +43,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             this.navigateToGame();
         }
         this.affichageConfig = !this.affichageConfig;
-        const valuePopup: string = this.affichageConfig? "flex": "none";
-        const valuePopupContainerDisplay: string = this.affichageConfig? "flex": "none";
-        const valuePopupContainerShadow: string = this.affichageConfig? "rgba(0, 0, 0, 0.8)": "none";
-        if (this.popup){
-            this.renderer.setStyle(this.popup.nativeElement, "display", valuePopup);
-        } else {
-            console.log("element popup non présent");
-        }
-        if(this.popupContainer){
-            this.renderer.setStyle(this.popupContainer.nativeElement, "display", valuePopupContainerDisplay);
-            this.renderer.setStyle(this.popupContainer.nativeElement, "background-color", valuePopupContainerShadow);
-        } else {
-            console.log("element popup container non présent")
-        }
     }
 
     navigateToGame(){

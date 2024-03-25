@@ -14,9 +14,10 @@
 </div>
 
 
-<div #popupContainer class="popup-container">
+<div *ngIf="affichageConfig" #popupContainer class="popup-container">
   <div #popup class="popup">
     <div class="popup-content">
+      <span (click)="afficherConfig()" class="close">&times;</span>
       <h2>Créer une nouvelle configuration</h2>
       <form [formGroup]="configForm" (ngSubmit)="onSubmit()">
         <div class="form-cell">
