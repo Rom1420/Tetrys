@@ -31,17 +31,13 @@
           <div>
             <span> <strong> Droit à l'erreur: </strong>  </span>
           </div>
-          <label> <input type="radio" formControlName="errorAllowed" [value]="true"> <span>oui</span> </label>
-          <label> <input type="radio" formControlName="errorAllowed" [value]="false"> <span>non</span> </label>
-        </div>
-        <p>Form Status: {{ this.configForm.get("time")?.status }}</p>
-        <p>Form Status: {{ this.configForm.get("length")?.status }}</p>
-        <p>Form Status: {{ this.configForm.get("errorAllowed")?.status }}</p>
-        <p>Form Status: {{ this.configForm.status }}</p>
-        <div class="start-button">
-          <button class="play-button" (click)="afficherConfig()" [disabled]="configForm.invalid" role="button">Jouer</button>
+          <label> <input type="radio" id="radioOui" formControlName="errorAllowed" [value]="true"> <span>oui</span> </label>
+          <label> <input type="radio" id="radioNon" formControlName="errorAllowed" [value]="false"> <span>non</span> </label>
         </div>
       </form>
+      <div class="start-button">
+        <button class="play-button" (click)="afficherConfig()" [disabled]="configForm.invalid" role="button">Jouer</button>
+      </div>
     </div>
   </div>
 </div>

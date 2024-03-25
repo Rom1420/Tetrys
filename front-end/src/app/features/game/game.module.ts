@@ -4,6 +4,7 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { GameComponent } from './game.component';
 import  { WordGameComponent } from './components/word-game/word-game.component';
 import { TetrysGamingComponent } from './components/tetrys-gaming/tetrys-gaming.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -15,6 +16,8 @@ import { TetrysGamingComponent } from './components/tetrys-gaming/tetrys-gaming.
     imports: [
         CommonModule,
         NgOptimizedImage,
+        ReactiveFormsModule,
+        FormsModule,
     ],
   exports: [
     GameComponent,
