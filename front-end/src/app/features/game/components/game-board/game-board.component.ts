@@ -11,7 +11,6 @@ export class GameBoardComponent {
   rows: number = 20;
   cols: number = 10;
   gameState: boolean[][] = [];
-  boardCells: any [] = [];
 
   @ViewChild('board') boardRef!: ElementRef;
 
@@ -19,17 +18,10 @@ export class GameBoardComponent {
 
 
   ngOnInit(): void {
-    this.generateBoard();
-    this.gameEngine.playGame();
     this.gameEngine.placePiece({ row:0, col:4 })
+    this.gameEngine.playGame();
     this.gameState = this.gameEngine.getGameState();  
   }
 
-  generateBoard(): void {
-    for (let row = 0; row < this.rows; row++) {
-      for (let col = 0; col < this.cols; col++) {
-        this.boardCells.push({ row, col });
-      }
-    }
-  }
+
 }

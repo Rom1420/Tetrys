@@ -56,7 +56,7 @@
             const newGridRow = position.row + row;
             const newGridCol = position.col + col;
             this.gameState[newGridRow][newGridCol] = true; 
-          }
+          } 
         }
       }
 
@@ -69,7 +69,6 @@
           }
         }
       }
-      console.log(this.gameState);
       this.currentPiece.position = position;
     }
 
@@ -82,13 +81,9 @@
       }
     }
 
-
     playGame(): void {
       setInterval(() => {
         this.dropPiece(); 
       }, 1000); 
     }
-
-    
-
   }
