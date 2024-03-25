@@ -6,6 +6,7 @@ import  { WordGameComponent } from './components/word-game/word-game.component';
 import { TetrysGamingComponent } from './components/tetrys-gaming/tetrys-gaming.component';
 import { GameBoardComponent } from './components/game-board/game-board.component';
 import { GameEngine } from './services/game-engine';
+import { GameEventComponent } from './components/game-event/game-event.component';
 
 
 
@@ -15,6 +16,7 @@ import { GameEngine } from './services/game-engine';
     GameComponent,
     TetrysGamingComponent,
     GameBoardComponent,
+    GameEventComponent,
   ],
     imports: [
         CommonModule,
@@ -27,6 +29,7 @@ import { GameEngine } from './services/game-engine';
     GameComponent,
     WordGameComponent,
     GameBoardComponent,
+    GameEventComponent
   ]
 })
 

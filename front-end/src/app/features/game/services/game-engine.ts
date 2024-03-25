@@ -6,6 +6,8 @@
     providedIn: 'root'
   })
   export class GameEngine {
+    
+    
     gameState: boolean[][]; 
     rows: number = 20;
     cols: number = 10;
@@ -79,6 +81,31 @@
 
         this.placePiece({row: currentPiecePosition.row + 1, col:currentPiecePosition.col});
       }
+    }
+    
+    movePieceRight() {
+      const currentPiecePosition: { row: number; col: number; } = this.currentPiece.position;
+      if (currentPiecePosition.col < 8) {
+
+        this.placePiece({row: currentPiecePosition.row, col:currentPiecePosition.col + 1});
+      }
+    }
+    movePieceLeft() {
+      const currentPiecePosition: { row: number; col: number; } = this.currentPiece.position;
+      if (currentPiecePosition.col > 0) {
+
+        this.placePiece({row: currentPiecePosition.row, col:currentPiecePosition.col - 1});
+      }
+    }
+    movePieceDown() {
+      const currentPiecePosition: { row: number; col: number; } = this.currentPiece.position;
+      if (currentPiecePosition.row < 17) {
+
+        this.placePiece({row: currentPiecePosition.row + 1, col:currentPiecePosition.col});
+      }
+    }
+    rotatePiece() {
+      throw new Error('Method not implemented.');
     }
 
     playGame(): void {
