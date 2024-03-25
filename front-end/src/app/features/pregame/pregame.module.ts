@@ -5,8 +5,9 @@ import { DifficultyButtonComponent } from './components/difficulty-button/diffic
 import { DifficultyListComponent } from './components/difficulty-list/difficulty-list.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { StudentComponent } from './components/student/student.component';
-
+import { AddProfilButtonComponent } from './components/add-profil-button/add-profil-button/add-profil-button.component';
 import { PregameComponent } from './pregame.component';
+import { PopupComponent } from './components/popup-add-profil/popup-add-profil.component';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { PregameComponent } from './pregame.component';
     DifficultyListComponent,
     PregameComponent,
     StudentComponent,
-    StudentListComponent
+    StudentListComponent,
+    AddProfilButtonComponent,
+    PopupComponent
   ],
   imports: [
     CommonModule
@@ -25,7 +28,9 @@ import { PregameComponent } from './pregame.component';
     DifficultyButtonComponent,
     PregameComponent,
     StudentComponent,
-    StudentListComponent
+    StudentListComponent,
+    AddProfilButtonComponent,
+    PopupComponent
   ]
 })
 export class PregameModule { }

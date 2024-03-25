@@ -14,4 +14,8 @@ export class StudentService {
     constructor(){
 
     }
+    addProfil(student: Student){
+        this.students.push(student)
+        this.students$.next(this.students)
+    }
 }
