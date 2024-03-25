@@ -1,0 +1,19 @@
+popup {
+    display: none;
+    .popup{
+        display: flex;
+        inset: 0;
+        z-index: 10000;
+        background-color:rgba(100, 212, 14, 0.75);
+        padding:40px;
+        overflow: auto;
+    }
+    .popup-body {
+        padding: 20px;
+        background: #fff;
+    }
+}
+
+body.popup-open {
+    overflow: hidden;
+}
