@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ConfigFormResultService} from "./services/config-form-result.service";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
 import {WordsServices} from "./services/words.services";
 import {Word} from "./models/word.model";
 import {GameFormService} from "./services/game-form.service";
-import {debounce, debounceTime} from "rxjs";
 import {GameManagerService} from "./services/game-manager.service";
 
 @Component({
@@ -17,7 +16,9 @@ export class GameComponent implements OnInit{
     public urlChronoImg: string = "../../assets/chrono.png";
     public wordForm: FormGroup;
     private actualWords: Word[] = [{name: ""}];
-    public actualWord: string = "";
+    public actualWordForm: string = "";
+    public time: number = 0;
+    public allTimer: any[] = [];
     constructor(private gameManagerService:GameManagerService, private configFormResult: ConfigFormResultService, private gameFormService: GameFormService, public wordService:WordsServices, public formBuilder: FormBuilder) {
           this.wordForm = this.formBuilder.group({
               word: ['']
@@ -25,6 +26,7 @@ export class GameComponent implements OnInit{
     }
     ngOnInit(){
         this.actualWords = this.wordService.getActualWords();
+        this.resetTimer();
     }
 
     testServiceForm(){
@@ -32,20 +34,60 @@ export class GameComponent implements OnInit{
     }
 
     verifWord(): boolean{
-        this.actualWord = this.wordForm.get('word')?.value;
-        const verif: boolean = this.actualWords.some(word => word.name == this.actualWord);
-        if(verif){
-          this.onSubmit();
+        this.actualWordForm = this.wordForm.get('word')?.value;
+        if(this.actualWordForm.length == 1){
+          this.startTimer();
         }
-        return verif;
+        const verif: boolean = this.actualWords.some(word => word.name == this.actualWordForm);
+          if(verif){
+            this.onSubmit();
+          }
+          return verif;
     }
+
+    resetTimer(){
+      this.time = this.actualWords.reduce((motCourant, motSuivant) => {
+        return motSuivant.name.length > motCourant.name.length ? motSuivant: motCourant;
+      }, {name: ""}).name.length;
+      this.time = this.time * 0.6;    //ratio par caractere
+      this.time = Number(this.time.toFixed(1));   //on arrondi au dixieme de secondes
+      console.log(this.time)
+
+      this.startTimer();
+      this.pauseTimer();
+    }
+
+    startTimer(){
+      const timer = setInterval(() => {
+        if (this.time > 0) {
+          this.time = Math.max(0, Number((this.time - 0.1).toFixed(1)));
+        } else {
+          this.pauseTimer();
+          alert("gros loser");
+        }
+      }, 100);
+      this.allTimer.push(timer);
+      console.log("timer " + timer);
+    }
+
+    pauseTimer(){
+      for(let timerid of this.allTimer){
+        clearInterval(timerid);
+      }
+      this.allTimer = [];
+    }
+
+
 
     onSubmit(){
         if (this.wordForm.valid){
+          this.pauseTimer()
           this.gameFormService.addResult(this.wordForm.value)
+          setTimeout(function (){}, 3000)
           this.gameManagerService.resetWords();
           this.actualWords = this.wordService.getActualWords();
           this.wordForm.reset();
+          this.resetTimer();
           console.log(this.gameFormService.getResults());
         }
     }

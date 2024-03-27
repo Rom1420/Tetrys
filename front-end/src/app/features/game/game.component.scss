@@ -70,4 +70,25 @@
 }
 
 
+@font-face{
+  font-family: "Digital Font";
+  src: url('../../../assets/font/DS-DIGIT.TTF');
+}
+
+.chrono-container{
+  width: 40%;
+  text-align: center;
+  background-color: black;
+  border: gray 3px solid;
+}
+
+.chrono-container p{
+  font-family: "Digital Font", serif;
+  color: red;
+  font-size: 20vh;
+  margin: 0;
+}
+
+
+
 
