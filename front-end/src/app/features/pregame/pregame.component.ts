@@ -6,7 +6,7 @@ import { PopupService } from './services/popup.service';
   styleUrl: './pregame.component.scss'
 })
 export class PregameComponent {
-  constructor(){}
+  constructor(public popupService: PopupService){}
   
   
 }

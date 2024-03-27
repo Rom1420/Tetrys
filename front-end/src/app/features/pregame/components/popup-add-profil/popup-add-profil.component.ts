@@ -8,48 +8,21 @@ import { PopupService } from '../../services/popup.service';
 @Component({
   selector: 'popup-add-profil',
   templateUrl: './popup-add-profil.component.html',
-  styleUrls: ['./popup-add-profil.component.css'],
+  styleUrls: ['./popup-add-profil.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class PopupComponent implements OnInit, OnDestroy{
+export class PopupComponent {
 
   public profilForm: FormGroup;
-  @Input() id?: string;
-  isOpen = false;
-  private element:any;
 
-  constructor(public popupService: PopupService,private el: ElementRef,public formBuilder: FormBuilder, public studentService: StudentService){
-    this.element = el.nativeElement;
+  constructor(public popupService: PopupService,public formBuilder: FormBuilder, public studentService: StudentService){
     this.profilForm = this.formBuilder.group({
         name: [''],
     })
   }
-
-  ngOnInit(){
-      this.popupService.add(this);
-      document.body.appendChild(this.element);
-      this.element.addEventListener('click',(el: any) =>{
-        if(el.target.className === 'popup'){
-            this.close();
-        }
-      });
-  }
-
-  ngOnDestroy(){
-      this.popupService.remove(this);
-      this.element.remove();
-  }
   
-  open(){
-    this.element.style.display ='block';
-    document.body.classList.add('popup-open');
-    this.isOpen =true;
-  }
-
-  close(){
-    this.element.style.display = 'none';
-    document.body.classList.remove('popup-open');
-    this.isOpen = false;
+  closePopup() {
+    this.popupService.closePopup();
   }
 
   addProfil(){

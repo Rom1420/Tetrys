@@ -6,7 +6,11 @@ import { PopupService } from '../../../services/popup.service';
   styleUrl: './add-profil-button.component.scss'
 })
 export class AddProfilButtonComponent { 
-  constructor(protected popupService: PopupService){
+  constructor(public popupService: PopupService){
 
+  }
+
+  openPopup() {
+    this.popupService.openPopup();
   }
 }

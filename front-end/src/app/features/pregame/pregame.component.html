@@ -2,6 +2,6 @@
 <div class="pregame-container">
     <student-list></student-list>
     <difficulty-list></difficulty-list>
-    <popup-add-profil id="popup-add-profil"></popup-add-profil>
+    <popup-add-profil *ngIf="popupService.isOpen"></popup-add-profil>
 </div>
 
