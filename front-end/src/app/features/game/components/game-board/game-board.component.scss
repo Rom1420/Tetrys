@@ -21,11 +21,50 @@
 }
 
 .cell {
-  width: 2vw; /* Largeur de chaque cellule */
-  border: 1px solid #ffffff42; /* Bordure de chaque cellule */
+  width: 2vw; 
   box-sizing: border-box;
 }
 
-.filled {
-  background-color: rgb(57, 183, 57);
+.block-null {
+  border: 0.1vw solid #ffffff12;
+}
+
+.block-1 {
+  background-color: #F2E205;
+  border: 0.2vw solid darken(#F2E205, 20%);
+}
+
+.block-2 {
+  background-color: #00F0F0;
+  border: 0.2vw solid darken(#00F0F0, 20%);
+}
+
+.block-3 {
+  background-color: #F0A000;
+  border-color: darken(#F0A000, 20%);
+  border: 0.2vw solid darken(#F0A000, 20%);
+}
+
+.block-4 {
+  background-color: #0000F0;
+  border-color: darken(#0000F0, 20%);
+  border: 0.2vw solid darken(#0000F0, 20%);
+}
+
+.block-5 {
+  background-color: #A000F0;
+  border-color: darken(#A000F0, 20%);
+  border: 0.2vw solid darken(#A000F0, 20%);
+}
+
+.block-6 {
+  background-color: #00F000;
+  border-color: darken(#00F000, 20%);
+  border: 0.2vw solid darken(#00F000, 20%);
+}
+
+.block-7 {
+  background-color: #F00000;
+  border-color: darken(#F00000, 20%);
+  border: 0.2vw solid darken(#F00000, 20%);
 }

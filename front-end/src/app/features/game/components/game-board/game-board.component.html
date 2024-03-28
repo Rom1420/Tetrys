@@ -1,7 +1,7 @@
 <div class="board-container">
-    <div class="board" grid>
-        <ng-container *ngFor="let row of gameState">
-          <div class="cell" *ngFor="let cell of row" [ngClass]="{'filled': cell}"></div>
-        </ng-container>
-      </div>
+  <div class="board" grid>
+      <ng-container *ngFor="let row of gameState">
+        <div class="cell" *ngFor="let cell of row" [ngClass]="'block-' + cell"></div>
+      </ng-container>
+  </div>
 </div>

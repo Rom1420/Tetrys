@@ -32,4 +32,12 @@
         [false, true, true]
         ]
     };
-    
+    export const TetrisBlockId = {
+        SquarePiece: 1,
+        LinePiece: 2,
+        LPiece: 3,
+        JPiece: 4,
+        TPiece: 5,
+        SPiece: 6,
+        ZPiece: 7
+    };
