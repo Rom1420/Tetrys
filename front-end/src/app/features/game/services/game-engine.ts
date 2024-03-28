@@ -35,6 +35,25 @@ export class GameEngine {
     return TetrisPieces[pieceType] || [];
   }
 
+  isCurrentPieceHere(row: number, col: number): boolean {
+    const currentPiecePosition = this.currentPiece.position;
+    const pieceShape = this.currentPiece.shape;
+  
+    const relativeRow = row - currentPiecePosition.row;
+    const relativeCol = col - currentPiecePosition.col;
+  
+    if (
+      relativeRow >= 0 &&
+      relativeRow < pieceShape.length &&
+      relativeCol >= 0 &&
+      relativeCol < pieceShape[0].length
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   initGameState(): void {
     for (let row = 0; row < this.rows; row++) {
       this.gameState[row] = [];
@@ -180,6 +199,7 @@ export class GameEngine {
     const gameEngineInstance = this;
     
     function startNewGameLoop() {
+      gameEngineInstance.checkAndClearCompletedRows();
       let pieceInfo = gameEngineInstance.getRandomPieceType();
       gameEngineInstance.currentPiece = gameEngineInstance.initializePiece(pieceInfo, { row: 0, col: 4 });
       function dropPieceRecursive() {
@@ -193,5 +213,42 @@ export class GameEngine {
       dropPieceRecursive();
   }
   startNewGameLoop(); 
+  }
+
+  checkAndClearCompletedRows(): void {
+      for(let row = 0; row < this.rows; row++){
+        if(this.isRowComplete(row)){
+          this.clearRow(row);
+          setTimeout(() => {
+            this.moveRowsDown(row);
+          }, 500);  
+        }
+      }
+  }
+  
+  
+  isRowComplete(row: number) {
+    for (let col = 0; col < this.cols; col++){
+      if(this.gameState[row][col] === null){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  clearRow(row: number) {
+      for(let col = 0; col < this.cols; col ++){
+        this.gameState[row][col] = null;
+      }
+  }
+
+  moveRowsDown(completedRow: number) {
+    for (let row = completedRow - 1; row >= 0; row--) {
+      for (let col = 0; col < this.cols; col++) {
+        if (!this.isCurrentPieceHere(row, col)) {
+          this.gameState[row + 1][col] = this.gameState[row][col];
+        }
+      }
+    }
   }
 }
