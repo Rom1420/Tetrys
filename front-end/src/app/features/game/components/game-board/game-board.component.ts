@@ -10,7 +10,7 @@ import { GameEngine } from '../../services/game-engine';
 export class GameBoardComponent {
   rows: number = 20;
   cols: number = 10;
-  gameState: boolean[][] = [];
+  gameState: (number | null)[][] = [];
 
   @ViewChild('board') boardRef!: ElementRef;
 
@@ -21,6 +21,5 @@ export class GameBoardComponent {
     this.gameEngine.playGame();
     this.gameState = this.gameEngine.getGameState();  
   }
-
 
 }
