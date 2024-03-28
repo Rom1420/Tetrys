@@ -46,15 +46,7 @@ export class GameEngine {
     const currentPieceShape: boolean[][] = this.currentPiece.shape
     const oldPosition = this.currentPiece.position;
   
-    for (let row = 0; row < currentPieceShape.length; row++) {
-      for (let col = 0; col < currentPieceShape[row].length; col++) {
-        if (currentPieceShape[row][col]) {
-          const oldGridRow = oldPosition.row + row;
-          const oldGridCol = oldPosition.col + col;
-          this.gameState[oldGridRow][oldGridCol] = false;
-        } 
-      }
-    }
+    this.clearCellsOccupiedByPiece();
 
     for (let row = 0; row < currentPieceShape.length; row++) {
       for (let col = 0; col < currentPieceShape[row].length; col++) {
