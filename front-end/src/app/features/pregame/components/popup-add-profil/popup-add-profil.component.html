@@ -4,11 +4,11 @@
         <form class="profil-form" [formGroup]="profilForm">
 
             <label for="name">
-                <p>nom du nouveau profil</p>
+                <p>nom du nouveau profil:</p>
                 <input class="input-custom" type="text" id="name" [formControlName]="'name'">
             </label>
         </form>
-        <button (click)="closePopup()">close</button>
-        <button type="submit" class="button-card" (click)="addProfil()" (click)="closePopup()">Create</button>
+        <button (click)="closePopup()">Fermer</button>
+        <button type="submit" class="button-card" (click)="addProfil()" (click)="closePopup()">Valider</button>
     </div>
 </div>
