@@ -21,10 +21,13 @@ export class GameEventComponent {
         // surement appel a is moovable to direction
         this.gameEngine.movePieceRight();
         break;
-        case 'ArrowDown':
-          // surement appel a is moovable to direction
-      this.gameEngine.movePieceDown();
-      break;
+      case 'ArrowDown':
+        // surement appel a is moovable to direction
+        this.gameEngine.movePieceDown();
+        break;
+      case 'ArrowUp':
+        this.gameEngine.rotatePiece();
+        break;
     }
   }
 }
