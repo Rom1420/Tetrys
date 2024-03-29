@@ -3,6 +3,7 @@ import {NgOptimizedImage} from "@angular/common";
 import {StatGameComponent} from "./components/stat-game/stat-game.component";
 import {StatGraphComponent} from "./components/stat-graph/stat-graph.component";
 import {StatsComponent} from "./stats.component";
+import { PregameModule } from '../pregame/pregame.module';
 
 @NgModule({
   declarations: [
@@ -11,11 +12,10 @@ import {StatsComponent} from "./stats.component";
     StatsComponent
   ],
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    PregameModule
   ],
   exports: [
-    StatGameComponent,
-    StatGraphComponent,
     StatsComponent
   ]
 })
