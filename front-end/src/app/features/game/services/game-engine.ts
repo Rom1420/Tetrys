@@ -15,7 +15,6 @@ export class GameEngine {
     this.gameState = [];    
     this.currentPiece = this.initializePiece(this.getRandomPieceType(), { row: 0, col: 4 });  
     this.initGameState();
-    console.log("init");
   }
 
   getGameState(): (number | null)[][] {
@@ -121,9 +120,9 @@ export class GameEngine {
       }
       rotatedPieceShape.push(newRow);
     }
-    this.currentPiece.shape = rotatedPieceShape;
-    if(this.canMoveTo(this.currentPiece.position)) {
-        this.placePiece(this.currentPiece.position);
+    if(this.canRotateTo(this.currentPiece.position, rotatedPieceShape)) { 
+      this.currentPiece.shape = rotatedPieceShape;
+      this.placePiece(this.currentPiece.position);
     }
     else{
       this.currentPiece.shape = oldPieceShape;
@@ -148,9 +147,7 @@ export class GameEngine {
 
   canMoveTo(newPosition: {row: number, col: number}): boolean {
     const currentPieceShape: boolean[][] = this.currentPiece.shape;
-
     this.clearCurrentPieceFromGameState(); 
-
     if (newPosition.row <= 0 || newPosition.row + currentPieceShape.length > this.rows || newPosition.col < 0 || newPosition.col + currentPieceShape[0].length > this.cols) {
       this.placePiece(this.currentPiece.position);
       return false; 
@@ -159,6 +156,30 @@ export class GameEngine {
     for (let row = 0; row < currentPieceShape.length; row++) {
       for (let col = 0; col < currentPieceShape[row].length; col++) {
         if (currentPieceShape[row][col]) {
+          const newRow: number = newPosition.row + row;
+          const newCol: number = newPosition.col + col;
+          if (this.gameState[newRow][newCol] !== null) {
+            this.placePiece(this.currentPiece.position);
+            return false;
+          }
+        }
+      }
+    }
+    return true; 
+  }
+
+  canRotateTo(newPosition: {row: number, col: number}, newShape: boolean[][]): boolean {
+
+    this.clearCurrentPieceFromGameState();
+    
+    if (newPosition.row <= 0 || newPosition.row + newShape.length > this.rows || newPosition.col < 0 || newPosition.col + newShape[0].length > this.cols) {
+      this.placePiece(this.currentPiece.position);
+      return false; 
+    }
+  
+    for (let row = 0; row < newShape.length; row++) {
+      for (let col = 0; col < newShape[row].length; col++) {
+        if (newShape[row][col]) {
           const newRow: number = newPosition.row + row;
           const newCol: number = newPosition.col + col;
           if (this.gameState[newRow][newCol] !== null) {
@@ -250,5 +271,17 @@ export class GameEngine {
         }
       }
     }
+  }
+
+  placeRandomPieceRandomly(){
+    let pieceInfo = this.getRandomPieceType();
+    const randomCol = Math.max(0, Math.floor(Math.random() * (this.cols - 2 )));
+
+    this.currentPiece = this.initializePiece(pieceInfo, {row:0, col: randomCol});
+
+    while(this.canMoveTo({row:this.currentPiece.position.row + 1, col:this.currentPiece.position.col})){
+      this.dropPiece();
+    }
+
   }
 }
