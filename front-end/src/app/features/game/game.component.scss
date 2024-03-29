@@ -1,5 +1,6 @@
 .game-container{
   display: flex;
+  height: 100%;
 }
 
 .playable-zone{
@@ -8,13 +9,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .words{
-  margin-top: 2%;
   flex-direction: row;
   width: 100%;
-  height: 10%;
+  height: auto;
 }
 
 
@@ -88,6 +89,8 @@
   font-size: 20vh;
   margin: 0;
 }
+
+
 
 
 

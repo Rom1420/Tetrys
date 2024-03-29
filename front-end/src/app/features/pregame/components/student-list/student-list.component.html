@@ -1,6 +1,9 @@
-<div class="student-list">
-    <div class="scroll-container-student">
-        <student *ngFor="let student of studentList" [student]=student></student>
+<div class="student-list-component">
+    <div class="student-list">
+        <div class="scroll-container-student">
+            <student *ngFor="let student of studentList" [student]=student></student>
+        </div>
     </div>
+    <add-profil-button></add-profil-button>
 </div>
-<add-profil-button></add-profil-button>
+    

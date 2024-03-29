@@ -34,7 +34,7 @@
 }
 
 .difficulty-button-container{
-    margin: 5px;
+    margin: 1vh 1vh;
     padding: 5px;
     display: flex;
     align-items: center;
@@ -156,7 +156,7 @@
 
 .perso {
     background-color: rgb(6, 114, 157);
-    box-shadow: 0px 0px 20px rgb(107, 204, 242);
+    box-shadow: 0px 0px 20px #6bccf2;
     transition: transform 0.3s ease-in-out;
 
     &:hover {

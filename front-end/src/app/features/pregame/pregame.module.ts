@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 import { DifficultyButtonComponent } from './components/difficulty-button/difficulty-button.component';
 import { DifficultyListComponent } from './components/difficulty-list/difficulty-list.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
@@ -21,13 +22,13 @@ import { PopupComponent } from './components/popup-add-profil/popup-add-profil.c
     StudentComponent,
     StudentListComponent,
     AddProfilButtonComponent,
-    PopupComponent
+    PopupComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     DifficultyListComponent,
@@ -36,7 +37,7 @@ import { PopupComponent } from './components/popup-add-profil/popup-add-profil.c
     StudentComponent,
     StudentListComponent,
     AddProfilButtonComponent,
-    PopupComponent
+    PopupComponent,
   ]
 })
 export class PregameModule { }

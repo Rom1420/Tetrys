@@ -10,6 +10,6 @@ export class BoardComponent {
 
   generateArray(length: number): any[] {
     return Array(length).fill(0);
-  }
+  } 
 
 }

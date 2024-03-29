@@ -28,6 +28,6 @@ export class PopupComponent {
   addProfil(){
     const profilToCreate: Student = this.profilForm.getRawValue() as Student;
     this.studentService.addProfil(profilToCreate);
-
+    this.popupService.closePopup();
   }
 }

@@ -1,0 +1,70 @@
+.board-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 30vw;
+    border: solid 2px #0057b397;
+    background-color: #0f1d388b;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 2vw); /* 10 colonnes de 30 pixels de large */
+  grid-template-rows: repeat(20, 2vw); /* 20 lignes de 30 pixels de hauteur */
+  gap: 0px; /* Espacement entre les cellules */
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 2vw;
+  box-sizing: border-box;
+}
+
+.block-null {
+  border: 0.1vw solid rgba(255, 255, 255, 0.144);
+}
+
+.block-1 {
+  background-color: #F2E205;
+  border: 0.2vw solid darken(#F2E205, 20%);
+}
+
+.block-2 {
+  background-color: #00F0F0;
+  border: 0.2vw solid darken(#00F0F0, 20%);
+}
+
+.block-3 {
+  background-color: #F0A000;
+  border-color: darken(#F0A000, 20%);
+  border: 0.2vw solid darken(#F0A000, 20%);
+}
+
+.block-4 {
+  background-color: #0000F0;
+  border-color: darken(#0000F0, 20%);
+  border: 0.2vw solid darken(#0000F0, 20%);
+}
+
+.block-5 {
+  background-color: #A000F0;
+  border-color: darken(#A000F0, 20%);
+  border: 0.2vw solid darken(#A000F0, 20%);
+}
+
+.block-6 {
+  background-color: #00F000;
+  border-color: darken(#00F000, 20%);
+  border: 0.2vw solid darken(#00F000, 20%);
+}
+
+.block-7 {
+  background-color: #F00000;
+  border-color: darken(#F00000, 20%);
+  border: 0.2vw solid darken(#F00000, 20%);
+}

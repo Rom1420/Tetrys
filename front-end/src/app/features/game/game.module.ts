@@ -4,10 +4,10 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { GameComponent } from './game.component';
 import  { WordGameComponent } from './components/word-game/word-game.component';
 import { TetrysGamingComponent } from './components/tetrys-gaming/tetrys-gaming.component';
-import { BoardComponent } from './components/board/board.component';
-import { PieceComponent } from './components/piece/piece.component';
-import { GameEngineComponent } from './components/game-engine/game-engine.component';
+import { GameBoardComponent } from './components/game-board/game-board.component';  
+import { GameEventComponent } from './components/game-event/game-event.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 
 
 @NgModule({
@@ -15,9 +15,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     WordGameComponent,
     GameComponent,
     TetrysGamingComponent,
-    BoardComponent,
-    PieceComponent,
-    GameEngineComponent
+    GameBoardComponent,
+    GameEventComponent,
   ],
     imports: [
         CommonModule,
@@ -28,7 +27,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
   exports: [
     GameComponent,
     WordGameComponent,
-    BoardComponent
+    GameBoardComponent,
+    GameEventComponent
   ]
 })
+
 export class GameModule { }
