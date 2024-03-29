@@ -9,6 +9,7 @@ import { HomePageComponent } from './components/home-page/home-page.component'
 
 import { GameModule } from '../features/game/game.module';
 import {PregameModule} from '../features/pregame/pregame.module';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {PregameModule} from '../features/pregame/pregame.module';
         BrowserModule,
         AppRoutingModule,
         GameModule,
-        PregameModule
+        PregameModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

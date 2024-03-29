@@ -1,0 +1,18 @@
+import {Injectable} from "@angular/core";
+import { BehaviorSubject, Subject } from "rxjs";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class GameManagerService {
+  i: number = 1;
+  private ask4Reset = new BehaviorSubject<number>(0);
+  reset$ = this.ask4Reset.asObservable();
+  constructor() {
+  }
+  resetWords(){
+    this.ask4Reset.next(this.i);
+    this.i++;
+  }
+
+}

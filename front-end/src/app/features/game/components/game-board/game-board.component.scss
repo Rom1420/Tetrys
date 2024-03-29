@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100%;
     width: 30vw;
     border: solid 2px #0057b397;
     background-color: #0f1d388b;
@@ -26,7 +26,7 @@
 }
 
 .block-null {
-  border: 0.1vw solid rgba(255, 255, 255, 0.32);
+  border: 0.1vw solid rgba(255, 255, 255, 0.144);
 }
 
 .block-1 {

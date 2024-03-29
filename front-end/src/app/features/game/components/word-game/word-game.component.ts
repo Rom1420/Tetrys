@@ -2,6 +2,8 @@ import {Component} from "@angular/core";
 import {Router} from "@angular/router"
 import {WordsServices} from "../../services/words.services";
 import {Word} from "../../models/word.model";
+import {Subscription} from "rxjs";
+import {GameManagerService} from "../../services/game-manager.service";
 
 
 @Component({
@@ -14,14 +16,16 @@ export class WordGameComponent{
 
   public words: Word[] = [];
   public urlBlock: string = "../../assets/block.png";
-  public nbRandom: number = 0;
+  private reset: Subscription;
+  constructor(private router: Router, public wordsService: WordsServices, private gameManagerService: GameManagerService) {
+    this.reset = this.gameManagerService.reset$.subscribe(value => this.setGame());
+  }
 
-  constructor(private router: Router, public wordsService: WordsServices) {
+  setGame(){
     this.wordsService.words$.subscribe((wordsList)=>{
       const randomInt: number = Math.floor(Math.random() * (wordsList.length - 2));
-      console.log(randomInt);
-      this.words = wordsService.get3Word(randomInt);
-    })
+      this.words = this.wordsService.get3Word(randomInt);
+    });
   }
 
   redirection(){
