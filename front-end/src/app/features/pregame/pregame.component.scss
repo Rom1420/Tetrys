@@ -14,3 +14,13 @@
     position: fixed;
     z-index: -2;
 }
+
+.pregame-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-top: 100px;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    
+}

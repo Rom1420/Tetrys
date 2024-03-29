@@ -1,0 +1,30 @@
+.student{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 27px;
+    border-radius: 10px;
+    align-items: center;
+    padding: 10px 0px;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 0;
+    border-color: solid 4px violet;
+}
+
+.student img{
+    max-height: 3vw;
+    max-width: auto;
+}
+
+
+.student p{
+    color: white;
+    font-size: 1.2vw;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.student:hover{
+    background-color: rgba(48, 70, 115,0.8);
+}
