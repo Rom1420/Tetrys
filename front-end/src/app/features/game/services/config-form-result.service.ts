@@ -11,7 +11,6 @@ export class ConfigFormResultService {
 
   addResult(result: ConfigModel) {
     this.formResults.push(result);
-    console.log(this.formResults);
   }
 
   getResults() {

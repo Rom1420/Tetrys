@@ -34,7 +34,7 @@ export class GameComponent implements OnInit{
     }
 
     verifWord(): boolean{
-        this.actualWordForm = this.wordForm.get('word')?.value;
+        this.actualWordForm = this.wordForm.get('word')?.value.toLowerCase();
         if(this.actualWordForm.length == 1){
           this.startTimer();
         }
