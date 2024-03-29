@@ -1,0 +1,18 @@
+.piece {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .cell {
+    width: 30px; /* Largeur de la cellule */
+    height: 30px; /* Hauteur de la cellule */
+    border: 1px solid #000; /* Bordure de la cellule */
+  }
+  
+  .cell.filled {
+    background-color: #000; /* Couleur de fond pour les cellules remplies */
+  }
