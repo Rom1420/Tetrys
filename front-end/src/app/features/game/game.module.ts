@@ -7,6 +7,7 @@ import { TetrysGamingComponent } from './components/tetrys-gaming/tetrys-gaming.
 import { BoardComponent } from './components/board/board.component';
 import { PieceComponent } from './components/piece/piece.component';
 import { GameEngineComponent } from './components/game-engine/game-engine.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -21,6 +22,8 @@ import { GameEngineComponent } from './components/game-engine/game-engine.compon
     imports: [
         CommonModule,
         NgOptimizedImage,
+        ReactiveFormsModule,
+        FormsModule,
     ],
   exports: [
     GameComponent,
