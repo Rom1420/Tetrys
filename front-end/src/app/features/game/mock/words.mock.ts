@@ -1,28 +1,17 @@
 import {Word} from "../models/word.model";
 
 export const WORD_LIST: Word[] = [
-  {
-    name: "Hello"
-  },
-  {
-    name: "Bonjour"
-  },
-  {
-    name: "ScoobyDoo"
-  },
-  {
-    name: "slt"
-  },
-  {
-    name: "caca"
-  },
-  {
-    name: "batiment"
-  },
-  {
-    name: "numérique"
-  },
-  {
-    name: "pancarte"
-  },
+  { name: "chat" },
+  { name: "maison" },
+  { name: "fleur" },
+  { name: "chaise" },
+  { name: "soleil" },
+  { name: "école" },
+  { name: "banane" },
+  { name: "ordinateur" },
+  { name: "téléphone" },
+  { name: "jardin" },
+  { name: "voiture" },
+  { name: "oiseau" },
+  { name: "scooby" },
 ]

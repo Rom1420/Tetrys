@@ -9,6 +9,7 @@ import { HomePageComponent } from './components/home-page/home-page.component'
 
 import { GameModule } from '../features/game/game.module';
 import {PregameModule} from '../features/pregame/pregame.module';
+import {ReactiveFormsModule} from "@angular/forms";
 import {StatsModule} from "../features/Stats/stats.module";
 
 
@@ -23,6 +24,7 @@ import {StatsModule} from "../features/Stats/stats.module";
         AppRoutingModule,
         GameModule,
         PregameModule,
+        ReactiveFormsModule,
         StatsModule
     ],
   providers: [],

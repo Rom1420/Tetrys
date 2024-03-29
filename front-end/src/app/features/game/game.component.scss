@@ -1,5 +1,6 @@
 .game-container{
   display: flex;
+  height: 100%;
 }
 
 .playable-zone{
@@ -8,13 +9,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .words{
-  margin-top: 2%;
   flex-direction: row;
   width: 100%;
-  height: 10%;
+  height: auto;
 }
 
 
@@ -68,6 +69,29 @@
 .input-container button{
   flex: 1;
 }
+
+
+@font-face{
+  font-family: "Digital Font";
+  src: url('../../../assets/font/DS-DIGIT.TTF');
+}
+
+.chrono-container{
+  width: 40%;
+  text-align: center;
+  background-color: black;
+  border: gray 3px solid;
+}
+
+.chrono-container p{
+  font-family: "Digital Font", serif;
+  color: red;
+  font-size: 20vh;
+  margin: 0;
+}
+
+
+
 
 
 

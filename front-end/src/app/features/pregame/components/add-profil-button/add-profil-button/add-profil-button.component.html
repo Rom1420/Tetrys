@@ -1,0 +1,4 @@
+<div class="add-profil-button-container">
+    <button *ngIf="!popupService.isOpen" class="add-profil-button" (click)="openPopup()">Créer Profil</button>
+    <popup-add-profil *ngIf="popupService.isOpen"></popup-add-profil>
+</div>
