@@ -22,10 +22,8 @@ export class WordGameComponent{
   }
 
   setGame(){
-    this.wordsService.words$.subscribe((wordsList)=>{
-      const randomInt: number = Math.floor(Math.random() * (wordsList.length - 2));
+      const randomInt: number = Math.floor(Math.random() * (this.wordsService.words.length - 2));
       this.words = this.wordsService.get3Word(randomInt);
-    });
   }
 
   redirection(){

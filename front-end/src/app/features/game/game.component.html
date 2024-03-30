@@ -8,7 +8,7 @@
       <form [formGroup]="wordForm" autocomplete="off">
         <label for="word">Rentrez un des 3 mots ci dessus: </label>
         <div class="input-container">
-          <input type="text" id="word" formControlName="word" (input)="verifWord()">
+          <input type="text" id="word" #word formControlName="word" (input)="verifWord()">
           <button (click)="testServiceForm()">Valider</button>
         </div>
       </form>

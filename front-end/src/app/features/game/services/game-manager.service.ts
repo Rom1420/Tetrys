@@ -8,8 +8,10 @@ export class GameManagerService {
   i: number = 1;
   private ask4Reset = new BehaviorSubject<number>(0);
   reset$ = this.ask4Reset.asObservable();
-  constructor() {
-  }
+
+  captureEvents$ = new BehaviorSubject<number>(0);
+
+  constructor() {}
   resetWords(){
     this.ask4Reset.next(this.i);
     this.i++;

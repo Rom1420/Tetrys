@@ -18,8 +18,8 @@ export class GameBoardComponent {
 
 
   ngOnInit(): void {
-    this.gameEngine.playGame();
-    this.gameState = this.gameEngine.getGameState();  
+    //this.gameEngine.playGame();
+    this.gameState = this.gameEngine.getGameState();
   }
 
 }

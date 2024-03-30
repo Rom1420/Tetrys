@@ -8,18 +8,17 @@ import {WORD_LIST} from "../mock/words.mock";
   providedIn: 'root'
 })
 export class WordsServices{
-  private words: Word[] = WORD_LIST;
+  public words: Word[] = WORD_LIST;
   private actualWords: Word[] = [];
-  public words$: BehaviorSubject<Word[]> = new BehaviorSubject(WORD_LIST);
+  public words$: BehaviorSubject<Word[]> = new BehaviorSubject(this.actualWords);
 
 
-  getNumberOfWords(): number{
-    return this.words.length;
-  }
+
 
   get3Word(rank: number): Word[]{
     this.actualWords = this.words.slice(rank, rank+3);
-    return this.words.slice(rank, rank+3);
+    this.words$.next(this.actualWords);
+    return this.actualWords;
   }
 
   setWords(words: Word[]){
