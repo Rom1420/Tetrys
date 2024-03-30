@@ -11,6 +11,7 @@ import { GameModule } from '../features/game/game.module';
 import {PregameModule} from '../features/pregame/pregame.module';
 import {ReactiveFormsModule} from "@angular/forms";
 import {StatsModule} from "../features/Stats/stats.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {StatsModule} from "../features/Stats/stats.module";
         GameModule,
         PregameModule,
         ReactiveFormsModule,
-        StatsModule
+        StatsModule,
+        BrowserAnimationsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

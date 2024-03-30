@@ -24,5 +24,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; 
+  
+  &-appear {
+    animation: difficulty-list-component-appear-animation 0.5s cubic-bezier(0.175, 0.885, 0.2, 1.275) forwards;
+  }
+  
+  @keyframes difficulty-list-component-appear-animation {
+  from {
+      opacity: 0;
+      transform: scale(0);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+  } 
 }

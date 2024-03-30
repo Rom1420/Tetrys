@@ -1,5 +1,4 @@
 .popup{
-    display: flex;
     height: auto;
     width: 0;
     margin: 10px auto;
@@ -10,21 +9,8 @@
     overflow: hidden;
     align-items: center;
     justify-content: center;
-    animation: growPopup 0.5s cubic-bezier(0.175, 0.885, 0.2, 1.275) forwards;
 }
 
-    
-
-@keyframes growPopup {
-    from {
-        width: 1vw;
-        height: 1.5vw;
-    }
-    to {
-        width: 20vw;
-        height: 19vh; 
-    }
-}
 .popup-body {
     width: 90%;
     padding: 0px 20px;

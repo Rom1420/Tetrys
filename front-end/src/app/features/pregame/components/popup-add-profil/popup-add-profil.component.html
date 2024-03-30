@@ -1,4 +1,4 @@
-<div  class="popup">
+<div class="popup" [@togglePopup]="popupService.isOpen ? 'open' : 'close'" (@togglePopup.done)="onAnimationDone()">
     <div class="popup-body">
         <div class="popup-header-container">
             <div class="close-button-container">
