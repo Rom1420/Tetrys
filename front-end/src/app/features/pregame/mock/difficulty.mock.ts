@@ -6,8 +6,8 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         description: 'Le mode pas trop dur',
         details: {
             timePerCharacter: 10,
-            maxWordLength: 8,
-            allowErrors: true
+            maxWordLength: 5,
+            allowErrors: "Oui"
         }
     },
     {
@@ -15,9 +15,9 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         name: 'Intermédiaire',
         description: 'Le mode un peu dur',
         details: {
-            timePerCharacter: 10,
-            maxWordLength: 8,
-            allowErrors: true
+            timePerCharacter: 7,
+            maxWordLength: 6,
+            allowErrors: "Oui"
         }
     },
     {
@@ -25,9 +25,9 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         name: 'Avancé',
         description: 'Le mode dur',
         details: {
-            timePerCharacter: 10,
+            timePerCharacter: 5,
             maxWordLength: 8,
-            allowErrors: true
+            allowErrors: "Non"
         }
     },
     {
@@ -37,7 +37,7 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         details: {
             timePerCharacter: 10,
             maxWordLength: 8,
-            allowErrors: true
+            allowErrors: "Oui"
         }
     }
 ]

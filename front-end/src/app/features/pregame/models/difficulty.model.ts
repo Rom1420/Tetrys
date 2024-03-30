@@ -5,6 +5,6 @@ export interface Difficulty {
   details: {
     timePerCharacter: number,
     maxWordLength: number,
-    allowErrors: boolean
+    allowErrors: string
   };
 }
