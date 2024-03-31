@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Difficulty } from 'src/app/features/pregame/models/difficulty.model';
 
 @Component({
@@ -10,6 +10,8 @@ import { Difficulty } from 'src/app/features/pregame/models/difficulty.model';
 export class DifficultyButtonComponent implements OnInit {
     @Input()
     difficulty!: Difficulty;
+
+    @Output() hover: EventEmitter<Difficulty> = new EventEmitter<Difficulty>();
 
     constructor() {}    
     ngOnInit(): void {
@@ -27,6 +29,11 @@ export class DifficultyButtonComponent implements OnInit {
             default:
                 return '';
         }
+    }
+
+    onHover(): void {
+        console.log(this.difficulty.details);
+        this.hover.emit(this.difficulty);
     }
 
 } 

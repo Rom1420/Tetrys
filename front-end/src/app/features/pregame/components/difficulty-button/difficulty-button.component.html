@@ -1,4 +1,4 @@
-<div class="difficulty-button-container">
+<div class="difficulty-button-container" (mouseenter)="onHover()">
     <a href="/game">
         <div class="level" [ngClass]="getDifficultyClass()">
             <span>{{ difficulty.name }}</span>
