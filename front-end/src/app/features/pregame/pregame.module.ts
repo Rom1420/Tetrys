@@ -9,9 +9,10 @@ import { DifficultyButtonComponent } from './components/difficulty-button/diffic
 import { DifficultyListComponent } from './components/difficulty-list/difficulty-list.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { StudentComponent } from './components/student/student.component';
-import { AddProfilButtonComponent } from './components/add-profil-button/add-profil-button/add-profil-button.component';
+import { AddProfilButtonComponent } from './components/add-profil-button/add-profil-button.component';
 import { PregameComponent } from './pregame.component';
 import { PopupComponent } from './components/popup-add-profil/popup-add-profil.component';
+import { DifficultyDetailComponent } from './components/difficulty-detail/difficulty-detail.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { PopupComponent } from './components/popup-add-profil/popup-add-profil.c
     StudentListComponent,
     AddProfilButtonComponent,
     PopupComponent,
+    DifficultyDetailComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,7 @@
+<div class="difficulty-detail-component details-appear" *ngIf="currentDifficulty">
+    <h1 [ngClass]="getDifficultyClass()">Mode {{ currentDifficulty.name }}</h1>   
+    <h3>{{ currentDifficulty.description }}</h3> 
+    <p>Temps par caractère : <span>{{ currentDifficulty.details.timePerCharacter }} sec</span></p>
+    <p>Taille max d'un mot : <span>{{ currentDifficulty.details.maxWordLength }} lettres</span></p>
+    <p>Droit à l'erreur : <span>{{ currentDifficulty.details.allowErrors }}</span></p>
+</div>      
