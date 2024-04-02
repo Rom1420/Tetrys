@@ -1,22 +1,26 @@
-<div class="popup" [@togglePopup]="popupService.isOpen ? 'open' : 'close'" (@togglePopup.done)="onAnimationDone()">
-    <div class="popup-body">
-        <div class="popup-header-container">
-            <div class="close-button-container">
-                <div (click)="closePopup()" class="close-button">
-                    <span></span>
-                    <span></span>
+    <div class="popup" [@togglePopup]="popupService.isOpen ? 'open' : 'close'" (@togglePopup.done)="onAnimationDone()">
+        <div class="popup-body">
+            <div class="popup-header-container">
+                <div class="close-button-container">
+                    <div (click)="closePopup()" class="close-button">
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
+                <h2>Ajouter un Profil</h2>
             </div>
-            <h2>Ajouter un Profil</h2>
+            <div class="input-and-button">
+                <form class="profil-form" [formGroup]="profilForm">
+                    
+                        <div class="input-container">
+                            <input class="input-custom" type="text" id="name" [formControlName]="'name'" placeholder="Nom">
+                        </div>
+                </form>
+                    <div class="submit-button-container">
+                        <button type="submit" class="submit-button" (click)="addProfil()">
+                            <span>&#10003;</span>
+                        </button>
+                    </div>
+            </div>
         </div>
-        <form class="profil-form" [formGroup]="profilForm">
-            <div class="input-container">
-                <label for="name">
-                    <input class="input-custom" type="text" id="name" [formControlName]="'name'" placeholder="Nom">
-                </label>
-                <button type="submit" class="submit-button" (click)="addProfil()">Valider</button>
-            </div>
-        </form>
-        
     </div>
-</div>
