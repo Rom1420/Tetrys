@@ -21,10 +21,6 @@ export class WordsServices{
     return this.actualWords;
   }
 
-  setWords(words: Word[]){
-    this.words = words;
-  }
-
   getActualWords(): Word[]{
     return this.actualWords;
   }

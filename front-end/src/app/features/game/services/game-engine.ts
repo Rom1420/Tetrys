@@ -3,7 +3,6 @@ import { TetrisBlockId, TetrisPieces } from '../mock/pieces.mock';
 import {GameFormService} from "./game-form.service";
 import {Subscription} from "rxjs";
 import {GameManagerService} from "./game-manager.service";
-import {GameEventComponent} from "../components/game-event/game-event.component";
 
 
 @Injectable({
@@ -17,13 +16,19 @@ export class GameEngine {
   resultWordGame: Subscription;
 
   constructor(private gameFormService: GameFormService, private gameManagerService:GameManagerService) {
-    this.resultWordGame = this.gameFormService.results$.subscribe((wordResult) => {
-      this.gameManagerService.captureEvents$.next(1);
-      this.playGame();
-    })
-    this.gameState = [];
-    this.currentPiece = this.initializePiece(this.getRandomPieceType(), { row: 0, col: 4 });
-    this.initGameState();
+      this.resultWordGame = this.gameFormService.results$.subscribe((wordResult) => {
+          this.gameManagerService.captureEvents$.next(1);
+          const allResults = this.gameFormService.getResults()
+          if (allResults.at(allResults.length - 1).isValid === "true"){
+            this.playGame();
+          } else {
+            this.placeRandomPieceRandomly()
+          }
+
+      })
+      this.gameState = [];
+      this.currentPiece = this.initializePiece(this.getRandomPieceType(), { row: 0, col: 4 });
+      this.initGameState();
   }
 
   getGameState(): (number | null)[][] {
@@ -295,6 +300,10 @@ export class GameEngine {
     while(this.canMoveTo({row:this.currentPiece.position.row + 1, col:this.currentPiece.position.col})){
       this.dropPiece();
     }
-
+    this.checkAndClearCompletedRows();
+    this.gameManagerService.captureEvents$.next(0);
+    this.gameManagerService.resetWords();
   }
+
+
 }
