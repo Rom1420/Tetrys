@@ -1,5 +1,5 @@
 <div class="block">
     <ng-container *ngFor="let row of cells">
-        <div class="cell" *ngFor="let cell of row" [ngClass]="{'filled' : cell}"></div>
+        <div class="cell" *ngFor="let cell of row" [ngClass]="cell ? 'block-' + id : ''"></div>
     </ng-container>     
 </div>
