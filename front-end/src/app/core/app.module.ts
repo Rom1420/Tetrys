@@ -17,7 +17,7 @@ import {StatsModule} from "../features/Stats/stats.module";
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
     imports: [
         BrowserModule,
@@ -25,7 +25,8 @@ import {StatsModule} from "../features/Stats/stats.module";
         GameModule,
         PregameModule,
         ReactiveFormsModule,
-        StatsModule
+        StatsModule,
+
     ],
   providers: [],
   bootstrap: [AppComponent]

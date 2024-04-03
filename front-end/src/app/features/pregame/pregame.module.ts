@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { DifficultyButtonComponent } from './components/difficulty-button/difficulty-button.component';
 import { DifficultyListComponent } from './components/difficulty-list/difficulty-list.component';
