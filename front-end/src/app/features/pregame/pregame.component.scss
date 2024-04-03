@@ -23,3 +23,17 @@
     align-items: center;
     justify-content: space-evenly;
 }
+
+.left-container, .mid-container, .right-container {
+    flex: 1;
+  }
+
+.left-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.right-container{
+    display: flex;
+    justify-content: flex-start;    
+}

@@ -13,7 +13,6 @@ import {GameManagerService} from "./services/game-manager.service";
 })
 export class GameComponent implements OnInit, AfterViewInit{
 
-    public urlChronoImg: string = "../../assets/chrono.png";
     public wordForm: FormGroup;
     private actualWords: Word[] = [{name: ""}];
     public actualWordForm: string = "";
@@ -30,8 +29,8 @@ export class GameComponent implements OnInit, AfterViewInit{
 
     ngAfterViewInit(): void {
       this.wordForm.addControl('isValid', this.formBuilder.control((this.isWordValid)))
-      this.wordService.words$.subscribe(() => {
-        this.actualWords = this.wordService.getActualWords();
+      this.wordService.words$.subscribe((newWords) => {
+        this.actualWords = newWords;
         this.wordForm.get('word')?.enable();
         this.wordFormToggle.nativeElement.focus();
         this.resetTimer();
@@ -92,6 +91,7 @@ export class GameComponent implements OnInit, AfterViewInit{
 
     onSubmit(){
         this.pauseTimer()
+        this.wordForm.get('word')?.disable();
         this.gameFormService.addResult(this.wordForm.value)
         this.wordForm.reset();
         this.wordForm.get('word')?.disable();
