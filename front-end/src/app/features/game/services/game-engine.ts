@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { TetrisBlockId, TetrisPieces } from '../mock/pieces.mock';
+import { TetrisBlockId, TetrisBlocks } from '../mock/block.mock';
 import {GameFormService} from "./game-form.service";
 import {Subscription} from "rxjs";
 import {GameManagerService} from "./game-manager.service";
-import {GameEventComponent} from "../components/game-event/game-event.component";
 
 
 @Injectable({
@@ -30,17 +29,17 @@ export class GameEngine {
     return this.gameState;
   }
 
-  initializePiece(pieceInfo: { type: keyof typeof TetrisPieces, id: number }, defaultPosition: { row: number, col: number }):
+  initializePiece(pieceInfo: { type: keyof typeof TetrisBlocks, id: number }, defaultPosition: { row: number, col: number }):
     { id: number, shape: boolean[][], position: { row: number, col: number } }  {
-      const shape = TetrisPieces[pieceInfo.type] || [];
+      const shape = TetrisBlocks[pieceInfo.type] || [];
       const position = { ...defaultPosition };
       const id = pieceInfo.id;
 
       return { id, shape, position };
   }
 
-  getPiece(pieceType: keyof typeof TetrisPieces): boolean[][] {
-    return TetrisPieces[pieceType] || [];
+  getPiece(pieceType: keyof typeof TetrisBlocks): boolean[][] {
+    return TetrisBlocks[pieceType] || [];
   }
 
   isCurrentPieceHere(row: number, col: number): boolean {
@@ -201,10 +200,10 @@ export class GameEngine {
     return true;
   }
 
-  getRandomPieceType(): { type: keyof typeof TetrisPieces, id: number } {
-    const pieceTypes = Object.keys(TetrisPieces);
+  getRandomPieceType(): { type: keyof typeof TetrisBlocks, id: number } {
+    const pieceTypes = Object.keys(TetrisBlocks);
     const randomIndex = Math.floor(Math.random() * pieceTypes.length);
-    const type = pieceTypes[randomIndex] as keyof typeof TetrisPieces;
+    const type = pieceTypes[randomIndex] as keyof typeof TetrisBlocks;
     const id = TetrisBlockId[type];
     return { type, id };
   }
