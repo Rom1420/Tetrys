@@ -1,7 +1,9 @@
 <div class="blocks-words">
     <ng-container *ngFor="let word of words; let i = index">
         <div class="block-word-container">
-            <block [shape]="blocks[i].shape"></block>
+            <div class="block-container">
+                <block [shape]="blocks[i].shape"></block>    
+            </div>
             <word [word]="word"></word>
         </div>
     </ng-container>

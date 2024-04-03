@@ -1,3 +1,5 @@
-<div class="block-container">
-    <div class="block"></div>
+<div class="block">
+    <ng-container *ngFor="let row of cells">
+        <div class="cell" *ngFor="let cell of row" [ngClass]="{'filled' : cell}"></div>
+    </ng-container>     
 </div>

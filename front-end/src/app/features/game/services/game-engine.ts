@@ -3,6 +3,7 @@ import { TetrisBlockId, TetrisBlocks } from '../mock/block.mock';
 import {GameFormService} from "./game-form.service";
 import {Subscription} from "rxjs";
 import {GameManagerService} from "./game-manager.service";
+import { Word } from '../models/word.model';
 
 
 @Injectable({
@@ -17,8 +18,12 @@ export class GameEngine {
 
   constructor(private gameFormService: GameFormService, private gameManagerService:GameManagerService) {
     this.resultWordGame = this.gameFormService.results$.subscribe((wordResult) => {
-      this.gameManagerService.captureEvents$.next(1);
-      this.playGame();
+      console.log(wordResult);
+      if (wordResult && wordResult.length > 0) {
+        const length = wordResult.length; 
+        this.gameManagerService.captureEvents$.next(1);
+        this.playGame(wordResult[length - 1].word);
+    }
     })
     this.gameState = [];
     this.currentPiece = this.initializePiece(this.getRandomPieceType(), { row: 0, col: 4 });
@@ -38,8 +43,22 @@ export class GameEngine {
       return { id, shape, position };
   }
 
+  initializePieceFromIdAndShape( blockId: number, Blockshape: boolean[][], defaultPosition: { row: number, col: number }):
+    { id: number, shape: boolean[][], position: { row: number, col: number } }  {
+      const shape = Blockshape;
+      const position = { ...defaultPosition };
+      const id = blockId;
+
+      return { id, shape, position };
+  }
+
   getPiece(pieceType: keyof typeof TetrisBlocks): boolean[][] {
     return TetrisBlocks[pieceType] || [];
+  }
+
+  getBlockFromWord(word: string): { id: number; shape: boolean[][]; } | undefined {
+    console.log(word);
+    return this.gameManagerService.getBlockFromWord(word);
   }
 
   isCurrentPieceHere(row: number, col: number): boolean {
@@ -223,15 +242,23 @@ export class GameEngine {
     }
   }
 
-  playGame() {
+  playGame(word : string) : void {
+    console.log(word);
     const dropPieceInterval = 1000;
     const gameEngineInstance = this;
     const reset = this.gameManagerService;
 
     function startNewGameLoop() {
       gameEngineInstance.checkAndClearCompletedRows();
-      let pieceInfo = gameEngineInstance.getRandomPieceType();
-      gameEngineInstance.currentPiece = gameEngineInstance.initializePiece(pieceInfo, { row: 0, col: 4 });
+      /*
+      *  Utile seulement pour le jeu classique
+      *   let pieceInfo = gameEngineInstance.getRandomPieceType();
+      *   gameEngineInstance.currentPiece = gameEngineInstance.initializePiece(pieceInfo, { row: 0, col: 4 });
+      */
+      let block: { id: number; shape: boolean[][] } | undefined = gameEngineInstance.getBlockFromWord(word);
+      if(block != undefined) {
+        gameEngineInstance.currentPiece = gameEngineInstance.initializePieceFromIdAndShape(block.id, block.shape, { row: 0, col: 4 });
+      }
       function dropPieceRecursive() {
           if (!gameEngineInstance.canMoveTo({ row: gameEngineInstance.currentPiece.position.row + 1, col: gameEngineInstance.currentPiece.position.col })) {
               //startNewGameLoop(); //pour empecher le respawn de pièces

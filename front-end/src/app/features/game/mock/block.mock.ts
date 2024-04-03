@@ -4,10 +4,7 @@
         [true, true]
         ],
         LinePiece: [
-        [true],
-        [true],
-        [true],
-        [true]
+            [true,true,true,true]
         ],
         LPiece: [
         [true, false],
@@ -20,8 +17,9 @@
         [true, true]
         ],
         TPiece: [
-        [false, true, false],
-        [true, true, true]
+            [true, false],
+            [true, true],
+            [true, false]
         ],
         SPiece: [
             [false, true],
