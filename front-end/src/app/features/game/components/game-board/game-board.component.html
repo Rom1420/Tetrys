@@ -1,7 +1,7 @@
 <div class="board-container">
-  <div class="board" grid>
+  <div class="board">
       <ng-container *ngFor="let row of gameState">
         <div class="cell" *ngFor="let cell of row" [ngClass]="'block-' + cell"></div>
-      </ng-container>
+      </ng-container> 
   </div>
 </div>

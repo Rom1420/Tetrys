@@ -1,0 +1,13 @@
+.block {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    display: grid;
+    grid-template-columns: repeat(4, 2vw); /* 10 colonnes de 30 pixels de large */
+    grid-template-rows: repeat(4, 2vw); /* 20 lignes de 30 pixels de hauteur */
+    gap: 0px;
+  }
+  
+  .filled {
+    background-color: #000;
+  }
