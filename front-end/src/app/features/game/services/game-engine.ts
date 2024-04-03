@@ -284,9 +284,9 @@ export class GameEngine {
   moveRowsDown(completedRow: number) {
     for (let row = completedRow - 1; row >= 0; row--) {
       for (let col = 0; col < this.cols; col++) {
-        if (!this.isCurrentPieceHere(row, col)) {
+        //if (!this.isCurrentPieceHere(row, col)) { Utile que dans la version du jue de base
           this.gameState[row + 1][col] = this.gameState[row][col];
-        }
+        //}
       }
     }
   }
