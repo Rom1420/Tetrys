@@ -1,0 +1,21 @@
+.block-word-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #F27F1B;
+    box-shadow: 0 0 5px #F27F1B;
+    border-radius: 10px;
+    width: 13vw;
+    height: auto;
+    padding-top: 10px;
+}
+
+.blocks-words{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content:space-evenly;
+  }

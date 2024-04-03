@@ -23,6 +23,7 @@ export class WordsServices{
   }
 
   getActualWords(): Word[]{
+    console.log("Hello",this.actualWords);
     return this.actualWords;
   }
 }

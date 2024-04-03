@@ -94,6 +94,5 @@ export class GameComponent implements OnInit, AfterViewInit{
         this.gameFormService.addResult(this.wordForm.value)
         this.wordForm.reset();
         this.wordForm.get('word')?.disable();
-        console.log(this.gameFormService.getResults());
     }
 }

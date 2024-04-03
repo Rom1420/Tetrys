@@ -1,7 +1,10 @@
 <div class="game-container">
   <game-board></game-board>
   <div class="playable-zone">
-    <block-word></block-word>
+    <div class="blocks-words-component">
+      <block-word></block-word>
+    </div>
+    
     <div class="writing-space">
       <form [formGroup]="wordForm" autocomplete="off">
         <label for="word">Rentrez un des 3 mots ci dessus: </label>

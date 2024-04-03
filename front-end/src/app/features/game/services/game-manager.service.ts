@@ -25,7 +25,8 @@ export class GameManagerService {
   }
 
   initializeWordsAndBlocks(): void {
-    const words = this.wordsService.get3Words(0);
+    const randomInt: number = Math.floor(Math.random() * (this.wordsService.words.length - 2));
+    const words = this.wordsService.get3Words(randomInt);
     const blocks = this.blockService.getThreeDistinctBlocks();
 
     this.wordsSubject.next(words);
