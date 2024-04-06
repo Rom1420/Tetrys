@@ -324,6 +324,8 @@ export class GameEngine {
     while(this.canMoveTo({row:this.currentPiece.position.row + 1, col:this.currentPiece.position.col})){
       this.dropPiece();
     }
-
+    this.checkAndClearCompletedRows();
+    this.gameManagerService.captureEvents$.next(0);
+    this.gameManagerService.resetWordsAndBlocks();
   }
 }
