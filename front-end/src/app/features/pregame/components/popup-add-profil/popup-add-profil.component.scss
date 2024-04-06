@@ -27,7 +27,7 @@ input.input-custom{
     background-color: rgba(255, 255, 255, 0.178);
     color: #fff;
     border-style: none; 
-    height: 2em;
+    height: 1.5em;
     padding: 8px;
     border-radius: 0.7em;   
     border: none;
@@ -229,7 +229,7 @@ button.submit-button:active {
 .submit-button-container{
     display: flex;
     width: 25%;
-    min-height: auto;
+    height: 100%;
 }
 
 .profil-form{
@@ -239,8 +239,8 @@ button.submit-button:active {
 .submit-button{
     span{
         content: "\2713";
-        min-width: 100%;
-        min-height: 100%;
+        width: 100%;
+        height: 100%;
         transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
     }
 }
