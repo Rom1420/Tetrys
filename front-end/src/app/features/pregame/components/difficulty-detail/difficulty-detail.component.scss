@@ -1,7 +1,8 @@
 .difficulty-detail-component{
     width: auto;
-    height: auto;
+    height: 20vw;
     padding: 20px;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,10 +27,6 @@
         border-radius: 84% 16% 81% 19% / 59% 72% 28% 41% ;  
         background-color: #304673cc;
 
-    }
-
-    .show{
-        opacity: 1;
     }
 
     h1{
