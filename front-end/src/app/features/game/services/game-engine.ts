@@ -23,13 +23,10 @@ export class GameEngine {
 <<<<<<< HEAD
     this.resultWordGame = this.gameFormService.results$.subscribe((wordResult) => {
       console.log(wordResult);
-      if (wordResult && wordResult.length > 0 && wordResult[wordResult.length - 1].isValid) {
+      if (wordResult && wordResult.length > 0) {
         const length = wordResult.length; 
         this.gameManagerService.captureEvents$.next(1);
         this.playGame(wordResult[length - 1].word);
-    }
-    else{
-      this.gameManagerService.captureEvents$.next(1);
     }
     })
     this.gameState = [];
@@ -286,7 +283,7 @@ export class GameEngine {
               //startNewGameLoop(); //pour empecher le respawn de pièces
               gameEngineInstance.checkAndClearCompletedRows();
               reset.captureEvents$.next(0);
-              reset.resetWordsAndBlocks();
+              reset.resetWords();
               return;
           }
           gameEngineInstance.dropPiece();

@@ -73,7 +73,6 @@ export class GameComponent implements OnInit, AfterViewInit{
         if (this.time > 0) {
           this.time = Math.max(0, Number((this.time - 0.1).toFixed(1)));
         } else {
-          alert('Game Over');
           this.onSubmit();
         }
       }, 100);

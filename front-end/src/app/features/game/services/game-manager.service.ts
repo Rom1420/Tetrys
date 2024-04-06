@@ -31,7 +31,7 @@ export class GameManagerService {
     this.wordsSubject.next(words);
     this.blocksSubject.next(blocks);
   }
-  resetWordsAndBlocks(){
+  resetWords(){
     this.ask4Reset.next(this.i);
     this.i++;
     this.initializeWordsAndBlocks();  
