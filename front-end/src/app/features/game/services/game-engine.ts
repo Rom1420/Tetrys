@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { TetrisBlockId, TetrisPieces } from '../mock/pieces.mock';
+import { TetrisBlockId, TetrisBlocks } from '../mock/block.mock';
 import {GameFormService} from "./game-form.service";
 import {Subscription} from "rxjs";
 import {GameManagerService} from "./game-manager.service";
+import { Word } from '../models/word.model';
 
 
 @Injectable({
@@ -16,36 +17,52 @@ export class GameEngine {
   resultWordGame: Subscription;
 
   constructor(private gameFormService: GameFormService, private gameManagerService:GameManagerService) {
-      this.resultWordGame = this.gameFormService.results$.subscribe((wordResult) => {
-          this.gameManagerService.captureEvents$.next(1);
-          const allResults = this.gameFormService.getResults()
-          if (allResults.at(allResults.length - 1).isValid === "true"){
-            this.playGame();
-          } else {
-            this.placeRandomPieceRandomly()
-          }
-
-      })
-      this.gameState = [];
-      this.currentPiece = this.initializePiece(this.getRandomPieceType(), { row: 0, col: 4 });
-      this.initGameState();
+    this.resultWordGame = this.gameFormService.results$.subscribe((wordResult) => {
+      console.log(wordResult);
+      if (wordResult && wordResult.length > 0) {
+        const length = wordResult.length;
+        this.gameManagerService.captureEvents$.next(1);
+        if (wordResult.at(wordResult.length - 1).isValid === "true"){
+          this.playGame(wordResult[length - 1].word);
+        } else {
+          this.placeRandomPieceRandomly()
+        }
+    }
+    })
+    this.gameState = [];
+    this.currentPiece = this.initializePiece(this.getRandomPieceType(), { row: 0, col: 4 });
+    this.initGameState();
   }
 
   getGameState(): (number | null)[][] {
     return this.gameState;
   }
 
-  initializePiece(pieceInfo: { type: keyof typeof TetrisPieces, id: number }, defaultPosition: { row: number, col: number }):
+  initializePiece(pieceInfo: { type: keyof typeof TetrisBlocks, id: number }, defaultPosition: { row: number, col: number }):
     { id: number, shape: boolean[][], position: { row: number, col: number } }  {
-      const shape = TetrisPieces[pieceInfo.type] || [];
+      const shape = TetrisBlocks[pieceInfo.type] || [];
       const position = { ...defaultPosition };
       const id = pieceInfo.id;
 
       return { id, shape, position };
   }
 
-  getPiece(pieceType: keyof typeof TetrisPieces): boolean[][] {
-    return TetrisPieces[pieceType] || [];
+  initializePieceFromIdAndShape( blockId: number, Blockshape: boolean[][], defaultPosition: { row: number, col: number }):
+    { id: number, shape: boolean[][], position: { row: number, col: number } }  {
+      const shape = Blockshape;
+      const position = { ...defaultPosition };
+      const id = blockId;
+
+      return { id, shape, position };
+  }
+
+  getPiece(pieceType: keyof typeof TetrisBlocks): boolean[][] {
+    return TetrisBlocks[pieceType] || [];
+  }
+
+  getBlockFromWord(word: string): { id: number; shape: boolean[][]; } | undefined {
+    console.log(word);
+    return this.gameManagerService.getBlockFromWord(word);
   }
 
   isCurrentPieceHere(row: number, col: number): boolean {
@@ -148,7 +165,6 @@ export class GameEngine {
     const currentPieceShape: boolean[][] = this.currentPiece.shape;
     const currentPosition = this.currentPiece.position;
 
-
     for (let row = 0; row < currentPieceShape.length; row++) {
       for (let col = 0; col < currentPieceShape[row].length; col++) {
         if (currentPieceShape[row][col]) {
@@ -214,10 +230,10 @@ export class GameEngine {
     return true;
   }
 
-  getRandomPieceType(): { type: keyof typeof TetrisPieces, id: number } {
-    const pieceTypes = Object.keys(TetrisPieces);
+  getRandomPieceType(): { type: keyof typeof TetrisBlocks, id: number } {
+    const pieceTypes = Object.keys(TetrisBlocks);
     const randomIndex = Math.floor(Math.random() * pieceTypes.length);
-    const type = pieceTypes[randomIndex] as keyof typeof TetrisPieces;
+    const type = pieceTypes[randomIndex] as keyof typeof TetrisBlocks;
     const id = TetrisBlockId[type];
     return { type, id };
   }
@@ -281,15 +297,23 @@ export class GameEngine {
 
 
 
-  playGame() {
+  playGame(word : string) : void {
+    console.log(word);
     const dropPieceInterval = 1000;
     const gameEngineInstance = this;
     const reset = this.gameManagerService;
 
     function startNewGameLoop() {
       gameEngineInstance.checkAndClearCompletedRows();
-      let pieceInfo = gameEngineInstance.getRandomPieceType();
-      gameEngineInstance.currentPiece = gameEngineInstance.initializePiece(pieceInfo, { row: 0, col: 4 });
+      /*
+      *  Utile seulement pour le jeu classique
+      *   let pieceInfo = gameEngineInstance.getRandomPieceType();
+      *   gameEngineInstance.currentPiece = gameEngineInstance.initializePiece(pieceInfo, { row: 0, col: 4 });
+      */
+      let block: { id: number; shape: boolean[][] } | undefined = gameEngineInstance.getBlockFromWord(word);
+      if(block != undefined) {
+        gameEngineInstance.currentPiece = gameEngineInstance.initializePieceFromIdAndShape(block.id, block.shape, { row: 0, col: 4 });
+      }
       function dropPieceRecursive() {
           if (!gameEngineInstance.canMoveTo({ row: gameEngineInstance.currentPiece.position.row + 1, col: gameEngineInstance.currentPiece.position.col })) {
               //startNewGameLoop(); //pour empecher le respawn de pièces

@@ -8,18 +8,18 @@ import { GameEngine } from '../../services/game-engine';
 })
 
 export class GameBoardComponent {
-  rows: number = 20;
-  cols: number = 10;
-  gameState: (number | null)[][] = [];
+	rows: number = 20;
+	cols: number = 10;
+	gameState: (number | null)[][] = [];
 
-  @ViewChild('board') boardRef!: ElementRef;
+	@ViewChild('board') boardRef!: ElementRef;
 
-  constructor(private gameEngine: GameEngine, private renderer: Renderer2){}
+	constructor(private gameEngine: GameEngine, private renderer: Renderer2){}
 
 
-  ngOnInit(): void {
-    //this.gameEngine.playGame();
-    this.gameState = this.gameEngine.getGameState();
-  }
+	ngOnInit(): void {
+	//this.gameEngine.playGame();
+	this.gameState = this.gameEngine.getGameState();
+	}
 
 }

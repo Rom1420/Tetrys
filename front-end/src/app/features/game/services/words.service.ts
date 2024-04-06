@@ -12,16 +12,14 @@ export class WordsServices{
   private actualWords: Word[] = [];
   public words$: BehaviorSubject<Word[]> = new BehaviorSubject(this.actualWords);
 
-
-
-
-  get3Word(rank: number): Word[]{
+  get3Words(rank: number): Word[]{
     this.actualWords = this.words.slice(rank, rank+3);
     this.words$.next(this.actualWords);
     return this.actualWords;
   }
 
   getActualWords(): Word[]{
+    console.log("Hello",this.actualWords);
     return this.actualWords;
   }
 }

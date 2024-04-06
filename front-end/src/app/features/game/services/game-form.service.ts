@@ -6,13 +6,13 @@ import {BehaviorSubject} from "rxjs";
 })
 export class GameFormService {
   formResults: any[] = [];
-  public results$ = new BehaviorSubject(this.formResults);
+  public results$ = new BehaviorSubject<any[]>(this.formResults);
 
   constructor() {}
 
   addResult(result: any) {
     this.formResults.push(result);
-    this.results$.next(result)
+    this.results$.next([...this.formResults]);
   }
 
   getResults() {

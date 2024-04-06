@@ -1,7 +1,7 @@
 import {AfterContentInit, AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ConfigFormResultService} from "./services/config-form-result.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {WordsServices} from "./services/words.services";
+import {WordsServices} from "./services/words.service";
 import {Word} from "./models/word.model";
 import {GameFormService} from "./services/game-form.service";
 import {GameManagerService} from "./services/game-manager.service";
