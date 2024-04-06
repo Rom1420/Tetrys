@@ -29,8 +29,8 @@ export class GameComponent implements OnInit, AfterViewInit{
 
     ngAfterViewInit(): void {
       this.wordForm.addControl('isValid', this.formBuilder.control((this.isWordValid)))
-      this.wordService.words$.subscribe((newWords) => {
-        this.actualWords = newWords;
+      this.wordService.words$.subscribe(() => {
+        this.actualWords = this.wordService.getActualWords();
         this.wordForm.get('word')?.enable();
         this.wordFormToggle.nativeElement.focus();
         this.resetTimer();
@@ -73,6 +73,7 @@ export class GameComponent implements OnInit, AfterViewInit{
         if (this.time > 0) {
           this.time = Math.max(0, Number((this.time - 0.1).toFixed(1)));
         } else {
+          alert('Game Over');
           this.onSubmit();
         }
       }, 100);
@@ -90,7 +91,6 @@ export class GameComponent implements OnInit, AfterViewInit{
 
     onSubmit(){
         this.pauseTimer()
-        this.wordForm.get('word')?.disable();
         this.gameFormService.addResult(this.wordForm.value)
         this.wordForm.reset();
         this.wordForm.get('word')?.disable();
