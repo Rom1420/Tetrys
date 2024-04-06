@@ -18,5 +18,20 @@
     </div>
   </div>
   <game-event></game-event>
+  <div *ngIf="endGameDisplay" class="endGameStats">
+    <div class="end-stat-content">
+      <div class="horizontal-bar">
+        <h1 class="score-text">Score : 253</h1>
+        <h3 class="note-text">Note A</h3>
+      </div>
+      <div class="vertical-bar">
+        <div class="replay-button-container">
+          <a href="/game">
+            <button class="replay-button" role="button">Rejouer</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 

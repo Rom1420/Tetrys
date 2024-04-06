@@ -93,7 +93,7 @@ export class GameEngine {
       this.currentPiece.position = position;
     }
     else{
-      this.placePiece(this.currentPiece.position);
+      //this.placePiece(this.currentPiece.position);
     }
   }
 
@@ -148,6 +148,7 @@ export class GameEngine {
     const currentPieceShape: boolean[][] = this.currentPiece.shape;
     const currentPosition = this.currentPiece.position;
 
+
     for (let row = 0; row < currentPieceShape.length; row++) {
       for (let col = 0; col < currentPieceShape[row].length; col++) {
         if (currentPieceShape[row][col]) {
@@ -160,26 +161,33 @@ export class GameEngine {
   }
 
   canMoveTo(newPosition: {row: number, col: number}): boolean {
-    const currentPieceShape: boolean[][] = this.currentPiece.shape;
-    this.clearCurrentPieceFromGameState();
-    if (newPosition.row <= 0 || newPosition.row + currentPieceShape.length > this.rows || newPosition.col < 0 || newPosition.col + currentPieceShape[0].length > this.cols) {
-      this.placePiece(this.currentPiece.position);
-      return false;
-    }
+    var i:number = 0;
+    try {
+      const currentPieceShape: boolean[][] = this.currentPiece.shape;
+      this.clearCurrentPieceFromGameState();
+      if (newPosition.row <= 0 || newPosition.row + currentPieceShape.length > this.rows || newPosition.col < 0 || newPosition.col + currentPieceShape[0].length > this.cols) {
+        this.placePiece(this.currentPiece.position);
+        return false;
+      }
 
-    for (let row = 0; row < currentPieceShape.length; row++) {
-      for (let col = 0; col < currentPieceShape[row].length; col++) {
-        if (currentPieceShape[row][col]) {
-          const newRow: number = newPosition.row + row;
-          const newCol: number = newPosition.col + col;
-          if (this.gameState[newRow][newCol] !== null) {
-            this.placePiece(this.currentPiece.position);
-            return false;
+      for (let row = 0; row < currentPieceShape.length; row++) {
+        for (let col = 0; col < currentPieceShape[row].length; col++) {
+          if (currentPieceShape[row][col]) {
+            const newRow: number = newPosition.row + row;
+            const newCol: number = newPosition.col + col;
+            if (this.gameState[newRow][newCol] !== null) {
+              this.placePiece(this.currentPiece.position);
+              return false;
+            }
           }
         }
       }
+      return true;
+    } catch (e){
+      console.log('fin de partie');
+      this.gameManagerService.endGame$.next(true);
+      return false;
     }
-    return true;
   }
 
   canRotateTo(newPosition: {row: number, col: number}, newShape: boolean[][]): boolean {
@@ -228,6 +236,50 @@ export class GameEngine {
         }
     }
   }
+
+  placeRandomPieceRandomly(){
+      const dropPieceInterval = 100;
+      const gameEngineInstance = this;
+      const reset = this.gameManagerService;
+
+      function startNewGameLoop() {
+        gameEngineInstance.checkAndClearCompletedRows();
+        let pieceInfo = gameEngineInstance.getRandomPieceType();
+        const randomCol = Math.max(0, Math.floor(Math.random() * (gameEngineInstance.cols - 2 )));
+        gameEngineInstance.currentPiece = gameEngineInstance.initializePiece(pieceInfo, { row: 0, col: randomCol });
+        function dropPieceRecursive() {
+          if (!gameEngineInstance.canMoveTo({ row: gameEngineInstance.currentPiece.position.row + 1, col: gameEngineInstance.currentPiece.position.col })) {
+            //startNewGameLoop(); //pour empecher le respawn de pièces
+            gameEngineInstance.checkAndClearCompletedRows();
+            reset.captureEvents$.next(0);
+            reset.resetWords();
+            return;
+          }
+          gameEngineInstance.dropPiece();
+          setTimeout(dropPieceRecursive, dropPieceInterval);
+        }
+        dropPieceRecursive();
+      }
+      startNewGameLoop();
+    }
+
+    /*const gameEngineInstance = this;
+    const reset = this.gameManagerService;
+    console.log('gameRandom')
+    let pieceInfo = this.getRandomPieceType();
+    const randomCol = Math.max(0, Math.floor(Math.random() * (this.cols - 2 )));
+
+    this.currentPiece = this.initializePiece(pieceInfo, {row:0, col: randomCol});
+
+    while(this.canMoveTo({row:this.currentPiece.position.row + 1, col:this.currentPiece.position.col})){
+      this.dropPiece();
+    }
+    function resetAll(){
+      gameEngineInstance.checkAndClearCompletedRows();
+      reset.captureEvents$.next(0);
+      reset.resetWords();*/
+
+
 
   playGame() {
     const dropPieceInterval = 1000;
@@ -289,20 +341,6 @@ export class GameEngine {
         //}
       }
     }
-  }
-
-  placeRandomPieceRandomly(){
-    let pieceInfo = this.getRandomPieceType();
-    const randomCol = Math.max(0, Math.floor(Math.random() * (this.cols - 2 )));
-
-    this.currentPiece = this.initializePiece(pieceInfo, {row:0, col: randomCol});
-
-    while(this.canMoveTo({row:this.currentPiece.position.row + 1, col:this.currentPiece.position.col})){
-      this.dropPiece();
-    }
-    this.checkAndClearCompletedRows();
-    this.gameManagerService.captureEvents$.next(0);
-    this.gameManagerService.resetWords();
   }
 
 

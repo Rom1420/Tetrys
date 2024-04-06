@@ -10,6 +10,7 @@ export class GameManagerService {
   reset$ = this.ask4Reset.asObservable();
 
   captureEvents$ = new BehaviorSubject<number>(0);
+  endGame$ = new BehaviorSubject(false);
 
   constructor() {}
   resetWords(){
