@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
     imports: [
         BrowserModule,
@@ -27,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         PregameModule,
         ReactiveFormsModule,
         StatsModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule, 
     ],
   providers: [],
   bootstrap: [AppComponent]
