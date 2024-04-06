@@ -1,13 +1,10 @@
-    export const TetrisPieces = {
+    export const TetrisBlocks = {
         SquarePiece: [
         [true, true],
         [true, true]
         ],
         LinePiece: [
-        [true],
-        [true],
-        [true],
-        [true]
+            [true,true,true,true]
         ],
         LPiece: [
         [true, false],
@@ -20,16 +17,19 @@
         [true, true]
         ],
         TPiece: [
-        [false, true, false],
-        [true, true, true]
+            [true, false],
+            [true, true],
+            [true, false]
         ],
         SPiece: [
-        [false, true, true],
-        [true, true, false]
+            [false, true],
+            [true, true],
+            [true,false]
         ],
         ZPiece: [
-        [true, true, false],
-        [false, true, true]
+            [true, false],
+            [true, true],
+            [false,true]
         ]
     };
     export const TetrisBlockId = {
