@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import {Student} from '../models/student.model';
+import { BehaviorSubject} from 'rxjs';
+import {Student} from '../../../features/pregame/models/student.model';
 import { STUDENT_LIST } from 'src/app/features/pregame/mock/student-list.mock';
 
 
@@ -11,11 +11,11 @@ export class StudentService {
     private students: Student[] = STUDENT_LIST;
     public students$: BehaviorSubject<Student[]> = new BehaviorSubject(STUDENT_LIST);
 
-    constructor(){
+    constructor(){}
 
-    }
     addProfil(student: Student){
         this.students.push(student)
         this.students$.next(this.students)
     }
+
 }

@@ -1,28 +1,28 @@
 <div class="stats-content">
   <div class="graph-stat-container">
-      <img src="../../../../../assets/graphdebutant.png " class="graph-img" data_status="unknown">
+    <img src="../../../../../assets/graphdebutant.png" class="graph-img" data_status="unknown">
   </div>
   <div class="main-container">
-      <div class="numeric-stats-container">
-          <div class="stat-container">
-              <h1 class="title" data_status="active">20 WPM</h1>
-              <p class="stat-description">Moyenne de mot par minute</p>
-          </div>
-          <div class="stat-container">
-              <h1 class="title" data_status="active">2547</h1>
-              <p class="stat-description">Score moyen</p>
-          </div>
-          <div class="stat-container">
-              <h1 class="title" data_status="active">10%</h1>
-              <p class="stat-description">Pourcentage d'erreurs   </p>
-          </div>
+    <div class="numeric-stats-container">
+      <div class="stat-container">
+        <h1 class="title" id="wpm">N/A</h1>
+        <p class="stat-description">Moyenne de mots par minute</p>
       </div>
-      <div class="button-mode-container">
-          <button class="mode-button general active">Général</button>
-          <button class="mode-button debutant">Débutant</button>
-          <button class="mode-button intermediaire">Intermédiaire</button>
-          <button class="mode-button avance">Avancé</button>
-          <button class="mode-button perso">Perso</button>
+      <div class="stat-container">
+        <h1 class="title" id="scoreMoyen">N/A</h1>
+        <p class="stat-description">Score moyen</p>
       </div>
+      <div class="stat-container">
+        <h1 class="title" id="pourcentageErreur">N/A</h1>
+        <p class="stat-description">Pourcentage d'erreurs</p>
+      </div>
+    </div>
+    <div class="button-mode-container">
+      <button class="mode-button general" (click)="updateStats('general')">Général</button>
+      <button class="mode-button debutant" (click)="updateStats('debutant')">Débutant</button>
+      <button class="mode-button intermediaire" (click)="updateStats('intermediaire')">Intermédiaire</button>
+      <button class="mode-button avance" (click)="updateStats('avance')">Avancé</button>
+      <button class="mode-button perso" (click)="updateStats('perso')">Perso</button>
+    </div>
   </div>
 </div>

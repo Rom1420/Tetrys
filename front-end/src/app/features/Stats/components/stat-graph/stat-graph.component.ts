@@ -1,12 +1,19 @@
-import { Component, OnInit } from "@angular/core";
-
+import {Component, Input, input, OnInit} from "@angular/core";
+import {StatsAvanceeService} from "../../services/stats-avancee.service";
+import {StatAvancee} from "../../models/stat-avancee.model";
 @Component({
   selector:'stat-graph',
   templateUrl: './stat-graph.component.html',
   styleUrls:['./stat-graph.component.scss']
 })
 export class StatGraphComponent implements OnInit {
-  constructor() {}
+  public statsAvanceeList : StatAvancee[] = [];
+
+  constructor(public StatsAvanceeService : StatsAvanceeService) {
+    this.StatsAvanceeService.statsAvanceeList$.subscribe((statsAvanceeList) =>{
+      this.statsAvanceeList = statsAvanceeList;
+    })
+  }
 
   ngOnInit() {
     const buttons = document.querySelectorAll('.mode-button');
@@ -30,8 +37,21 @@ export class StatGraphComponent implements OnInit {
           if(graphImg) {
             graphImg.setAttribute('data-status', 'active');
         }
-        }, 300);      
+        }, 300);
       });
     });
+  }
+
+  updateStats(mode: String) {
+    for(let stat of this.statsAvanceeList){
+      if(stat.mode == mode){
+        //@ts-ignore
+        document.getElementById('wpm').innerText = stat.wpm + " WPM";
+        // @ts-ignore
+        document.getElementById('scoreMoyen').innerText = stat.scoreMoyen + "";
+        // @ts-ignore
+        document.getElementById('pourcentageErreur').innerText = stat.pourcentageErreur + "%";
+      }
+    }
   }
 }

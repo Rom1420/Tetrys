@@ -30,7 +30,7 @@
 }
 
 .scroll-container-student > * {
-    scroll-snap-align: start; 
+    scroll-snap-align: start;
 }
 
 .scroll-container-student > :first-child {
@@ -42,12 +42,12 @@
 .scroll-container-student::-webkit-scrollbar,
 .scroll-container-historical::-webkit-scrollbar {
     width: 12px;
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 .scroll-container-progression::-webkit-scrollbar-thumb,
 .scroll-container-student::-webkit-scrollbar-thumb,
 .scroll-container-historical::-webkit-scrollbar-thumb {
     background-color: #304673;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
