@@ -254,6 +254,7 @@ export class GameEngine {
       const dropPieceInterval = 100;
       const gameEngineInstance = this;
       const reset = this.gameManagerService;
+      reset.captureEvents$.next(0);
 
       function startNewGameLoop() {
         gameEngineInstance.checkAndClearCompletedRows();
@@ -264,7 +265,6 @@ export class GameEngine {
           if (!gameEngineInstance.canMoveTo({ row: gameEngineInstance.currentPiece.position.row + 1, col: gameEngineInstance.currentPiece.position.col })) {
             //startNewGameLoop(); //pour empecher le respawn de pièces
             gameEngineInstance.checkAndClearCompletedRows();
-            reset.captureEvents$.next(0);
             reset.resetWords();
             return;
           }
