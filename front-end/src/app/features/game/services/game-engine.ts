@@ -18,7 +18,6 @@ export class GameEngine {
 
   constructor(private gameFormService: GameFormService, private gameManagerService:GameManagerService) {
     this.resultWordGame = this.gameFormService.results$.subscribe((wordResult) => {
-      console.log(wordResult);
       if (wordResult && wordResult.length > 0) {
         const length = wordResult.length;
         this.gameManagerService.captureEvents$.next(1);
@@ -61,7 +60,6 @@ export class GameEngine {
   }
 
   getBlockFromWord(word: string): { id: number; shape: boolean[][]; } | undefined {
-    console.log(word);
     return this.gameManagerService.getBlockFromWord(word);
   }
 
@@ -177,7 +175,6 @@ export class GameEngine {
   }
 
   canMoveTo(newPosition: {row: number, col: number}): boolean {
-    var i:number = 0;
     try {
       const currentPieceShape: boolean[][] = this.currentPiece.shape;
       this.clearCurrentPieceFromGameState();
@@ -298,7 +295,6 @@ export class GameEngine {
 
 
   playGame(word : string) : void {
-    console.log(word);
     const dropPieceInterval = 1000;
     const gameEngineInstance = this;
     const reset = this.gameManagerService;

@@ -1,10 +1,11 @@
-import {AfterContentInit, AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ConfigFormResultService} from "./services/config-form-result.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {WordsServices} from "./services/words.service";
 import {Word} from "./models/word.model";
 import {GameFormService} from "./services/game-form.service";
 import {GameManagerService} from "./services/game-manager.service";
+import {ConfigModel} from "./models/config.model";
 
 @Component({
   selector: 'app-game',
@@ -20,12 +21,19 @@ export class GameComponent implements OnInit, AfterViewInit{
     public allTimer: any[] = [];
     private isWordValid: boolean = false;
     public endGameDisplay: boolean = false;
-    @ViewChild('word') wordFormToggle!: ElementRef;
+    public config: ConfigModel;
+
+  @ViewChild('word') wordFormToggle!: ElementRef;
     constructor(private gameManagerService:GameManagerService, private configFormResult: ConfigFormResultService, private gameFormService: GameFormService, public wordService:WordsServices, public formBuilder: FormBuilder) {
-      this.wordForm = this.formBuilder.group({
-            word: [''],
-            isValid: this.isWordValid
-        });
+        this.wordForm = this.formBuilder.group({
+              word: [''],
+              isValid: this.isWordValid
+          });
+        this.config = this.configFormResult.getLastConfig()
+        console.log(this.config)
+        this.configFormResult.configActual$.subscribe((actualConfig) => {
+            this.config = actualConfig[actualConfig.length - 1]
+        })
     }
 
     ngAfterViewInit(): void {
@@ -67,7 +75,7 @@ export class GameComponent implements OnInit, AfterViewInit{
       this.time = this.actualWords.reduce((motCourant, motSuivant) => {
         return motSuivant.name.length > motCourant.name.length ? motSuivant: motCourant;
       }, {name: ""}).name.length;
-      this.time = this.time * 0.6;    //ratio par caractere
+      this.time = this.time * this.config.time;    //ratio par caractere
       this.time = Number(this.time.toFixed(1));   //on arrondi au dixieme de secondes
       this.startTimer();
       this.pauseTimer();
