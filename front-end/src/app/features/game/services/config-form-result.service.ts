@@ -12,7 +12,7 @@ export class ConfigFormResultService {
   constructor() {}
 
   addResult(result: ConfigModel) {
-    this.formResults.value.push(result);
+    this.formResults.next([result])
   }
 
   getResults() {
