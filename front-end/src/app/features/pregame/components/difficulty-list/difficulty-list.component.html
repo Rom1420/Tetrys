@@ -1,6 +1,11 @@
 <div class="difficulty-list-component difficulty-list-component-appear">
   <div class="difficulty-container">
-      <h1 class="difficulty-list-text">Choisissez une difficulté</h1>
-      <difficulty-button *ngFor="let difficulty of difficultyList" [difficulty]="difficulty"></difficulty-button>
+    <h1 class="difficulty-list-text">Choisissez une difficulté</h1>
+    <difficulty-button
+      *ngFor="let difficulty of difficultyList"
+      [difficulty]="difficulty"
+      (hover)="onDifficultyHover($event)"
+      (mouseleave)="onDifficultyHoverEnd()">
+    </difficulty-button>
   </div>
 </div>

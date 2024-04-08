@@ -141,3 +141,9 @@ c
 ^front-end/src/app/features/pregame/components/popup-add-profil/popup-add-profil.component.scss,0\6\0656604675e26183d1e89da25973262a137ac05d
 é
 ^front-end/src/app/features/pregame/components/popup-add-profil/popup-add-profil.component.html,2\3\23cebbd7474ea122b8b04dd2ac047464988ed44d
+é
+^front-end/src/app/features/pregame/components/difficulty-detail/difficulty-detail.component.ts,0\1\0158e0b5e3130c30c40fbd290d5c9f6d0f13f023
+ê
+`front-end/src/app/features/pregame/components/difficulty-button/difficulty-button.component.scss,e\4\e41aad23c5cf60ef063d36f5cb1ba6a0838a48b0
+ä
+Zfront-end/src/app/features/pregame/components/difficulty-list/difficulty-list.component.ts,6\e\6e57076530c31f5f9e28f8254484a8c4f324862f
