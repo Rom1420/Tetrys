@@ -13,6 +13,7 @@ export class GameManagerService {
   reset$ = this.ask4Reset.asObservable();
 
   captureEvents$ = new BehaviorSubject<number>(0);
+  endGame$ = new BehaviorSubject(false);
 
   private wordsSubject = new BehaviorSubject<Word[]>([]);
   words$ = this.wordsSubject.asObservable();
@@ -31,7 +32,7 @@ export class GameManagerService {
     this.wordsSubject.next(words);
     this.blocksSubject.next(blocks);
   }
-  resetWordsAndBlocks(){
+  resetWords(){
     this.ask4Reset.next(this.i);
     this.i++;
     this.initializeWordsAndBlocks();  

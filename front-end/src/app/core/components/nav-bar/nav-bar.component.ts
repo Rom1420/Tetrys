@@ -2,13 +2,14 @@ import {AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild} from
 import {NavigationEnd, NavigationStart, Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ConfigFormResultService} from "../../../features/game/services/config-form-result.service";
+import {ConfigModel} from "../../../features/game/models/config.model";
 @Component({
     selector: 'nav-bar',
     templateUrl: './nav-bar.component.html',
     styleUrls: ['./nav-bar.component.scss']
 })
 
-export class NavbarComponent implements AfterViewInit, OnInit {
+export class NavbarComponent implements OnInit {
     public affichageConfig: boolean = false;
     public url: string = "";
     public configForm: FormGroup;
@@ -21,7 +22,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         })
     }
 
-    ngAfterViewInit(): void {}
 
     ngOnInit(){
         this.router.events.subscribe(event => {

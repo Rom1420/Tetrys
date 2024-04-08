@@ -1,10 +1,11 @@
-import {AfterContentInit, AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ConfigFormResultService} from "./services/config-form-result.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {WordsServices} from "./services/words.service";
 import {Word} from "./models/word.model";
 import {GameFormService} from "./services/game-form.service";
 import {GameManagerService} from "./services/game-manager.service";
+import {ConfigModel} from "./models/config.model";
 
 @Component({
   selector: 'app-game',
@@ -13,19 +14,26 @@ import {GameManagerService} from "./services/game-manager.service";
 })
 export class GameComponent implements OnInit, AfterViewInit{
 
-    public urlChronoImg: string = "../../assets/chrono.png";
     public wordForm: FormGroup;
     private actualWords: Word[] = [{name: ""}];
     public actualWordForm: string = "";
     public time: number = 0;
     public allTimer: any[] = [];
     private isWordValid: boolean = false;
-    @ViewChild('word') wordFormToggle!: ElementRef;
+    public endGameDisplay: boolean = false;
+    public config: ConfigModel;
+
+  @ViewChild('word') wordFormToggle!: ElementRef;
     constructor(private gameManagerService:GameManagerService, private configFormResult: ConfigFormResultService, private gameFormService: GameFormService, public wordService:WordsServices, public formBuilder: FormBuilder) {
-      this.wordForm = this.formBuilder.group({
-            word: [''],
-            isValid: this.isWordValid
-        });
+        this.wordForm = this.formBuilder.group({
+              word: [''],
+              isValid: this.isWordValid
+          });
+        this.config = this.configFormResult.getLastConfig()
+        this.configFormResult.configActual$.subscribe((actualConfig) => {
+          this.config = actualConfig[actualConfig.length - 1]
+          console.log(this.config)
+        })
     }
 
     ngAfterViewInit(): void {
@@ -36,6 +44,10 @@ export class GameComponent implements OnInit, AfterViewInit{
         this.wordFormToggle.nativeElement.focus();
         this.resetTimer();
       });
+      this.gameManagerService.endGame$.subscribe((value) => {
+        this.endGameDisplay = value;
+      })
+
     }
     ngOnInit(){
         this.actualWords = this.wordService.getActualWords();
@@ -43,7 +55,7 @@ export class GameComponent implements OnInit, AfterViewInit{
     }
 
     testServiceForm(){
-        console.log(this.gameFormService.getResults())
+        console.log(this.wordForm.get('word')?.enabled)
     }
 
     verifWord(): boolean{
@@ -63,7 +75,7 @@ export class GameComponent implements OnInit, AfterViewInit{
       this.time = this.actualWords.reduce((motCourant, motSuivant) => {
         return motSuivant.name.length > motCourant.name.length ? motSuivant: motCourant;
       }, {name: ""}).name.length;
-      this.time = this.time * 0.6;    //ratio par caractere
+      this.time = this.time * this.config.time;    //ratio par caractere
       this.time = Number(this.time.toFixed(1));   //on arrondi au dixieme de secondes
       this.startTimer();
       this.pauseTimer();
@@ -74,7 +86,6 @@ export class GameComponent implements OnInit, AfterViewInit{
         if (this.time > 0) {
           this.time = Math.max(0, Number((this.time - 0.1).toFixed(1)));
         } else {
-          alert('Game Over');
           this.onSubmit();
         }
       }, 100);
@@ -91,9 +102,10 @@ export class GameComponent implements OnInit, AfterViewInit{
 
 
     onSubmit(){
-        this.pauseTimer()
-        this.gameFormService.addResult(this.wordForm.value)
-        this.wordForm.get('word')?.disable();
-        this.wordForm.reset();
+      this.pauseTimer()
+      this.gameFormService.addResult(this.wordForm.value)
+      this.wordForm.get('word')?.disable();
+      console.log(this.gameFormService.getResults());
+      this.wordForm.reset();
     }
 }
