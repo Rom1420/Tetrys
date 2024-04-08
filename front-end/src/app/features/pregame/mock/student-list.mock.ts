@@ -2,27 +2,23 @@ import { Student } from "src/app/features/pregame/models/student.model";
 
 export const STUDENT_LIST: Student[] = [
     {
-        name: 'Mathias'
+        id: 0,
+        name: 'Mathias',
+        isSelected: false
     },
     {
-        name:'Eliot'
+        id: 1,
+        name:'Eliot',
+        isSelected: false
     },
     {
-        name: 'Mathias'
+        id: 2,
+        name: 'Romain',
+        isSelected: false
     },
     {
-        name:'Eliot'
-    },
-    {
-        name: 'Mathias'
-    },
-    {
-        name:'Eliot'
-    },
-    {
-        name: 'Mathias'
-    },
-    {
-        name:'Eliot'
-    },
+        id: 3,
+        name:'Matice',
+        isSelected: false
+    }
 ];

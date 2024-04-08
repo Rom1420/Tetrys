@@ -6,11 +6,11 @@ import { Difficulty } from './models/difficulty.model';
   selector: 'app-pregame',
   templateUrl: './pregame.component.html',
   styleUrl: './pregame.component.scss',
-  
+
 })
 export class PregameComponent {
   constructor(public popupService: PopupService){}
-  
+
   selectedDifficulty: Difficulty | null = null;
 
 
