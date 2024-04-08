@@ -14,10 +14,14 @@ import { PopupService } from '../../services/popup.service';
 export class PopupComponent {
 
   public profilForm: FormGroup;
+  public studentList: Student[] = [];
 
   constructor(public popupService: PopupService,public formBuilder: FormBuilder, public studentService: StudentService){
     this.profilForm = this.formBuilder.group({
         name: [''],
+    });
+    this.studentService.students$.subscribe((studentList) => {
+      this.studentList = studentList;
     })
   }
 
@@ -26,7 +30,7 @@ export class PopupComponent {
   }
 
   addProfil(){
-    const profilToCreate: Student = this.profilForm.getRawValue() as Student;
+    const profilToCreate: Student = {id: this.studentList.length, name : this.profilForm.getRawValue().name, isSelected : false};
     this.studentService.addProfil(profilToCreate);
     this.popupService.closePopup();
   }

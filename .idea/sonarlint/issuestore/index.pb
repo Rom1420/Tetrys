@@ -91,3 +91,7 @@ m
 =front-end/src/app/features/Stats/models/stat-avancee.model.ts,4\f\4f6f686687a24268dc2571401f997cf77367665a
 r
 Bfront-end/src/app/features/Stats/services/stats-avancee.service.ts,6\5\65975fa5dfac005aa79638614c10e138fc10946b
+n
+>front-end/src/app/core/components/nav-bar/nav-bar.component.ts,d\e\de87f23515fbc4f30e0433139ca153fb906c13cd
+Œ
+\front-end/src/app/features/pregame/components/popup-add-profil/popup-add-profil.component.ts,4\c\4cc5caaa3731706560e3b7c370249f220b2b4554

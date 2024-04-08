@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import { StudentService } from 'src/app/core/components/services/student.service';
 import {Student} from '../../models/student.model'
+import {max} from "rxjs";
 
 @Component({
     selector: 'student',
@@ -21,6 +22,15 @@ export class StudentComponent {
     student: Student | undefined;
 
 
+    maximumId() : number {
+      let x : number = 0;
+      for(let student of this.studentList){
+        if(student.id > x)
+          x = student.id;
+      }
+      return x=1;
+    }
+
     ngOnInit() {};
 
     selected() : void{
@@ -30,6 +40,7 @@ export class StudentComponent {
       }
       if(this.student){
         this.student.isSelected = !this.student.isSelected;
+        console.log(this.student);
       }
     }
 
