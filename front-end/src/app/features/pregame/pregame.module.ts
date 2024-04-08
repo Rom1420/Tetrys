@@ -11,6 +11,7 @@ import { AddProfilButtonComponent } from './components/add-profil-button/add-pro
 import { PregameComponent } from './pregame.component';
 import { PopupComponent } from './components/popup-add-profil/popup-add-profil.component';
 import { DifficultyDetailComponent } from './components/difficulty-detail/difficulty-detail.component';
+import { ConfigComponent } from './components/config/config.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { DifficultyDetailComponent } from './components/difficulty-detail/diffic
     AddProfilButtonComponent,
     PopupComponent,
     DifficultyDetailComponent,
+    ConfigComponent,
   ],
   imports: [
     CommonModule,

@@ -5,40 +5,10 @@
     <nav class="navbar">
         <a href="/pre-game">Jeu</a>
         <a href="/stats">Statistiques</a>
-        <a (click)="afficherConfig()">Configuration</a>
+        <a >Configuration</a>
     </nav>
     <div class="profil-container">
       <a href="#"><img class="profil" src="./assets/profil_icon.svg" alt="profile image"></a>
       <p class="profil-name">Mathias</p>
     </div>
-</div>
-
-
-<div *ngIf="affichageConfig"  class="popup-container">
-  <div class="popup">
-    <div class="popup-content">
-      <span (click)="afficherConfig()" class="close">&times;</span>
-      <h2>Créer une nouvelle configuration</h2>
-      <form [formGroup]="configForm" (ngSubmit)="onSubmit()">
-        <div class="form-cell">
-          <label for="time"> Temps maximum par caractère </label>
-          <input type="text" placeholder="Actual: 0.6 sec" id="time" formControlName="time">
-        </div>
-        <div class="form-cell">
-          <label for="length"> Longueur maximale de mot </label>
-          <input type="text" placeholder="Actual: 10" id="length" formControlName="length">
-        </div>
-        <div class="form-cell">
-          <div>
-            <span> <strong> Droit à l'erreur: </strong>  </span>
-          </div>
-          <label> <input type="radio" id="radioOui" formControlName="errorAllowed" [value]="true"> <span>oui</span> </label>
-          <label> <input type="radio" id="radioNon" formControlName="errorAllowed" [value]="false"> <span>non</span> </label>
-        </div>
-      </form>
-      <div class="start-button">
-        <button class="play-button" (click)="afficherConfig(); onSubmit()" [disabled]="configForm.invalid" role="button">Jouer</button>
-      </div>
-    </div>
-  </div>
 </div>

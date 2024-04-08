@@ -24,7 +24,7 @@
     span{
         font-size: 1.2vw;
         padding: 15px 25px;
-        border-radius: 84% 16% 81% 19% / 59% 72% 28% 41% ;  
+        border-radius: 84% 16% 81% 19% / 59% 72% 28% 41% ;
         background-color: #304673cc;
 
     }
@@ -64,7 +64,7 @@
 .details-appear {
     animation: details-appear-animation 0.5s cubic-bezier(0.175, 0.885, 0.2, 1.275) forwards;
   }
-  
+
   @keyframes details-appear-animation {
     from {
       opacity: 0;
