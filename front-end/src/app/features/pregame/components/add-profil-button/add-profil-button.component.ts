@@ -8,11 +8,18 @@ import { PopupService } from '../../services/popup.service';
   styleUrl: './add-profil-button.component.scss'
 })
 export class AddProfilButtonComponent { 
-  constructor(public popupService: PopupService){
+  isButtonVisible:boolean = true;
 
+  constructor(public popupService: PopupService){
   }
 
   openPopup() {
+    this.isButtonVisible = false;
     this.popupService.openPopup();
+  }
+
+
+  handleAnimationDone() {
+    this.isButtonVisible = true;
   }
 }

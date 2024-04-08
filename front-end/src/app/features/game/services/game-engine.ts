@@ -251,7 +251,7 @@ export class GameEngine {
   }
 
   placeRandomPieceRandomly(){
-      const dropPieceInterval = 100;
+      const dropPieceInterval = 1;
       const gameEngineInstance = this;
       const reset = this.gameManagerService;
       reset.captureEvents$.next(0);
