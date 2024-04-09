@@ -16,6 +16,10 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     CommonModule,
     BrowserModule,
+  ],
+  exports: [
+    BoxStatComponent,
+    GameDetailsComponent
   ]
 })
 export class StatsDetailsModule { }
