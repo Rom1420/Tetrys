@@ -1,0 +1,12 @@
+.box-stat-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    
+
+    transition-duration: 300ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    transform: rotate3d(0);
+}
