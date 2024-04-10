@@ -7,7 +7,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StatsProfilComponent } from './components/stats-profil/stats-profil.component';
 import { GameResumeComponent } from './components/game-resume/game-resume.component';
 import { GameEvolutionComponent } from './components/game-evolution/game-evolution.component';
-import { StarsComponent } from './components/stars/stars.component';
+import { StarComponent } from './components/star/star.component';
+
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 
 
@@ -19,16 +21,18 @@ import { StarsComponent } from './components/stars/stars.component';
     StatsProfilComponent,
     GameResumeComponent,
     GameEvolutionComponent,
-    StarsComponent,
+    StarComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
+    AngularSvgIconModule,
   ],
   exports: [
     BoxStatComponent,
     GameDetailsComponent,
     StatsProfilComponent,
+    StarComponent,
   ]
 })
 export class StatsDetailsModule { }

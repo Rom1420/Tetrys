@@ -14,6 +14,8 @@ import {StatsModule} from "../features/Stats/stats.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StatsDetailsModule } from '../features/stats-details/stats-details.module';
 
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { StatsDetailsModule } from '../features/stats-details/stats-details.modu
         StatsModule,
         BrowserAnimationsModule, 
         StatsDetailsModule,
+        AngularSvgIconModule.forRoot(),
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,19 @@
-<p>game-resume works!</p>
+<div class="game-resume-container">
+    <div class="stats-header">
+        <h1>
+            Résumé de partie
+        </h1>
+    </div>
+    <div class="resume-stat">
+        <h1 class="mode-value red">Avancé</h1>
+    </div>
+    <div class="resume-stat">
+        <h1 class="basic-stat-value">5797</h1>
+        <p class="basic-stat-title">Score moyen</p>
+    </div>
+    <div class="stars-container">
+        <span class="star-rating">
+            <star *ngFor="let _ of [1,2,3]"></star>
+        </span>
+    </div>
+</div>
