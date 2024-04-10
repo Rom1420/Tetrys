@@ -5,6 +5,9 @@ import { GameDetailsComponent } from './components/game-details/game-details.com
 import { BoxStatComponent } from './components/box-stat/box-stat.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { StatsProfilComponent } from './components/stats-profil/stats-profil.component';
+import { GameResumeComponent } from './components/game-resume/game-resume.component';
+import { GameEvolutionComponent } from './components/game-evolution/game-evolution.component';
+import { StarsComponent } from './components/stars/stars.component';
 
 
 
@@ -14,6 +17,9 @@ import { StatsProfilComponent } from './components/stats-profil/stats-profil.com
     GameDetailsComponent,
     BoxStatComponent,
     StatsProfilComponent,
+    GameResumeComponent,
+    GameEvolutionComponent,
+    StarsComponent,
   ],
   imports: [
     CommonModule,
