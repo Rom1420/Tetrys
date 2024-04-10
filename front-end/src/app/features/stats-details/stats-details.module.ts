@@ -4,6 +4,7 @@ import { StatsDetailsComponent } from './stats-details.component';
 import { GameDetailsComponent } from './components/game-details/game-details.component';
 import { BoxStatComponent } from './components/box-stat/box-stat.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { StatsProfilComponent } from './components/stats-profil/stats-profil.component';
 
 
 
@@ -11,7 +12,8 @@ import { BrowserModule } from '@angular/platform-browser';
   declarations: [
     StatsDetailsComponent,
     GameDetailsComponent,
-    BoxStatComponent
+    BoxStatComponent,
+    StatsProfilComponent,
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   exports: [
     BoxStatComponent,
-    GameDetailsComponent
+    GameDetailsComponent,
+    StatsProfilComponent,
   ]
 })
 export class StatsDetailsModule { }
