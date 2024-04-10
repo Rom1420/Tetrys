@@ -56,27 +56,26 @@
 }
 
 .star-rating{
-    text-shadow: 0px 0px 5px #f8d060;
+    filter: drop-shadow(0px 0px 5px #f8d060);
     transition: transform 0.7s ease-in-out;
 
     &:hover{
         transform: scale(1.2);
-        animation: sparkle 1.5s ease-in-out;
+        animation: sparkle 1.5s infinite ease-in-out;
     }
 }
 
 
-
 @keyframes sparkle {
     0%{
-        text-shadow: 0px 0px 5px #f8d060;
+        filter: drop-shadow(0px 0px 5px #f8d060);
     }
     50% {
         opacity: 1;
-        text-shadow: 0px 0px 15px #f8d060;
+        filter: drop-shadow(0px 0px 10px #f8d060);
     }
     100%{
-        text-shadow: 0px 0px 5px #f8d060;
+        filter: drop-shadow(0px 0px 5px #f8d060);
     }
 }
 
