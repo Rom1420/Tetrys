@@ -8,6 +8,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent {
   showHomepage: boolean = true;
+  showLoginpage: boolean = true;
 
   constructor(private router: Router){}
 
