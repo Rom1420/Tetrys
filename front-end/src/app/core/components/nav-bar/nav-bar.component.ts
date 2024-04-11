@@ -11,4 +11,20 @@ import {ConfigModel} from "../../../features/game/models/config.model";
 
 export class NavbarComponent {
 
+
+  constructor(public router:Router) {
+  }
+
+  navigateToPreGame(){
+    this.router.navigate(["/pre-game"]).then(() => {
+      console.log('Navigation réussie !');}).catch(error => {
+      console.error('Erreur de navigation :', error);});
+  }
+
+  navigateToStats(){
+    this.router.navigate(["/pre-game"]).then(() => {
+      console.log('Navigation réussie !');}).catch(error => {
+      console.error('Erreur de navigation :', error);});
+  }
+
 }

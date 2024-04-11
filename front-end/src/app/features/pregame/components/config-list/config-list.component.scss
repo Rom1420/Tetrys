@@ -1,0 +1,200 @@
+.config-list{
+  flex-grow: 1;
+  flex-direction: column;
+  width: 100%;
+  background-color: #4a5d83;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
+  border-radius: 15px;
+  overflow: hidden;
+
+  &-appear {
+    animation: config-list-appear-animation 0.5s cubic-bezier(0.175, 0.885, 0.2, 1.275) forwards;
+  }
+
+  @keyframes config-list-appear-animation {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.config-list-component{
+  height: 64vh;
+  width: 30vw;
+  margin: 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-container-config {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-container-config > * {
+  scroll-snap-align: start;
+}
+
+.scroll-container-config > :first-child {
+  background-color: rgba(48, 70, 115,0.8);
+}
+
+
+.scroll-container-progression::-webkit-scrollbar,
+.scroll-container-config::-webkit-scrollbar,
+.scroll-container-historical::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+}
+
+.scroll-container-progression::-webkit-scrollbar-thumb,
+.scroll-container-config::-webkit-scrollbar-thumb,
+.scroll-container-historical::-webkit-scrollbar-thumb {
+  background-color: #304673;
+  border-radius: 10px;
+}
+
+
+.add-profil-button-container{
+  height: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+button.add-profil-button {
+  width: auto;
+  height: 4em;
+  box-shadow: 0px 0px 10px #F27F1B;
+  appearance: button;
+  background-color: #b76115;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.2em;
+  padding: 0.5em 1em;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 1vh 15px;
+  outline: none;
+  overflow: visible;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.add-profil-button:after {
+  background-clip: padding-box;
+  background-color: #F27F1B;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.add-profil-button:main,
+.add-profil-button:focus {
+  user-select: auto;
+}
+
+.add-profil-button:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.add-profil-button:disabled {
+  cursor: auto;
+}
+
+.add-profil-button:active {
+  border-width: 2px 0 0;
+  background: none;
+}
+.button-appear {
+  animation: button-appear-animation 0.5s cubic-bezier(0.175, 0.885, 0.2, 1.275) forwards;
+}
+
+@keyframes button-appear-animation {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.caracteristics-bar{
+  display: grid;
+  grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 7px;
+  color: #FFFFFF;
+}
+
+.config{
+  display: grid;
+  grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  color: #FFFFFF;
+  padding: 8px;
+}
+
+
+
+.scroll-container-config>.config:nth-child(even){
+  background-color: #4a5d83;
+}
+.scroll-container-config>.config:nth-child(odd){
+  background-color: #304673;
+}
+
+.scroll-container-config>.config :first-child(even){
+  background-color: red;
+}
+
+.config img{
+  max-height: 30%;
+  max-width: 30%;
+}
+
+

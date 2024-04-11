@@ -4,20 +4,21 @@ import {NavigationEnd, NavigationStart, Router} from "@angular/router";
 import {ConfigFormResultService} from "../../../game/services/config-form-result.service";
 
 @Component({
-  selector: 'app-config',
-  templateUrl: './config.component.html',
-  styleUrl: './config.component.scss'
+  selector: 'app-config-creation',
+  templateUrl: './config-creation.component.html',
+  styleUrl: './config-creation.component.scss'
 })
-export class ConfigComponent implements OnInit{
+export class ConfigCreationComponent implements OnInit{
   public affichageConfig: boolean = false;
   public url: string = "";
   public configForm: FormGroup;
 
   constructor(private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService) {
     this.configForm = this.formBuilder.group({
+      name: ['', Validators.required],
       time: ['', [Validators.required, Validators.pattern('^\\d*\\.?\\d+$')]],
       length: ['', [Validators.required, Validators.pattern('^\\d+')]],
-      errorAllowed: ['', [Validators.required, Validators.pattern('^(true|false)$') ]]
+      errorAllowed: ['', [Validators.required, Validators.pattern('^(true|false)$') ]],
     })
   }
 
@@ -55,6 +56,13 @@ export class ConfigComponent implements OnInit{
       this.configFormResultService.addResult(this.configForm.value)
       this.configForm.reset();
     }
+  }
+
+  isConfigFormValid(): boolean{
+    if (this.configForm.valid){
+      (document.querySelector(".disabling-text") as HTMLDivElement).style.display = "none";
+    }
+    return this.configForm.valid;
   }
 
 }
