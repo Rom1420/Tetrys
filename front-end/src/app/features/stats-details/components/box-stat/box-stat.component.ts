@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'box-stat',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './box-stat.component.scss'
 })
 export class BoxStatComponent {
+  @Input() details: boolean = false;
+  forDetails: boolean = false;
 
+
+  ngOnInit() {
+    this.forDetails = this.details;
+  }
 }

@@ -2,7 +2,7 @@
     box-sizing: border-box;
     padding: 20px;
     width: 100vw;
-    height: 100vh;
+    height: 92vh;
     display: flex;
 }
 
@@ -16,7 +16,7 @@ stats-profil{
     box-sizing: border-box;
     display: flex;
     width: 100%;
-    height: calc(100% - 8vh);
+    height: 100%;
     background-color: var(--box-color);
     box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
     border-radius: 15px;
@@ -34,10 +34,30 @@ stats-profil{
     margin-left: 20px;
 }
 
-game-details{
-    flex-grow: 1;
-}
-
 game-resume{
     height: auto;
 }
+
+game-evolution{
+    height: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    stats-profil{
+        display: none;
+    }
+
+    .side-container{
+        width: 0%;
+    }
+
+    .right-container{
+        margin-left: 0%;
+    }
+  }
+
+  @media screen and (max-height: 700px) {
+    game-evolution{
+        display: none;
+    }
+  }

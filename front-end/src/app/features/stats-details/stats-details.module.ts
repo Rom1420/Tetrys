@@ -12,7 +12,6 @@ import { StarComponent } from './components/star/star.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 
-
 @NgModule({
   declarations: [
     StatsDetailsComponent,
@@ -33,6 +32,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     GameDetailsComponent,
     StatsProfilComponent,
     StarComponent,
+    GameEvolutionComponent,
   ]
 })
 export class StatsDetailsModule { }

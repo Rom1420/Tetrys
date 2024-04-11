@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-game-evolution',
+  selector: 'game-evolution',
   templateUrl: './game-evolution.component.html',
   styleUrl: './game-evolution.component.scss'
 })
