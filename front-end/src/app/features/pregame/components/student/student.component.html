@@ -1,4 +1,4 @@
-<div class="student" *ngIf="student" (click)="selected()" [ngClass]="{'selected':getSelect()}">
+<div class="student" *ngIf="student" (click)="onSelectStudent(student)" [ngClass]="{'selected': student.isSelected}">
     <img src="./assets/user.png" alt="img-utilisateur-inconnu">
     <p>{{student.name}}</p>
 </div>

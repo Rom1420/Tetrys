@@ -9,19 +9,14 @@
     <div class="historical-container">
       <div class="historical-list">
         <div class="headers-list">
-          <p>Date</p>
+          <p>Date</p> 
           <p>Mode</p>
           <p>Score</p>
           <p>Note</p>
           <p style="margin-right: 50px;">Detail</p>
         </div>
         <div class="scroll-container-historical">
-          <stat-game></stat-game>
-          <stat-game></stat-game>
-          <stat-game></stat-game>
-          <stat-game></stat-game>
-          <stat-game></stat-game>
-          <stat-game></stat-game>
+          <stat-game [playerId]="selectedPlayerId"></stat-game>
         </div>
       </div>
     </div>

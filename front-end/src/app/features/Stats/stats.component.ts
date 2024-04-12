@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StudentService } from 'src/app/core/components/services/student.service';
 
 @Component({
   selector: 'stats-game',
@@ -6,6 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./stats.component.scss']
 })
 
-export class StatsComponent{
+export class StatsComponent implements OnInit {
+  selectedPlayerId: number = 1; 
 
+  constructor(private studentService: StudentService) {}
+
+  ngOnInit(): void {
+    this.studentService.selectedStudent$.subscribe(student => {
+      console.log(student.id);
+      this.selectedPlayerId = student.id; 
+    });
+  }
 }

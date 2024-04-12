@@ -4,4 +4,5 @@ export interface GameResume {
     gameMode : string;
     gameScore : number;
     gameStars : number;
+    date : string;
 }

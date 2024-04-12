@@ -1,25 +1,27 @@
-<div class="game-stat-container">
+<div *ngFor="let resume of gameResumes" class="game-stat-container">
   <div class="date-container">
     <p class="date-content">
-      10/03/24
+      {{ resume.date }}
     </p>
   </div>
   <div class="mode-container">
     <p class="mode-content">
-      Débutant
+      {{ resume.gameMode }}
     </p>
   </div>
   <div class="score-container">
     <p class="score-content">
-      253
+      {{ resume.gameScore }}
     </p>
   </div>
   <div class="note-container">
     <p class="note-content">
-      A
+      {{ resume.gameStars }}
     </p>
   </div>
   <div class="icon-detail-container">
-    <img ngSrc="./assets/arrow_forward.png" alt="Détails" height="24" width="24">
+    <a href="/stats-details">
+      <img ngSrc="./assets/arrow_forward.png" alt="Détails" height="24" width="24">
+    </a>
   </div>
 </div>

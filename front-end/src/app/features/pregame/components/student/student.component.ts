@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
 import { StudentService } from 'src/app/core/components/services/student.service';
 import {Student} from '../../models/student.model'
-import {max} from "rxjs";
 
 @Component({
     selector: 'student',
@@ -50,5 +49,11 @@ export class StudentComponent {
       else
         return false;
     }
+
+      onSelectStudent(student: Student): void {
+        this.studentList.forEach(s => s.isSelected = false); 
+        student.isSelected = true; 
+        this.studentService.onSelectStudent(student);
+      }
 
 }
