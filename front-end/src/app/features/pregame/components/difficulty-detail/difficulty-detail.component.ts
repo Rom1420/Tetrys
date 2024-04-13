@@ -11,16 +11,16 @@ export class DifficultyDetailComponent {
 
   getDifficultyClass(): string {
     switch (this.currentDifficulty?.id) {
-        case 1:
-            return 'debutant';
-        case 2:
-            return 'intermediaire';
-        case 3:
-            return 'avance';
-        case 4:
-            return 'perso';
-        default:
-            return '';
+      case 1:
+        return 'debutant';
+      case 2:
+        return 'intermediaire';
+      case 3:
+        return 'avance';
+      case 4:
+        return 'perso';
+      default:
+        return '';
     }
-}
+  }
 }
