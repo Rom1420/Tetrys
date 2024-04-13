@@ -4,7 +4,7 @@
     <div class="blocks-words-component">
       <block-word></block-word>
     </div>
-    
+
     <div class="writing-space">
       <form [formGroup]="wordForm" autocomplete="off">
         <label for="word">Rentrez un des 3 mots ci dessus: </label>
@@ -23,7 +23,13 @@
     <div class="end-stat-content">
       <div class="horizontal-bar">
         <h1 class="score-text">Score : 253</h1>
-        <h3 class="note-text">Note A</h3>
+        <div class="stars">
+          <img src="../../assets/fullStar.png" alt="full star">
+          <img src="../../assets/fullStar.png" alt="full star">
+          <img src="../../assets/fullStar.png" alt="full star">
+          <img src="../../assets/fullStar.png" alt="full star">
+          <img src="../../assets/emptyStar.png" alt="full star">
+        </div>
       </div>
       <div class="vertical-bar">
         <div class="replay-button-container">

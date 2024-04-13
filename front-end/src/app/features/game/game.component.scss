@@ -235,18 +235,26 @@
 
 .score-text {
   font-size: 50px;
-  margin-top: 35px;
+  margin-top: 0px;
   margin-bottom: 0px;
   color: #fff4ec;
   font-weight: 800;
 }
 
-.note-text {
+.stars {
   margin-top: -10px;
   font-size: 30px;
   color: #F27F1B;
   font-weight: 900;
+  height: 30%;
+  display: flex;
 }
+
+.stars img{
+  max-height: 100%;
+}
+
+
 
 
 
