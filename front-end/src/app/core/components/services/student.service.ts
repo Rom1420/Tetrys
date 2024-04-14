@@ -26,7 +26,6 @@ export class StudentService {
 
     onSelectStudent(studentId: number) {
         this.selectedStudentIdSubject$.next(studentId);
-        console.log("emitted value: ", studentId);
       } 
 
     getStudentName(id: number): String | undefined {

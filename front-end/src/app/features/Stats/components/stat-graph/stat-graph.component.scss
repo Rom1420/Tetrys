@@ -113,9 +113,10 @@ p.stat-description{
   transition: transform 0.5s ease;
   backface-visibility: hidden;
   cursor: pointer;
+  pointer-events: auto;
 }
 
-.mode-button.active {
+.mode-button:not([disabled]).active {
   border: solid 1px #fff;
   backface-visibility: hidden;
   animation: clicked 0.4s ease forwards;
@@ -131,11 +132,11 @@ p.stat-description{
   }
 }
 
-.mode-button:not(.active):hover {
-  animation: transform 0.3s ease forwards;
+.mode-button:not([disabled]):not(.active):hover {
+  animation: hoover 0.3s ease forwards;
 }
 
-@keyframes transform {
+@keyframes hoover {
   0% {
       transform: scale(1);
   }
@@ -163,21 +164,19 @@ p.stat-description{
   margin-right: auto;
 }
 
-.title[data-status="unknown"]{
-  transform: scale(0);
-}
-
-.title[data-status="active"]{
-  transform: scale(1);
-}
 
 h1.title{
   color: #fff;
   font-size: 3vw;
   font-family: 'Roboto', sans-serif;
   margin-bottom: 5px;
-  transition: transform 0.4s cubic-bezier(0,.72,.35,.99), opacity 0.4s cubic-bezier(0,.72,.35,.99);
+  transition: transform 0.2s cubic-bezier(0,.72,.35,.99), opacity 0.4s cubic-bezier(0,.72,.35,.99);
   text-align: center;
+
+  &.hidden{
+      transform: scale(0);
+      transition: transform 0.2s cubic-bezier(0,.72,.35,.99), opacity 0.4s cubic-bezier(0,.72,.35,.99);
+  }
 }
 
 .title{
@@ -185,4 +184,23 @@ h1.title{
   align-items: flex-end;
   justify-content: center;
   height: 40%;
+}
+
+.mode-button[disabled] {
+  opacity: 0.5; 
+  cursor: not-allowed;
+  pointer-events: none; 
+}
+
+.mode-button:not([disabled]) {
+  animation: all 0.5s ease forwards; 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1; 
+  }
 }
