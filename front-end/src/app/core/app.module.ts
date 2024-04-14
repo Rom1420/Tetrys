@@ -12,7 +12,10 @@ import {PregameModule} from '../features/pregame/pregame.module';
 import {ReactiveFormsModule} from "@angular/forms";
 import {StatsModule} from "../features/Stats/stats.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StatsDetailsModule } from '../features/stats-details/stats-details.module';
 
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         ReactiveFormsModule,
         StatsModule,
         BrowserAnimationsModule, 
+        StatsDetailsModule,
+        AngularSvgIconModule.forRoot(),
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

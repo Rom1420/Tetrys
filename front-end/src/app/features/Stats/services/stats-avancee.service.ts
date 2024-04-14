@@ -9,6 +9,31 @@ import {BehaviorSubject} from "rxjs";
 
 
 export class StatsAvanceeService {
-  public statsAvanceeList$: BehaviorSubject<StatAvancee[]> = new BehaviorSubject(STATS_AVANCEES_LIST);
+  public selectedGameModeSubject$: BehaviorSubject<String> = 
+            new BehaviorSubject<String>("");
+  public selectedGameMode$ = 
+          this.selectedGameModeSubject$.asObservable();
 
+
+  private statAvanceeList: StatAvancee[] = STATS_AVANCEES_LIST;
+  private statAvanceeSubject: BehaviorSubject<StatAvancee[]> = new BehaviorSubject<StatAvancee[]>([]);
+
+  constrcutor(){
+    this.statAvanceeSubject.next([]);
+  }
+
+
+  onSelectGameMode(gameMode: String): void {
+    this.selectedGameModeSubject$.next(gameMode);
+  }
+
+  getStatAvancee(idJoueur: number, gameMode: String): StatAvancee | null {
+    const statAvancee: StatAvancee | undefined = this.statAvanceeList.find(statAvancee => statAvancee.idJoueur === idJoueur && statAvancee.mode === gameMode);
+    if(statAvancee){
+      return statAvancee;
+    }
+    else {
+      return null;
+    }
+  }
 }

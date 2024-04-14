@@ -1,0 +1,49 @@
+<div class="game-details-container">
+    <div class="stats-header">
+        <h1>
+            Détails de partie
+        </h1>
+    </div>
+
+    <box-stat 
+        [stat]="gameDetails?.precisionPercentage" 
+        [title]="'Précision'" 
+        [subtitle]="'par mots'" 
+        [details]="true"
+        [showPercentage]="true"
+        [icon]="'../../../../../assets/ic_accuracy.svg'"
+        [statType]="'precisionPercentage'"></box-stat>
+
+    <box-stat 
+        [stat]="gameDetails?.wordsPerMinute" 
+        [title]="'Vitesse'" 
+        [subtitle]="'mots par minutes'" 
+        [details]="true"
+        [icon]="'../../../../../assets/ic_speed.svg'"
+        [statType]="'wordsPerMinute'"></box-stat>
+
+    <box-stat 
+        [stat]="gameDetails?.incorrectWordsNumber" 
+        [title]="'Incorrect'" 
+        [subtitle]="'total des mots'" 
+        [details]="true"
+        [icon]="'../../../../../assets/ic_error.svg'"
+        [statType]="'incorrectWordsNumber'"></box-stat>
+
+    <box-stat 
+        [stat]="gameDetails?.correctWordsNumber" 
+        [title]="'Correct'" 
+        [subtitle]="'total des mots'" 
+        [details]="true"
+        [icon]="'../../../../../assets/ic_correct.svg'"
+        [statType]="'correctWordsNumber'"></box-stat>
+
+    <box-stat 
+        [stat]="gameDetails?.accentsPrecisionPercentage" 
+        [title]="'Précision'" 
+        [subtitle]="'des mots accentués'" 
+        [details]="true"
+        [showPercentage]="true"
+        [icon]="'../../../../../assets/ic_accuracy.svg'"
+        [statType]="'accentsPrecisionPercentage'"></box-stat>     
+</div>

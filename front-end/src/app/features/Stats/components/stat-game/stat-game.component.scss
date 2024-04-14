@@ -16,7 +16,25 @@
 .icon-detail-container{
   margin-right: 13px;
   margin-top: 4px;
-  filter: invert(100%);
+  transition: all .3s ease-in-out;
+
+  &:hover{
+    cursor: pointer;
+    transform-origin: center center;
+    transform: scale(1.15);
+
+    & svg{
+      fill: #F27F1B;
+    }
+  }
+
+  & svg {
+    width: 2vw;
+    height: 2vw;
+    fill: #fff;
+    vertical-align: middle;
+    transition: all .3s ease-in-out;
+  }
 }
 
 .game-stat-container > *{

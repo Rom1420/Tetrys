@@ -1,0 +1,62 @@
+<div class="details-stats-header">
+    <h1>
+        Évolution
+    </h1>
+</div>
+<div class="evolution-stats">
+    
+    <div class="evolution-stats-container">
+        <div class="stats-header">
+            <h1>
+                Globale
+            </h1>
+        </div>
+        <div class="evolution-stats-content-container">
+            <div class="evolution-box-stats-container">
+                <box-stat 
+                    [stat]="precisionGlobalEvolution" 
+                    [title]="'Précision'" 
+                    [subtitle]="'par mots'" 
+                    [showPercentage]="true"
+                    [icon]="'../../../../../assets/ic_accuracy.svg'"
+                    [statType]="'evolution'"></box-stat>
+            </div>
+            <div class="evolution-box-stats-container">
+                <box-stat 
+                    [stat]="speedGlobalEvolution" 
+                    [title]="'Vitesse'" 
+                    [subtitle]="'mots par minutes'" 
+                    [showPercentage]="true"
+                    [icon]="'../../../../../assets/ic_speed.svg'"
+                    [statType]="'evolution'"></box-stat>
+            </div>
+        </div>
+    </div>
+    <div class="evolution-stats-container">
+        <div class="stats-header">
+            <h1>
+                Partie précédente
+            </h1>
+        </div>
+        <div class="evolution-stats-content-container">
+            <div class="evolution-box-stats-container">
+                <box-stat 
+                    [stat]="precisionLastGameEvolution" 
+                    [title]="'Précision'" 
+                    [subtitle]="'par mots'" 
+                    [showPercentage]="true"
+                    [icon]="'../../../../../assets/ic_accuracy.svg'"
+                    [statType]="'evolution'"></box-stat>
+            </div>
+            <div class="evolution-box-stats-container">
+                <box-stat 
+                    [stat]="speedLastGameEvolution" 
+                    [title]="'Précision'" 
+                    [subtitle]="'par mots'" 
+                    [showPercentage]="true"
+                    [icon]="'../../../../../assets/ic_speed.svg'"
+                    [statType]="'evolution'"></box-stat>
+            </div>
+        </div>
+    </div>
+</div>

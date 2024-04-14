@@ -1,4 +1,4 @@
-import {Component, Input, input, OnInit} from "@angular/core";
+import {Component, Input, input, OnChanges, OnInit, SimpleChanges} from "@angular/core";
 import {StatsAvanceeService} from "../../services/stats-avancee.service";
 import {StatAvancee} from "../../models/stat-avancee.model";
 @Component({
@@ -6,52 +6,60 @@ import {StatAvancee} from "../../models/stat-avancee.model";
   templateUrl: './stat-graph.component.html',
   styleUrls:['./stat-graph.component.scss']
 })
-export class StatGraphComponent implements OnInit {
-  public statsAvanceeList : StatAvancee[] = [];
+export class StatGraphComponent implements OnChanges {
+  @Input() selectedPlayerId: number | null = 0;
+  @Input() selectedGameMode: String | undefined = 'general';
 
-  constructor(public StatsAvanceeService : StatsAvanceeService) {
-    this.StatsAvanceeService.statsAvanceeList$.subscribe((statsAvanceeList) =>{
-      this.statsAvanceeList = statsAvanceeList;
-    })
-  }
+  statsAvancee : StatAvancee | null = null;
 
-  ngOnInit() {
-    const buttons = document.querySelectorAll('.mode-button');
+  constructor(private statsAvanceeService: StatsAvanceeService) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
     const titles = document.querySelectorAll(".title");
     const graphImg = document.querySelector('.graph-img');
 
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+
+    if ('selectedPlayerId' in changes) {
+      titles.forEach(title => title.classList.add('hidden'));
+
+      setTimeout(() => {
         titles.forEach(title => {
-          title.setAttribute('data-status', 'unknown');
+          title.classList.remove('hidden');
         });
-        if(graphImg) {
-          graphImg.setAttribute('data-status', 'unknown');
-        }
-        setTimeout(() => {
-          titles.forEach(title => {
-            title.setAttribute('data-status', 'active');
-          });
-          if(graphImg) {
-            graphImg.setAttribute('data-status', 'active');
-        }
-        }, 300);
-      });
-    });
+      }, 200);
+      this.selectedGameMode = 'general';
+      this.selectedPlayerId = changes['selectedPlayerId'].currentValue;
+    } else if ('selectedGameMode' in changes) {
+      titles.forEach(title => title.classList.add('hidden'));
+
+      setTimeout(() => {
+        titles.forEach(title => {
+          title.classList.remove('hidden');
+        });
+      }, 200);
+      this.selectedGameMode = changes['selectedGameMode'].currentValue;
+    }
+    
+  
+    const playerId = this.selectedPlayerId;
+    const gameMode = this.selectedGameMode;
+  
+    if (playerId !== null && gameMode) {
+      this.statsAvancee = this.statsAvanceeService.getStatAvancee(playerId, gameMode);
+    }
   }
 
-  updateStats(mode: String) {
-    for(let stat of this.statsAvanceeList){
-      if(stat.mode == mode){
-        //@ts-ignore
-        document.getElementById('wpm').innerText = stat.wpm + " WPM";
-        // @ts-ignore
-        document.getElementById('scoreMoyen').innerText = stat.scoreMoyen + "";
-        // @ts-ignore
-        document.getElementById('pourcentageErreur').innerText = stat.pourcentageErreur + "%";
-      }
+  updateGameMode(gameMode: String) {
+    this.statsAvanceeService.onSelectGameMode(gameMode);
+
+    const buttons = document.querySelectorAll('.mode-button');
+    buttons.forEach(button => {
+      button.classList.remove('active');
+    });
+
+    const clickedButton = document.querySelector(`.mode-button.${gameMode}`);
+    if (clickedButton) {
+      clickedButton.classList.add('active');
     }
   }
 }
