@@ -1,5 +1,5 @@
 <div class="popup" [@toggleDPopup]="popupService.isOpenDPopup ? 'open' : 'close'" (@toggleDPopup.done)="onAnimationDone()">
-    <div class="popup-body">
+    <div class="popup-delete-body">
         <div class="popup-header-container">
             <h2>Supprimer ce profil ?</h2>
         </div>
@@ -11,7 +11,7 @@
             </div>
             <div class="cancel-button-container">
                 <button class="cancel-button" (click)="closeDPopup()">
-                    <span>&#10003;</span>
+                    <span>&#10006;</span>
                 </button>
             </div>
         </div>
