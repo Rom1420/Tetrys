@@ -47,11 +47,23 @@
 .mode-value{
     box-shadow: -5px -5px 2px rgba(0, 0, 0, 0.4) inset;
     padding: 1.5vh 2vw;
-    background-color: var(--red);
     border-radius: 91% 9% 82% 18% / 14% 80% 20% 86% ;
 
-    &.mode-value{
+    & h1{
         font-size: 3.2vh;
+    }
+
+    &.green{
+        background-color: var(--green);
+    }
+    &.orange{
+        background-color: var(--orange);
+    }
+    &.red{
+        background-color: var(--red);
+    }
+    &.cyan{
+        background-color: var(--cyan);
     }
 }
 

@@ -7,6 +7,8 @@ import { PregameModule } from '../pregame/pregame.module';
 import { StatsDetailsModule } from '../stats-details/stats-details.module';
 import { CommonModule } from '@angular/common';
 
+import { AppRoutingModule } from '../../core/app-routing.module';
+
 @NgModule({
   declarations: [
     StatGameComponent,
@@ -14,6 +16,7 @@ import { CommonModule } from '@angular/common';
     StatsComponent
   ],
   imports: [
+    AppRoutingModule,
     NgOptimizedImage,
     PregameModule,
     StatsDetailsModule,

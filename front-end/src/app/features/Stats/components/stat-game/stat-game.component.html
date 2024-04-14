@@ -20,7 +20,7 @@
     </p>
   </div>
   <div class="icon-detail-container">
-    <a href="/stats-details">
+    <a [routerLink]="['/stats-details']" (click)="selectGame(resume.idPartie)">
       <img ngSrc="./assets/arrow_forward.png" alt="Détails" height="24" width="24">
     </a>
   </div>

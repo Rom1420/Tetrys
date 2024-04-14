@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable} from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import {Student} from '../../../features/pregame/models/student.model';
 import { STUDENT_LIST } from 'src/app/features/pregame/mock/student-list.mock';
 
@@ -9,10 +9,13 @@ import { STUDENT_LIST } from 'src/app/features/pregame/mock/student-list.mock';
 })
 export class StudentService {
     private students: Student[] = STUDENT_LIST;
-    public students$: BehaviorSubject<Student[]> = new BehaviorSubject(STUDENT_LIST);
+    public students$: BehaviorSubject<Student[]> = 
+            new BehaviorSubject<Student[]>(STUDENT_LIST);
 
-    private selectedStudentSubject = new BehaviorSubject<Student>(this.students[0]);
-    selectedStudent$: Observable<Student> = this.selectedStudentSubject.asObservable();
+    public selectedStudentIdSubject$: BehaviorSubject<number> = 
+            new BehaviorSubject<number>(0);
+    public selectedStudentId$ = 
+            this.selectedStudentIdSubject$.asObservable();
 
     constructor(){}
 
@@ -20,14 +23,13 @@ export class StudentService {
         this.students.push(student)
         this.students$.next(this.students)
     }
-    
 
-    onSelectStudent(student: Student) {
-        this.selectedStudentSubject.next(student);
+    onSelectStudent(studentId: number) {
+        this.selectedStudentIdSubject$.next(studentId);
+        console.log("emitted value: ", studentId);
       } 
 
-    getSelectedStudent(): Observable<Student> {
-        return this.selectedStudent$;
+    getStudentName(id: number): String | undefined {
+        return STUDENT_LIST.find(student => student.id === id)?.name;
     }
-
 }

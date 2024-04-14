@@ -16,7 +16,9 @@
           <p style="margin-right: 50px;">Detail</p>
         </div>
         <div class="scroll-container-historical">
-          <stat-game [playerId]="selectedPlayerId"></stat-game>
+          <ng-container *ngIf="selectedPlayerId !== null">
+            <stat-game [playerId]="selectedPlayerId"></stat-game>
+          </ng-container>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 import { GameResume } from "src/app/features/stats-details/models/game-resume.model";
 import { GameResumeService } from "src/app/features/stats-details/services/game-resume.service";
+import { StatsDetailsService } from "src/app/features/stats-details/services/stats-details.service";
 
 @Component({
   selector: 'stat-game',
@@ -11,7 +12,9 @@ export class StatGameComponent implements OnChanges {
   @Input() playerId: number = 1;
   gameResumes: GameResume[] = [];
 
-  constructor(private gameResumeService: GameResumeService) {}
+  constructor(private gameResumeService: GameResumeService,
+    private statsDetailsService: StatsDetailsService
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if ('playerId' in changes) {
@@ -30,4 +33,9 @@ export class StatGameComponent implements OnChanges {
         }
       });
   }
+
+  selectGame(id: any) {
+    this.statsDetailsService.selectedGameId(id);
+  }
+
 }

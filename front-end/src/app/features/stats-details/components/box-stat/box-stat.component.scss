@@ -45,6 +45,15 @@
         &.green{
             background-color: var(--green);
         }
+        &.cyan{
+            background-color: var(--cyan);
+        }
+        &.orange{
+            background-color: var(--orange);
+        }
+        &.red{
+            background-color: var(--red);
+        }
     }
 
     &-stat-pic{
@@ -79,7 +88,7 @@
         }
     }
 
-    &-subtile{
+    &-subtitle{
         margin-top: 0px;
         margin-bottom: 5px;
         color: var(--text-second-color);

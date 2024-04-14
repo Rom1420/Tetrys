@@ -1,18 +1,18 @@
 <div class="box-stat-container" [class.details]="forDetails">
     <div class="icon-container">
-        <div class="icon-background green">
-            <img src="../../../../../assets/ic_accuracy.svg" class="icon-stat-pic">
+        <div class="icon-background" [ngClass]="getColorForStat()">
+            <img [src]="icon" class="icon-stat-pic">
         </div>
     </div>
     <div class="box-stats">
         <h3 class="box-stats-title" [class.details]="forDetails">
-            Précision
+            {{ title }}
         </h3>
-        <p class="box-stats-subtile" [class.details]="forDetails">
-            par mots
+        <p class="box-stats-subtitle" [class.details]="forDetails">
+            {{ subtitle }}
         </p>
         <h1 class="box-stats-value" [class.details]="forDetails">
-            70%
+            {{ stat }} 
         </h1>    
         <div class="glow"></div>
     </div>

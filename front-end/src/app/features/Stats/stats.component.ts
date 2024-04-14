@@ -8,14 +8,17 @@ import { StudentService } from 'src/app/core/components/services/student.service
 })
 
 export class StatsComponent implements OnInit {
-  selectedPlayerId: number = 1; 
+  selectedPlayerId: number | null = null; 
 
   constructor(private studentService: StudentService) {}
 
   ngOnInit(): void {
-    this.studentService.selectedStudent$.subscribe(student => {
-      console.log(student.id);
-      this.selectedPlayerId = student.id; 
+    this.studentService.selectedStudentId$.subscribe((studentId: number) => {
+      if (studentId) {
+        this.selectedPlayerId = studentId; 
+      } else {
+        this.selectedPlayerId = null;
+      }
     });
   }
 }

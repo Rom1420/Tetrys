@@ -1,4 +1,7 @@
-import { Component} from '@angular/core';
+import { Component, Input, SimpleChanges} from '@angular/core';
+import { GameResumeService } from '../../services/game-resume.service';
+import{ GameResume } from '../../models/game-resume.model';
+import { StatsDetailsService } from '../../services/stats-details.service';
 
 @Component({
   selector: 'game-resume',
@@ -6,20 +9,25 @@ import { Component} from '@angular/core';
   styleUrl: './game-resume.component.scss'
 })
 export class GameResumeComponent {
+  @Input() selectedGameId: number | null = null;
+  @Input() selectedPlayerId: number | null = null;
+  gameResume: GameResume | null = null;
 
-  /*
-  starsCount: number; // Nombre d'étoiles à afficher
+  constructor(private gameResumeService: GameResumeService) {}
 
-  constructor(private starService: StarService) { }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['selectedPlayerId'] && changes['selectedGameId']) {
+      
+      const playerId = changes['selectedPlayerId'].currentValue;
+      const gameId = changes['selectedGameId'].currentValue;
 
-  ngOnInit(): void {
-    this.getStarsCount();
+      if (playerId && gameId) {
+        this.updateGameResume(playerId, gameId);
+      }
+    }
   }
 
-  getStarsCount(): void {
-    this.starService.getStarsCount().subscribe(count => {
-      this.starsCount = count;
-    });
-  }*/
+  private updateGameResume(selectedPlayerId: number, selectedGameId: number): void {
+    this.gameResume = this.gameResumeService.getGameResume(selectedPlayerId, selectedGameId);
+  }
 }
-

@@ -50,10 +50,10 @@ export class StudentComponent {
         return false;
     }
 
-      onSelectStudent(student: Student): void {
-        this.studentList.forEach(s => s.isSelected = false); 
-        student.isSelected = true; 
-        this.studentService.onSelectStudent(student);
-      }
+    onSelectStudent(student: Student): void {
+      this.studentList.forEach(s => s.isSelected = false); 
+      student.isSelected = true; 
+      this.studentService.onSelectStudent(student.id);
+    }
 
 }

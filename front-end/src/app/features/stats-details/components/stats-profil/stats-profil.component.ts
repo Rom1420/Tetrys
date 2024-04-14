@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'stats-profil',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './stats-profil.component.scss'
 })
 export class StatsProfilComponent {
+  @Input() selectedPlayerName: String | undefined;
 
 }
