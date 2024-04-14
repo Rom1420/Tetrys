@@ -35,9 +35,7 @@ export class DifficultyButtonComponent implements OnInit {
     setConfig(){
       if (this.difficulty.id != 4){
         this.configFormResultService.addResult(this.difficulty.config)
-        console.log(this.configFormResultService.getResults());
-        this.router.navigate(["/game"]).then(() => {
-          console.log('Navigation réussie !');}).catch(error => {
+        this.router.navigate(["/game"]).catch(error => {
           console.error('Erreur de navigation :', error);});
       }
     }

@@ -16,14 +16,12 @@ export class NavbarComponent {
   }
 
   navigateToPreGame(){
-    this.router.navigate(["/pre-game"]).then(() => {
-      console.log('Navigation réussie !');}).catch(error => {
+    this.router.navigate(["/pre-game"]).catch(error => {
       console.error('Erreur de navigation :', error);});
   }
 
   navigateToStats(){
-    this.router.navigate(["/pre-game"]).then(() => {
-      console.log('Navigation réussie !');}).catch(error => {
+    this.router.navigate(["/pre-game"]).catch(error => {
       console.error('Erreur de navigation :', error);});
   }
 

@@ -25,6 +25,12 @@
             <label> <input type="radio" id="radioNon" formControlName="errorAllowed" [value]="false"> <span>non</span> </label>
           </div>
         </div>
+        <div class="form-cell">
+          <div class="add-words-config">
+            <label for="txtZone">Mots supplémentaires (optionnel)</label>
+            <textarea id="txtZone" name="add-words" rows="4" cols="30" placeholder="Entrez vos nouveaux mots ici..."></textarea>
+          </div>
+        </div>
       </form>
       <div class="start-button">
         <button class="play-button" (click)="navigateToGame() ; onSubmit()" [disabled]="!isConfigFormValid()" role="button">Jouer</button>

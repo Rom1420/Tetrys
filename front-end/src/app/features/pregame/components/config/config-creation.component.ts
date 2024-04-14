@@ -46,8 +46,7 @@ export class ConfigCreationComponent implements OnInit{
   }
 
   navigateToGame(){
-    this.router.navigate(["/game"]).then(() => {
-      console.log('Navigation réussie !');}).catch(error => {
+    this.router.navigate(["/game"]).catch(error => {
       console.error('Erreur de navigation :', error);});
   }
 

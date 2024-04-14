@@ -21,13 +21,16 @@ export class GameComponent implements OnInit, AfterViewInit{
     public allTimer: any[] = [];
     private isWordValid: boolean = false;
     public endGameDisplay: boolean = false;
+    @ViewChild('word') wordFormToggle!: ElementRef;
     public config: ConfigModel;
+    public show2ndChance = false;
+    public errorsAllowed:number = 0;
 
-  @ViewChild('word') wordFormToggle!: ElementRef;
     constructor(private gameManagerService:GameManagerService, private configFormResult: ConfigFormResultService, private gameFormService: GameFormService, public wordService:WordsServices, public formBuilder: FormBuilder) {
         this.wordForm = this.formBuilder.group({
               word: [''],
-              isValid: this.isWordValid
+              isValid: this.isWordValid,
+              error: this.errorsAllowed
           });
         this.config = this.configFormResult.getLastConfig()
         this.configFormResult.configActual$.subscribe((actualConfig) => {
@@ -38,6 +41,7 @@ export class GameComponent implements OnInit, AfterViewInit{
 
     ngAfterViewInit(): void {
       this.wordForm.addControl('isValid', this.formBuilder.control((this.isWordValid)))
+      this.wordForm.addControl('error', this.formBuilder.control((this.errorsAllowed)))
       this.wordService.words$.subscribe((newWords) => {
         this.actualWords = newWords;
         this.wordForm.get('word')?.enable();
@@ -54,9 +58,6 @@ export class GameComponent implements OnInit, AfterViewInit{
         this.resetTimer();
     }
 
-    testServiceForm(){
-        console.log(this.wordForm.get('word')?.enabled)
-    }
 
     verifWord(): boolean{
         this.actualWordForm = this.wordForm.get('word')?.value.toLowerCase();
@@ -86,6 +87,7 @@ export class GameComponent implements OnInit, AfterViewInit{
         if (this.time > 0) {
           this.time = Math.max(0, Number((this.time - 0.1).toFixed(1)));
         } else {
+          console.log(this.isWordValid)
           this.onSubmit();
         }
       }, 100);
@@ -103,9 +105,22 @@ export class GameComponent implements OnInit, AfterViewInit{
 
     onSubmit(){
       this.pauseTimer()
-      this.gameFormService.addResult(this.wordForm.value)
-      this.wordForm.get('word')?.disable();
-      console.log(this.gameFormService.getResults());
-      this.wordForm.reset();
+      if (!this.isWordValid && this.config.errorAllowed){
+        this.errorsAllowed = 1;
+        this.wordForm.patchValue({'error': this.errorsAllowed});
+        console.log(this.wordForm.value)
+        this.gameFormService.addResult(this.wordForm.value)
+        console.log(this.gameFormService.getResults());
+        this.errorsAllowed = 0;
+        this.wordForm.reset();
+      } else {
+        this.wordForm.patchValue({'error': this.errorsAllowed});
+        console.log(this.wordForm.value)
+        this.gameFormService.addResult(this.wordForm.value)
+        this.wordForm.get('word')?.disable();
+        console.log(this.gameFormService.getResults());
+        this.errorsAllowed = 0;
+        this.wordForm.reset();
+      }
     }
 }

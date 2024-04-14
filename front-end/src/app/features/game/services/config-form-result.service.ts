@@ -15,7 +15,6 @@ export class ConfigFormResultService {
   addResult(result: ConfigModel) {
     this.formResults.value.push(result)
     this.formResults.next(this.formResults.value);
-    console.log(this.formResults.value)
   }
 
   getResults() {
@@ -30,14 +29,11 @@ export class ConfigFormResultService {
     this.deleteConfiguration(config);
     this.formResults.value.push(config)
     this.formResults.next(this.formResults.value);
-    this.router.navigate(["/game"]).then(() => {
-      console.log('Navigation réussie !');}).catch(error => {
+    this.router.navigate(["/game"]).catch(error => {
       console.error('Erreur de navigation :', error);});
-
   }
 
   deleteConfiguration(config: ConfigModel){
-    console.log(config)
     this.formResults.next(this.formResults.value.filter(conf => conf   !== config));
     console.log(this.formResults.value)
   }
