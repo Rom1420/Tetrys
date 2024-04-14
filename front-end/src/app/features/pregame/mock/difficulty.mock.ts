@@ -5,6 +5,7 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         name: 'Débutant',
         description: 'Le mode pas trop dur',
         config: {
+            name: "débutant",
             time: 1.5,
             length: 6,
             errorAllowed: true
@@ -15,6 +16,7 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         name: 'Intermédiaire',
         description: 'Le mode un peu dur',
         config: {
+          name: "intermédiaire",
           time: 1,
           length: 10,
           errorAllowed: false
@@ -25,6 +27,7 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         name: 'Avancé',
         description: 'Le mode dur',
         config: {
+          name: "avancé",
           time: 0.6,
           length: 6,
           errorAllowed: false
@@ -35,6 +38,7 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         name: 'Personnalisé',
         description: 'Le mode Perso',
         config: {
+          name: "perso",
           time: 0,
           length: 100,
           errorAllowed: false

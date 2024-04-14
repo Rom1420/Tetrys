@@ -10,12 +10,18 @@ import { Difficulty } from './models/difficulty.model';
 })
 export class PregameComponent {
   constructor(public popupService: PopupService){}
-
+  public showConfig: boolean = false;
   selectedDifficulty: Difficulty | null = null;
 
 
   onDifficultyHover(difficulty: Difficulty): void {
-    this.selectedDifficulty = difficulty;
+    this.showConfig = difficulty.id == 4;
+    if (this.showConfig){
+      this.selectedDifficulty = null;
+    }else {
+      this.selectedDifficulty = difficulty;
+    }
+
   }
 
   onDifficultyHoverEnd(): void {
