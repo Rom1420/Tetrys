@@ -50,6 +50,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             console.log('Navigation réussie !');}).catch(error => {
             console.error('Erreur de navigation :', error);});
     }
+    navigateToLogin(){
+        this.router.navigate(["/login"]).then(() => {
+          console.log('Navigation réussie !');}).catch(error => {
+          console.error('Erreur de navigation :', error);});
+      }
 
     onSubmit(){
         if (this.configForm.valid){
