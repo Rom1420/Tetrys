@@ -1,7 +1,7 @@
 <div class="popup" [@toggleDPopup]="popupService.isOpenDPopup ? 'open' : 'close'" (@toggleDPopup.done)="onAnimationDone()">
     <div class="popup-body">
         <div class="popup-header-container">
-            <h2>Etes vous sur de vouloir supprimer ce profil ?</h2>
+            <h2>Supprimer ce profil ?</h2>
         </div>
         <div class="buttons">
             <div class="validate-button-container" (click)="deleteProfil()">

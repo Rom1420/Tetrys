@@ -1,6 +1,7 @@
-import { Component, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { PopupService } from './services/popup.service';
 import { Difficulty } from './models/difficulty.model';
+import { StudentService } from './services/student.service';
 
 @Component({
   selector: 'app-pregame',
@@ -9,7 +10,18 @@ import { Difficulty } from './models/difficulty.model';
   
 })
 export class PregameComponent {
-  constructor(public popupService: PopupService){}
+  selectedStudentIdToDelete: number | null = null;
+
+  constructor(private studentService: StudentService){
+    this.studentService.selectedStudentIdToDelete$.subscribe((studentId: number | null) => {
+      if(studentId){
+        console.log(studentId,"to delete");
+        this.selectedStudentIdToDelete = studentId;
+      }else{
+        this.selectedStudentIdToDelete = null;
+      }
+    });
+  }
   
   selectedDifficulty: Difficulty | null = null;
 

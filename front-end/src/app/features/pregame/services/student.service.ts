@@ -8,19 +8,32 @@ import { STUDENT_LIST } from 'src/app/features/pregame/mock/student-list.mock';
     providedIn: 'root'
 })
 export class StudentService {
-    private students: Student[] = STUDENT_LIST;
+    public students: Student[] = STUDENT_LIST;
     public students$: BehaviorSubject<Student[]> = new BehaviorSubject(STUDENT_LIST);
+
+    private selectedStudentIdToDeleteSubject: BehaviorSubject<number | null> = new BehaviorSubject<number | null>(null);
+    public selectedStudentIdToDelete$ = this.selectedStudentIdToDeleteSubject.asObservable();
 
     constructor(){
 
     }
-    addProfil(student: Student){
-        this.students.push(student)
-        this.students$.next(this.students)
+
+    updateSelectedStudentIdToDelete(studentId: number | null): void {
+        console.log("emitted", studentId);
+        this.selectedStudentIdToDeleteSubject.next(studentId);
     }
-    deleteProfil(student: Student) {
-        const index = this.students.findIndex(s => s === student);
-        this.students.splice(index, 1)
+
+    addProfil(student: Student){
+        this.students.push(student);
+        this.students$.next(this.students);
+    }
+    deleteProfil(studentToDelete: Student | undefined){
+        if(studentToDelete){
+            this.updateSelectedStudentIdToDelete(studentToDelete.id);
+        }
+        if(studentToDelete?.id){
+            this.students = this.students.filter(student => student.id !== studentToDelete.id);
+        }
         this.students$.next(this.students)  
     }
 }

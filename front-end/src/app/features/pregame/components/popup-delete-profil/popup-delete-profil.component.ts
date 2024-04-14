@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Student } from '../../models/student.model';
@@ -34,11 +34,19 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 ]
 })
 export class PopupDComponent {
+  @Input() selectedStudentIdToDelete: number | null = null;
 
   @Output() animationDone: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(public popupService: PopupService, public studentService: StudentService){
     
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    if('selectedStudentIdToDelete' in changes) {
+      console.log("changement");
+      this.selectedStudentIdToDelete = changes['selectedStudentIdToDelete'].currentValue;
+    }
   }
   
   closeDPopup() {
@@ -46,8 +54,13 @@ export class PopupDComponent {
   }
 
   deleteProfil() {
-    this.studentService.deleteProfil(this.popupService.savedStudentToDelete);
-    this.popupService.closeDPopup();
+    if(this.selectedStudentIdToDelete) { 
+      const studentToDelete = this.studentService.students.
+      find(student => 
+        student.id === this.selectedStudentIdToDelete);
+      this.studentService.deleteProfil(studentToDelete);
+      this.popupService.closeDPopup();
+    }
   }
 
 

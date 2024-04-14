@@ -2,7 +2,7 @@
     <img src="./assets/user.png" alt="img-utilisateur-inconnu">
     <p>{{student.name}}</p>
     <div class="close-button-container">
-        <div (click)="openDPopup()" class="close-button">
+        <div (click)="openDPopup()" (click)="updateSelectedStudentIdToDelete(student)" class="close-button">
             <span></span>
             <span></span>
         </div>

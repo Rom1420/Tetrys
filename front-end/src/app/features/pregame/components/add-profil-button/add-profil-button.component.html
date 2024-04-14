@@ -1,5 +1,5 @@
 <div class="add-profil-button-container">
     <button *ngIf="isButtonVisible" class="add-profil-button button-appear" (click)="openPopup()">Créer Profil</button>
     <popup-add-profil (animationDone)="handleAnimationDone()"></popup-add-profil>
-    <popup-delete-profil (animationDone)="handleAnimationDone()"></popup-delete-profil>
+    <popup-delete-profil [selectedStudentIdToDelete]="selectedStudentIdToDelete" (animationDone)="handleAnimationDone()"></popup-delete-profil>
 </div>

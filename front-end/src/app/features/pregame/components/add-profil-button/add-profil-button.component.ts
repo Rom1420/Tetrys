@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PopupService } from '../../services/popup.service';
 import { Subscription } from 'rxjs';
 import { OnDestroy } from '@angular/core';
@@ -10,6 +10,8 @@ import { OnDestroy } from '@angular/core';
   styleUrl: './add-profil-button.component.scss'
 })
 export class AddProfilButtonComponent implements OnDestroy{ 
+  @Input() selectedStudentIdToDelete: number | null = null;
+
   isButtonVisible:boolean = true;
   private subscription: Subscription;
 

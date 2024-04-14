@@ -10,20 +10,15 @@ export class PopupService {
     private popupOpenedSource = new Subject<void>();
     popupOpened$ = this.popupOpenedSource.asObservable();
 
-    private studentD: Student | undefined;
     private afterClosedSubject: Subject<void> = new Subject<void>();
     isOpen: boolean = false;
     isOpenDPopup: boolean =false;
 
     constructor() { }
 
-    saveStudentToDelete(student: Student | undefined){
-        this.studentD=student;
+    deleteStudent(){
+        
     }
-    savedStudentToDelete(): Student | undefined {
-        return this.studentD;
-    }
-
 
     afterClosed(): Observable<void> {
         return this.afterClosedSubject.asObservable();
