@@ -10,12 +10,13 @@ import { StudentService } from 'src/app/core/components/services/student.service
 
 })
 export class PregameComponent implements OnInit{
-
+  isMidContainerHovered: boolean = false;
   isHovering: boolean = false;
+  public showConfig: boolean = false;
 
   selectedPlayerId: number | null = null;
   selectedDifficulty: Difficulty | null = null;
-  isMidContainerHovered: boolean = false;
+  
 
   constructor(public popupService: PopupService,
     private studentService: StudentService
@@ -41,10 +42,17 @@ export class PregameComponent implements OnInit{
   }
 
   onDifficultyHover(difficulty: Difficulty): void {
-      this.isHovering = true;
+    this.isHovering = true;
     if(this.selectedPlayerId != null){
       this.selectedDifficulty = difficulty;
     } 
+    this.showConfig = difficulty.id == 4;
+    if (this.showConfig && this.selectedPlayerId != null){
+      this.selectedDifficulty = null;
+    }
+    else {
+      this.selectedDifficulty = difficulty;
+    }
   }
 
   onDifficultyHoverEnd(): void {
