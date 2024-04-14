@@ -18,4 +18,9 @@ export class StudentService {
         this.students.push(student)
         this.students$.next(this.students)
     }
+    deleteProfil(student: Student) {
+        const index = this.students.findIndex(s => s === student);
+        this.students.splice(index, 1)
+        this.students$.next(this.students)  
+    }
 }

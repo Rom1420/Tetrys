@@ -10,6 +10,7 @@ import { StudentComponent } from './components/student/student.component';
 import { AddProfilButtonComponent } from './components/add-profil-button/add-profil-button.component';
 import { PregameComponent } from './pregame.component';
 import { PopupComponent } from './components/popup-add-profil/popup-add-profil.component';
+import { PopupDComponent } from './components/popup-delete-profil/popup-delete-profil.component';
 import { DifficultyDetailComponent } from './components/difficulty-detail/difficulty-detail.component';
 
 
@@ -23,6 +24,7 @@ import { DifficultyDetailComponent } from './components/difficulty-detail/diffic
     AddProfilButtonComponent,
     PopupComponent,
     DifficultyDetailComponent,
+    PopupDComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +40,7 @@ import { DifficultyDetailComponent } from './components/difficulty-detail/diffic
     StudentListComponent,
     AddProfilButtonComponent,
     PopupComponent,
+    PopupDComponent,
   ]
 })
 export class PregameModule { }

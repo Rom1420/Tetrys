@@ -1,0 +1,19 @@
+<div class="popup" [@toggleDPopup]="popupService.isOpenDPopup ? 'open' : 'close'" (@toggleDPopup.done)="onAnimationDone()">
+    <div class="popup-body">
+        <div class="popup-header-container">
+            <h2>Etes vous sur de vouloir supprimer ce profil ?</h2>
+        </div>
+        <div class="buttons">
+            <div class="validate-button-container" (click)="deleteProfil()">
+                <button class="validate-button" >
+                    <span>&#10003;</span>
+                </button>
+            </div>
+            <div class="cancel-button-container">
+                <button class="cancel-button" (click)="closeDPopup()">
+                    <span>&#10003;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
