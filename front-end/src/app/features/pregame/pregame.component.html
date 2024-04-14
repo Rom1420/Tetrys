@@ -3,8 +3,14 @@
   <div class="left-container">
     <student-list></student-list>
   </div>
-  <div class="mid-container">
-    <difficulty-list (hover)="onDifficultyHover($event)" (hoverEnd)="onDifficultyHoverEnd()"></difficulty-list>
+  <div class="mid-container" (mouseenter)="onMidContainerHover()" (mouseleave)="onMidContainerHoverEnd()">
+    <difficulty-list [selectedPlayerId]="selectedPlayerId" 
+      (hover)="onDifficultyHover($event)" 
+      (hoverEnd)="onDifficultyHoverEnd()">
+    </difficulty-list>
+    <div class="hover-message" [ngClass]="{'show-message': isMidContainerHovered && selectedPlayerId === null}">
+      <h3>Choisissez un profil</h3>
+    </div>
   </div>
   <div class="right-container">
     <difficulty-detail [currentDifficulty]="selectedDifficulty"></difficulty-detail>
