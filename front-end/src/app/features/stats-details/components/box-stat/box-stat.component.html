@@ -12,7 +12,7 @@
             {{ subtitle }}
         </p>
         <h1 class="box-stats-value" [class.details]="forDetails">
-            {{ stat }} 
+            {{ stat }} <span *ngIf="showPercentage">%</span>
         </h1>    
         <div class="glow"></div>
     </div>

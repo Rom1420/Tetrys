@@ -20,6 +20,8 @@ export class StatGraphComponent implements OnInit {
     const titles = document.querySelectorAll(".title");
     const graphImg = document.querySelector('.graph-img');
 
+    this.updateStats('general');
+
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         buttons.forEach(btn => btn.classList.remove('active'));
@@ -46,7 +48,7 @@ export class StatGraphComponent implements OnInit {
     for(let stat of this.statsAvanceeList){
       if(stat.mode == mode){
         //@ts-ignore
-        document.getElementById('wpm').innerText = stat.wpm + " WPM";
+        document.getElementById('wpm').innerText = stat.wpm;
         // @ts-ignore
         document.getElementById('scoreMoyen').innerText = stat.scoreMoyen + "";
         // @ts-ignore

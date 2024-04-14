@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { GameResumeService } from '../../services/game-resume.service';
-import { StudentService } from 'src/app/core/components/services/student.service';
-import { GameResume } from '../../models/game-resume.model';
+import { Component, Input, SimpleChanges } from '@angular/core';
+import { GAMEDETAILS_LIST } from '../../mock/game-details.mock';
+import { GameDetailsService } from '../../services/game-details.service';
+import { GameDetails } from '../../models/game-details.model';
 
 @Component({
   selector: 'game-evolution',
@@ -9,24 +9,64 @@ import { GameResume } from '../../models/game-resume.model';
   styleUrl: './game-evolution.component.scss'
 })
 export class GameEvolutionComponent {
-
-  selectedGameId: number | null = null;
-  selectedPlayerId: number | null = null;
-  gameResume: GameResume | null = null;
-
-  constructor(public gameResumeService: GameResumeService, 
-    public studentService: StudentService) {
+  @Input() selectedGameId: number | null = null;
+  @Input() selectedPlayerId: number | null = null;
   
-      this.studentService.selectedStudentId$.subscribe((studentId: number) => {
-        console.log("received event");
-        if (studentId) {
-          this.selectedPlayerId = studentId; 
-        } else {
-          console.log("No student selected");
-          this.selectedPlayerId = null;
-        }
-      });
+  gameDetailsList: GameDetails[] = GAMEDETAILS_LIST;
+  selectedGameDetails: GameDetails | null =null;
+  selectedPlayerGameDetailsList: GameDetails[] | null = null;
 
+  precisionGlobalEvolution: number | null = null;
+  speedGlobalEvolution: number | null = null;
+  precisionLastGameEvolution: number | null = null;
+  speedLastGameEvolution: number | null = null;
+
+  constructor(public gameDetailsService: GameDetailsService) {}
+  
+  ngOnChanges(changes: SimpleChanges){
+    if (changes['selectedPlayerId'] && changes['selectedGameId']) {
+      
+      const playerId = changes['selectedPlayerId'].currentValue;
+      const gameId = changes['selectedGameId'].currentValue;
+
+      if (playerId && gameId) {
+        this.selectedGameDetails = this.gameDetailsService.getGameDetails(playerId,gameId);
+        this.selectedPlayerGameDetailsList = this.gameDetailsList.filter(student => student.idJoueur == playerId);
+        this.updateGameEvolution();
+      }
+    }
   }
 
+  updateGameEvolution() {
+    if (!this.selectedPlayerId || !this.selectedGameId || !this.selectedPlayerGameDetailsList || !this.selectedGameDetails) {
+      return;
+    }
+
+    const totalGames = this.selectedPlayerGameDetailsList.length;
+  
+    const aggregateStats = this.selectedPlayerGameDetailsList.reduce((accumulator, game) => {
+      if (game.idPartie !== this.selectedGameDetails?.idPartie) {
+        accumulator.precisionPercentage += game.precisionPercentage;
+        accumulator.wordsPerMinute += game.wordsPerMinute;
+      }
+      return accumulator;
+    }, { precisionPercentage: 0, wordsPerMinute: 0 });
+
+    const averagePrecisionPercentage = aggregateStats.precisionPercentage / totalGames;
+    const averageWordsPerMinute = aggregateStats.wordsPerMinute / totalGames;
+  
+    this.precisionGlobalEvolution = Math.round(((this.selectedGameDetails.precisionPercentage - averagePrecisionPercentage) / averagePrecisionPercentage) * 100);
+    this.speedGlobalEvolution = Math.round(((this.selectedGameDetails.wordsPerMinute - averageWordsPerMinute) / averageWordsPerMinute) * 100);
+    
+    if (totalGames > 1) {
+      const lastGame = this.selectedPlayerGameDetailsList[totalGames - 1];
+      this.precisionLastGameEvolution = Math.round(((this.selectedGameDetails.precisionPercentage - lastGame.precisionPercentage) / lastGame.precisionPercentage) * 100);
+      this.speedLastGameEvolution = Math.round(((this.selectedGameDetails.wordsPerMinute - lastGame.wordsPerMinute) / lastGame.wordsPerMinute) * 100);
+    }
+    else{
+      this.precisionLastGameEvolution = 0;
+      this.speedLastGameEvolution = 0;
+    }
+    console.log("evolutionGlobale",this.precisionGlobalEvolution)
+  }
 }

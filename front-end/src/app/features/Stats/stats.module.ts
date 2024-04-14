@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from '../../core/app-routing.module';
 
+import { AngularSvgIconModule } from 'angular-svg-icon';
+
 @NgModule({
   declarations: [
     StatGameComponent,
@@ -21,6 +23,7 @@ import { AppRoutingModule } from '../../core/app-routing.module';
     PregameModule,
     StatsDetailsModule,
     CommonModule,
+    AngularSvgIconModule
   ],
   exports: [
     StatsComponent

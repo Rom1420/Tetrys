@@ -11,6 +11,8 @@ import { StarComponent } from './components/star/star.component';
 
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
+import { AppRoutingModule } from '../../core/app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     CommonModule,
     BrowserModule,
     AngularSvgIconModule,
+    AppRoutingModule,
   ],
   exports: [
     BoxStatComponent,

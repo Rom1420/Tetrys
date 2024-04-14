@@ -9,16 +9,13 @@ export class GameDetailsService {
 
   private gameDetailsList: GameDetails[] = GAMEDETAILS_LIST;
 
+
   getGameDetails(idJoueur: number, idPartie: number): GameDetails | null {
-
     const gameDetail: GameDetails | undefined = this.gameDetailsList.find(resume => resume.idJoueur === idJoueur && resume.idPartie === idPartie);
-   
     if(gameDetail) {
-
       return gameDetail;
     }
     else{
-
       return null;
     }
   }   

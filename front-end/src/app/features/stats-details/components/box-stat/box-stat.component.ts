@@ -33,10 +33,21 @@ export class BoxStatComponent {
         return this.getColorForCorrectWordsNumber();
       case 'accentsPrecisionPercentage':
         return this.getColorForAccentsPrecisionPercentage();
+      case 'evolution':
+        return this.getColorForEvolution();
       default:
         return 'cyan';
     }
   }
+  getColorForEvolution(): string {
+    if ( this.stat >= 0 ){
+      return 'green'
+    }else if ( this.stat >= -30 ){
+      return 'orange'
+    }else{
+      return 'red';
+    }
+  } 
   
   private getColorForPrecisionPercentage(): string {
     if (this.stat >= 70) {
