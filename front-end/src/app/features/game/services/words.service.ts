@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Subject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 import {Word} from "../models/word.model";
 import {WORD_LIST} from "../mock/words.mock";
 
@@ -23,7 +23,6 @@ export class WordsServices{
   }
 
   getActualWords(): Word[]{
-    console.log("Hello",this.actualWords);
     return this.actualWords;
   }
 }
