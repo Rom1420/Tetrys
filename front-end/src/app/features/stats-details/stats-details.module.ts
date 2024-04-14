@@ -34,6 +34,7 @@ import { AppRoutingModule } from '../../core/app-routing.module';
     BoxStatComponent,
     GameDetailsComponent,
     StatsProfilComponent,
+    GameResumeComponent,
     StarComponent,
     GameEvolutionComponent,
   ]

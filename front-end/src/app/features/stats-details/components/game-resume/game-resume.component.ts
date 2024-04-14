@@ -1,7 +1,6 @@
 import { Component, Input, SimpleChanges} from '@angular/core';
 import { GameResumeService } from '../../services/game-resume.service';
 import{ GameResume } from '../../models/game-resume.model';
-import { StatsDetailsService } from '../../services/stats-details.service';
 
 @Component({
   selector: 'game-resume',

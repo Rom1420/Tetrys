@@ -23,7 +23,9 @@
     <div class="end-stat-content">
       <div class="horizontal-bar">
         <h1 class="score-text">Score : 253</h1>
-        <h3 class="note-text">Note A</h3>
+          <span class="star-rating">
+              <star *ngFor="let _ of [1, 2, 3]" [isEndGame]="true"></star>
+          </span>
       </div>
       <div class="vertical-bar">
         <div class="replay-button-container">
