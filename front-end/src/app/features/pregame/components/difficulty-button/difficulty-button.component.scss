@@ -41,6 +41,11 @@
     justify-content: center;
     width: 15vw;
     height: auto;
+
+    &.disabled{
+        opacity: 0.7;
+        pointer-events: none;
+    }
 }
 
 .difficulty-button-container a{

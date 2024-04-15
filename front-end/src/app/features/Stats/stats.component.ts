@@ -21,14 +21,13 @@ export class StatsComponent implements OnInit {
 
     this.studentService.selectedStudentIdToDelete$.subscribe((studentId: number | null) => {
       if(studentId){
-        console.log(studentId,"to delete");
         this.selectedStudentIdToDelete = studentId;
       }else{
         this.selectedStudentIdToDelete = null;
       }
     });
 
-    this.studentService.selectedStudentId$.subscribe((studentId: number) => {
+    this.studentService.selectedStudentId$.subscribe((studentId: number | null) => {
       if (studentId) {
         this.selectedPlayerId = studentId; 
       } else {

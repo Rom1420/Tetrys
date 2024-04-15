@@ -206,17 +206,11 @@ stat-graph{
 }
 
 .headers-list{
-  margin: 0 10px 0 50px;
-  display: flex;
-  justify-content: space-between;
-}
-
-
-.headers-list > p > * :first-child {
-  margin-right: 50px;
-}
-.headers-list > p > * :last-child {
-  margin-left: 50px;
+  display: grid;
+  grid-template-columns: repeat(5, 5fr); 
+  justify-items: center;
+  grid-row-gap: 10px;
+  margin: 0px 10px;
 }
 
 .headers-list p {

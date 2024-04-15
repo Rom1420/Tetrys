@@ -16,10 +16,6 @@ export class PopupService {
 
     constructor() { }
 
-    deleteStudent(){
-        
-    }
-
     afterClosed(): Observable<void> {
         return this.afterClosedSubject.asObservable();
       }

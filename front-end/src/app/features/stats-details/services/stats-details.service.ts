@@ -14,7 +14,7 @@ export class StatsDetailsService {
   selectedPlayerName: String | undefined;
 
   constructor(private studentService: StudentService) {
-    this.studentService.selectedStudentId$.subscribe((studentId: number) => {
+    this.studentService.selectedStudentId$.subscribe((studentId: number | null) => {
       if (studentId) {
         this.selectedPlayerId = studentId; 
         this.selectedPlayerName = this.studentService.getStudentName(studentId);
