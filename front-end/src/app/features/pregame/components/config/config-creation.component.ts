@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {NavigationEnd, NavigationStart, Router} from "@angular/router";
 import {ConfigFormResultService} from "../../../game/services/config-form-result.service";
+import {Word} from "../../../game/models/word.model";
+import {WordsServices} from "../../../game/services/words.service";
 import { ConfigListComponent } from '../config-list/config-list.component';
 
 @Component({
@@ -11,17 +13,22 @@ import { ConfigListComponent } from '../config-list/config-list.component';
 })
 export class ConfigCreationComponent implements OnInit{
   @Input() showCreateConfiguration!: (() => void);
-  
+
   public affichageConfig: boolean = false;
   public url: string = "";
   public configForm: FormGroup;
+  public words: Word[] = [];
 
-  constructor(private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService) {
+  constructor(private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService, public wordsService: WordsServices) {
     this.configForm = this.formBuilder.group({
       name: ['', Validators.required],
       time: ['', [Validators.required, Validators.pattern('^\\d*\\.?\\d+$')]],
       length: ['', [Validators.required, Validators.pattern('^\\d+')]],
       errorAllowed: ['', [Validators.required, Validators.pattern('^(true|false)$') ]],
+      wordList: ['', Validators.required],
+    })
+    this.wordsService.words$.subscribe((words) => {
+      this.words = words;
     })
   }
 
@@ -65,6 +72,19 @@ export class ConfigCreationComponent implements OnInit{
       (document.querySelector(".disabling-text") as HTMLDivElement).style.display = "none";
     }
     return this.configForm.valid;
+  }
+
+  addWords() {
+    let newWords: string = this.configForm.getRawValue().wordList;
+    if (newWords) {
+      let wordArray = newWords.split(' ');
+      wordArray.forEach(word => {
+        if (word) {
+          const newWord: Word = { name: word };
+          this.wordsService.addWord(newWord);
+        }
+      });
+    }
   }
 
 }
