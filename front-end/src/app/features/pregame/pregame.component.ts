@@ -32,7 +32,7 @@ export class PregameComponent {
 
 
   ngOnInit(): void {
-    this.studentService.selectedStudentId$.subscribe((studentId: number) => {
+    this.studentService.selectedStudentId$.subscribe((studentId: number | null) => {
       if (studentId) {
         this.selectedPlayerId = studentId; 
       } else {

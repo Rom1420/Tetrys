@@ -33,7 +33,9 @@ export class StudentComponent {
 
 
     openDPopup(){
-        this.popupService.openDPopup();
+        if(!this.popupService.isOpen){
+            this.popupService.openDPopup();
+        }
     }
 
     updateSelectedStudentIdToDelete(student : Student | null){
