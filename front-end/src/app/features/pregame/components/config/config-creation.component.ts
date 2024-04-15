@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {NavigationEnd, NavigationStart, Router} from "@angular/router";
 import {ConfigFormResultService} from "../../../game/services/config-form-result.service";
 import {Word} from "../../../game/models/word.model";
 import {WordsServices} from "../../../game/services/words.service";
+import { ConfigListComponent } from '../config-list/config-list.component';
 
 @Component({
   selector: 'app-config-creation',
@@ -11,6 +12,8 @@ import {WordsServices} from "../../../game/services/words.service";
   styleUrl: './config-creation.component.scss'
 })
 export class ConfigCreationComponent implements OnInit{
+  @Input() showCreateConfiguration!: (() => void);
+
   public affichageConfig: boolean = false;
   public url: string = "";
   public configForm: FormGroup;

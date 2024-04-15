@@ -4,6 +4,7 @@
     <difficulty-button
       *ngFor="let difficulty of difficultyList"
       [difficulty]="difficulty"
+      [selectedPlayerId]="selectedPlayerId"
       (hover)="onDifficultyHover($event)"
       (mouseleave)="onDifficultyHoverEnd()">
     </difficulty-button>

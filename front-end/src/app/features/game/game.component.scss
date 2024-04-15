@@ -63,13 +63,29 @@
 .input-container {
   display: flex;
   flex-direction: row;
-  height: auto;
+  font-size: 10vh;
+  height: 10vh;
   width: auto;
   margin-bottom: 3%;
 }
 
 .input-container input{
   flex: 5;
+  font-size: 7vh;
+  background-color: var(--box-color); 
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.2s ease-in;
+
+  &:focus{
+    outline: solid 2px var(--orange);
+    border: transparent;
+  }
+
+  &:hover{
+    outline: solid 2px var(--orange);
+    border: transparent;
+  }
 }
 
 .input-container button{
@@ -83,16 +99,16 @@
 }
 
 .chrono-container{
-  width: 40%;
+  width: 30%;
   text-align: center;
-  background-color: black;
-  border: gray 3px solid;
+  background-color: var(--box-color);
+  border-radius: 82% 18% 87% 13% / 12% 86% 14% 88% ;
 }
 
 .chrono-container p{
   font-family: "Digital Font", serif;
-  color: red;
-  font-size: 20vh;
+  color: #fff;
+  font-size: 15vh;
   margin: 0;
 }
 
@@ -239,19 +255,30 @@
   margin-bottom: 0px;
   color: #fff4ec;
   font-weight: 800;
+} 
+
+.star-rating{
+  filter: drop-shadow(0px 0px 5px #f8d060);
+  transition: transform 0.7s ease-in-out;
+
+  &:hover{
+      transform: scale(1.2);
+      animation: sparkle 1.5s infinite ease-in-out;
+  }
 }
 
-.stars {
-  margin-top: -10px;
-  font-size: 30px;
-  color: #F27F1B;
-  font-weight: 900;
-  height: 30%;
-  display: flex;
-}
 
-.stars img{
-  max-height: 100%;
+@keyframes sparkle {
+  0%{
+      filter: drop-shadow(0px 0px 5px #f8d060);
+  }
+  50% {
+      opacity: 1;
+      filter: drop-shadow(0px 0px 10px #f8d060);
+  }
+  100%{
+      filter: drop-shadow(0px 0px 5px #f8d060);
+  }
 }
 
 

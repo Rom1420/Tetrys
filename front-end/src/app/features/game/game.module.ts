@@ -9,7 +9,7 @@ import { GameEventComponent } from './components/game-event/game-event.component
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BlockComponent } from './components/block/block.component';
 import { BlockWordComponent } from './components/block-word/block-word.component';
-
+import { StatsDetailsModule } from '../stats-details/stats-details.module';
 
 
 @NgModule({
@@ -27,12 +27,13 @@ import { BlockWordComponent } from './components/block-word/block-word.component
         NgOptimizedImage,
         ReactiveFormsModule,
         FormsModule,
+        StatsDetailsModule,
     ],
   exports: [
     GameComponent,
     WordComponent,
     GameBoardComponent,
-    GameEventComponent
+    GameEventComponent,
   ]
 })
 

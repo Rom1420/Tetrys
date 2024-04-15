@@ -1,4 +1,4 @@
-<div class="difficulty-button-container">
+<div class="difficulty-button-container" [ngClass]="{'disabled': selectedPlayerId === null}">
     <a (click)="setConfig()" (mouseenter)="onHover()" >
         <div class="level" [ngClass]="getDifficultyClass()">
             <span>{{ difficulty.name }}</span>
