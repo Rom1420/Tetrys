@@ -9,18 +9,26 @@ import { StudentService } from 'src/app/core/components/services/student.service
   styleUrl: './pregame.component.scss',
 
 })
-export class PregameComponent implements OnInit{
+export class PregameComponent {
+  public showConfig: boolean = false;
   isMidContainerHovered: boolean = false;
   isHovering: boolean = false;
-  public showConfig: boolean = false;
 
   selectedPlayerId: number | null = null;
+  selectedStudentIdToDelete: number | null = null;
   selectedDifficulty: Difficulty | null = null;
   
 
-  constructor(public popupService: PopupService,
-    private studentService: StudentService
-  ){}
+  constructor(private studentService: StudentService, 
+    public popupService: PopupService){
+    this.studentService.selectedStudentIdToDelete$.subscribe((studentId: number | null) => {
+      if(studentId){
+        this.selectedStudentIdToDelete = studentId;
+      }else{
+        this.selectedStudentIdToDelete = null;
+      }
+    });
+  }
 
 
   ngOnInit(): void {

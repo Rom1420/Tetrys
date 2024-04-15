@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GameComponent } from '../features/game/game.component';
 import { PregameComponent } from '../features/pregame/pregame.component';
 import {StatsComponent} from "../features/Stats/stats.component";
+import { LoginContainerComponent } from './components/login/login-container/login-container.component';
 import { StatsDetailsComponent } from '../features/stats-details/stats-details.component';
 // import { Component } from './name/name.component'; to import component
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'game', component: GameComponent},
   {path: 'pre-game', component: PregameComponent},
   {path: 'stats', component: StatsComponent},
+  {path:'login',component: LoginContainerComponent},
   {path: 'stats-details', component: StatsDetailsComponent},
   {path: '**', redirectTo: '/pre-game' } // Redirection pour les routes inexistantes
 ];

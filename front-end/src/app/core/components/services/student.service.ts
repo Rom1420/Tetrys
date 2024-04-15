@@ -8,9 +8,12 @@ import { STUDENT_LIST } from 'src/app/features/pregame/mock/student-list.mock';
     providedIn: 'root'
 })
 export class StudentService {
-    private students: Student[] = STUDENT_LIST;
+    public students: Student[] = STUDENT_LIST;
     public students$: BehaviorSubject<Student[]> = 
             new BehaviorSubject<Student[]>(STUDENT_LIST);
+
+    private selectedStudentIdToDeleteSubject: BehaviorSubject<number | null> = new BehaviorSubject<number | null>(null);
+    public selectedStudentIdToDelete$ = this.selectedStudentIdToDeleteSubject.asObservable();
 
     public selectedStudentIdSubject$: BehaviorSubject<number> = 
             new BehaviorSubject<number>(0);
@@ -19,9 +22,25 @@ export class StudentService {
 
     constructor(){}
 
+    updateSelectedStudentIdToDelete(studentId: number | null): void {
+        console.log("emitted", studentId);
+        this.selectedStudentIdToDeleteSubject.next(studentId);
+    }
+
     addProfil(student: Student){
         this.students.push(student)
         this.students$.next(this.students)
+    }
+
+    deleteProfil(studentToDelete: Student | undefined){
+        if(studentToDelete){
+            this.updateSelectedStudentIdToDelete(studentToDelete.id);
+            console.log(studentToDelete.id);
+        }
+        if(studentToDelete?.id){
+            this.students = this.students.filter(student => student.id !== studentToDelete.id);
+        }
+        this.students$.next(this.students)  
     }
 
     onSelectStudent(studentId: number) {
