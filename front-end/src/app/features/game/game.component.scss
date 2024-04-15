@@ -63,13 +63,29 @@
 .input-container {
   display: flex;
   flex-direction: row;
-  height: auto;
+  font-size: 10vh;
+  height: 10vh;
   width: auto;
   margin-bottom: 3%;
 }
 
 .input-container input{
   flex: 5;
+  font-size: 7vh;
+  background-color: var(--box-color); 
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.2s ease-in;
+
+  &:focus{
+    outline: solid 2px var(--orange);
+    border: transparent;
+  }
+
+  &:hover{
+    outline: solid 2px var(--orange);
+    border: transparent;
+  }
 }
 
 .input-container button{
