@@ -1,0 +1,115 @@
+.game-resume-container{
+    padding-top: 20px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: var(--box-color);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
+    border-radius: 15px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+.resume-stat, 
+.stars-container{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    & h1{
+        margin-top: 30px;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 0px;
+    }
+
+    & p{
+        color: var(--text-second-color);
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-top: 0px;
+    }
+
+}
+
+.stars-container{
+    margin: auto 0px;
+}
+
+.mode-value{
+    box-shadow: -5px -5px 2px rgba(0, 0, 0, 0.4) inset;
+    padding: 1.5vh 2vw;
+    border-radius: 91% 9% 82% 18% / 14% 80% 20% 86% ;
+
+    & h1{
+        font-size: 3.2vh;
+    }
+
+    &.green{
+        background-color: var(--green);
+    }
+    &.orange{
+        background-color: var(--orange);
+    }
+    &.red{
+        background-color: var(--red);
+    }
+    &.cyan{
+        background-color: var(--cyan);
+    }
+}
+
+.star-rating{
+    filter: drop-shadow(0px 0px 5px #f8d060);
+    transition: transform 0.7s ease-in-out;
+
+    &:hover{
+        transform: scale(1.2);
+        animation: sparkle 1.5s infinite ease-in-out;
+    }
+}
+
+
+@keyframes sparkle {
+    0%{
+        filter: drop-shadow(0px 0px 5px #f8d060);
+    }
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0px 0px 10px #f8d060);
+    }
+    100%{
+        filter: drop-shadow(0px 0px 5px #f8d060);
+    }
+}
+
+
+
+.stats-header{
+    margin: 0px;
+    width: max-content;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+
+    & h1{
+        margin: 0px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.4vw;
+    }
+}
+
+

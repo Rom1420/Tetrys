@@ -7,7 +7,7 @@
     padding: 10px 0px;
     transition: background-color 0.3s ease-in-out;
     z-index: 0;
-    border-color: solid 4px violet;
+    cursor: pointer;
 }
 
 .student img{
@@ -78,3 +78,12 @@
         }
       }
 }
+
+
+.selected{
+    background-color: rgba(48, 70, 115,0.8);
+  }
+  
+  .selected:hover{
+    background-color: rgba(48, 70, 115,0.85);
+  } 

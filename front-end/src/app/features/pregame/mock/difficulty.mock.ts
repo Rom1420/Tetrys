@@ -4,40 +4,44 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         id: 1,
         name: 'Débutant',
         description: 'Le mode pas trop dur',
-        details: {
-            timePerCharacter: 10,
-            maxWordLength: 5,
-            allowErrors: "Oui"
+        config: {
+            name: "débutant",
+            time: 1.5,
+            length: 6,
+            errorAllowed: true
         }
     },
     {
         id: 2,
         name: 'Intermédiaire',
         description: 'Le mode un peu dur',
-        details: {
-            timePerCharacter: 7,
-            maxWordLength: 6,
-            allowErrors: "Oui"
+        config: {
+          name: "intermédiaire",
+          time: 1,
+          length: 10,
+          errorAllowed: false
         }
     },
     {
         id: 3,
         name: 'Avancé',
         description: 'Le mode dur',
-        details: {
-            timePerCharacter: 5,
-            maxWordLength: 8,
-            allowErrors: "Non"
+        config: {
+          name: "avancé",
+          time: 0.6,
+          length: 6,
+          errorAllowed: false
         }
     },
     {
         id: 4,
         name: 'Personnalisé',
         description: 'Le mode Perso',
-        details: {
-            timePerCharacter: 10,
-            maxWordLength: 8,
-            allowErrors: "Oui"
+        config: {
+          name: "perso",
+          time: 0,
+          length: 100,
+          errorAllowed: false
         }
     }
 ]

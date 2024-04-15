@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Difficulty } from 'src/app/features/pregame/models/difficulty.model';
+import {ConfigFormResultService} from "../../../game/services/config-form-result.service";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'difficulty-button',
@@ -13,9 +15,8 @@ export class DifficultyButtonComponent implements OnInit {
 
     @Output() hover: EventEmitter<Difficulty> = new EventEmitter<Difficulty>();
 
-    constructor() {}    
-    ngOnInit(): void {
-    }
+    constructor( public configFormResultService:ConfigFormResultService, private router:Router) {}
+    ngOnInit(): void {}
     getDifficultyClass(): string {
         switch (this.difficulty.id) {
             case 1:
@@ -31,9 +32,17 @@ export class DifficultyButtonComponent implements OnInit {
         }
     }
 
+    setConfig(){
+      if (this.difficulty.id != 4){
+        this.configFormResultService.addResult(this.difficulty.config)
+        this.router.navigate(["/game"]).catch(error => {
+          console.error('Erreur de navigation :', error);});
+      }
+    }
+
     onHover(): void {
-        console.log(this.difficulty.details);
+        //console.log(this.difficulty.config);
         this.hover.emit(this.difficulty);
     }
 
-} 
+}

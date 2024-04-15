@@ -1,17 +1,30 @@
-<div class="stat-graph">
-  <div class="graph-container">
-    <img ngSrc="../../../../../assets/graphdebutant.png" alt="img-graph-inconnu" height="452" width="751">
+<div class="stats-content">
+  <div class="graph-stat-container">
+    <img src="../../../../../assets/graphdebutant.png" class="graph-img" data_status="unknown">
   </div>
-  <div class="graph-container">
-    <img ngSrc="../../../../../assets/graphintermediaire.png" alt="img-graph-inconnu" height="452" width="751">
-  </div>
-  <div class="graph-container">
-    <img ngSrc="../../../../../assets/graphavance.png" alt="img-graph-inconnu" height="452" width="751">
-  </div>
-  <div class="graph-container">
-    <img ngSrc="../../../../../assets/graphavance.png" alt="img-graph-inconnu" height="452" width="751">
-  </div>
-  <div class="graph-container">
-    <img ngSrc="../../../../../assets/graphavance.png" alt="img-graph-inconnu" height="452" width="751">
+  <div class="main-container">
+    <div class="numeric-stats-container">
+      <div class="stat-container">
+        <h1 class="title hidden" id="wpm">{{ statsAvancee?.wpm }}</h1>
+        <p class="stat-description">Moyenne de mots par minute</p>
+      </div>
+      <div class="stat-container">
+        <h1 class="title hidden" id="scoreMoyen">{{ statsAvancee?.scoreMoyen }}</h1>
+        <p class="stat-description">Score moyen</p>
+      </div>
+      <div class="stat-container">
+        <h1 class="title hidden" id="pourcentageErreur">
+          {{ statsAvancee?.pourcentageErreur ? statsAvancee?.pourcentageErreur + '%' : '' }}
+        </h1>
+        <p class="stat-description">Pourcentage d'erreurs</p>
+      </div>
+    </div>
+    <div class="button-mode-container">
+      <button class="mode-button general active" [disabled]="selectedPlayerId == null" (click)="updateGameMode('general')">Général</button>
+      <button class="mode-button debutant" [disabled]="selectedPlayerId == null" (click)="updateGameMode('debutant')">Débutant</button>
+      <button class="mode-button intermediaire" [disabled]="selectedPlayerId == null" (click)="updateGameMode('intermediaire')">Intermédiaire</button>
+      <button class="mode-button avance" [disabled]="selectedPlayerId == null" (click)="updateGameMode('avance')">Avancé</button>
+      <button class="mode-button perso" [disabled]="selectedPlayerId == null" (click)="updateGameMode('perso')">Perso</button>
+    </div>
   </div>
 </div>

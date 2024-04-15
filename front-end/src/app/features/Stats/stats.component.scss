@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+stat-graph{
+  width: 100%;
+  margin: 10px;
+}
+
 .top-container{
   display: flex;
   height: auto;
@@ -131,8 +136,6 @@
   margin: 0px 0px 0px 50px;
   border-radius: 15px;
   padding: 15px 40px;
-  align-items: center;
-  overflow: hidden;
 }
 
 .scroll-container-progression {

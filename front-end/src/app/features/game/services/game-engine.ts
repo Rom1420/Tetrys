@@ -15,17 +15,23 @@ export class GameEngine {
   cols: number = 10;
   currentPiece: { id: number, shape: boolean[][], position: { row: number, col: number } };
   resultWordGame: Subscription;
+  secondError = false;
 
   constructor(private gameFormService: GameFormService, private gameManagerService:GameManagerService) {
     this.resultWordGame = this.gameFormService.results$.subscribe((wordResult) => {
-      console.log(wordResult);
       if (wordResult && wordResult.length > 0) {
         const length = wordResult.length;
         this.gameManagerService.captureEvents$.next(1);
         if (wordResult.at(wordResult.length - 1).isValid === "true"){
+          console.log("normal")
           this.playGame(wordResult[length - 1].word);
-        } else {
+          this.secondError = false;
+        } else if (wordResult.at(wordResult.length - 1).error == 0 || this.secondError) {
+          console.log("random")
           this.placeRandomPieceRandomly()
+        } else {
+          console.log("1 erreur")
+          this.error();
         }
     }
     })
@@ -61,7 +67,6 @@ export class GameEngine {
   }
 
   getBlockFromWord(word: string): { id: number; shape: boolean[][]; } | undefined {
-    console.log(word);
     return this.gameManagerService.getBlockFromWord(word);
   }
 
@@ -177,7 +182,6 @@ export class GameEngine {
   }
 
   canMoveTo(newPosition: {row: number, col: number}): boolean {
-    var i:number = 0;
     try {
       const currentPieceShape: boolean[][] = this.currentPiece.shape;
       this.clearCurrentPieceFromGameState();
@@ -257,6 +261,7 @@ export class GameEngine {
       const dropPieceInterval = 1;
       const gameEngineInstance = this;
       const reset = this.gameManagerService;
+      reset.captureEvents$.next(0);
 
       function startNewGameLoop() {
         gameEngineInstance.checkAndClearCompletedRows();
@@ -267,7 +272,6 @@ export class GameEngine {
           if (!gameEngineInstance.canMoveTo({ row: gameEngineInstance.currentPiece.position.row + 1, col: gameEngineInstance.currentPiece.position.col })) {
             //startNewGameLoop(); //pour empecher le respawn de pièces
             gameEngineInstance.checkAndClearCompletedRows();
-            reset.captureEvents$.next(0);
             reset.resetWords();
             return;
           }
@@ -279,26 +283,8 @@ export class GameEngine {
       startNewGameLoop();
     }
 
-    /*const gameEngineInstance = this;
-    const reset = this.gameManagerService;
-    console.log('gameRandom')
-    let pieceInfo = this.getRandomPieceType();
-    const randomCol = Math.max(0, Math.floor(Math.random() * (this.cols - 2 )));
-
-    this.currentPiece = this.initializePiece(pieceInfo, {row:0, col: randomCol});
-
-    while(this.canMoveTo({row:this.currentPiece.position.row + 1, col:this.currentPiece.position.col})){
-      this.dropPiece();
-    }
-    function resetAll(){
-      gameEngineInstance.checkAndClearCompletedRows();
-      reset.captureEvents$.next(0);
-      reset.resetWords();*/
-
-
 
   playGame(word : string) : void {
-    console.log(word);
     const dropPieceInterval = 1000;
     const gameEngineInstance = this;
     const reset = this.gameManagerService;
@@ -328,6 +314,17 @@ export class GameEngine {
       dropPieceRecursive();
     }
   startNewGameLoop();
+  }
+
+  error(){
+    const gameEngineInstance = this;
+    function avoid(){
+      console.log("salut")
+      gameEngineInstance.secondError = true;
+      gameEngineInstance.gameManagerService.resetWords();
+      gameEngineInstance.gameManagerService.captureEvents$.next(0);
+    }
+    avoid();
   }
 
   checkAndClearCompletedRows(): void {

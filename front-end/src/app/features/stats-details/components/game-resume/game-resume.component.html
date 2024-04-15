@@ -1,0 +1,24 @@
+<div class="game-resume-container">
+    <div class="stats-header">
+        <h1>
+            Résumé de partie
+        </h1>
+    </div>
+    <div class="resume-stat">
+        <h1 class="mode-value" 
+        [ngClass]="{'green': gameResume?.gameMode === 'Débutant', 
+        'orange': gameResume?.gameMode === 'Intermédiaire', 
+        'red': gameResume?.gameMode === 'Avancé', 
+        'cyan': gameResume?.gameMode === 'Perso'}">
+        {{ gameResume?.gameMode }}</h1>
+    </div>
+    <div class="resume-stat"    >
+        <h1 class="basic-stat-value">{{ gameResume?.gameScore }}</h1>
+        <p class="basic-stat-title">Score moyen</p>
+    </div>
+    <div class="stars-container">
+        <span class="star-rating">
+            <star *ngFor="let _ of [].constructor(gameResume?.gameStars)"></star>
+        </span>
+    </div>
+</div>

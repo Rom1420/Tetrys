@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy, Out
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Student } from '../../models/student.model';
-import { StudentService } from '../../services/student.service';
+import { StudentService } from 'src/app/core/components/services/student.service';
 import { PopupService } from '../../services/popup.service';
 
 import { trigger, state, style, animate, transition } from '@angular/animations';
@@ -44,7 +44,6 @@ export class PopupDComponent {
 
   ngOnChanges(changes: SimpleChanges){
     if('selectedStudentIdToDelete' in changes) {
-      console.log("changement");
       this.selectedStudentIdToDelete = changes['selectedStudentIdToDelete'].currentValue;
     }
   }

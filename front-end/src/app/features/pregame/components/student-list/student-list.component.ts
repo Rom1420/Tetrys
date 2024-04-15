@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { StudentService } from 'src/app/features/pregame/services/student.service';
+import { StudentService } from 'src/app/core/components/services/student.service';
 import { Student } from 'src/app/features/pregame/models/student.model';
 
 @Component({
@@ -16,9 +16,10 @@ export class StudentListComponent implements OnInit {
         this.studentService.students$.subscribe((studentList) => {
             this.studentList =  studentList;
         });
+    }
 
-    }
-    ngOnInit() {
-        
-    }
+    ngOnInit() {}
+
+    
+
 }

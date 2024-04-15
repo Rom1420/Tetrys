@@ -1,0 +1,12 @@
+<div class="body">
+    <div class="main-container">
+        <div class="side-container">
+            <stats-profil [selectedPlayerName]="selectedPlayerName"></stats-profil>
+        </div>
+        <div class="right-container">
+            <game-resume [selectedGameId]="selectedGameId" [selectedPlayerId]="selectedPlayerId"></game-resume>
+            <game-details [selectedGameId]="selectedGameId" [selectedPlayerId]="selectedPlayerId"></game-details>
+            <game-evolution [selectedGameId]="selectedGameId" [selectedPlayerId]="selectedPlayerId"></game-evolution>
+        </div>
+    </div>
+</div>

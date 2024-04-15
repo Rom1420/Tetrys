@@ -26,22 +26,22 @@ input.input-custom{
     all: unset;
     background-color: rgba(255, 255, 255, 0.178);
     color: #fff;
-    border-style: none; 
+    border-style: none;
     height: 1.5em;
     padding: 8px;
-    border-radius: 0.7em;   
+    border-radius: 0.7em;
     border: none;
     transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, font-size 0.3s ease-in-out, width 0.3s ease-in-out;
     width: 100%;
-    
+
     &:hover {
-        box-shadow: 0 0 0 2.5px #F27F1B; 
+        box-shadow: 0 0 0 2.5px #F27F1B;
         background-color: rgba(255, 255, 255, 0.329);
     }
 
     &:focus {
         font-size: 1.1em;
-        box-shadow: 0 0 0 2.5px #F27F1B; 
+        box-shadow: 0 0 0 2.5px #F27F1B;
         outline: none;
 
         &::placeholder{
@@ -60,7 +60,7 @@ input.input-custom{
     }
 }
 
-h2 {
+.popup-header-container h2 {
     margin: 0px 20px 0px;
     color: #fff;
     margin-top: 0;
@@ -73,7 +73,7 @@ p{
     color: #fff;
     margin-bottom: 10px;
     text-align:left;
-    font-size: 1vw; 
+    font-size: 1vw;
 }
 
 
@@ -89,7 +89,7 @@ button.submit-button {
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
@@ -203,11 +203,11 @@ button.submit-button:active {
         cursor: pointer;
         transform: scale(1.2);
         transform-origin: center center;
-        span { 
+        span {
             background: #F27F1B;
         }
       }
-}   
+}
 
 .input-container{
     margin: 0px 10px 0px 0px;

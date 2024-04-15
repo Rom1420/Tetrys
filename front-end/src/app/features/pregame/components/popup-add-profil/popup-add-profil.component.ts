@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy, Out
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Student } from '../../models/student.model';
-import { StudentService } from '../../services/student.service';
+import { StudentService } from '../../../../core/components/services/student.service';
 import { PopupService } from '../../services/popup.service';
 
 import { trigger, state, style, animate, transition } from '@angular/animations';
@@ -38,26 +38,30 @@ export class PopupComponent {
   @Output() animationDone: EventEmitter<void> = new EventEmitter<void>();
 
   public profilForm: FormGroup;
+  public studentList: Student[] = [];
 
   constructor(public popupService: PopupService,public formBuilder: FormBuilder, public studentService: StudentService){
     this.profilForm = this.formBuilder.group({
         name: [''],
+    });
+    this.studentService.students$.subscribe((studentList) => {
+      this.studentList = studentList;
     })
   }
-  
+
   closePopup() {
     this.popupService.closePopup();
   }
 
   addProfil(){
-    const profilToCreate: Student = this.profilForm.getRawValue() as Student;
+    const profilToCreate: Student = {id: this.studentList.length, name : this.profilForm.getRawValue().name, isSelected : false};
     this.studentService.addProfil(profilToCreate);
     this.popupService.closePopup();
   }
 
   onAnimationDone() {
     if(!this.popupService.isOpen) {
-      this.animationDone.emit(); 
+      this.animationDone.emit();
     }
   }
 }

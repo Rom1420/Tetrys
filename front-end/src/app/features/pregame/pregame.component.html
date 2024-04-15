@@ -9,5 +9,6 @@
     <div class="right-container">
         <difficulty-detail [currentDifficulty]="selectedDifficulty"></difficulty-detail>
         <!--<configuration-component></configuration-component> on l'affichera si on clique sur personnalisé-->
+        <app-config-list *ngIf="showConfig"></app-config-list>
     </div>
 </div>

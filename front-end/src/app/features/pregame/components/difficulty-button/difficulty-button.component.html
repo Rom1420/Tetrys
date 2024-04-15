@@ -1,5 +1,5 @@
-<div class="difficulty-button-container" >
-    <a href="/game"(mouseenter)="onHover()" >
+<div class="difficulty-button-container">
+    <a (click)="setConfig()" (mouseenter)="onHover()" >
         <div class="level" [ngClass]="getDifficultyClass()">
             <span>{{ difficulty.name }}</span>
         </div>

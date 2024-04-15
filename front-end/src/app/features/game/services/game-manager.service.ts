@@ -35,7 +35,7 @@ export class GameManagerService {
   resetWords(){
     this.ask4Reset.next(this.i);
     this.i++;
-    this.initializeWordsAndBlocks();  
+    this.initializeWordsAndBlocks();
   }
 
   getBlockFromWord(word: string): { id: number, shape: boolean[][] } | undefined {
