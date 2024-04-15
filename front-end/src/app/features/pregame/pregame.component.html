@@ -1,14 +1,20 @@
 <div class="background-overlay"></div>
 <div class="pregame-container">
     <div class="left-container">
-        <student-list [selectedStudentIdToDelete]="selectedStudentIdToDelete"></student-list>
+      <student-list [selectedStudentIdToDelete]="selectedStudentIdToDelete"></student-list>
     </div>
-    <div class="mid-container">
-        <difficulty-list (hover)="onDifficultyHover($event)" (hoverEnd)="onDifficultyHoverEnd()"></difficulty-list>
+    <div class="mid-container" (mouseenter)="onMidContainerHover()" (mouseleave)="onMidContainerHoverEnd()">
+      <difficulty-list [selectedPlayerId]="selectedPlayerId" 
+        (hover)="onDifficultyHover($event)" 
+        (hoverEnd)="onDifficultyHoverEnd()">
+      </difficulty-list>
+      <div class="hover-message" [ngClass]="{'show-message': isMidContainerHovered && selectedPlayerId === null}">
+        <h3>Choisissez un profil</h3>
+      </div>
     </div>
     <div class="right-container">
-        <difficulty-detail [currentDifficulty]="selectedDifficulty"></difficulty-detail>
-        <!--<configuration-component></configuration-component> on l'affichera si on clique sur personnalisé-->
-        <app-config-list *ngIf="showConfig"></app-config-list>
+      <difficulty-detail [currentDifficulty]="selectedDifficulty"></difficulty-detail>
+      <app-config-list *ngIf="showConfig"></app-config-list> 
     </div>
-</div>
+  </div>
+  
