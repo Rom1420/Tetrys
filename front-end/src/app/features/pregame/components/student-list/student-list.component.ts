@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/core/components/services/student.service';
 import { Student } from 'src/app/features/pregame/models/student.model';
 
@@ -9,6 +9,7 @@ import { Student } from 'src/app/features/pregame/models/student.model';
 })
 
 export class StudentListComponent implements OnInit {
+    @Input() selectedStudentIdToDelete: number | null = null;
     public studentList: Student[] = [];
 
     constructor(public studentService: StudentService){

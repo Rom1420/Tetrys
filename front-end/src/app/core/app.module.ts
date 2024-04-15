@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/nav-bar/nav-bar.component';
-import { HomePageComponent } from './components/home-page/home-page.component'
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { LoginContainerComponent } from './components/login/login-container/login-container.component';
+import { LoginInputComponent } from './components/login/login-input/login-input.component';
 
 import { GameModule } from '../features/game/game.module';
 import {PregameModule} from '../features/pregame/pregame.module';
@@ -22,6 +24,8 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     AppComponent,
     NavbarComponent,
     HomePageComponent,
+    LoginContainerComponent,
+    LoginInputComponent,
   ],
     imports: [
         BrowserModule,

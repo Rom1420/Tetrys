@@ -10,6 +10,7 @@ import { StudentComponent } from './components/student/student.component';
 import { AddProfilButtonComponent } from './components/add-profil-button/add-profil-button.component';
 import { PregameComponent } from './pregame.component';
 import { PopupComponent } from './components/popup-add-profil/popup-add-profil.component';
+import { PopupDComponent } from './components/popup-delete-profil/popup-delete-profil.component';
 import { DifficultyDetailComponent } from './components/difficulty-detail/difficulty-detail.component';
 import { ConfigCreationComponent } from './components/config/config-creation.component';
 import { ConfigListComponent } from './components/config-list/config-list.component';
@@ -25,6 +26,7 @@ import { ConfigListComponent } from './components/config-list/config-list.compon
     AddProfilButtonComponent,
     PopupComponent,
     DifficultyDetailComponent,
+    PopupDComponent,
     ConfigCreationComponent,
     ConfigListComponent,
   ],
@@ -42,6 +44,7 @@ import { ConfigListComponent } from './components/config-list/config-list.compon
     StudentListComponent,
     AddProfilButtonComponent,
     PopupComponent,
+    PopupDComponent,
   ]
 })
 export class PregameModule { }
