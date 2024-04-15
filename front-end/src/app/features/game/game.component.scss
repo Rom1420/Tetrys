@@ -83,16 +83,16 @@
 }
 
 .chrono-container{
-  width: 40%;
+  width: 30%;
   text-align: center;
-  background-color: black;
-  border: gray 3px solid;
+  background-color: var(--box-color);
+  border-radius: 82% 18% 87% 13% / 12% 86% 14% 88% ;
 }
 
 .chrono-container p{
   font-family: "Digital Font", serif;
-  color: red;
-  font-size: 20vh;
+  color: #fff;
+  font-size: 15vh;
   margin: 0;
 }
 
