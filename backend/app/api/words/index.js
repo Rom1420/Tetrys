@@ -1,12 +1,22 @@
 const { Router } = require('express')
 
 const { Word } = require('../../models')
+const { addWord } = require('./manager')
 
 const router = new Router()
 
 router.get('/', (req, res) => {
     try {
-        res.status(200).json(Quiz.get())
+        res.status(200).json(Word.get())
+    } catch (err){
+        res.status(500).json(err)
+    }
+})
+
+router.get('/:wordId', (req, res) => {
+    try {
+        const word = Word.getById(req.params.wordId);
+        res.status(200).json(word)
     } catch (err){
         res.status(500).json(err)
     }
@@ -14,7 +24,8 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     try{
-        const word = Word.create({...req.body})
+        console.log('addingWord')
+        const word = addWord(req.body.text)
         res.status(201).json(word)
     } catch (err){
         if(err.name === 'ValidationError'){
@@ -24,5 +35,14 @@ router.post('/', (req, res) => {
         }
     } 
 })
+
+router.delete('/:wordId', (req, res) => {
+    try {
+        Word.delete(req.params.wordId)
+        res.status(204).end()
+    } catch (err) {
+        res.status(500).json(err);
+    }
+  })
 
 module.exports = router
