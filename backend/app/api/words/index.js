@@ -1,7 +1,7 @@
 const { Router } = require('express')
 
 const { Word } = require('../../models')
-const { addWord } = require('./manager')
+const { addWord, getWordsBelowSize, getListOfWordsById } = require('./manager')
 
 const router = new Router()
 
@@ -13,10 +13,20 @@ router.get('/', (req, res) => {
     }
 })
 
-router.get('/:wordId', (req, res) => {
+
+router.get('/wordsSize/:size', (req, res) => {
     try {
-        const word = Word.getById(req.params.wordId);
-        res.status(200).json(word)
+        const words = getWordsBelowSize(req.params.size);
+        res.status(200).json(words)
+    } catch (err){
+        res.status(500).json(err)
+    }
+})
+
+router.get('/listId/:listId', (req, res) => {
+    try {
+        const words = getListOfWordsById(req.params.listId);
+        res.status(200).json(words)
     } catch (err){
         res.status(500).json(err)
     }
@@ -25,7 +35,7 @@ router.get('/:wordId', (req, res) => {
 router.post('/', (req, res) => {
     try{
         console.log('addingWord')
-        const word = addWord(req.body.text)
+        const word = addWord({...req.body})
         res.status(201).json(word)
     } catch (err){
         if(err.name === 'ValidationError'){
@@ -43,6 +53,16 @@ router.delete('/:wordId', (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-  })
+})
+
+router.delete('/', (req, res) => {
+    try {
+        Word.items = [];
+        res.status(204).end()
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 
 module.exports = router

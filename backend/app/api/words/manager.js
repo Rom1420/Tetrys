@@ -5,8 +5,13 @@ class WordManager {
         return Word.get();
     }
 
+    /**
+     * Récupère les mots dont la taille est inférieure ou égale à la taille maximale spécifiée.
+     * @param {number} maxSize La taille maximale des mots à récupérer.
+     * @returns {Array} Un tableau contenant les mots dont la taille est inférieure ou égale à maxSize.
+     */
     static getWordsBelowSize(maxSize) {
-        return Word.get().filter(word => word.size < maxSize);
+        return Word.get().filter(word => word.size <= maxSize);
     }
 
     static getWordsById(wordId){
@@ -17,16 +22,20 @@ class WordManager {
         return Word.create(word);
     }
 
-    static addWord(text) {
+    static addWord({text, listId = 0}) {
         if(typeof text !== 'string' || text.trim() === '') {
         }
         const size = text.length
         console.log('addingWord')
         try {
-            return Word.create({text:text, size:size})
+            return Word.create({text:text, size:size, listId:listId})
         } catch (err){
         
         }
+    }
+
+    static getListOfWordsById(listId){
+        return Word.get().filter(word => word.listId == listId);
     }
 }
 

@@ -4,4 +4,5 @@ const BaseModel = require('../utils/base-model.js')
 module.exports = new BaseModel('Word',{
     text: Joi.string().required(),
     size : Joi.number().required(),
+    listId : Joi.number().required(),
 })
