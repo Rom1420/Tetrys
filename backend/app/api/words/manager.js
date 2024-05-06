@@ -34,6 +34,11 @@ class WordManager {
         }
     }
 
+    static isAccentuated(word) {
+        const accentuatedCharacters = /[àâäéèêëîïôöùûü']/gi;
+        return accentuatedCharacters.test(word);
+    }
+
     static getListOfWordsById(listId){
         return Word.get().filter(word => word.listId == listId);
     }
