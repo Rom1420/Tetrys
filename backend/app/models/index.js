@@ -1,5 +1,5 @@
-// const YourModel = require('./your-model.model.js')
+const Word = require('./word.model.js')
 
 module.exports = {
-  // YourModel,
+  Word,
 }
