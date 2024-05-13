@@ -3,7 +3,6 @@ import { TetrisBlockId, TetrisBlocks } from '../mock/block.mock';
 import {GameFormService} from "./game-form.service";
 import {Subscription} from "rxjs";
 import {GameManagerService} from "./game-manager.service";
-import { Word } from '../models/word.model';
 
 
 @Injectable({

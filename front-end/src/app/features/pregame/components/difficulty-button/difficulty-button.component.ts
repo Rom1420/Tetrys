@@ -41,7 +41,6 @@ export class DifficultyButtonComponent implements OnInit {
     }
 
     onHover(): void {
-        //console.log(this.difficulty.config);
         this.hover.emit(this.difficulty);
     }
 

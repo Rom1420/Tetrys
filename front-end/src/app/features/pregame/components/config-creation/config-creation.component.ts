@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {NavigationEnd, NavigationStart, Router} from "@angular/router";
 import {ConfigFormResultService} from "../../../game/services/config-form-result.service";
+import {HttpClient} from "@angular/common/http";
+import {ConfigModel} from "../../../game/models/config.model";
+import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 
 @Component({
   selector: 'app-config-creation',
@@ -12,8 +15,10 @@ export class ConfigCreationComponent implements OnInit{
   public affichageConfig: boolean = false;
   public url: string = "";
   public configForm: FormGroup;
+  private configUrl: string = "http://localhost:9428/api/configs/";
 
-  constructor(private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService) {
+
+  constructor(private http: HttpClient,private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService) {
     this.configForm = this.formBuilder.group({
       name: ['', Validators.required],
       time: ['', [Validators.required, Validators.pattern('^\\d*\\.?\\d+$')]],
@@ -38,13 +43,6 @@ export class ConfigCreationComponent implements OnInit{
     });
   }
 
-  afficherConfig(){
-    if (this.url != "/game"){
-      this.navigateToGame();
-    }
-    this.affichageConfig = !this.affichageConfig;
-  }
-
   navigateToGame(){
     this.router.navigate(["/game"]).catch(error => {
       console.error('Erreur de navigation :', error);});
@@ -53,8 +51,15 @@ export class ConfigCreationComponent implements OnInit{
   onSubmit(){
     if (this.configForm.valid){
       this.configFormResultService.addResult(this.configForm.value)
+      this.http.post<ConfigModel>(this.configUrl, this.configForm.value).subscribe(() => this.retrieveConfigs())
       this.configForm.reset();
     }
+  }
+
+  retrieveConfigs(){
+    this.http.get<ConfigModel[]>(this.configUrl).subscribe((configList) => {
+      console.log(configList);
+    });
   }
 
   isConfigFormValid(): boolean{

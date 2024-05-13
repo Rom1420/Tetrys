@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ConfigFormResultService} from "../../../game/services/config-form-result.service";
 import {ConfigModel} from "../../../game/models/config.model";
+import {HttpClient} from "@angular/common/http";
+
 
 @Component({
   selector: 'app-config-list',
@@ -11,12 +13,17 @@ export class ConfigListComponent implements OnInit{
   public configList: ConfigModel[] = [];
   public showCreateConfig: boolean = false;
   public showConfigList: boolean = !this.showCreateConfig;
+  public configUrl: string = "http://localhost:9428/api/configs/";
 
-  constructor(public configFormResultService: ConfigFormResultService){
-    this.configFormResultService.configActual$.subscribe(() => {
-      this.configList = configFormResultService.getResults();
-    })
+  constructor(private http: HttpClient, public configFormResultService: ConfigFormResultService){
+    this.retrieveConfigs()
+  }
 
+  retrieveConfigs(){
+    this.http.get<ConfigModel[]>(this.configUrl).subscribe((list) => {
+      console.log(list)
+      this.configList = (list);
+    });
   }
 
   showCreateConfiguration(){
@@ -30,6 +37,8 @@ export class ConfigListComponent implements OnInit{
   }
   deleteConfig(config: ConfigModel){
     this.configFormResultService.deleteConfiguration(config);
+    const urlID = this.configUrl + "/" + config.id;
+    this.http.delete<ConfigModel>(urlID).subscribe(() => this.retrieveConfigs())
   }
 
 }
