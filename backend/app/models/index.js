@@ -1,5 +1,5 @@
-// const YourModel = require('./your-model.model.js')
+const GameResume = require('./gameResume.model.js')
 
 module.exports = {
-  // YourModel,
+  GameResume,
 }
