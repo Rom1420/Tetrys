@@ -6,4 +6,5 @@ module.exports = new BaseModel('Config', {
     time: Joi.string().required(),
     length: Joi.string().required(),
     errorAllowed: Joi.boolean().required(),
+    wordList: Joi.string()
 })

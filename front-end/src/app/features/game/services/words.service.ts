@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import {Word} from "../models/word.model";
 import {WORD_LIST} from "../mock/words.mock";
+import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 
 
 @Injectable({
@@ -24,5 +25,10 @@ export class WordsServices{
 
   getActualWords(): Word[]{
     return this.actualWords;
+  }
+
+  addWord(word : Word): void{
+    this.words.push(word);
+    this.words$.next(this.actualWords);
   }
 }

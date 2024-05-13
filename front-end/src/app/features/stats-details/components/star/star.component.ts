@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'star',
@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './star.component.scss'
 })
 export class StarComponent {
-  
+  @Input() isEndGame: boolean = false;
   
 }

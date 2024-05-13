@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Difficulty } from 'src/app/features/pregame/models/difficulty.model';
 import {ConfigFormResultService} from "../../../game/services/config-form-result.service";
 import {Router} from "@angular/router";
@@ -10,13 +10,30 @@ import {Router} from "@angular/router";
 })
 
 export class DifficultyButtonComponent implements OnInit {
-    @Input()
-    difficulty!: Difficulty;
+    @Input() difficulty!: Difficulty;
+    @Input() selectedPlayerId: number | null = null;    
 
     @Output() hover: EventEmitter<Difficulty> = new EventEmitter<Difficulty>();
 
     constructor( public configFormResultService:ConfigFormResultService, private router:Router) {}
+    
+    
     ngOnInit(): void {}
+    
+    ngOnChanges(changes: SimpleChanges): void {
+        if ('selectedPlayerId' in changes && changes['selectedPlayerId'].currentValue !== null) {
+            console.log("Changement détecté dans selectedPlayerId : ", changes['selectedPlayerId'].currentValue);
+            this.updateButtonState();
+        }
+    }
+
+    updateButtonState(): void {
+        const buttonContainer = document.querySelector('.difficulty-button-container');
+        if (buttonContainer) {
+            buttonContainer.classList.remove('disabled');
+        }
+    }
+
     getDifficultyClass(): string {
         switch (this.difficulty.id) {
             case 1:
@@ -43,5 +60,7 @@ export class DifficultyButtonComponent implements OnInit {
     onHover(): void {
         this.hover.emit(this.difficulty);
     }
+
+
 
 }

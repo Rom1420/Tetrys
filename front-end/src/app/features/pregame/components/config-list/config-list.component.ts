@@ -36,7 +36,7 @@ export class ConfigListComponent implements OnInit{
     this.configFormResultService.startGameWithConfiguration(config);
   }
   deleteConfig(config: ConfigModel){
-    this.configFormResultService.deleteConfiguration(config);
+    //this.configFormResultService.deleteConfiguration(config);
     const urlID = this.configUrl + "/" + config.id;
     this.http.delete<ConfigModel>(urlID).subscribe(() => this.retrieveConfigs())
   }

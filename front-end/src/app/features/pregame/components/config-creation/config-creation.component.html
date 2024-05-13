@@ -1,39 +1,45 @@
-<div class="popup-container">
+<div class="popup-container" >
   <div class="popup">
     <div class="popup-content">
       <div class="popup-header">
-        <span>&larr;</span>
-        <h2>Créer une nouvelle configuration</h2>
+        <h2>Nouvelle configuration</h2>
       </div>
       <form [formGroup]="configForm" (ngSubmit)="onSubmit()" autocomplete="off">
-        <div class="form-cell">
-          <label for="name"> Nom de la configuration </label>
-          <input type="text" id="name" formControlName="name">
-        </div>
-        <div class="form-cell">
-          <label for="time"> Temps maximum par caractère </label>
-          <input type="text" id="time" formControlName="time">
-        </div>
-        <div class="form-cell">
-          <label for="length"> Longueur maximale de mot </label>
-          <input type="text" id="length"  formControlName="length">
-        </div>
-        <div class="form-cell">
-          <label for="radioOui"> Droit à l'erreur:  </label>
-          <div class="radiosButtons">
-            <label> <input type="radio" id="radioOui" formControlName="errorAllowed" [value]="true"> <span>oui</span> </label>
-            <label> <input type="radio" id="radioNon" formControlName="errorAllowed" [value]="false"> <span>non</span> </label>
+        <div class="config-container">
+          <div class="form-cell">
+            <div class="input-container">
+              <input class="input-custom" type="text" id="name" formControlName="name" placeholder="Nom de la config">
+            </div>
           </div>
-        </div>
-        <div class="form-cell">
-          <div class="add-words-config">
-            <label for="txtZone">Mots supplémentaires (optionnel)</label>
-            <textarea id="txtZone" name="add-words" rows="4" cols="30" placeholder="Entrez vos nouveaux mots ici..."></textarea>
+          <div class="form-cell">
+            <div class="input-container">
+              <input class="input-custom" type="text" id="time" formControlName="time" placeholder="Temps max par mot">
+            </div>
+          </div>
+          <div class="form-cell">
+            <div class="input-container">
+              <input class="input-custom" type="text" id="length"  formControlName="length" placeholder="Longueur max de mot">
+            </div>
+          </div>
+          <div class="form-cell">
+            <div class="error-container">
+              <label for="radioOui"> Droit à l'erreur:  </label>
+              <div class="radiosButtons">
+                <label> <input type="radio" id="radioOui" formControlName="errorAllowed" [value]="true"> <span>oui</span> </label>
+                <label> <input type="radio" id="radioNon" formControlName="errorAllowed" [value]="false"> <span>non</span> </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-cell">
+            <div class="add-words-config">
+              <label for="txtZone">Mots supplémentaires (optionnel)</label>
+              <textarea class="text-zone" formControlName="wordList" id="wordList" name="add-words" rows="4" cols="30" placeholder="Entrez vos nouveaux mots ici..."></textarea>
+            </div>
           </div>
         </div>
       </form>
       <div class="start-button">
-        <button class="play-button" (click)="navigateToGame() ; onSubmit()" [disabled]="!isConfigFormValid()" role="button">Jouer</button>
+        <button class="play-button" (click)="navigateToGame() ; addWords() ;onSubmit()" [disabled]="!isConfigFormValid()" role="button">Jouer</button>
         <span class="disabling-text">Formulaire non complet</span>
       </div>
     </div>

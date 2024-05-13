@@ -1,4 +1,4 @@
-import  { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import  { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DifficultyServices } from "src/app/features/pregame/services/difficulty.services";
 import { Difficulty } from "src/app/features/pregame/models/difficulty.model";
 
@@ -8,6 +8,7 @@ import { Difficulty } from "src/app/features/pregame/models/difficulty.model";
   styleUrls: ['./difficulty-list.component.scss']
 })
 export class DifficultyListComponent implements OnInit {
+  @Input() selectedPlayerId: number | null = null; 
 
   public difficultyList: Difficulty[] = [];
   public basicDifficultyListWithTitles: { id: number, title: string }[] = [];

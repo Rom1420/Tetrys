@@ -7,6 +7,7 @@ import {GameFormService} from "./services/game-form.service";
 import {GameManagerService} from "./services/game-manager.service";
 import {ConfigModel} from "./models/config.model";
 
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',

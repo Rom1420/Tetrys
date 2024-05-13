@@ -180,7 +180,7 @@ button.add-profil-button {
 }
 
 .config-del{
-  cursor: help;
+  cursor: grabbing;
 }
 
 
@@ -201,4 +201,6 @@ button.add-profil-button {
   max-width: 30%;
 }
 
-
+app-config-creation{
+  width: 90%;
+}

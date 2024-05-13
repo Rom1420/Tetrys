@@ -15,15 +15,14 @@ export class StudentService {
     private selectedStudentIdToDeleteSubject: BehaviorSubject<number | null> = new BehaviorSubject<number | null>(null);
     public selectedStudentIdToDelete$ = this.selectedStudentIdToDeleteSubject.asObservable();
 
-    public selectedStudentIdSubject$: BehaviorSubject<number> = 
-            new BehaviorSubject<number>(0);
+    public selectedStudentIdSubject$: BehaviorSubject<number | null> = 
+            new BehaviorSubject<number | null>(0);
     public selectedStudentId$ = 
             this.selectedStudentIdSubject$.asObservable();
 
     constructor(){}
 
     updateSelectedStudentIdToDelete(studentId: number | null): void {
-        console.log("emitted", studentId);
         this.selectedStudentIdToDeleteSubject.next(studentId);
     }
 
@@ -34,13 +33,14 @@ export class StudentService {
 
     deleteProfil(studentToDelete: Student | undefined){
         if(studentToDelete){
+            this.selectedStudentIdSubject$.next(null);
             this.updateSelectedStudentIdToDelete(studentToDelete.id);
-            console.log(studentToDelete.id);
         }
         if(studentToDelete?.id){
             this.students = this.students.filter(student => student.id !== studentToDelete.id);
         }
         this.students$.next(this.students)  
+        this.updateSelectedStudentIdToDelete(null);
     }
 
     onSelectStudent(studentId: number) {
