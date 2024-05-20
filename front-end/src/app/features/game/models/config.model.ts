@@ -3,6 +3,7 @@ export interface ConfigModel{
   time: number,
   length: number,
   errorAllowed: boolean,
+  userId: number,
   wordList?: string,
   id?: number
 }

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ConfigFormResultService} from "../../../game/services/config-form-result.service";
 import {ConfigModel} from "../../../game/models/config.model";
 import {HttpClient} from "@angular/common/http";
+import {StudentService} from "../../../../core/components/services/student.service";
 
 
 @Component({
@@ -14,15 +15,20 @@ export class ConfigListComponent implements OnInit{
   public showCreateConfig: boolean = false;
   public showConfigList: boolean = !this.showCreateConfig;
   public configUrl: string = "http://localhost:9428/api/configs/";
+  private userId: number | null = 0;
 
-  constructor(private http: HttpClient, public configFormResultService: ConfigFormResultService){
+
+  constructor(private studentService:StudentService, private http: HttpClient, public configFormResultService: ConfigFormResultService){
+    studentService.selectedStudentId$.subscribe((value) => {
+      this.userId = value;
+    })
     this.retrieveConfigs()
   }
 
   retrieveConfigs(){
     this.http.get<ConfigModel[]>(this.configUrl).subscribe((list) => {
       console.log(list)
-      this.configList = (list);
+      this.configList = (list.filter((config) => config.userId == this.userId));
     });
   }
 

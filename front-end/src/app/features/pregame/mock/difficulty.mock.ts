@@ -8,7 +8,8 @@ export const DIFFICULTY_LIST: Difficulty[] = [
             name: "débutant",
             time: 1.5,
             length: 6,
-            errorAllowed: true
+            errorAllowed: true,
+            userId: 0
         }
     },
     {
@@ -19,7 +20,8 @@ export const DIFFICULTY_LIST: Difficulty[] = [
           name: "intermédiaire",
           time: 1,
           length: 10,
-          errorAllowed: false
+          errorAllowed: false,
+          userId: 0
         }
     },
     {
@@ -29,8 +31,9 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         config: {
           name: "avancé",
           time: 0.6,
-          length: 6,
-          errorAllowed: false
+          length: 15,
+          errorAllowed: false,
+          userId:0
         }
     },
     {
@@ -41,7 +44,8 @@ export const DIFFICULTY_LIST: Difficulty[] = [
           name: "perso",
           time: 0,
           length: 100,
-          errorAllowed: false
+          errorAllowed: false,
+          userId: 0
         }
     }
 ]

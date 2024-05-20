@@ -8,6 +8,7 @@ import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 import {Word} from "../../../game/models/word.model";
 import {WordsServices} from "../../../game/services/words.service";
 import { ConfigListComponent } from '../config-list/config-list.component';
+import {StudentService} from "../../../../core/components/services/student.service";
 
 @Component({
   selector: 'app-config-creation',
@@ -16,37 +17,43 @@ import { ConfigListComponent } from '../config-list/config-list.component';
 })
 export class ConfigCreationComponent implements OnInit{
   @Input() showCreateConfiguration!: (() => void);
+  @Input() currentUserId!: number;
 
   public affichageConfig: boolean = false;
   public url: string = "";
   public configForm: FormGroup;
+  private userId: number | null = 0;
   private configUrl: string = "http://localhost:9428/api/configs/";
   public words: Word[] = [];
 
-  constructor(private http: HttpClient, private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService, public wordsService: WordsServices) {
+  constructor(private studentService:StudentService, private http: HttpClient, private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService, public wordsService: WordsServices) {
+
+    studentService.selectedStudentId$.subscribe((value) => {
+      console.log(value)
+      //console.log(this.currentUserId)
+      this.userId = value;
+    })
+
     this.configForm = this.formBuilder.group({
       name: ['', Validators.required],
       time: ['', [Validators.required, Validators.pattern('^\\d*\\.?\\d+$')]],
       length: ['', [Validators.required, Validators.pattern('^\\d+')]],
       errorAllowed: ['', [Validators.required, Validators.pattern('^(true|false)$') ]],
       wordList: [' '],
+      userId:  [this.userId, [Validators.required, Validators.pattern('^\\d+')]],
     })
     this.wordsService.words$.subscribe((words) => {
       this.words = words;
     })
+
   }
 
 
   ngOnInit(){
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        // La navigation a commencé
-        console.log('URL actuelle:', this.router.url);
-
       }
       if (event instanceof NavigationEnd) {
-        // La navigation est terminée, vous pouvez maintenant obtenir l'URL actuelle
-        console.log('URL actuelle:', this.router.url);
         this.url = this.router.url;
       }
     });
@@ -60,6 +67,7 @@ export class ConfigCreationComponent implements OnInit{
   onSubmit(){
     if (this.configForm.valid){
       //this.configFormResultService.addResult(this.configForm.value)
+      console.log(this.configForm.value)
       this.http.post<ConfigModel>(this.configUrl, this.configForm.value).subscribe(() => this.retrieveConfigs())
       this.configForm.reset();
     }
