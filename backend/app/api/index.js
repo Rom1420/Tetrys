@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const manageAllErrors = require("../utils/routes/manageAllErrors")
-const Config = require("../configModel/configModel")
+const Config = require("./configModel")
+const Difficulties = require('./difficultyModel')
 
 const router = new Router()
 router.get('/status', (req, res) => {
@@ -12,5 +13,6 @@ router.get('/status', (req, res) => {
 });
 
 router.use('/configs', Config);
+router.use('/difficulties', Difficulties)
 
 module.exports = router
