@@ -22,16 +22,29 @@ export class GameManagerService {
   blocks$ = this.blocksSubject.asObservable();
 
   constructor(private wordsService: WordsServices, private blockService: BlockService) {
-    this.initializeWordsAndBlocks();
-  }
+    this.initializeWordsAndBlocks(); 
+  }   
 
   initializeWordsAndBlocks(): void {
-    const randomInt: number = Math.floor(Math.random() * (this.wordsService.words.length - 2));
-    const words = this.wordsService.get3Words(randomInt);
-    const blocks = this.blockService.getThreeDistinctBlocks();
-    this.wordsSubject.next(words);
-    this.blocksSubject.next(blocks);
+    this.wordsService.words$.subscribe((words) => {
+      if(words.length > 0) {
+        console.log("juste apres le sub",this.wordsService.words);
+        const randomInt: number = Math.floor(Math.random() * (words.length - 2));
+    
+        this.wordsService.get3Words(randomInt);
+
+        this.wordsService.actualWords$.subscribe((actualWords) => {
+          if(actualWords.length > 0){
+            this.wordsSubject.next(actualWords);
+            console.log("words initialize :",actualWords);
+            const blocks = this.blockService.getThreeDistinctBlocks();
+            this.blocksSubject.next(blocks);
+          }
+        });
+      }
+    });
   }
+
   resetWords(){
     this.ask4Reset.next(this.i);
     this.i++;
@@ -39,7 +52,7 @@ export class GameManagerService {
   }
 
   getBlockFromWord(word: string): { id: number, shape: boolean[][] } | undefined {
-    const wordIndex = this.wordsSubject.value.findIndex(w => w.name === word);
+    const wordIndex = this.wordsSubject.value.findIndex(w => w.text === word);
     if (wordIndex !== -1 && wordIndex < this.blocksSubject.value.length) {
       return this.blocksSubject.value[wordIndex];
     }

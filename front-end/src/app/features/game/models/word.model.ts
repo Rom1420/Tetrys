@@ -1,3 +1,3 @@
 export interface Word{
-  name: string;
+  text: string;
 }

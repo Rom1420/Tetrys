@@ -7,7 +7,12 @@ const router = new Router()
 
 router.get('/', (req, res) => {
     try {
-        res.status(200).json(Word.get())
+        const accentuated = req.query.accentuated === 'true';
+        let words = Word.get();
+        if (!accentuated) {
+            words = words.filter(word => !isAccentuated(word.text));
+        }
+        res.status(200).json(words)
     } catch (err){
         res.status(500).json(err)
     }
@@ -36,15 +41,6 @@ router.get('/listId/:listId', (req, res) => {
     }
 })
 
-router.get('/accentuated/:listId', (req, res) => {
-    try {
-        const words = getListOfWordsById(req.params.listId);
-        res.status(200).json(words)
-    } catch (err){
-        res.status(500).json(err)
-    }
-})
-
 router.post('/', (req, res) => {
     try{
         const word = addWord({...req.body})
@@ -58,11 +54,19 @@ router.post('/', (req, res) => {
     } 
 })
 
+router.put('/:wordId', (req, res) => {
+    try {
+      res.status(200).json(Word.update(req.params.wordId, req.body))
+    } catch (err) {
+        res.status(500).json(err);
+    }
+  })
+
 router.delete('/:wordId', (req, res) => {
     try {
         Word.delete(req.params.wordId)
         res.status(204).end()
-    } catch (err) {
+    } catch (err) {     
         res.status(500).json(err);
     }
 })

@@ -80,7 +80,7 @@ export class ConfigCreationComponent implements OnInit{
       let wordArray = newWords.split(' ');
       wordArray.forEach(word => {
         if (word) {
-          const newWord: Word = { name: word };
+          const newWord: Word = { text: word };
           this.wordsService.addWord(newWord);
         }
       });

@@ -16,7 +16,7 @@ import {ConfigModel} from "./models/config.model";
 export class GameComponent implements OnInit, AfterViewInit{
 
     public wordForm: FormGroup;
-    private actualWords: Word[] = [{name: ""}];
+    private actualWords: Word[] = [{text: ""}];
     public actualWordForm: string = "";
     public time: number = 0;
     public allTimer: any[] = [];
@@ -43,7 +43,7 @@ export class GameComponent implements OnInit, AfterViewInit{
     ngAfterViewInit(): void {
       this.wordForm.addControl('isValid', this.formBuilder.control((this.isWordValid)))
       this.wordForm.addControl('error', this.formBuilder.control((this.errorsAllowed)))
-      this.wordService.words$.subscribe((newWords) => {
+      this.wordService.actualWords$.subscribe((newWords) => {
         this.actualWords = newWords;
         this.wordForm.get('word')?.enable();
         this.wordFormToggle.nativeElement.focus();
@@ -65,7 +65,7 @@ export class GameComponent implements OnInit, AfterViewInit{
         if(this.actualWordForm.length == 1){
           this.startTimer();
         }
-        this.isWordValid = this.actualWords.some(word => word.name == this.actualWordForm);
+        this.isWordValid = this.actualWords.some(word => word.text == this.actualWordForm);
         this.wordForm.patchValue({'isValid': this.isWordValid.toString()});
         if(this.isWordValid){
           this.onSubmit();
@@ -75,8 +75,8 @@ export class GameComponent implements OnInit, AfterViewInit{
 
     resetTimer(){
       this.time = this.actualWords.reduce((motCourant, motSuivant) => {
-        return motSuivant.name.length > motCourant.name.length ? motSuivant: motCourant;
-      }, {name: ""}).name.length;
+        return motSuivant.text.length > motCourant.text.length ? motSuivant: motCourant;
+      }, {text: ""}).text.length;
       this.time = this.time * this.config.time;    //ratio par caractere
       this.time = Number(this.time.toFixed(1));   //on arrondi au dixieme de secondes
       this.startTimer();
