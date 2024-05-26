@@ -11,18 +11,17 @@ import {Router} from "@angular/router";
 
 export class DifficultyButtonComponent implements OnInit {
     @Input() difficulty!: Difficulty;
-    @Input() selectedPlayerId: number | null = null;    
+    @Input() selectedPlayerId: number | null = null;
 
     @Output() hover: EventEmitter<Difficulty> = new EventEmitter<Difficulty>();
 
     constructor( public configFormResultService:ConfigFormResultService, private router:Router) {}
-    
-    
+
+
     ngOnInit(): void {}
-    
+
     ngOnChanges(changes: SimpleChanges): void {
         if ('selectedPlayerId' in changes && changes['selectedPlayerId'].currentValue !== null) {
-            console.log("Changement détecté dans selectedPlayerId : ", changes['selectedPlayerId'].currentValue);
             this.updateButtonState();
         }
     }
@@ -35,7 +34,7 @@ export class DifficultyButtonComponent implements OnInit {
     }
 
     getDifficultyClass(): string {
-        switch (this.difficulty.id) {
+        switch (this.difficulty.difficultyId) {
             case 1:
                 return 'debutant';
             case 2:
@@ -50,10 +49,8 @@ export class DifficultyButtonComponent implements OnInit {
     }
 
     setConfig(){
-      if (this.difficulty.id != 4){
-        this.configFormResultService.addResult(this.difficulty.config)
-        this.router.navigate(["/game"]).catch(error => {
-          console.error('Erreur de navigation :', error);});
+      if (this.difficulty.difficultyId != 4){
+        this.configFormResultService.startGameWithConfiguration(this.difficulty.config)
       }
     }
 

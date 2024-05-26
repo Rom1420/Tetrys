@@ -7,34 +7,18 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class ConfigFormResultService {
-  public formResults = new BehaviorSubject<ConfigModel[]>([]);    //settings niveau moyen par défault
+  public formResults = new BehaviorSubject<ConfigModel>({errorAllowed: false, length: 0, name: "", time: 0, userId: 0});    //settings niveau moyen par défault
   public configActual$ = this.formResults.asObservable()
 
   constructor(private router:Router) {}
 
-  addResult(result: ConfigModel) {
-    this.formResults.value.push(result)
-    this.formResults.next(this.formResults.value);
-  }
-
-  getResults() {
+  getConfig() {
     return this.formResults.value;
   }
 
-  getLastConfig() {
-    return this.formResults.value[this.formResults.value.length - 1];
-  }
-
   startGameWithConfiguration(config:ConfigModel){
-    this.deleteConfiguration(config);
-    this.formResults.value.push(config)
-    this.formResults.next(this.formResults.value);
+    this.formResults.next(config);
     this.router.navigate(["/game"]).catch(error => {
       console.error('Erreur de navigation :', error);});
-  }
-
-  deleteConfiguration(config: ConfigModel){
-    this.formResults.next(this.formResults.value.filter(conf => conf   !== config));
-    console.log(this.formResults.value)
   }
 }

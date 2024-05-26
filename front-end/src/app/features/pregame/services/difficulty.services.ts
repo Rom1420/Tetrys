@@ -17,14 +17,13 @@ export class DifficultyServices {
 
   constructor(private http: HttpClient) {
     http.get<Difficulty[]>(this.configUrl).subscribe((list) => {
-      console.log(list)
       this.difficulties$.next(list);
     });
   }
 
 
   getBasicDifficultiesTitle(): { id: number, title: string }[] {
-      return this.difficulties.map(difficulty => ({id: difficulty.id, title: difficulty.name}) );
+      return this.difficulties.map(difficulty => ({id: difficulty.difficultyId, title: difficulty.name}) );
   }
 
 }

@@ -67,8 +67,8 @@ export class ConfigCreationComponent implements OnInit{
   onSubmit(){
     if (this.configForm.valid){
       //this.configFormResultService.addResult(this.configForm.value)
-      console.log(this.configForm.value)
       this.http.post<ConfigModel>(this.configUrl, this.configForm.value).subscribe(() => this.retrieveConfigs())
+      this.configFormResultService.startGameWithConfiguration(this.configForm.value);
       this.configForm.reset();
     }
   }
