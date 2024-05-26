@@ -33,10 +33,9 @@ export class GameComponent implements OnInit, AfterViewInit{
               isValid: this.isWordValid,
               error: this.errorsAllowed
           });
-        this.config = this.configFormResult.getLastConfig()
+        this.config = this.configFormResult.getConfig()
         this.configFormResult.configActual$.subscribe((actualConfig) => {
-          this.config = actualConfig[actualConfig.length - 1]
-          console.log(this.config)
+          this.config = actualConfig
         })
     }
 

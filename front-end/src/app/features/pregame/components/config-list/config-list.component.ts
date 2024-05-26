@@ -27,7 +27,6 @@ export class ConfigListComponent implements OnInit{
 
   retrieveConfigs(){
     this.http.get<ConfigModel[]>(this.configUrl).subscribe((list) => {
-      console.log(list)
       this.configList = (list.filter((config) => config.userId == this.userId));
     });
   }

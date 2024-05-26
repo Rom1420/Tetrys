@@ -1,7 +1,7 @@
 import { Difficulty } from "src/app/features/pregame/models/difficulty.model";
 export const DIFFICULTY_LIST: Difficulty[] = [
     {
-        id: 1,
+        difficultyId: 1,
         name: 'Débutant',
         description: 'Le mode pas trop dur',
         config: {
@@ -13,7 +13,7 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         }
     },
     {
-        id: 2,
+        difficultyId: 2,
         name: 'Intermédiaire',
         description: 'Le mode un peu dur',
         config: {
@@ -25,7 +25,7 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         }
     },
     {
-        id: 3,
+        difficultyId: 3,
         name: 'Avancé',
         description: 'Le mode dur',
         config: {
@@ -37,7 +37,7 @@ export const DIFFICULTY_LIST: Difficulty[] = [
         }
     },
     {
-        id: 4,
+        difficultyId: 4,
         name: 'Personnalisé',
         description: 'Le mode Perso',
         config: {

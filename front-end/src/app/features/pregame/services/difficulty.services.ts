@@ -1,24 +1,29 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { Difficulty } from "src/app/features/pregame/models/difficulty.model";
-import { DIFFICULTY_LIST } from "src/app/features/pregame/mock/difficulty.mock";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DifficultyServices {
 
-  private difficulties: Difficulty[] = DIFFICULTY_LIST;
+  public configUrl: string = "http://localhost:9428/api/difficulties/";
 
-  public difficulties$: BehaviorSubject<Difficulty[]> = new BehaviorSubject(DIFFICULTY_LIST);
+  private difficulties: Difficulty[] = [];
 
-  getDifficulties(): Difficulty[] {
-      return DIFFICULTY_LIST;
+  public difficulties$: BehaviorSubject<Difficulty[]> = new BehaviorSubject(this.difficulties);
+  public allDifficulties$ = this.difficulties$.asObservable()
+
+  constructor(private http: HttpClient) {
+    http.get<Difficulty[]>(this.configUrl).subscribe((list) => {
+      this.difficulties$.next(list);
+    });
   }
 
+
   getBasicDifficultiesTitle(): { id: number, title: string }[] {
-      const basicDifficulties = this.difficulties.slice(0, 3);
-      return basicDifficulties.map(difficulty => ({id: difficulty.id, title: difficulty.name}) );
+      return this.difficulties.map(difficulty => ({id: difficulty.difficultyId, title: difficulty.name}) );
   }
 
 }
