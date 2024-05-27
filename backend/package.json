@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/NablaT/backend-ps6-starter-quiz#readme",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@types/hapi__joi": "^17.1.14",
     "body-parser": "1.19.0",
     "cors": "2.8.5",
     "express": "^4.17.1",

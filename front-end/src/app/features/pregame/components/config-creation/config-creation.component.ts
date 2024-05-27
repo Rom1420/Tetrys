@@ -2,9 +2,13 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {NavigationEnd, NavigationStart, Router} from "@angular/router";
 import {ConfigFormResultService} from "../../../game/services/config-form-result.service";
+import {HttpClient} from "@angular/common/http";
+import {ConfigModel} from "../../../game/models/config.model";
+import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 import {Word} from "../../../game/models/word.model";
 import {WordsServices} from "../../../game/services/words.service";
 import { ConfigListComponent } from '../config-list/config-list.component';
+import {StudentService} from "../../../../core/components/services/student.service";
 
 @Component({
   selector: 'app-config-creation',
@@ -18,42 +22,41 @@ export class ConfigCreationComponent implements OnInit{
   public affichageConfig: boolean = false;
   public url: string = "";
   public configForm: FormGroup;
+  private userId: number | null = 0;
+  private configUrl: string = "http://localhost:9428/api/configs/";
   public words: Word[] = [];
 
-  constructor(private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService, public wordsService: WordsServices) {
+  constructor(private studentService:StudentService, private http: HttpClient, private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService, public wordsService: WordsServices) {
+
+    studentService.selectedStudentId$.subscribe((value) => {
+      console.log(value)
+      //console.log(this.currentUserId)
+      this.userId = value;
+    })
+
     this.configForm = this.formBuilder.group({
       name: ['', Validators.required],
       time: ['', [Validators.required, Validators.pattern('^\\d*\\.?\\d+$')]],
       length: ['', [Validators.required, Validators.pattern('^\\d+')]],
       errorAllowed: ['', [Validators.required, Validators.pattern('^(true|false)$') ]],
-      wordList: ['', Validators.required],
+      wordList: [' '],
+      userId:  [this.userId, [Validators.required, Validators.pattern('^\\d+')]],
     })
     this.wordsService.words$.subscribe((words) => {
       this.words = words;
     })
+
   }
 
 
   ngOnInit(){
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        // La navigation a commencé
-        console.log('URL actuelle:', this.router.url);
-
       }
       if (event instanceof NavigationEnd) {
-        // La navigation est terminée, vous pouvez maintenant obtenir l'URL actuelle
-        console.log('URL actuelle:', this.router.url);
         this.url = this.router.url;
       }
     });
-  }
-
-  afficherConfig(){
-    if (this.url != "/game"){
-      this.navigateToGame();
-    }
-    this.affichageConfig = !this.affichageConfig;
   }
 
   navigateToGame(){
@@ -63,9 +66,17 @@ export class ConfigCreationComponent implements OnInit{
 
   onSubmit(){
     if (this.configForm.valid){
-      this.configFormResultService.addResult(this.configForm.value)
+      //this.configFormResultService.addResult(this.configForm.value)
+      this.http.post<ConfigModel>(this.configUrl, this.configForm.value).subscribe(() => this.retrieveConfigs())
+      this.configFormResultService.startGameWithConfiguration(this.configForm.value);
       this.configForm.reset();
     }
+  }
+
+  retrieveConfigs(){
+    this.http.get<ConfigModel[]>(this.configUrl).subscribe((configList) => {
+      console.log(configList);
+    });
   }
 
   isConfigFormValid(): boolean{

@@ -1,7 +1,7 @@
 import {ConfigModel} from "../../game/models/config.model";
 
 export interface Difficulty {
-  id: number;
+  difficultyId: number;
   name: string;
   description: string;
   config: ConfigModel;
