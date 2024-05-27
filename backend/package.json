@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app/index.js",
-    "dev": "./node_modules/.bin/nodemon app/index.js",
+    "dev": "%INIT_CWD%/node_modules/.bin/nodemon app/index.js",
     "lint": "./node_modules/.bin/eslint -c .eslintrc.js app/",
     "lint:fix": "./node_modules/.bin/eslint -c .eslintrc.js app/ --fix",
     "start:e2e": "rimraf ./database/e2e && copyfiles -f ./database/e2e-starter/* ./database/e2e ./database/e2e && cross-env DB_FOLDER=e2e/ node app/index.js"
@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/NablaT/backend-ps6-starter-quiz#readme",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@types/hapi__joi": "^17.1.14",
     "body-parser": "1.19.0",
     "cors": "2.8.5",
     "express": "^4.17.1",

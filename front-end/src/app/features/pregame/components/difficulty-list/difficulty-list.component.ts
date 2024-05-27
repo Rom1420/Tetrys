@@ -8,7 +8,7 @@ import { Difficulty } from "src/app/features/pregame/models/difficulty.model";
   styleUrls: ['./difficulty-list.component.scss']
 })
 export class DifficultyListComponent implements OnInit {
-  @Input() selectedPlayerId: number | null = null; 
+  @Input() selectedPlayerId: number | null = null;
 
   public difficultyList: Difficulty[] = [];
   public basicDifficultyListWithTitles: { id: number, title: string }[] = [];
@@ -16,7 +16,7 @@ export class DifficultyListComponent implements OnInit {
   @Output() hoverEnd: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(public difficultyService: DifficultyServices) {
-    this.difficultyService.difficulties$.subscribe((difficultyList) => {
+    this.difficultyService.allDifficulties$.subscribe((difficultyList) => {
       this.difficultyList = difficultyList;
     });
   }

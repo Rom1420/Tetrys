@@ -10,7 +10,7 @@ export class DifficultyDetailComponent {
   @Input() currentDifficulty: Difficulty | null = null;
 
   getDifficultyClass(): string {
-    switch (this.currentDifficulty?.id) {
+    switch (this.currentDifficulty?.difficultyId) {
       case 1:
         return 'debutant';
       case 2:
