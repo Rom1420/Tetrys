@@ -22,13 +22,12 @@ class WordManager {
         return Word.create(word);
     }
 
-    static addWord({text, listId = 0}) {
+    static addWord({text, size, listId = 0, studentId = 0}) {
         if(typeof text !== 'string' || text.trim() === '') {
         }
-        const size = text.length
-        console.log('addingWord')
+        size = text.length
         try {
-            return Word.create({text:text, size:size, listId:listId})
+            return Word.create({text:text, size:size, listId:listId, studentId:studentId});
         } catch (err){
         
         }

@@ -2,6 +2,7 @@ const { Router } = require('express')
 
 const { Word } = require('../../models')
 const { addWord, getWordsBelowSize, getListOfWordsById, isAccentuated } = require('./manager')
+const WordManager = require('./manager')
 
 const router = new Router()
 
@@ -43,7 +44,7 @@ router.get('/listId/:listId', (req, res) => {
 
 router.post('/', (req, res) => {
     try{
-        const word = addWord({...req.body})
+        const word = WordManager.addWord ({...req.body})
         res.status(201).json(word)
     } catch (err){
         if(err.name === 'ValidationError'){

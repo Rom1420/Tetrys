@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ConfigFormResultService} from "../../../game/services/config-form-result.service";
 import {ConfigModel} from "../../../game/models/config.model";
 
@@ -11,6 +11,9 @@ export class ConfigListComponent implements OnInit{
   public configList: ConfigModel[] = [];
   public showCreateConfig: boolean = false;
   public showConfigList: boolean = !this.showCreateConfig;
+
+  
+  @Input() selectedPlayerId: number | null = 0; 
 
   constructor(public configFormResultService: ConfigFormResultService){
     this.configFormResultService.configActual$.subscribe(() => {

@@ -13,6 +13,7 @@ import { ConfigListComponent } from '../config-list/config-list.component';
 })
 export class ConfigCreationComponent implements OnInit{
   @Input() showCreateConfiguration!: (() => void);
+  @Input() selectedPlayerId: number | null = 0; 
 
   public affichageConfig: boolean = false;
   public url: string = "";
@@ -76,14 +77,9 @@ export class ConfigCreationComponent implements OnInit{
 
   addWords() {
     let newWords: string = this.configForm.getRawValue().wordList;
-    if (newWords) {
+    if (newWords && this.selectedPlayerId) {
       let wordArray = newWords.split(' ');
-      wordArray.forEach(word => {
-        if (word) {
-          const newWord: Word = { text: word };
-          this.wordsService.addWord(newWord);
-        }
-      });
+      this.wordsService.addWordsListOfStudent(wordArray, this.selectedPlayerId);
     }
   }
 

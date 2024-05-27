@@ -41,13 +41,11 @@ export class WordsServices{
       }
       this.http.get<Word[]>(url).subscribe((words) => {
         this.actualWords = words.slice(rank, rank + 3);
-        console.log("get3Words",this.actualWords);  
         this.actualWords$.next(this.actualWords);
       });
     }
   }
     
-
   setWords(words: Word[]){
     this.words = words;
   }
@@ -62,6 +60,33 @@ export class WordsServices{
 
   addWord(word : Word): void{
     this.words.push(word);
-    this.words$.next(this.actualWords);
+    this.words$.next(this.words);
+  }
+
+  addWordsListOfStudent(wordsList : string[], studentId : number): void{
+    const listId = this.getNextListId();
+    
+    for(const wordText of wordsList){
+
+      const newWord = this.createWord(wordText, studentId, listId);
+
+      console.log("newWord : ", newWord);
+      this.http.post<Word>(this.wordUrl, newWord).subscribe((word) => {
+        this.addWord(word);
+      });
+    }
+  }
+
+  getNextListId(): number {
+    const listIds = this.words.map(word => word.listId);
+    const maxListIds = Math.max(...listIds, 0);
+    return maxListIds + 1;
+  }
+
+  createWord(text : string, studentId : number, listId : number): Word{
+    const newWord = {text: text, size : 0, listId : 0, studentId : 0};
+    newWord.studentId = studentId;
+    newWord.listId = listId;
+    return newWord;
   }
 }

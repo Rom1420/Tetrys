@@ -13,10 +13,10 @@ import {ConfigModel} from "./models/config.model";
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
 })
-export class GameComponent implements OnInit, AfterViewInit{
+export class GameComponent implements OnInit, AfterViewInit {
 
     public wordForm: FormGroup;
-    private actualWords: Word[] = [{text: ""}];
+    private actualWords: Word[] = [{text: "", size : 0, listId : 0, studentId : 0}];
     public actualWordForm: string = "";
     public time: number = 0;
     public allTimer: any[] = [];
