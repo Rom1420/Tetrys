@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TetrisBlockId, TetrisBlocks } from '../mock/block.mock';
 import {GameFormService} from "./game-form.service";
-import {Subscription} from "rxjs";
+import {BehaviorSubject, Subscription} from "rxjs";
 import {GameManagerService} from "./game-manager.service";
 
 
@@ -14,7 +14,7 @@ export class GameEngine {
   cols: number = 10;
   currentPiece: { id: number, shape: boolean[][], position: { row: number, col: number } };
   resultWordGame: Subscription;
-  secondError = false;
+  secondError = new BehaviorSubject(false);
 
   constructor(private gameFormService: GameFormService, private gameManagerService:GameManagerService) {
     this.resultWordGame = this.gameFormService.results$.subscribe((wordResult) => {
@@ -24,8 +24,8 @@ export class GameEngine {
         if (wordResult.at(wordResult.length - 1).isValid === "true"){
           console.log("normal")
           this.playGame(wordResult[length - 1].word);
-          this.secondError = false;
-        } else if (wordResult.at(wordResult.length - 1).error == 0 || this.secondError) {
+          this.secondError.next(false);
+        } else if (wordResult.at(wordResult.length - 1).error == 0 || this.secondError.value) {
           console.log("random")
           this.placeRandomPieceRandomly()
         } else {
@@ -319,7 +319,7 @@ export class GameEngine {
     const gameEngineInstance = this;
     function avoid(){
       console.log("salut")
-      gameEngineInstance.secondError = true;
+      gameEngineInstance.secondError.next(true);
       gameEngineInstance.gameManagerService.resetWords();
       gameEngineInstance.gameManagerService.captureEvents$.next(0);
     }
