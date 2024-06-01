@@ -3,6 +3,8 @@ import { BehaviorSubject, Subject } from "rxjs";
 import { BlockService } from "./block.service";
 import { WordsServices } from "./words.service";
 import {Word} from "../models/word.model";
+import {ConfigFormResultService} from "./config-form-result.service";
+import {ConfigModel} from "../models/config.model";
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +23,18 @@ export class GameManagerService {
   private blocksSubject = new BehaviorSubject<{ id: number, shape: boolean[][] }[]>([]);
   blocks$ = this.blocksSubject.asObservable();
 
-  constructor(private wordsService: WordsServices, private blockService: BlockService) {
+  private config:ConfigModel;
+
+  constructor(private wordsService: WordsServices, private blockService: BlockService, private configFormResultService: ConfigFormResultService) {
     this.initializeWordsAndBlocks();
+    this.config = this.configFormResultService.getConfig()
+    this.configFormResultService.configActual$.subscribe((actualConfig) => {
+      this.config = actualConfig
+    })
   }
 
   initializeWordsAndBlocks(): void {
-    const randomInt: number = Math.floor(Math.random() * (this.wordsService.words.length - 2));
-    const words = this.wordsService.get3Words(randomInt);
+    const words = this.wordsService.get3Words(this.configFormResultService.getConfig().length);
     const blocks = this.blockService.getThreeDistinctBlocks();
     this.wordsSubject.next(words);
     this.blocksSubject.next(blocks);

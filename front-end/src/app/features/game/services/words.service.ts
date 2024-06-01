@@ -13,14 +13,19 @@ export class WordsServices{
   private actualWords: Word[] = [];
   public words$: BehaviorSubject<Word[]> = new BehaviorSubject(this.actualWords);
 
-  get3Words(rank: number): Word[]{
-    this.actualWords = this.words.slice(rank, rank+3);
+  get3Words(lengthMin: number): Word[]{
+    let i: number = 0
+    this.actualWords = []
+    console.log("coucou")
+    while (i < 3){
+      const randomInt: number = Math.floor(Math.random() * (this.words.length));
+      if (this.words[randomInt].name.length <= lengthMin){
+        this.actualWords.push(this.words[randomInt])
+        i++
+      }
+    }
     this.words$.next(this.actualWords);
     return this.actualWords;
-  }
-
-  setWords(words: Word[]){
-    this.words = words;
   }
 
   getActualWords(): Word[]{
