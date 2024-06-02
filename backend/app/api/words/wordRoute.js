@@ -1,7 +1,7 @@
 const { Router } = require('express')
 
 const { Word } = require('../../models')
-const { addWord, getWordsBelowSize, getListOfWordsById, isAccentuated } = require('./manager')
+const { addWord, getWordsBelowSize, getListOfWordsById, isAccentuated, isInWordsList } = require('./manager')
 const WordManager = require('./manager')
 
 const router = new Router()
@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
         }
         res.status(200).json(words)
     } catch (err){
+        console.log(err)
         res.status(500).json(err)
     }
 })
@@ -42,18 +43,20 @@ router.get('/listId/:listId', (req, res) => {
     }
 })
 
-router.post('/', (req, res) => {
-    try{
-        const word = WordManager.addWord ({...req.body})
-        res.status(201).json(word)
-    } catch (err){
-        if(err.name === 'ValidationError'){
-            res.status(400).json(err.extra)
-        } else {
-            res.status(500).json(err)
+router.post('/', async (req, res) => {
+    try {
+        if (WordManager.isInWordsList(req.body.text, req.body.listId)) {
+            return res.status(400).json({ error: 'Word already exists' });
         }
-    } 
-})
+        
+        const newWord = await WordManager.createWord(req.body);
+        res.status(201).json(newWord);
+    } catch (err) {
+        console.error('Error adding word:', err);
+        res.status(500).json({ error: err.message });
+    }
+});
+
 
 router.put('/:wordId', (req, res) => {
     try {

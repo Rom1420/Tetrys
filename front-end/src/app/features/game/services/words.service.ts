@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import {Word} from "../models/word.model";
-import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 
 import { HttpClient } from '@angular/common/http';
 import { serverUrl, httpOptionsBase } from '../../../../configs/server.config';
@@ -15,7 +14,7 @@ export class WordsServices{
   private actualWords: Word[] = []; // Contient les 3 mots actuellement joués
   public actualWords$: BehaviorSubject<Word[]> = new BehaviorSubject(this.actualWords);
   
-  private wordUrl = serverUrl + '/words';
+  private wordUrl = serverUrl + '/words/';
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient){
@@ -23,6 +22,7 @@ export class WordsServices{
   }
 
   retrieveWords():void{
+    console.log(this.wordUrl)
     this.http.get<Word[]>(this.wordUrl).subscribe((words) => {
       this.words = words;
       this.words$.next(this.words);
@@ -63,19 +63,27 @@ export class WordsServices{
     this.words$.next(this.words);
   }
 
-  addWordsListOfStudent(wordsList : string[], studentId : number): void{
-    const listId = this.getNextListId();
-    
-    for(const wordText of wordsList){
+  addWordsListOfStudent(wordsList: string[], studentId: number): void {
+  const listId = this.getNextListId();
+  console.log('wordList', wordsList, "de ", wordsList.length);
 
-      const newWord = this.createWord(wordText, studentId, listId);
+  for (const wordText of wordsList) {
+    const newWord = this.createWord(wordText, studentId, listId);
+    console.log('newWord', newWord);
 
-      console.log("newWord : ", newWord);
-      this.http.post<Word>(this.wordUrl, newWord).subscribe((word) => {
-        this.addWord(word);
+    if (!this.words.some(word => word.text === newWord.text && word.listId === newWord.listId)) {
+      console.log(this.words.length)
+      this.http.post<Word>(this.wordUrl, newWord).subscribe({
+        next: (word) => {
+          console.log('Word added', word);
+        },
+        error: (err) => {
+          console.error('Error adding word', err);
+        }
       });
     }
   }
+}
 
   getNextListId(): number {
     const listIds = this.words.map(word => word.listId);
@@ -83,10 +91,13 @@ export class WordsServices{
     return maxListIds + 1;
   }
 
-  createWord(text : string, studentId : number, listId : number): Word{
-    const newWord = {text: text, size : 0, listId : 0, studentId : 0};
-    newWord.studentId = studentId;
-    newWord.listId = listId;
+  createWord(text: string, studentId: number, listId: number): Word {
+    const newWord: Word = {
+      text: text,
+      size: text.length,
+      listId: listId,
+      studentId: studentId,
+    };
     return newWord;
-  }
+}
 }

@@ -18,19 +18,29 @@ class WordManager {
         return Word.get().filter(word => word.id == wordId);
     }
 
-    static createWord(word) {
-        return Word.create(word);
+
+    static async createWord({ text, size, listId = 0, studentId = 0 }) {
+        if (typeof text !== 'string' || text.trim() === '') {
+            throw new Error('Invalid word text');
+        }
+        if (this.isInWordsList(text, listId)) {
+            throw new Error('Word already exists');
+        }
+
+        size = text.length;
+        try {
+            const newWord = Word.create({ text: text, size: size, listId: listId, studentId: studentId });
+            console.log('Word created in manager:', newWord);
+            return newWord;
+        } catch (err) {
+            console.error('Error creating word in manager:', err);
+            throw err;
+        }
     }
 
-    static addWord({text, size, listId = 0, studentId = 0}) {
-        if(typeof text !== 'string' || text.trim() === '') {
-        }
-        size = text.length
-        try {
-            return Word.create({text:text, size:size, listId:listId, studentId:studentId});
-        } catch (err){
-        
-        }
+    static isInWordsList(wordText, listId) {
+        const words = this.getAllWords();
+        return words.some(word => word.text === wordText && word.listId === listId);
     }
 
     static isAccentuated(word) {

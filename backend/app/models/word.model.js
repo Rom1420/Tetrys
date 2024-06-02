@@ -5,4 +5,5 @@ module.exports = new BaseModel('Word',{
     text: Joi.string().required(),
     size : Joi.number().required(),
     listId : Joi.number().required(),
+    studentId : Joi.number().required(),
 })

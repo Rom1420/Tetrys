@@ -22,32 +22,5 @@
     "errorAllowed": false,
     "userId": 0,
     "id": 1716197873858
-  },
-  {
-    "name": "e",
-    "time": "0.1",
-    "length": "26",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 2,
-    "id": 1716291173984
-  },
-  {
-    "name": "kug",
-    "time": "10",
-    "length": "844",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 2,
-    "id": 1716292508681
-  },
-  {
-    "name": "oijfr",
-    "time": "8",
-    "length": "5",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 2,
-    "id": 1716791096786
   }
 ]

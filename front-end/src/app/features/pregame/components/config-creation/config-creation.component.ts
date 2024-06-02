@@ -17,7 +17,6 @@ import {StudentService} from "../../../../core/components/services/student.servi
 })
 export class ConfigCreationComponent implements OnInit{
   @Input() showCreateConfiguration!: (() => void);
-  @Input() selectedPlayerId: number | null = 0; 
 
   public affichageConfig: boolean = false;
   public url: string = "";
@@ -29,8 +28,6 @@ export class ConfigCreationComponent implements OnInit{
   constructor(private studentService:StudentService, private http: HttpClient, private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService, public wordsService: WordsServices) {
 
     studentService.selectedStudentId$.subscribe((value) => {
-      console.log(value)
-      //console.log(this.currentUserId)
       this.userId = value;
     })
 
@@ -68,6 +65,7 @@ export class ConfigCreationComponent implements OnInit{
     if (this.configForm.valid){
       //this.configFormResultService.addResult(this.configForm.value)
       this.http.post<ConfigModel>(this.configUrl, this.configForm.value).subscribe(() => this.retrieveConfigs())
+      this.addWords();
       this.configFormResultService.startGameWithConfiguration(this.configForm.value);
       this.configForm.reset();
     }
@@ -88,9 +86,12 @@ export class ConfigCreationComponent implements OnInit{
 
   addWords() {
     let newWords: string = this.configForm.getRawValue().wordList;
-    if (newWords && this.selectedPlayerId) {
-      let wordArray = newWords.split(' ');
-      this.wordsService.addWordsListOfStudent(wordArray, this.selectedPlayerId);
+    if (newWords && this.userId) {
+      let wordArray = newWords.split(' ')
+                              .map(word => word.trim().replace(/,$/, '')) 
+                              .filter(word => word.length > 0); 
+
+      this.wordsService.addWordsListOfStudent(wordArray, this.userId);
     }
   }
 
