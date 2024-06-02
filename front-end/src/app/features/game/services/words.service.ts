@@ -1,9 +1,11 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, forkJoin } from "rxjs";
 import {Word} from "../models/word.model";
 
 import { HttpClient } from '@angular/common/http';
 import { serverUrl, httpOptionsBase } from '../../../../configs/server.config';
+import { ConfigModel } from "../models/config.model";
+import { ConfigFormResultService } from "./config-form-result.service";
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +15,16 @@ export class WordsServices{
   public words$: BehaviorSubject<Word[]> = new BehaviorSubject(this.words);
   private actualWords: Word[] = []; // Contient les 3 mots actuellement joués
   public actualWords$: BehaviorSubject<Word[]> = new BehaviorSubject(this.actualWords);
+  public config$: BehaviorSubject<ConfigModel | null> = new BehaviorSubject<ConfigModel | null>(null);
   
   private wordUrl = serverUrl + '/words/';
   private httpOptions = httpOptionsBase;
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient, private configFormResultService: ConfigFormResultService){
     this.retrieveWords()
+    this.configFormResultService.configActual$.subscribe(config =>{
+      this.setConfig(config);
+    });
   }
 
   retrieveWords():void{
@@ -29,21 +35,50 @@ export class WordsServices{
     });
   }
 
-  get3Words(rank: number, accentuated: boolean = false, listId: number = 0): void{
-    let url = '${this.wordUrl}'
+  get3Words(): void {
+    this.config$.subscribe(config => {
+      console.log(config);
+      if (config) {
+        const { listId, onlyWordsList } = config;
 
-    if(listId !== 0){
-       url = `${this.wordUrl}/listId/${listId}`;
-    } else {
-      let url = `${this.wordUrl}`;
-      if (accentuated) {
-        url = `${this.wordUrl}/accentuated`;
+        if (onlyWordsList && listId !== 0) {
+          console.log("voici le listId",listId);
+          const url = `${this.wordUrl}listId/${listId}`;
+          this.http.get<Word[]>(url).subscribe((words) => {
+            this.actualWords = this.getRandomWords(words, 3);
+            this.actualWords$.next(this.actualWords);
+          });
+        } else if (listId !== 0) {
+          const urlListId = `${this.wordUrl}listId/${listId}`;
+          const urlListIdZero = `${this.wordUrl}listId/0`;
+
+          forkJoin([
+            this.http.get<Word[]>(urlListId),
+            this.http.get<Word[]>(urlListIdZero)
+          ]).subscribe(([wordsListId, wordsListIdZero]) => {
+            const combinedWords = wordsListId.concat(wordsListIdZero);
+            this.actualWords = this.getRandomWords(combinedWords, 3);
+            this.actualWords$.next(this.actualWords);
+          });
+        } 
+        else {
+          
+          this.http.get<Word[]>(this.wordUrl).subscribe((words) => {
+            this.actualWords = this.getRandomWords(words, 3);
+            this.actualWords$.next(this.actualWords);
+          });
+        }
       }
-      this.http.get<Word[]>(url).subscribe((words) => {
-        this.actualWords = words.slice(rank, rank + 3);
-        this.actualWords$.next(this.actualWords);
-      });
-    }
+    });
+  }
+  getRandomWords(words: Word[], count: number): Word[] {
+    const shuffled = words.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  }
+
+  setConfig(config: ConfigModel) {
+    console.log("config before set", config);
+    this.config$.next(config);
   }
     
   setWords(words: Word[]){

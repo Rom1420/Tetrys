@@ -11,19 +11,21 @@
               <input class="input-custom" type="text" id="name" formControlName="name" placeholder="Nom de la config">
             </div>
           </div>
-          <div class="form-cell">
-            <div class="input-container">
-              <input class="input-custom" type="text" id="time" formControlName="time" placeholder="Temps max par mot">
+          <div class="time-and-length-container">
+            <div class="form-cell">
+              <div class="input-container">
+                <input class="input-custom" type="text" id="time" formControlName="time" placeholder="Temps max par mot">
+              </div>
             </div>
-          </div>
-          <div class="form-cell">
-            <div class="input-container">
-              <input class="input-custom" type="text" id="length"  formControlName="length" placeholder="Longueur max de mot">
+            <div class="form-cell">
+              <div class="input-container">
+                <input class="input-custom" type="text" id="length"  formControlName="length" placeholder="Longueur max de mot">
+              </div>
             </div>
           </div>
           <div class="form-cell">
             <div class="error-container">
-              <label for="radioOui"> Droit à l'erreur:  </label>
+              <label for="radioOui"> Droit à l'erreur :</label>
               <div class="radiosButtons">
                 <label> <input type="radio" id="radioOui" formControlName="errorAllowed" [value]="true"> <span>oui</span> </label>
                 <label> <input type="radio" id="radioNon" formControlName="errorAllowed" [value]="false"> <span>non</span> </label>
@@ -34,6 +36,15 @@
             <div class="add-words-config">
               <label for="wordList">Mots supplémentaires (optionnel)</label>
               <textarea class="text-zone" formControlName="wordList" id="wordList" name="add-words" rows="4" cols="30" placeholder="Entrez vos nouveaux mots ici..."></textarea>
+            </div>
+          </div>
+          <div class="form-cell">
+            <div class="error-container">
+              <label for="radioOui">Exclusivement mots perso :</label>
+              <div class="radiosButtons">
+                <label> <input type="radio" id="onlyWordsListYes" formControlName="onlyWordsList" [value]="true"> <span>oui</span> </label>
+                <label> <input type="radio" id="onlyWordsListNo" formControlName="onlyWordsList" [value]="false"> <span>non</span> </label>
+              </div>
             </div>
           </div>
         </div>

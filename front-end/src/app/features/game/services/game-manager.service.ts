@@ -28,9 +28,8 @@ export class GameManagerService {
   initializeWordsAndBlocks(): void {
     this.wordsService.words$.subscribe((words) => {
       if(words.length > 0) {
-        const randomInt: number = Math.floor(Math.random() * (words.length - 2));
-    
-        this.wordsService.get3Words(randomInt);
+        
+        this.wordsService.get3Words();
 
         this.wordsService.actualWords$.subscribe((actualWords) => {
           if(actualWords.length > 0){

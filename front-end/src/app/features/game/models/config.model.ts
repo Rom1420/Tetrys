@@ -6,5 +6,6 @@ export interface ConfigModel{
   userId: number,
   wordList?: string,
   id?: number,
-  listId?: number
+  listId?: number,
+  onlyWordsList?: boolean
 }

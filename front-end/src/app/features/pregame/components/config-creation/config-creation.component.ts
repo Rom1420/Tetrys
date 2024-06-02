@@ -40,6 +40,7 @@ export class ConfigCreationComponent implements OnInit{
       errorAllowed: ['', [Validators.required, Validators.pattern('^(true|false)$') ]],
       wordList: [' '],
       userId:  [this.userId, [Validators.required, Validators.pattern('^\\d+')]],
+      onlyWordsList: [false, Validators.required]
     })
     this.wordsService.words$.subscribe((words) => {
       this.words = words;
@@ -74,6 +75,8 @@ export class ConfigCreationComponent implements OnInit{
         this.http.post<ConfigModel>(this.configUrl, configData).subscribe(() => {
           this.retrieveConfigs();
           this.addWords(listId);
+          console.log("configData on submit", configData);
+          this.configFormResultService.setConfig(configData);
           this.configFormResultService.startGameWithConfiguration(this.configForm.value);
           this.configForm.reset();
         });

@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class ConfigFormResultService {
-  public formResults = new BehaviorSubject<ConfigModel>({errorAllowed: false, length: 0, name: "", time: 0, userId: 0});    //settings niveau moyen par défault
+  public formResults = new BehaviorSubject<ConfigModel>({errorAllowed: false, length: 10, name: "", time: 1, userId: 0});    //settings niveau moyen par défault
   public configActual$ = this.formResults.asObservable()
 
   constructor(private router:Router) {}
@@ -16,8 +16,11 @@ export class ConfigFormResultService {
     return this.formResults.value;
   }
 
-  startGameWithConfiguration(config:ConfigModel){
+  setConfig(config: ConfigModel) {
     this.formResults.next(config);
+  }
+
+  startGameWithConfiguration(config:ConfigModel){
     this.router.navigate(["/game"]).catch(error => {
       console.error('Erreur de navigation :', error);});
   }
