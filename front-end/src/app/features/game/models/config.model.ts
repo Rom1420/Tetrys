@@ -5,5 +5,6 @@ export interface ConfigModel{
   errorAllowed: boolean,
   userId: number,
   wordList?: string,
-  id?: number
+  id?: number,
+  listId?: number
 }

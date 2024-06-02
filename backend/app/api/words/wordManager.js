@@ -51,6 +51,16 @@ class WordManager {
     static getListOfWordsById(listId){
         return Word.get().filter(word => word.listId == listId);
     }
+
+    static deleteWordsByListId(listId) {
+        try {
+            listId = parseInt(listId, 10);
+            Word.items = Word.items.filter(word => word.listId !== listId);
+        } catch (err) {
+            console.error('Error deleting words by listId:', err);
+            throw err;
+        }
+    }
 }
 
 module.exports = WordManager;

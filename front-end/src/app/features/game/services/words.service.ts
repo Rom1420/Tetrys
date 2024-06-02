@@ -63,8 +63,7 @@ export class WordsServices{
     this.words$.next(this.words);
   }
 
-  addWordsListOfStudent(wordsList: string[], studentId: number): void {
-  const listId = this.getNextListId();
+  addWordsListOfStudent(wordsList: string[], studentId: number, listId: number): void {
   console.log('wordList', wordsList, "de ", wordsList.length);
 
   for (const wordText of wordsList) {
@@ -85,11 +84,6 @@ export class WordsServices{
   }
 }
 
-  getNextListId(): number {
-    const listIds = this.words.map(word => word.listId);
-    const maxListIds = Math.max(...listIds, 0);
-    return maxListIds + 1;
-  }
 
   createWord(text: string, studentId: number, listId: number): Word {
     const newWord: Word = {
