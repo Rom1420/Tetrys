@@ -21,21 +21,38 @@ class WordManager {
 
     static async createWord({ text, size, listId = 0, studentId = 0 }) {
         if (typeof text !== 'string' || text.trim() === '') {
-            throw new Error('Invalid word text');
+            console.error('Invalid word text');
+            return null;
         }
         if (this.isInWordsList(text, listId)) {
-            throw new Error('Word already exists');
+            console.log('Word already exists:', text);
+            return null; 
         }
 
         size = text.length;
         try {
             const newWord = Word.create({ text: text, size: size, listId: listId, studentId: studentId });
-            console.log('Word created in manager:', newWord);
             return newWord;
         } catch (err) {
             console.error('Error creating word in manager:', err);
             throw err;
         }
+    }
+
+    static async createWords(words) {
+        const createdWords = [];
+        for (const wordData of words) {
+            const { text, listId = 0, studentId = 0 } = wordData;
+            const size = text.length;
+            try {
+                const newWord = await this.createWord({ text, size, listId, studentId });
+                createdWords.push(newWord);
+            } catch (err) {
+                console.error(`Error creating word: ${text}`, err);
+                throw err;
+            }
+        }
+        return createdWords;
     }
 
     static isInWordsList(wordText, listId) {

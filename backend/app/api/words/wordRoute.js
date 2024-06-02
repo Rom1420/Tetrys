@@ -56,6 +56,17 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.post('/wordsList', (req, res) => {
+    try {
+        const words = req.body;
+        const createdWords = WordManager.createWords(words);
+        res.status(201).json(createdWords);
+    } catch (err) {
+        console.error('Error adding words:', err);
+        manageAllErrors(res, err);
+    }
+});
+
 
 router.put('/:wordId', (req, res) => {
     try {
