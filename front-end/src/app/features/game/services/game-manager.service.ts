@@ -3,6 +3,8 @@ import { BehaviorSubject, Subject } from "rxjs";
 import { BlockService } from "./block.service";
 import { WordsServices } from "./words.service";
 import {Word} from "../models/word.model";
+import {ConfigFormResultService} from "./config-form-result.service";
+import {ConfigModel} from "../models/config.model";
 
 @Injectable({
   providedIn: 'root'

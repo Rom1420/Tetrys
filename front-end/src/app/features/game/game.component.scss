@@ -72,7 +72,7 @@
 .input-container input{
   flex: 5;
   font-size: 7vh;
-  background-color: var(--box-color); 
+  background-color: var(--box-color);
   color: #fff;
   font-family: 'Roboto', sans-serif;
   transition: all 0.2s ease-in;
@@ -255,7 +255,7 @@
   margin-bottom: 0px;
   color: #fff4ec;
   font-weight: 800;
-} 
+}
 
 .star-rating{
   filter: drop-shadow(0px 0px 5px #f8d060);
@@ -279,6 +279,20 @@
   100%{
       filter: drop-shadow(0px 0px 5px #f8d060);
   }
+}
+
+.mode-name{
+  font-size: 1.8em;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 5%;
+}
+
+.second-chance{
+  font-size: 1.5em;
+  color: crimson;
+  margin-bottom: 3%;
+  font-weight: bold;
 }
 
 
