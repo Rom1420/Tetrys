@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class ConfigFormResultService {
-  public formResults = new BehaviorSubject<ConfigModel>({errorAllowed: false, length: 10, name: "", time: 1, userId: 0});    //settings niveau moyen par défault
+  public formResults = new BehaviorSubject<ConfigModel>({errorAllowed: true, length: 6, name: "débutant", time: 1.5, userId: 0});    //settings niveau moyen par défault
   public configActual$ = this.formResults.asObservable()
 
   constructor(private router:Router) {}
