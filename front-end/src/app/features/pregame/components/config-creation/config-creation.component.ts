@@ -9,6 +9,7 @@ import {Word} from "../../../game/models/word.model";
 import {WordsServices} from "../../../game/services/words.service";
 import { ConfigListComponent } from '../config-list/config-list.component';
 import {StudentService} from "../../../../core/components/services/student.service";
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-config-creation',
@@ -17,7 +18,6 @@ import {StudentService} from "../../../../core/components/services/student.servi
 })
 export class ConfigCreationComponent implements OnInit{
   @Input() showCreateConfiguration!: (() => void);
-  @Input() currentUserId!: number;
 
   public affichageConfig: boolean = false;
   public url: string = "";
@@ -25,12 +25,11 @@ export class ConfigCreationComponent implements OnInit{
   private userId: number | null = 0;
   private configUrl: string = "http://localhost:9428/api/configs/";
   public words: Word[] = [];
+  private configs: ConfigModel[] = [];
 
   constructor(private studentService:StudentService, private http: HttpClient, private router:Router, public formBuilder: FormBuilder, public configFormResultService: ConfigFormResultService, public wordsService: WordsServices) {
 
     studentService.selectedStudentId$.subscribe((value) => {
-      console.log(value)
-      //console.log(this.currentUserId)
       this.userId = value;
     })
 
@@ -41,6 +40,7 @@ export class ConfigCreationComponent implements OnInit{
       errorAllowed: ['', [Validators.required, Validators.pattern('^(true|false)$') ]],
       wordList: [' '],
       userId:  [this.userId, [Validators.required, Validators.pattern('^\\d+')]],
+      onlyWordsList: [false, Validators.required]
     })
     this.wordsService.words$.subscribe((words) => {
       this.words = words;
@@ -64,17 +64,29 @@ export class ConfigCreationComponent implements OnInit{
       console.error('Erreur de navigation :', error);});
   }
 
-  onSubmit(){
-    if (this.configForm.valid){
-      //this.configFormResultService.addResult(this.configForm.value)
-      this.http.post<ConfigModel>(this.configUrl, this.configForm.value).subscribe(() => this.retrieveConfigs())
-      this.configFormResultService.startGameWithConfiguration(this.configForm.value);
-      this.configForm.reset();
+  onSubmit() {
+    if (this.configForm.valid) {
+      this.getNextListId().subscribe(listId => {
+        const configData = {
+          ...this.configForm.value,
+          listId: listId
+        };
+
+        this.http.post<ConfigModel>(this.configUrl, configData).subscribe(() => {
+          this.retrieveConfigs();
+          this.addWords(listId);
+          console.log("configData on submit", configData);
+          this.configFormResultService.setConfig(configData);
+          this.configFormResultService.startGameWithConfiguration(this.configForm.value);
+          this.configForm.reset();
+        });
+      });
     }
   }
 
   retrieveConfigs(){
     this.http.get<ConfigModel[]>(this.configUrl).subscribe((configList) => {
+      this.configs = configList;
       console.log(configList);
     });
   }
@@ -86,16 +98,23 @@ export class ConfigCreationComponent implements OnInit{
     return this.configForm.valid;
   }
 
-  addWords() {
+  getNextListId(): Observable<number> {
+    return this.http.get<ConfigModel[]>(this.configUrl).pipe(
+      map(configs => {
+        const listIds = configs.map(config => config.listId || 0);
+        return Math.max(...listIds, 0) + 1;
+      })
+    );
+  }
+  
+  addWords(listId: number) {
     let newWords: string = this.configForm.getRawValue().wordList;
-    if (newWords) {
-      let wordArray = newWords.split(' ');
-      wordArray.forEach(word => {
-        if (word) {
-          const newWord: Word = { name: word };
-          this.wordsService.addWord(newWord);
-        }
-      });
+    if (newWords && this.userId) {
+      let wordArray = newWords.split(' ')
+                              .map(word => word.trim().replace(/,$/, '')) 
+                              .filter(word => word.length > 0); 
+
+      this.wordsService.addWordsListOfStudent(wordArray, this.userId, listId);
     }
   }
 

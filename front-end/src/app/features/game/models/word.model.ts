@@ -1,3 +1,6 @@
 export interface Word{
-  name: string;
+  text: string;
+  size: number;
+  listId: number;
+  studentId: number;
 }

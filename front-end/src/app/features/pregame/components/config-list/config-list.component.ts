@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ConfigFormResultService} from "../../../game/services/config-form-result.service";
 import {ConfigModel} from "../../../game/models/config.model";
 import {HttpClient} from "@angular/common/http";

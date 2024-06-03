@@ -1,0 +1,3677 @@
+[
+  {
+    "text": "aide",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563159
+  },
+  {
+    "text": "chef",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563162
+  },
+  {
+    "text": "enfant",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563162
+  },
+  {
+    "text": "garde",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563163
+  },
+  {
+    "text": "gauche",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563163
+  },
+  {
+    "text": "geste",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563164
+  },
+  {
+    "text": "gosse",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563165
+  },
+  {
+    "text": "livre",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563165
+  },
+  {
+    "text": "merci",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563166
+  },
+  {
+    "text": "mort",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563167
+  },
+  {
+    "text": "ombre",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563167
+  },
+  {
+    "text": "part",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563167
+  },
+  {
+    "text": "poche",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563168
+  },
+  {
+    "text": "professeur",
+    "size": 10,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563168
+  },
+  {
+    "text": "tour",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563169
+  },
+  {
+    "text": "fois",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563169
+  },
+  {
+    "text": "madame",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563170
+  },
+  {
+    "text": "paix",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563170
+  },
+  {
+    "text": "voix",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563171
+  },
+  {
+    "text": "affaire",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563172
+  },
+  {
+    "text": "année",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563172
+  },
+  {
+    "text": "arme",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563173
+  },
+  {
+    "text": "armée",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563173
+  },
+  {
+    "text": "attention",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563174
+  },
+  {
+    "text": "balle",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563174
+  },
+  {
+    "text": "boîte",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563174
+  },
+  {
+    "text": "bouche",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563174
+  },
+  {
+    "text": "carte",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563175
+  },
+  {
+    "text": "cause",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563175
+  },
+  {
+    "text": "chambre",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563175
+  },
+  {
+    "text": "chance",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563176
+  },
+  {
+    "text": "chose",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563176
+  },
+  {
+    "text": "classe",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563176
+  },
+  {
+    "text": "confiance",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563177
+  },
+  {
+    "text": "couleur",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563177
+  },
+  {
+    "text": "cour",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563178
+  },
+  {
+    "text": "cuisine",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563179
+  },
+  {
+    "text": "dame",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563179
+  },
+  {
+    "text": "dent",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563180
+  },
+  {
+    "text": "droite",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563180
+  },
+  {
+    "text": "école",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563181
+  },
+  {
+    "text": "église",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563181
+  },
+  {
+    "text": "envie",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563182
+  },
+  {
+    "text": "épaule",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563182
+  },
+  {
+    "text": "époque",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563183
+  },
+  {
+    "text": "équipe",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563183
+  },
+  {
+    "text": "erreur",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563183
+  },
+  {
+    "text": "espèce",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563184
+  },
+  {
+    "text": "face",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563184
+  },
+  {
+    "text": "façon",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563185
+  },
+  {
+    "text": "faim",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563186
+  },
+  {
+    "text": "famille",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563187
+  },
+  {
+    "text": "faute",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563187
+  },
+  {
+    "text": "femme",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563188
+  },
+  {
+    "text": "fenêtre",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563188
+  },
+  {
+    "text": "fête",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563189
+  },
+  {
+    "text": "fille",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563189
+  },
+  {
+    "text": "fleur",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563189
+  },
+  {
+    "text": "force",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563190
+  },
+  {
+    "text": "forme",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563190
+  },
+  {
+    "text": "guerre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563190
+  },
+  {
+    "text": "gueule",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563191
+  },
+  {
+    "text": "habitude",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563192
+  },
+  {
+    "text": "heure",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563192
+  },
+  {
+    "text": "histoire",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563193
+  },
+  {
+    "text": "idée",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563193
+  },
+  {
+    "text": "image",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563194
+  },
+  {
+    "text": "impression",
+    "size": 10,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563194
+  },
+  {
+    "text": "jambe",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563195
+  },
+  {
+    "text": "joie",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563195
+  },
+  {
+    "text": "journée",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563196
+  },
+  {
+    "text": "langue",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563196
+  },
+  {
+    "text": "lettre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563197
+  },
+  {
+    "text": "lèvre",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563197
+  },
+  {
+    "text": "ligne",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563198
+  },
+  {
+    "text": "lumière",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563198
+  },
+  {
+    "text": "main",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563198
+  },
+  {
+    "text": "maison",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563199
+  },
+  {
+    "text": "maman",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563199
+  },
+  {
+    "text": "manière",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563200
+  },
+  {
+    "text": "marche",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563200
+  },
+  {
+    "text": "merde",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563201
+  },
+  {
+    "text": "mère",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563201
+  },
+  {
+    "text": "minute",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563202
+  },
+  {
+    "text": "musique",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563202
+  },
+  {
+    "text": "nuit",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563203
+  },
+  {
+    "text": "odeur",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563203
+  },
+  {
+    "text": "oreille",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563204
+  },
+  {
+    "text": "parole",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563204
+  },
+  {
+    "text": "partie",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563204
+  },
+  {
+    "text": "peau",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563205
+  },
+  {
+    "text": "peine",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563206
+  },
+  {
+    "text": "pensée",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563206
+  },
+  {
+    "text": "personne",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563207
+  },
+  {
+    "text": "peur",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563207
+  },
+  {
+    "text": "photo",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563208
+  },
+  {
+    "text": "pièce",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563209
+  },
+  {
+    "text": "pierre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563209
+  },
+  {
+    "text": "place",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563210
+  },
+  {
+    "text": "police",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563210
+  },
+  {
+    "text": "porte",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563211
+  },
+  {
+    "text": "présence",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563211
+  },
+  {
+    "text": "prison",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563213
+  },
+  {
+    "text": "putain",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563214
+  },
+  {
+    "text": "question",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563215
+  },
+  {
+    "text": "raison",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563216
+  },
+  {
+    "text": "réponse",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563216
+  },
+  {
+    "text": "robe",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563216
+  },
+  {
+    "text": "route",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563217
+  },
+  {
+    "text": "salle",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563217
+  },
+  {
+    "text": "scène",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563218
+  },
+  {
+    "text": "seconde",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563219
+  },
+  {
+    "text": "sécurité",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563219
+  },
+  {
+    "text": "semaine",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563220
+  },
+  {
+    "text": "situation",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563220
+  },
+  {
+    "text": "soeur",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563221
+  },
+  {
+    "text": "soirée",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563221
+  },
+  {
+    "text": "sorte",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563222
+  },
+  {
+    "text": "suite",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563222
+  },
+  {
+    "text": "table",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563223
+  },
+  {
+    "text": "terre",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563223
+  },
+  {
+    "text": "tête",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563224
+  },
+  {
+    "text": "vérité",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563224
+  },
+  {
+    "text": "ville",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563224
+  },
+  {
+    "text": "voiture",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563225
+  },
+  {
+    "text": "avis",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563225
+  },
+  {
+    "text": "bois",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563226
+  },
+  {
+    "text": "bras",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563227
+  },
+  {
+    "text": "choix",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563227
+  },
+  {
+    "text": "corps",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563228
+  },
+  {
+    "text": "cours",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563228
+  },
+  {
+    "text": "gars",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563229
+  },
+  {
+    "text": "mois",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563229
+  },
+  {
+    "text": "pays",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563230
+  },
+  {
+    "text": "prix",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563230
+  },
+  {
+    "text": "propos",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563231
+  },
+  {
+    "text": "sens",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563231
+  },
+  {
+    "text": "temps",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563232
+  },
+  {
+    "text": "travers",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563232
+  },
+  {
+    "text": "vieux",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563233
+  },
+  {
+    "text": "accord",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563233
+  },
+  {
+    "text": "agent",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563234
+  },
+  {
+    "text": "amour",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563234
+  },
+  {
+    "text": "appel",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563235
+  },
+  {
+    "text": "arbre",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563235
+  },
+  {
+    "text": "argent",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563236
+  },
+  {
+    "text": "avenir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563236
+  },
+  {
+    "text": "avion",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563237
+  },
+  {
+    "text": "bateau",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563237
+  },
+  {
+    "text": "bébé",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563237
+  },
+  {
+    "text": "besoin",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563238
+  },
+  {
+    "text": "bonheur",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563238
+  },
+  {
+    "text": "bonjour",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563239
+  },
+  {
+    "text": "bord",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563239
+  },
+  {
+    "text": "boulot",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563239
+  },
+  {
+    "text": "bout",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563240
+  },
+  {
+    "text": "bruit",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563240
+  },
+  {
+    "text": "bureau",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563241
+  },
+  {
+    "text": "café",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563242
+  },
+  {
+    "text": "camp",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563242
+  },
+  {
+    "text": "capitaine",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563242
+  },
+  {
+    "text": "chat",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563243
+  },
+  {
+    "text": "chemin",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563244
+  },
+  {
+    "text": "chéri",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563244
+  },
+  {
+    "text": "cheval",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563245
+  },
+  {
+    "text": "cheveu",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563245
+  },
+  {
+    "text": "chien",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563245
+  },
+  {
+    "text": "ciel",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563246
+  },
+  {
+    "text": "client",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563246
+  },
+  {
+    "text": "cœur",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563247
+  },
+  {
+    "text": "coin",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563248
+  },
+  {
+    "text": "colonel",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563250
+  },
+  {
+    "text": "compte",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563250
+  },
+  {
+    "text": "copain",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563251
+  },
+  {
+    "text": "côté",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563252
+  },
+  {
+    "text": "coup",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563252
+  },
+  {
+    "text": "courant",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563253
+  },
+  {
+    "text": "début",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563254
+  },
+  {
+    "text": "départ",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563255
+  },
+  {
+    "text": "dieu",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563255
+  },
+  {
+    "text": "docteur",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563256
+  },
+  {
+    "text": "doigt",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563256
+  },
+  {
+    "text": "dollar",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563257
+  },
+  {
+    "text": "doute",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563257
+  },
+  {
+    "text": "droit",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563258
+  },
+  {
+    "text": "effet",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563258
+  },
+  {
+    "text": "endroit",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563259
+  },
+  {
+    "text": "ennemi",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563259
+  },
+  {
+    "text": "escalier",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563260
+  },
+  {
+    "text": "esprit",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563260
+  },
+  {
+    "text": "état",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563261
+  },
+  {
+    "text": "exemple",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563261
+  },
+  {
+    "text": "fait",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563262
+  },
+  {
+    "text": "film",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563263
+  },
+  {
+    "text": "flic",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563264
+  },
+  {
+    "text": "fond",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563264
+  },
+  {
+    "text": "français",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563265
+  },
+  {
+    "text": "frère",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563265
+  },
+  {
+    "text": "front",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563266
+  },
+  {
+    "text": "garçon",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563266
+  },
+  {
+    "text": "général",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563267
+  },
+  {
+    "text": "genre",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563268
+  },
+  {
+    "text": "goût",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563269
+  },
+  {
+    "text": "gouvernement",
+    "size": 12,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563270
+  },
+  {
+    "text": "grand",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563270
+  },
+  {
+    "text": "groupe",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563271
+  },
+  {
+    "text": "haut",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563271
+  },
+  {
+    "text": "homme",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563272
+  },
+  {
+    "text": "honneur",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563272
+  },
+  {
+    "text": "hôtel",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563273
+  },
+  {
+    "text": "instant",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563273
+  },
+  {
+    "text": "intérêt",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563274
+  },
+  {
+    "text": "intérieur",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563275
+  },
+  {
+    "text": "jardin",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563275
+  },
+  {
+    "text": "jour",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563276
+  },
+  {
+    "text": "journal",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563277
+  },
+  {
+    "text": "lieu",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563277
+  },
+  {
+    "text": "long",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563278
+  },
+  {
+    "text": "maître",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563278
+  },
+  {
+    "text": "mari",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563279
+  },
+  {
+    "text": "mariage",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563280
+  },
+  {
+    "text": "matin",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563280
+  },
+  {
+    "text": "médecin",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563281
+  },
+  {
+    "text": "mètre",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563281
+  },
+  {
+    "text": "milieu",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563282
+  },
+  {
+    "text": "million",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563283
+  },
+  {
+    "text": "moment",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563284
+  },
+  {
+    "text": "monde",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563284
+  },
+  {
+    "text": "monsieur",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563285
+  },
+  {
+    "text": "mouvement",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563285
+  },
+  {
+    "text": "moyen",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563286
+  },
+  {
+    "text": "noir",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563286
+  },
+  {
+    "text": "nouveau",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563287
+  },
+  {
+    "text": "numéro",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563287
+  },
+  {
+    "text": "oeil",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563288
+  },
+  {
+    "text": "oiseau",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563288
+  },
+  {
+    "text": "oncle",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563289
+  },
+  {
+    "text": "ordre",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563290
+  },
+  {
+    "text": "papa",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563290
+  },
+  {
+    "text": "papier",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563291
+  },
+  {
+    "text": "parent",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563291
+  },
+  {
+    "text": "passage",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563292
+  },
+  {
+    "text": "passé",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563293
+  },
+  {
+    "text": "patron",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563294
+  },
+  {
+    "text": "père",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563294
+  },
+  {
+    "text": "petit",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563295
+  },
+  {
+    "text": "peuple",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563296
+  },
+  {
+    "text": "pied",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563297
+  },
+  {
+    "text": "plaisir",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563297
+  },
+  {
+    "text": "plan",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563298
+  },
+  {
+    "text": "point",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563299
+  },
+  {
+    "text": "premier",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563299
+  },
+  {
+    "text": "présent",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563300
+  },
+  {
+    "text": "président",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563301
+  },
+  {
+    "text": "prince",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563302
+  },
+  {
+    "text": "problème",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563303
+  },
+  {
+    "text": "quartier",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563303
+  },
+  {
+    "text": "rapport",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563304
+  },
+  {
+    "text": "regard",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563304
+  },
+  {
+    "text": "reste",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563305
+  },
+  {
+    "text": "retard",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563305
+  },
+  {
+    "text": "retour",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563306
+  },
+  {
+    "text": "rêve",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563306
+  },
+  {
+    "text": "salut",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563307
+  },
+  {
+    "text": "sang",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563307
+  },
+  {
+    "text": "secret",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563308
+  },
+  {
+    "text": "seigneur",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563308
+  },
+  {
+    "text": "sentiment",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563309
+  },
+  {
+    "text": "service",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563310
+  },
+  {
+    "text": "seul",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563310
+  },
+  {
+    "text": "siècle",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563311
+  },
+  {
+    "text": "signe",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563311
+  },
+  {
+    "text": "silence",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563312
+  },
+  {
+    "text": "soir",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563312
+  },
+  {
+    "text": "soldat",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563313
+  },
+  {
+    "text": "soleil",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563314
+  },
+  {
+    "text": "sourire",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563314
+  },
+  {
+    "text": "souvenir",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563315
+  },
+  {
+    "text": "sujet",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563316
+  },
+  {
+    "text": "téléphone",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563316
+  },
+  {
+    "text": "tout",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563317
+  },
+  {
+    "text": "train",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563318
+  },
+  {
+    "text": "travail",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563318
+  },
+  {
+    "text": "trou",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563319
+  },
+  {
+    "text": "truc",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563320
+  },
+  {
+    "text": "type",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563320
+  },
+  {
+    "text": "vent",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563321
+  },
+  {
+    "text": "ventre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563321
+  },
+  {
+    "text": "verre",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563322
+  },
+  {
+    "text": "village",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563323
+  },
+  {
+    "text": "visage",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563325
+  },
+  {
+    "text": "voyage",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563325
+  },
+  {
+    "text": "fils",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563326
+  },
+  {
+    "text": "gens",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563327
+  },
+  {
+    "text": "abandonner",
+    "size": 10,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563328
+  },
+  {
+    "text": "accepter",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563328
+  },
+  {
+    "text": "accompagner",
+    "size": 11,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563329
+  },
+  {
+    "text": "acheter",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563329
+  },
+  {
+    "text": "adorer",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563330
+  },
+  {
+    "text": "agir",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563331
+  },
+  {
+    "text": "aider",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563332
+  },
+  {
+    "text": "aimer",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563332
+  },
+  {
+    "text": "ajouter",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563333
+  },
+  {
+    "text": "aller",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563334
+  },
+  {
+    "text": "amener",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563334
+  },
+  {
+    "text": "amuser",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563335
+  },
+  {
+    "text": "annoncer",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563336
+  },
+  {
+    "text": "apercevoir",
+    "size": 10,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563336
+  },
+  {
+    "text": "apparaître",
+    "size": 10,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563337
+  },
+  {
+    "text": "appeler",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563338
+  },
+  {
+    "text": "apporter",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563338
+  },
+  {
+    "text": "apprendre",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563339
+  },
+  {
+    "text": "approcher",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563340
+  },
+  {
+    "text": "arranger",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563340
+  },
+  {
+    "text": "arrêter",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563341
+  },
+  {
+    "text": "arriver",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563341
+  },
+  {
+    "text": "asseoir",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563342
+  },
+  {
+    "text": "assurer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563343
+  },
+  {
+    "text": "attaquer",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563343
+  },
+  {
+    "text": "atteindre",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563344
+  },
+  {
+    "text": "attendre",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563345
+  },
+  {
+    "text": "avancer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563345
+  },
+  {
+    "text": "avoir",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563346
+  },
+  {
+    "text": "baisser",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563346
+  },
+  {
+    "text": "battre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563347
+  },
+  {
+    "text": "boire",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563348
+  },
+  {
+    "text": "bouger",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563348
+  },
+  {
+    "text": "brûler",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563349
+  },
+  {
+    "text": "cacher",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563350
+  },
+  {
+    "text": "calmer",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563351
+  },
+  {
+    "text": "casser",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563352
+  },
+  {
+    "text": "cesser",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563352
+  },
+  {
+    "text": "changer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563353
+  },
+  {
+    "text": "chanter",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563353
+  },
+  {
+    "text": "charger",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563354
+  },
+  {
+    "text": "chercher",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563355
+  },
+  {
+    "text": "choisir",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563356
+  },
+  {
+    "text": "commencer",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563357
+  },
+  {
+    "text": "comprendre",
+    "size": 10,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563357
+  },
+  {
+    "text": "compter",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563358
+  },
+  {
+    "text": "conduire",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563359
+  },
+  {
+    "text": "connaître",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563359
+  },
+  {
+    "text": "continuer",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563360
+  },
+  {
+    "text": "coucher",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563360
+  },
+  {
+    "text": "couper",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563361
+  },
+  {
+    "text": "courir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563362
+  },
+  {
+    "text": "couvrir",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563363
+  },
+  {
+    "text": "craindre",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563364
+  },
+  {
+    "text": "crier",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563364
+  },
+  {
+    "text": "croire",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563365
+  },
+  {
+    "text": "danser",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563366
+  },
+  {
+    "text": "décider",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563366
+  },
+  {
+    "text": "découvrir",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563367
+  },
+  {
+    "text": "dégager",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563368
+  },
+  {
+    "text": "demander",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563369
+  },
+  {
+    "text": "descendre",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563369
+  },
+  {
+    "text": "désoler",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563370
+  },
+  {
+    "text": "détester",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563371
+  },
+  {
+    "text": "détruire",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563371
+  },
+  {
+    "text": "devenir",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563372
+  },
+  {
+    "text": "deviner",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563373
+  },
+  {
+    "text": "devoir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563373
+  },
+  {
+    "text": "dire",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563374
+  },
+  {
+    "text": "disparaître",
+    "size": 11,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563375
+  },
+  {
+    "text": "donner",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563375
+  },
+  {
+    "text": "dormir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563376
+  },
+  {
+    "text": "échapper",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563377
+  },
+  {
+    "text": "écouter",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563377
+  },
+  {
+    "text": "écrire",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563378
+  },
+  {
+    "text": "éloigner",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563379
+  },
+  {
+    "text": "embrasser",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563379
+  },
+  {
+    "text": "emmener",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563380
+  },
+  {
+    "text": "empêcher",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563380
+  },
+  {
+    "text": "emporter",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563381
+  },
+  {
+    "text": "enlever",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563382
+  },
+  {
+    "text": "entendre",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563382
+  },
+  {
+    "text": "entrer",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563383
+  },
+  {
+    "text": "envoyer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563384
+  },
+  {
+    "text": "espérer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563384
+  },
+  {
+    "text": "essayer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563385
+  },
+  {
+    "text": "être",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563386
+  },
+  {
+    "text": "éviter",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563387
+  },
+  {
+    "text": "excuser",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563387
+  },
+  {
+    "text": "exister",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563388
+  },
+  {
+    "text": "expliquer",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563389
+  },
+  {
+    "text": "faire",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563389
+  },
+  {
+    "text": "falloir",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563390
+  },
+  {
+    "text": "fermer",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563391
+  },
+  {
+    "text": "filer",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563391
+  },
+  {
+    "text": "finir",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563392
+  },
+  {
+    "text": "foutre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563393
+  },
+  {
+    "text": "frapper",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563393
+  },
+  {
+    "text": "gagner",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563394
+  },
+  {
+    "text": "garder",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563395
+  },
+  {
+    "text": "glisser",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563395
+  },
+  {
+    "text": "habiter",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563396
+  },
+  {
+    "text": "ignorer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563397
+  },
+  {
+    "text": "imaginer",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563398
+  },
+  {
+    "text": "importer",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563398
+  },
+  {
+    "text": "inquiéter",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563399
+  },
+  {
+    "text": "installer",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563400
+  },
+  {
+    "text": "intéresser",
+    "size": 10,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563401
+  },
+  {
+    "text": "inviter",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563401
+  },
+  {
+    "text": "jeter",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563402
+  },
+  {
+    "text": "jouer",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563403
+  },
+  {
+    "text": "jurer",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563404
+  },
+  {
+    "text": "lâcher",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563404
+  },
+  {
+    "text": "laisser",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563405
+  },
+  {
+    "text": "lancer",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563406
+  },
+  {
+    "text": "lever",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563407
+  },
+  {
+    "text": "lire",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563408
+  },
+  {
+    "text": "maintenir",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563408
+  },
+  {
+    "text": "manger",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563409
+  },
+  {
+    "text": "manquer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563410
+  },
+  {
+    "text": "marcher",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563410
+  },
+  {
+    "text": "marier",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563411
+  },
+  {
+    "text": "mener",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563412
+  },
+  {
+    "text": "mentir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563413
+  },
+  {
+    "text": "mettre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563414
+  },
+  {
+    "text": "monter",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563414
+  },
+  {
+    "text": "montrer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563415
+  },
+  {
+    "text": "mourir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563416
+  },
+  {
+    "text": "naître",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563417
+  },
+  {
+    "text": "obliger",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563417
+  },
+  {
+    "text": "occuper",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563418
+  },
+  {
+    "text": "offrir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563419
+  },
+  {
+    "text": "oser",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563419
+  },
+  {
+    "text": "oublier",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563420
+  },
+  {
+    "text": "ouvrir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563421
+  },
+  {
+    "text": "paraître",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563422
+  },
+  {
+    "text": "parler",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563422
+  },
+  {
+    "text": "partir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563423
+  },
+  {
+    "text": "passer",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563424
+  },
+  {
+    "text": "payer",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563424
+  },
+  {
+    "text": "penser",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563425
+  },
+  {
+    "text": "perdre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563426
+  },
+  {
+    "text": "permettre",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563426
+  },
+  {
+    "text": "plaire",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563427
+  },
+  {
+    "text": "pleurer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563428
+  },
+  {
+    "text": "porter",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563428
+  },
+  {
+    "text": "poser",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563429
+  },
+  {
+    "text": "pousser",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563430
+  },
+  {
+    "text": "pouvoir",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563431
+  },
+  {
+    "text": "préférer",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563431
+  },
+  {
+    "text": "prendre",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563432
+  },
+  {
+    "text": "préparer",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563433
+  },
+  {
+    "text": "présenter",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563434
+  },
+  {
+    "text": "prévenir",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563434
+  },
+  {
+    "text": "prier",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563435
+  },
+  {
+    "text": "promettre",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563436
+  },
+  {
+    "text": "proposer",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563437
+  },
+  {
+    "text": "protéger",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563437
+  },
+  {
+    "text": "quitter",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563438
+  },
+  {
+    "text": "raconter",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563439
+  },
+  {
+    "text": "ramener",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563440
+  },
+  {
+    "text": "rappeler",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563441
+  },
+  {
+    "text": "recevoir",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563442
+  },
+  {
+    "text": "reconnaître",
+    "size": 11,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563443
+  },
+  {
+    "text": "réfléchir",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563443
+  },
+  {
+    "text": "refuser",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563444
+  },
+  {
+    "text": "regarder",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563445
+  },
+  {
+    "text": "rejoindre",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563445
+  },
+  {
+    "text": "remarquer",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563446
+  },
+  {
+    "text": "remettre",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563447
+  },
+  {
+    "text": "remonter",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563448
+  },
+  {
+    "text": "rencontrer",
+    "size": 10,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563448
+  },
+  {
+    "text": "rendre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563449
+  },
+  {
+    "text": "rentrer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563450
+  },
+  {
+    "text": "répéter",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563451
+  },
+  {
+    "text": "répondre",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563451
+  },
+  {
+    "text": "reposer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563452
+  },
+  {
+    "text": "reprendre",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563453
+  },
+  {
+    "text": "ressembler",
+    "size": 10,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563454
+  },
+  {
+    "text": "rester",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563454
+  },
+  {
+    "text": "retenir",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563455
+  },
+  {
+    "text": "retirer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563456
+  },
+  {
+    "text": "retourner",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563456
+  },
+  {
+    "text": "retrouver",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563457
+  },
+  {
+    "text": "réussir",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563458
+  },
+  {
+    "text": "réveiller",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563458
+  },
+  {
+    "text": "revenir",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563459
+  },
+  {
+    "text": "rêver",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563460
+  },
+  {
+    "text": "revoir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563461
+  },
+  {
+    "text": "rire",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563462
+  },
+  {
+    "text": "risquer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563462
+  },
+  {
+    "text": "rouler",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563463
+  },
+  {
+    "text": "sauter",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563464
+  },
+  {
+    "text": "sauver",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563465
+  },
+  {
+    "text": "savoir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563466
+  },
+  {
+    "text": "sembler",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563466
+  },
+  {
+    "text": "sentir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563467
+  },
+  {
+    "text": "séparer",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563468
+  },
+  {
+    "text": "serrer",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563468
+  },
+  {
+    "text": "servir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563469
+  },
+  {
+    "text": "sortir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563470
+  },
+  {
+    "text": "souffrir",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563471
+  },
+  {
+    "text": "suffire",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563472
+  },
+  {
+    "text": "suivre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563473
+  },
+  {
+    "text": "taire",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563475
+  },
+  {
+    "text": "tendre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563476
+  },
+  {
+    "text": "tenir",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563476
+  },
+  {
+    "text": "tenter",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563477
+  },
+  {
+    "text": "terminer",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563478
+  },
+  {
+    "text": "tirer",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563479
+  },
+  {
+    "text": "tomber",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563480
+  },
+  {
+    "text": "toucher",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563482
+  },
+  {
+    "text": "tourner",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563483
+  },
+  {
+    "text": "traîner",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563484
+  },
+  {
+    "text": "traiter",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563486
+  },
+  {
+    "text": "travailler",
+    "size": 10,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563487
+  },
+  {
+    "text": "traverser",
+    "size": 9,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563488
+  },
+  {
+    "text": "tromper",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563489
+  },
+  {
+    "text": "trouver",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563490
+  },
+  {
+    "text": "tuer",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563491
+  },
+  {
+    "text": "utiliser",
+    "size": 8,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563492
+  },
+  {
+    "text": "valoir",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563492
+  },
+  {
+    "text": "vendre",
+    "size": 6,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563493
+  },
+  {
+    "text": "venir",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563495
+  },
+  {
+    "text": "vivre",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563496
+  },
+  {
+    "text": "voir",
+    "size": 4,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563497
+  },
+  {
+    "text": "voler",
+    "size": 5,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563498
+  },
+  {
+    "text": "vouloir",
+    "size": 7,
+    "listId": 0,
+    "studentId": 0,
+    "id": 1717362563499
+  },
+  {
+    "text": "toto",
+    "size": 4,
+    "listId": 1,
+    "studentId": 1,
+    "id": 1717374480164
+  },
+  {
+    "text": "tyty",
+    "size": 4,
+    "listId": 1,
+    "studentId": 1,
+    "id": 1717374480168
+  },
+  {
+    "text": "tutu",
+    "size": 4,
+    "listId": 1,
+    "studentId": 1,
+    "id": 1717374480172
+  }
+]

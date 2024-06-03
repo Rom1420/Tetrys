@@ -24,30 +24,14 @@
     "id": 1716197873858
   },
   {
-    "name": "oijfr",
-    "time": "8",
+    "name": "test",
+    "time": "1",
     "length": "5",
     "errorAllowed": false,
-    "wordList": " ",
-    "userId": 2,
-    "id": 1716791096786
-  },
-  {
-    "name": "coucou",
-    "time": "2",
-    "length": "6",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 2,
-    "id": 1716801003115
-  },
-  {
-    "name": "mots supp",
-    "time": "1",
-    "length": "1",
-    "errorAllowed": false,
-    "wordList": " L'ergothérapeute à besoin d'évaluer la progression de l'enfant pour savoir si elle peut passer au niveau supérieur après qu'il ait fait plusieurs parties.",
-    "userId": 2,
-    "id": 1717254438697
+    "wordList": " toto, tyty, tutu",
+    "userId": 1,
+    "onlyWordsList": false,
+    "listId": 1,
+    "id": 1717374480131
   }
 ]

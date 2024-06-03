@@ -23,22 +23,27 @@ export class GameManagerService {
   private blocksSubject = new BehaviorSubject<{ id: number, shape: boolean[][] }[]>([]);
   blocks$ = this.blocksSubject.asObservable();
 
-  private config:ConfigModel;
-
-  constructor(private wordsService: WordsServices, private blockService: BlockService, private configFormResultService: ConfigFormResultService) {
-    this.initializeWordsAndBlocks();
-    this.config = this.configFormResultService.getConfig()
-    this.configFormResultService.configActual$.subscribe((actualConfig) => {
-      this.config = actualConfig
-    })
-  }
+  constructor(private wordsService: WordsServices, private blockService: BlockService) {
+    this.initializeWordsAndBlocks(); 
+  }   
 
   initializeWordsAndBlocks(): void {
-    const words = this.wordsService.get3Words(this.configFormResultService.getConfig().length);
-    const blocks = this.blockService.getThreeDistinctBlocks();
-    this.wordsSubject.next(words);
-    this.blocksSubject.next(blocks);
+    this.wordsService.words$.subscribe((words) => {
+      if(words.length > 0) {
+        
+        this.wordsService.get3Words();
+
+        this.wordsService.actualWords$.subscribe((actualWords) => {
+          if(actualWords.length > 0){
+            this.wordsSubject.next(actualWords);
+            const blocks = this.blockService.getThreeDistinctBlocks();
+            this.blocksSubject.next(blocks);
+          }
+        });
+      }
+    });
   }
+
   resetWords(){
     this.ask4Reset.next(this.i);
     this.i++;
@@ -46,7 +51,7 @@ export class GameManagerService {
   }
 
   getBlockFromWord(word: string): { id: number, shape: boolean[][] } | undefined {
-    const wordIndex = this.wordsSubject.value.findIndex(w => w.name === word);
+    const wordIndex = this.wordsSubject.value.findIndex(w => w.text === word);
     if (wordIndex !== -1 && wordIndex < this.blocksSubject.value.length) {
       return this.blocksSubject.value[wordIndex];
     }
