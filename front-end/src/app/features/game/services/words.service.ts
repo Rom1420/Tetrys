@@ -39,13 +39,16 @@ export class WordsServices{
     this.config$.subscribe(config => {
       console.log(config);
       if (config) {
-        const { listId, onlyWordsList } = config;
+        const { listId, onlyWordsList, length } = config;
+
+        const filterByLength = (words: Word[]) => words.filter(word => word.size <= length);
 
         if (onlyWordsList && listId !== 0) {
-          console.log("voici le listId",listId);
+          console.log("voici le listId", listId);
           const url = `${this.wordUrl}listId/${listId}`;
           this.http.get<Word[]>(url).subscribe((words) => {
-            this.actualWords = this.getRandomWords(words, 3);
+            const filteredWords = filterByLength(words);
+            this.actualWords = this.getRandomWords(filteredWords, 3);
             this.actualWords$.next(this.actualWords);
           });
         } else if (listId !== 0) {
@@ -57,20 +60,21 @@ export class WordsServices{
             this.http.get<Word[]>(urlListIdZero)
           ]).subscribe(([wordsListId, wordsListIdZero]) => {
             const combinedWords = wordsListId.concat(wordsListIdZero);
-            this.actualWords = this.getRandomWords(combinedWords, 3);
+            const filteredWords = filterByLength(combinedWords);
+            this.actualWords = this.getRandomWords(filteredWords, 3);
             this.actualWords$.next(this.actualWords);
           });
-        } 
-        else {
-          
+        } else {
           this.http.get<Word[]>(this.wordUrl).subscribe((words) => {
-            this.actualWords = this.getRandomWords(words, 3);
+            const filteredWords = filterByLength(words);
+            this.actualWords = this.getRandomWords(filteredWords, 3);
             this.actualWords$.next(this.actualWords);
           });
         }
       }
     });
   }
+
   getRandomWords(words: Word[], count: number): Word[] {
     const shuffled = words.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);

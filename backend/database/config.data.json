@@ -22,5 +22,16 @@
     "errorAllowed": false,
     "userId": 0,
     "id": 1716197873858
+  },
+  {
+    "name": "test",
+    "time": "1",
+    "length": "5",
+    "errorAllowed": false,
+    "wordList": " toto, tyty, tutu",
+    "userId": 1,
+    "onlyWordsList": false,
+    "listId": 1,
+    "id": 1717374480131
   }
 ]
