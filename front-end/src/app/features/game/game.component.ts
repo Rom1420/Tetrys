@@ -7,6 +7,7 @@ import {GameFormService} from "./services/game-form.service";
 import {GameManagerService} from "./services/game-manager.service";
 import {ConfigModel} from "./models/config.model";
 import {GameEngine} from "./services/game-engine";
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -27,6 +28,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     public config: ConfigModel;
     public show2ndChance = false;
     public errorsAllowed:number = 0;
+    private configSubscription!: Subscription;
 
     constructor(private gameManagerService:GameManagerService, private configFormResult: ConfigFormResultService, private gameFormService: GameFormService, public wordService:WordsServices, public formBuilder: FormBuilder, private gameEngine: GameEngine) {
         this.wordForm = this.formBuilder.group({
@@ -60,8 +62,12 @@ export class GameComponent implements OnInit, AfterViewInit {
 
     }
     ngOnInit(){
-        this.actualWords = this.wordService.getActualWords();
-        this.resetTimer();
+      this.gameEngine.resetGame();
+      this.configSubscription = this.configFormResult.configActual$.subscribe((actualConfig) => {
+        this.config = actualConfig;
+      });
+      this.actualWords = this.wordService.getActualWords();
+      this.resetTimer();
     }
 
 
@@ -126,4 +132,9 @@ export class GameComponent implements OnInit, AfterViewInit {
         this.wordForm.reset();
       }
     }
+    ngOnDestroy() {
+      this.configSubscription.unsubscribe();
+  }
+
+  
 }

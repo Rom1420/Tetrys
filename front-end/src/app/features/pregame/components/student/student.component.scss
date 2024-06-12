@@ -81,9 +81,9 @@
 
 
 .selected{
-    background-color: rgba(48, 70, 115,0.8);
+   background: linear-gradient(to bottom, var(--cyan-light) 0%, var(--background) 100%);
   }
   
   .selected:hover{
-    background-color: rgba(48, 70, 115,0.85);
+    background: linear-gradient(to bottom, var(--cyan-light) 0%, var(--background) 100%);
   } 

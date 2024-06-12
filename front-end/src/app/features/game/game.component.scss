@@ -1,9 +1,12 @@
 .game-container{
+  position: relative;
   display: flex;
   height: 90%;
+  width: 100%;
 }
 
 .playable-zone{
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -13,6 +16,7 @@
 }
 
 .blocks-words-component{
+    position: relative;
     width: 100%;
     height: auto;
     justify-content: center;
@@ -72,7 +76,8 @@
 .input-container input{
   flex: 5;
   font-size: 7vh;
-  background-color: var(--box-color);
+  background: linear-gradient(to bottom, var(--cyan-brighter) 0%, var(--background) 80%);
+  box-shadow: 0px 0px 20px #baebff;
   color: #fff;
   font-family: 'Roboto', sans-serif;
   transition: all 0.2s ease-in;
@@ -101,7 +106,8 @@
 .chrono-container{
   width: 30%;
   text-align: center;
-  background-color: var(--box-color);
+  background: linear-gradient(to bottom, var(--cyan-brighter) 0%, var(--background) 80%);
+  box-shadow: 0px 0px 20px #baebff;
   border-radius: 82% 18% 87% 13% / 12% 86% 14% 88% ;
 }
 
@@ -284,8 +290,16 @@
 .mode-name{
   font-size: 1.8em;
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  box-shadow: -5px -5px 2px rgba(0, 0, 0, 0.4) inset;
+  padding: 3vh 2.5vw;
+  border-radius: 91% 9% 82% 18% / 14% 80% 20% 86%;
   margin-bottom: 5%;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  margin-top: 30px;
 }
 
 .second-chance{
@@ -296,7 +310,21 @@
 }
 
 
+app-pregame{
+  display: flex;
+  height: auto;
+}
 
 
-
-
+.green{
+  background-color: var(--green);
+}
+.orange{
+  background-color: var(--orange);
+}
+.red{
+  background-color: var(--red);
+}
+.cyan{
+  background-color: var(--cyan);
+}

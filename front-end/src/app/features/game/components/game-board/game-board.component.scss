@@ -5,8 +5,7 @@
     align-items: center;
     height: 102%;
     width: 30vw;
-    border: solid 2px #0057b397;
-    background-color: #0f1d388b;
+    background-color: transparent;
 }
 
 .board {
@@ -27,7 +26,7 @@
 }
 
 .block-null {
-  border: 0.1vw solid rgba(255, 255, 255, 0.144);
+  border: 0.1vw solid rgba(255, 255, 255, 0.551);
 }
 
 .block-1 {

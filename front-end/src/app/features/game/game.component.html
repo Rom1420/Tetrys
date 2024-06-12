@@ -1,7 +1,11 @@
 <div class="game-container">
+  <cloud-background></cloud-background>
   <game-board></game-board>
   <div class="playable-zone">
-    <div class="mode-name">
+    <div class="mode-name" [ngClass]="{'green': config.name === 'débutant', 
+        'orange': config.name === 'intermediaire', 
+        'red': config.name === 'avancé', 
+        'cyan': config.name === 'perso'}">
       <span> Mode: {{config.name}} </span>
     </div>
     <div class="blocks-words-component">
