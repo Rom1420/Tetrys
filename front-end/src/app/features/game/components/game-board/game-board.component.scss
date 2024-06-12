@@ -13,6 +13,11 @@
   grid-template-columns: repeat(10, 2vw); /* 10 colonnes de 30 pixels de large */
   grid-template-rows: repeat(20, 2vw); /* 20 lignes de 30 pixels de hauteur */
   gap: 0px; /* Espacement entre les cellules */
+  border-bottom: 0.5vw solid rgba(255, 255, 255, 0.551);
+  border-left: 0.5vw solid rgba(255, 255, 255, 0.551);
+  border-right: 0.5vw solid rgba(255, 255, 255, 0.551);
+  border-bottom-left-radius: 1vw;
+  border-bottom-right-radius: 1vw
 }
 
 .row {
@@ -20,14 +25,12 @@
 }
 
 .cell {
-  border-radius: 20%;
+  border-radius: 30%;
   width: 2vw;
   box-sizing: border-box;
 }
 
-.block-null {
-  border: 0.1vw solid rgba(255, 255, 255, 0.551);
-}
+
 
 .block-1 {
   background-color: #F2E205;

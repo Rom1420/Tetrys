@@ -14,9 +14,10 @@
 
     <div class="writing-space">
       <form [formGroup]="wordForm" autocomplete="off">
-        <label for="word">Rentrez un des 3 mots ci dessus: </label>
+        <label for="word"></label>
+        <div class="blur-effect"></div>
         <div class="input-container">
-          <input type="text" id="word" #word formControlName="word" (input)="verifWord()">
+          <input type="text" id="word" #word formControlName="word" (input)="verifWord()" placeholder="Tapez les Mots ici">
         </div>
       </form>
     </div>
