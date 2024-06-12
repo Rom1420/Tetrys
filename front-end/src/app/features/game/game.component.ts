@@ -25,6 +25,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     private isWordValid: boolean = false;
     public endGameDisplay: boolean = false;
     @ViewChild('word') wordFormToggle!: ElementRef;
+    @ViewChild('textInput') textInput!: ElementRef;
     public config: ConfigModel;
     public show2ndChance = false;
     public errorsAllowed:number = 0;
@@ -48,6 +49,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
+      this.textInput.nativeElement.blur();
       this.wordForm.addControl('isValid', this.formBuilder.control((this.isWordValid)))
       this.wordForm.addControl('error', this.formBuilder.control((this.errorsAllowed)))
       this.wordService.actualWords$.subscribe((newWords) => {
