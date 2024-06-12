@@ -15,10 +15,14 @@
     <div class="writing-space">
       <form [formGroup]="wordForm" autocomplete="off">
         <label for="word"></label>
-        <div class="blur-effect"></div>
+        <div class="blur-effect"></div>  
+        <div class="end-game-button-container">
+          <button class="end-game-button" (click)="endGame()">FIN PARTIE</button>
+        </div>
         <div class="input-container">
           <input type="text" id="word" #word formControlName="word" (input)="verifWord()" placeholder="Tapez les Mots ici">
         </div>
+        
       </form>
     </div>
     <div *ngIf="show2ndChance" class="second-chance">

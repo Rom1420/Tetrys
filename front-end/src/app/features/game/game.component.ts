@@ -49,7 +49,6 @@ export class GameComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-      this.textInput.nativeElement.blur();
       this.wordForm.addControl('isValid', this.formBuilder.control((this.isWordValid)))
       this.wordForm.addControl('error', this.formBuilder.control((this.errorsAllowed)))
       this.wordService.actualWords$.subscribe((newWords) => {
@@ -138,5 +137,7 @@ export class GameComponent implements OnInit, AfterViewInit {
       this.configSubscription.unsubscribe();
   }
 
-  
+  endGame() {
+    this.gameManagerService.endGame$.next(true);
+  }
 }

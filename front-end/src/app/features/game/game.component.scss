@@ -52,16 +52,14 @@
 .writing-space button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background: linear-gradient(-130deg, var(--red-light) 0%, var(--red-dark) 80%);
   border: none;
   color: #fff;
-  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .writing-space button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(-130deg, var(--red-light) 0%, var(--red) 100%);
 }
 
 .input-container {
@@ -140,8 +138,84 @@
 }
 
 
+button.end-game-button{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    appearance: button;
+    background: var(--red);
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2vw;
+    font-weight: 900;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 20px;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
 
-  
+button.end-game-button::before {
+  content: "";
+  position: absolute;
+  left: -17px;
+  width: 17px;
+  top: 10px;
+  right: 10px;
+  height: 100%;
+  background-color: #7c1010;
+  transform: skewY(-50deg);
+  z-index: 0;
+}
+
+button.end-game-button::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  bottom: -20px;
+  left: -9px;
+  height: 20px;
+  width: calc(100% + 1px);
+  background: #530808;
+  transform: skewX(-39deg);
+  z-index: -1;
+}
+
+button.end-game-button:hover {
+  background: linear-gradient(-130deg, var(--red-light) 0%, var(--red) 40%);
+  transform: scale(1.05);
+}
+
+button.end-game-button:active {
+  transform: scale(1); 
+}
+
+
+
+.end-game-button-container{
+  position: absolute;
+  display: flex;
+  width: 14%;
+  height: 11%;
+  right: 8%;
+}
 
 
 .shine-overlay {
@@ -195,6 +269,7 @@
   justify-content: center;
   align-items: center;
   transform: scale(1.5);
+  z-index: 60;
 }
 
 .end-stat-content {
