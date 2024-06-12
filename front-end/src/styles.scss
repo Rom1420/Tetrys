@@ -19,7 +19,7 @@ body{
     height: 100%;
     margin: 0;
     box-sizing: border-box;
-    background-color: #304673;
+    background: linear-gradient(to bottom, var(--background) 0%, var(--cyan-brighter) 100%);
 }
 
 :root {
