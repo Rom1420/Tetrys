@@ -139,8 +139,21 @@ L'objectif est de créer une application non seulement fonctionnelle mais égale
      <ul>
          <li><strong>Front-end</strong>
             <ul>
-               <li>
-
+               <li>Ajout de components depuis la maquette</li>
+               <li>Page de statistiques en partie</li>
+               <li>Sélection d'un étudiant</li>
+            </ul>
+         </li>
+      </ul>
+     <ul>
+         <li><strong>Back-end</strong>
+            <ul>
+               <li>Création et suppression d'un étudiant</li>
+               <li>Sélection d'un étudiant</li>
+               <li>Lien entre étudiants sélectionné et ses statistiques</li>
+            </ul>
+         </li>
+      </ul>
 
  - **[Mathias](https://github.com/MathiasSantosR)**
 	 <ul>
