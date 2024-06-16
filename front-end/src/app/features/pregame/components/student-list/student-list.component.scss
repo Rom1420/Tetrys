@@ -48,9 +48,7 @@
     scroll-snap-align: start;
 }
 
-.scroll-container-student > :first-child {
-    background-color: rgba(48, 70, 115,0.8);
-}
+
 
 
 .scroll-container-progression::-webkit-scrollbar,
@@ -67,3 +65,22 @@
     border-radius: 10px;
 }
 
+.no-student-text-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.no-student-text{
+    text-align: center;
+    text-shadow: 4px 4px 2px rgba(0,0,0,0.1);
+    background-color: transparent;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #ffffff88;
+    margin: auto;
+    padding: 20px; 
+    max-width: 80%; 
+}
