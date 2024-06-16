@@ -108,6 +108,7 @@
   color: #fff;
   font-family: 'Roboto', sans-serif;
   transition: all 0.2s ease-in;
+  text-shadow: -10px 5px 2px rgba(0, 0, 0, 0.1);
   border: none;
   outline-offset: -2px;
   transition: all 0.2s ease-in;
@@ -116,12 +117,14 @@
   &::placeholder{
     font-size: .6em;
     text-align: center;
+    text-shadow: -10px 5px 2px rgba(0, 0, 0, 0.1);
     color: #ffffffb9;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     letter-spacing: 1px;
     transition: opacity 0.2s ease-in-out;
+    z-index: 30;
   }
 }
 
