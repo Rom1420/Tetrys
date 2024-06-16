@@ -150,7 +150,7 @@ L'objectif est de créer une application non seulement fonctionnelle mais égale
             <ul>
                <li>Création et suppression d'un étudiant</li>
                <li>Sélection d'un étudiant</li>
-               <li>Lien entre étudiants sélectionné et ses statistiques</li>
+               <li>Lien entre étudiant sélectionné et ses statistiques</li>
             </ul>
          </li>
       </ul>
