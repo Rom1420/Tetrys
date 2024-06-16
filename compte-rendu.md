@@ -124,3 +124,18 @@ L'objectif est de créer une application non seulement fonctionnelle mais égale
 
 
  - **[Mathias](https://github.com/MathiasSantosR)**
+ <ul>
+	    <li><strong>Front-end</strong>:
+		<ul>
+		    <li>Gestion des élèves</li>
+		    <li>Création de popups</li>
+		    
+		</ul>
+	    </li>
+	    <li><strong>Back-end</strong>:
+		<ul>
+		    <li>Route gameResume (non terminé actuellement)</li>
+		    
+		</ul>
+	    </li>
+	</ul>
