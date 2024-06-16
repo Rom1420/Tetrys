@@ -4,6 +4,6 @@ const GameResume = require('./gameResume.model.js')
 
 module.exports = {
   ConfigModel,
-  DifficultyModel
+  DifficultyModel,
   GameResume,
 }
