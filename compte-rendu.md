@@ -116,6 +116,23 @@ L'objectif est de créer une application non seulement fonctionnelle mais égale
     </ul>
 
 - **[Eliot](https://github.com/eliotmnrt)**
+    <ul>
+        <li><strong>Front-end</strong>:
+            <ul>
+                <li>Développement de la partie typographie du jeu </li>
+                <li>Création des modèles de difficultés et de ceux de configurations</li>
+                 <li>Gestion de l'affichage des configurations personnalisées</li>
+                <li>Gestion des mots utilisés dans le jeu</li>
+            </ul>
+        </li>
+        <li><strong>Back-end</strong>:
+            <ul>
+                <li>Gestion des configurations et des difficultés </li>
+                <li>Création de routes pour le back-end</li>
+                <li>refactor des méthodes qui affichaient les configurations personnalisées et des difficultés</li>
+            </ul>
+        </li>
+    </ul>
 
 
  - **[Matice](https://github.com/MaticeMrll)**
