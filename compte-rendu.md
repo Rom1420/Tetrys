@@ -129,13 +129,11 @@ L'objectif est de créer une application non seulement fonctionnelle mais égale
 		<ul>
 		    <li>Gestion des élèves</li>
 		    <li>Création de popups</li>
-		    
 		</ul>
 	    </li>
 	    <li><strong>Back-end</strong>:
 		<ul>
-		    <li>Route gameResume (non terminé actuellement)</li>
-		    
+		    <li>Route gameResume (non terminé actuellement)</li>    
 		</ul>
 	    </li>
 	</ul>
