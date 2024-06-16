@@ -4,7 +4,9 @@
             <div class="no-student-text-container" *ngIf="studentList.length === 0">
                 <p class="no-student-text">Créez un nouveau profil puis sélectionnez-le</p>
             </div>
-            <student *ngFor="let student of studentList" [student]=student></student>
+             <div *ngFor="let student of studentList; let i = index">
+                <student [student]="student" [profilePicture]="getProfilePicture(i)"></student>
+            </div>
         </div>
     </div>
     <add-profil-button [selectedStudentIdToDelete]="selectedStudentIdToDelete"></add-profil-button>

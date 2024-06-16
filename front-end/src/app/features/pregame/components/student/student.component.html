@@ -1,5 +1,7 @@
 <div class="student" *ngIf="student" (click)="onSelectStudent(student)" [ngClass]="{'selected': student.isSelected}">
-    <img src="./assets/user.png" alt="img-utilisateur-inconnu">
+    <div class="container">
+        <img [attr.src]="profilePicture">
+    </div>
     <p>{{student.name}}</p>
     <div class="close-button-container">
         <div (click)="openDPopup()" (click)="updateSelectedStudentIdToDelete(student)" class="close-button">
