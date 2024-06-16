@@ -119,6 +119,10 @@ L'objectif est de créer une application non seulement fonctionnelle mais égale
 
 
  - **[Matice](https://github.com/MaticeMrll)**
+     <ul>
+         <li><strong>Front-end</strong>
+            <ul>
+               <li>
 
 
  - **[Mathias](https://github.com/MathiasSantosR)**
