@@ -132,16 +132,5 @@
     "onlyWordsList": false,
     "listId": 12,
     "id": 1718626146557
-  },
-  {
-    "name": "configTest",
-    "time": "0.6",
-    "length": "6",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": true,
-    "listId": 13,
-    "id": 1718632433324
   }
 ]
