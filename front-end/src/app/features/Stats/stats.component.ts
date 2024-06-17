@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { StatsAvanceeService } from './services/stats-avancee.service';
 import { StudentService } from 'src/app/core/components/services/student.service';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'stats-game',
@@ -10,40 +11,30 @@ import { StudentService } from 'src/app/core/components/services/student.service
 })
 
 export class StatsComponent implements OnInit {
-  selectedPlayerId: number | null = null; 
-  selectedGameMode: String  = "Général";
+  selectedPlayerId: number | null = null;
+  selectedGameMode: string = 'general';
   selectedStudentIdToDelete: number | null = null;
 
+  
   constructor(private studentService: StudentService,
     private statsAvanceeService: StatsAvanceeService
   ) {}
   
   ngOnInit(): void {
-
-    this.studentService.selectedStudentIdToDelete$.subscribe((studentId: number | null) => {
-      if(studentId){
-        this.selectedStudentIdToDelete = studentId;
-      }else{
-        this.selectedStudentIdToDelete = null;
-      }
+    this.studentService.selectedStudentIdToDelete$.subscribe(studentId => {
+      this.selectedStudentIdToDelete = studentId;
     });
 
-    this.studentService.selectedStudentId$.subscribe((studentId: number | null) => {
-      if (studentId) {
-        this.selectedPlayerId = studentId; 
-        this.statsAvanceeService.updateStatsForStudent(studentId, this.selectedGameMode);
-        console.log("change student to : ",this.selectedPlayerId);
-      } else {
-        this.selectedPlayerId = null;
+    this.studentService.selectedStudentId$.subscribe(studentId => {
+      this.selectedPlayerId = studentId;
+      if (studentId !== null) {
+        this.statsAvanceeService.fetchStatAvancee(studentId, 'general');
       }
     });
-    
-    this.statsAvanceeService.selectedGameMode$.subscribe((gameMode : String) => {
-      if(gameMode && this.selectedPlayerId){
-        this.selectedGameMode = gameMode;
-        console.log("change mode to : ",this.selectedGameMode);
-        this.statsAvanceeService.updateStatsForStudent(this.selectedPlayerId, gameMode);
-      }
-    });
+  }
+
+  updateGameMode(gameMode: string): void {
+    this.selectedGameMode = gameMode;
+    this.statsAvanceeService.setGameMode(gameMode);
   }
 }

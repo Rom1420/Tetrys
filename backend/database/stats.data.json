@@ -25,18 +25,18 @@
   },
   {
     "idJoueur": 1718633208890,
-    "mode": "debutant",
-    "wpm": 12,
-    "scoreMoyen": 86,
-    "pourcentageErreur": 75,
-    "id": 1718633268279
-  },
-  {
-    "idJoueur": 1718633208890,
     "mode": "general",
     "wpm": 12,
     "scoreMoyen": 86,
     "pourcentageErreur": 75,
     "id": 1718633271852
+  },
+  {
+    "idJoueur": 1718633208890,
+    "mode": "debutant",
+    "wpm": 12,
+    "scoreMoyen": 86,
+    "pourcentageErreur": 20,
+    "id": 1718665844118
   }
 ]
