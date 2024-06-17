@@ -1,16 +1,28 @@
 <div class="game-container">
+  <cloud-background></cloud-background>
   <game-board></game-board>
   <div class="playable-zone">
+    <div class="mode-name" [ngClass]="{'green': config.name === 'débutant', 
+        'orange': config.name === 'intermediaire', 
+        'red': config.name === 'avancé', 
+        'cyan': config.name === 'perso'}">
+      <span> Mode {{config.name}} </span>
+    </div>
     <div class="blocks-words-component">
       <block-word></block-word>
     </div>
 
     <div class="writing-space">
       <form [formGroup]="wordForm" autocomplete="off">
-        <label for="word">Rentrez un des 3 mots ci dessus: </label>
-        <div class="input-container">
-          <input type="text" id="word" #word formControlName="word" (input)="verifWord()">
+        <label for="word"></label>
+        <div class="blur-effect"></div>  
+        <div class="end-game-button-container">
+          <button class="end-game-button" (click)="endGame()">FIN PARTIE</button>
         </div>
+        <div class="input-container">
+          <input type="text" id="word" #word formControlName="word" (input)="verifWord()" placeholder="Tapez les Mots ici">
+        </div>
+        
       </form>
     </div>
     <div *ngIf="show2ndChance" class="second-chance">

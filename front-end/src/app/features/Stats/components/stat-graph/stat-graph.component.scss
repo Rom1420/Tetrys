@@ -7,7 +7,7 @@
   display: flex;
   width: 90%;
   height: 40vh;
-  background-color: var(--box-color);
+  background: linear-gradient(to top, var(--cyan-brighter) 0%, var(--background) 80%);
   border-radius: 20px;
   box-shadow: 0px 0px 10px 7px rgba(0, 0, 0, 0.4);
 }

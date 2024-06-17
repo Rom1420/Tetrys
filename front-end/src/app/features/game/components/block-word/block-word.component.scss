@@ -1,17 +1,43 @@
 .block-word-container{
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
     text-align: center;
-    background-color: #F27F1B;
-    box-shadow: 0 0 5px #F27F1B;
-    border-radius: 10px;
+    background: linear-gradient(45deg, var(--orange) 60%, var(--orange-light) 100%);
     width: 8vw;
     height: fit-content;
     padding: 20px;
     padding-bottom: 10px;
 }
+
+.block-word-container::before {
+    content: '';
+    position: absolute;
+    left: -17px;
+    width: 17px;
+    top: 10px;
+    right: 10px;
+    height: 100%;
+    background-color: #9b530f;
+    transform: skewY(-50deg);
+    z-index: 0;
+}
+
+.block-word-container::after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    bottom: -20px;
+    left: -9px;
+    height: 20px;
+    width: calc(100% + 1px);
+    background: #693300;
+    transform: skewX(-39deg);
+    z-index: -1;
+  
+}
+
 
 .blocks-words{
     display: flex;
@@ -22,6 +48,68 @@
   }
 
   .block-container{
-    width: 80%; 
-    aspect-ratio: 1 / 1;    
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-left: 7px;
   }
+
+
+  .shine-overlay {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 3px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 35; 
+}
+
+.vertical {
+    margin: 10px;
+    width: 13px; /* Largeur de la partie verticale */
+    height: 15%; /* Hauteur complète */
+    background-color: #ffffffbd; /* Couleur de la forme */
+    box-shadow: 0px 0px 20px 5px#ffffffd0;
+    border-radius: 20px;
+    position: relative;
+    z-index: 35;
+}
+
+.horizontal {
+    margin: 10px;
+    margin-right: 0px;
+    width: 35%; /* Largeur de la partie verticale */
+    height: 9px; /* Hauteur complète */
+    background-color: #ffffffbd; /* Couleur de la forme */
+    box-shadow: 0px 0px 20px 5px#ffffffd0;
+    border-radius: 20px;
+    position: relative;
+    z-index: 35;
+}
+
+.blur-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(3px);
+    z-index: 30;
+}
+
+block{
+    z-index: 40;
+    width: 100%;
+    height: 80%;
+}
+
+word{
+    z-index: 40;
+}

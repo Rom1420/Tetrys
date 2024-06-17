@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import {Student} from '../../../features/pregame/models/student.model';
-import { STUDENT_LIST } from 'src/app/features/pregame/mock/student-list.mock';
+import { STUDENT_LIST } from 'src/app/features/pregame/mock/student-list.mock'
+import { serverUrl, httpOptionsBase } from 'configs/server.config';
+import { HttpClient } from '@angular/common/http';
+
 
 
 @Injectable({
@@ -20,15 +23,27 @@ export class StudentService {
     public selectedStudentId$ = 
             this.selectedStudentIdSubject$.asObservable();
 
-    constructor(){}
+    private studentUrl = serverUrl + '/students';
+
+    private httpOptions = httpOptionsBase;
+
+    constructor(private http: HttpClient) {
+        this.retrieveStudents();
+    }
+
+    retrieveStudents(): void {
+        this.http.get<Student[]>(this.studentUrl).subscribe((studentsList) => {
+            this.students = studentsList;
+            this.students$.next(this.students);
+        });
+    }
 
     updateSelectedStudentIdToDelete(studentId: number | null): void {
         this.selectedStudentIdToDeleteSubject.next(studentId);
     }
 
     addProfil(student: Student){
-        this.students.push(student)
-        this.students$.next(this.students)
+        this.http.post<Student>(this.studentUrl, student, this.httpOptions).subscribe(() => this.retrieveStudents());
     }
 
     deleteProfil(studentToDelete: Student | undefined){
@@ -37,7 +52,9 @@ export class StudentService {
             this.updateSelectedStudentIdToDelete(studentToDelete.id);
         }
         if(studentToDelete?.id){
-            this.students = this.students.filter(student => student.id !== studentToDelete.id);
+            const urlWithId = this.studentUrl + '/' + studentToDelete.id;
+            console.log(urlWithId);
+            this.http.delete<Student>(urlWithId, this.httpOptions).subscribe(() => this.retrieveStudents());
         }
         this.students$.next(this.students)  
         this.updateSelectedStudentIdToDelete(null);

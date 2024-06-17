@@ -13,6 +13,7 @@ export class StudentComponent {
   public studentList: Student[] = [];
 
     @Input()student: Student | undefined;
+    @Input() profilePicture: string | undefined; 
 
     constructor(public popupService: PopupService, private studentService: StudentService) {
         this.studentService.students$.subscribe((studentList) => {

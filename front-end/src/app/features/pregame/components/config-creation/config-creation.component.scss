@@ -76,7 +76,7 @@ form{
 
 .form-cell label{
   font-weight: 500;
-  font-size: 1.3vw;
+  font-size: 1.1vw;
   color: #fff;
   margin-top: 10px;
 }
@@ -93,7 +93,7 @@ form{
   width: 40%;
   align-items: center;
   justify-content: center;
-  margin: 20px auto;
+  margin: 25px auto 10px;
 }
 
 .play-button {
@@ -236,12 +236,7 @@ input.input-custom{
   justify-content: flex-start;
 }
 
-.time-and-length-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-}
+
 
 .text-zone{ 
   outline: none;
@@ -252,7 +247,7 @@ input.input-custom{
   font-size: 1vw;
   padding: 17px 30px;
   border-radius: 20px;
-  background-color: #304673;
+  background: linear-gradient(to bottom, var(--cyan-light) 0%, var(--background) 100%);
   color: #fff;
   border: transparent ;
   transition: transform 0.3s ease-in-out;
@@ -268,4 +263,24 @@ input.input-custom{
   &:hover{
       transform: scale(1.02);
   }
+}
+
+.time-and-length-container{
+  width: 93%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#time, #length {
+  width: 100%;
+}
+
+#name::placeholder{
+  text-align: center;
+}
+
+.input-container{
+  justify-content: center;
 }

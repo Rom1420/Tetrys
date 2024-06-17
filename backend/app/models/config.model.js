@@ -8,4 +8,6 @@ module.exports = new BaseModel('Config', {
     errorAllowed: Joi.boolean().required(),
     wordList: Joi.string(),
     userId: Joi.number(),
+    listId: Joi.number().required(),
+    onlyWordsList: Joi.boolean().required(),
 })

@@ -24,30 +24,69 @@
     "id": 1716197873858
   },
   {
-    "name": "e",
-    "time": "0.1",
-    "length": "26",
+    "name": "Lucas",
+    "time": "1",
+    "length": "10",
     "errorAllowed": false,
-    "wordList": " ",
-    "userId": 2,
-    "id": 1716291173984
+    "wordList": " élément trop longtemps nouille fortement",
+    "userId": 4,
+    "onlyWordsList": true,
+    "listId": 2,
+    "id": 1717395134898
   },
   {
-    "name": "kug",
-    "time": "10",
-    "length": "844",
+    "name": "bite",
+    "time": "1",
+    "length": "10",
+    "errorAllowed": false,
+    "wordList": " grosse bite jul",
+    "userId": 4,
+    "onlyWordsList": true,
+    "listId": 4,
+    "id": 1717398733196
+  },
+  {
+    "name": "Dictée",
+    "time": "1",
+    "length": "8",
+    "errorAllowed": true,
+    "wordList": " Hauteur Test Poire",
+    "userId": 4,
+    "onlyWordsList": true,
+    "listId": 5,
+    "id": 1717401861157
+  },
+  {
+    "name": "a",
+    "time": "7",
+    "length": "7",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 3,
+    "onlyWordsList": false,
+    "listId": 6,
+    "id": 1718202728404
+  },
+  {
+    "name": "a",
+    "time": "0.1",
+    "length": "5",
     "errorAllowed": true,
     "wordList": " ",
-    "userId": 2,
-    "id": 1716292508681
+    "userId": 3,
+    "onlyWordsList": false,
+    "listId": 7,
+    "id": 1718216216417
   },
   {
-    "name": "oijfr",
-    "time": "8",
-    "length": "5",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 2,
-    "id": 1716791096786
+    "name": "qsjdn",
+    "time": "1",
+    "length": "2",
+    "errorAllowed": true,
+    "wordList": " bonjour",
+    "userId": 1718610618291,
+    "onlyWordsList": false,
+    "listId": 8,
+    "id": 1718610637311
   }
 ]

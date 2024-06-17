@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
-    background-color: var(--box-color);
+    background: linear-gradient(to top, var(--cyan-light) -50%, var(--background) 80%);
     box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
     padding: 20px;
     gap: 30px;

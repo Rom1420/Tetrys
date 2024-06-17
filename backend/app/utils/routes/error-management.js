@@ -1,4 +1,6 @@
 const manageAllErrors = (res, err) => {
+  console.log("error szerver")
+  console.log(err)
   if (err.name === 'NotFoundError') {
     res.status(404).end()
   } else if (err.name === 'ValidationError') {

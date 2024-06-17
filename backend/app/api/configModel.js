@@ -1,6 +1,7 @@
 const { Router } = require('express')
-const {ConfigModel} = require("../models");
+const {ConfigModel, Word} = require("../models");
 const manageAllErrors = require("../utils/routes/manageAllErrors")
+const { deleteWordsByListId } = require('./words/wordManager')
 
 const router = new Router()
 
@@ -30,14 +31,25 @@ router.put('/:id', (req, res) => {
     }
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
-        ConfigModel.delete(req.params.id)
-        res.status(204).end()
-    } catch (err){
-        manageAllErrors(res, err)
-    }
+        const config = ConfigModel.getById(req.params.id)
 
-})
+        if (!config) {
+            return res.status(404).json({ error: 'Configuration not found' });
+        }
+
+        const listId = config.listId;
+
+        deleteWordsByListId(listId);
+
+        ConfigModel.delete(req.params.id);
+
+        res.status(204).end();
+    } catch (err) {
+        console.error('Error deleting configuration and words:', err);
+        manageAllErrors(res, err);
+    }
+});
 
 module.exports = router;

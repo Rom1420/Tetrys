@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TetrisBlockId, TetrisBlocks } from '../mock/block.mock';
 import {GameFormService} from "./game-form.service";
-import {Subscription} from "rxjs";
+import {BehaviorSubject, Subscription} from "rxjs";
 import {GameManagerService} from "./game-manager.service";
 
 
@@ -9,34 +9,49 @@ import {GameManagerService} from "./game-manager.service";
   providedIn: 'root'
 })
 export class GameEngine {
-  gameState: (number | null)[][];
+  gameState!: (number | null)[][];
   rows: number = 20;
   cols: number = 10;
-  currentPiece: { id: number, shape: boolean[][], position: { row: number, col: number } };
-  resultWordGame: Subscription;
-  secondError = false;
+  currentPiece!: { id: number; shape: boolean[][]; position: { row: number; col: number; }; };
+  resultWordGame!: Subscription;
+  secondError = new BehaviorSubject(false);
 
-  constructor(private gameFormService: GameFormService, private gameManagerService:GameManagerService) {
+  constructor(private gameFormService: GameFormService, private gameManagerService: GameManagerService) {
+    this.initGameEngine();
+  }
+
+  initGameEngine(): void {
+    // Réinitialisation complète
+    if (this.resultWordGame) {
+      this.resultWordGame.unsubscribe();
+    }
+    
     this.resultWordGame = this.gameFormService.results$.subscribe((wordResult) => {
       if (wordResult && wordResult.length > 0) {
         const length = wordResult.length;
         this.gameManagerService.captureEvents$.next(1);
-        if (wordResult.at(wordResult.length - 1).isValid === "true"){
+        if (wordResult.at(wordResult.length - 1).isValid === "true") {
           console.log("normal")
           this.playGame(wordResult[length - 1].word);
-          this.secondError = false;
-        } else if (wordResult.at(wordResult.length - 1).error == 0 || this.secondError) {
+          this.secondError.next(false);
+        } else if (wordResult.at(wordResult.length - 1).error == 0 || this.secondError.value) {
           console.log("random")
-          this.placeRandomPieceRandomly()
+          this.placeRandomPieceRandomly();
         } else {
           console.log("1 erreur")
           this.error();
         }
-    }
-    })
+      }
+    });
+    
     this.gameState = [];
     this.currentPiece = this.initializePiece(this.getRandomPieceType(), { row: 0, col: 4 });
     this.initGameState();
+  }
+
+  resetGame(): void {
+    console.log('Réinitialisation du jeu');
+    this.initGameEngine();
   }
 
   getGameState(): (number | null)[][] {
@@ -319,7 +334,7 @@ export class GameEngine {
     const gameEngineInstance = this;
     function avoid(){
       console.log("salut")
-      gameEngineInstance.secondError = true;
+      gameEngineInstance.secondError.next(true);
       gameEngineInstance.gameManagerService.resetWords();
       gameEngineInstance.gameManagerService.captureEvents$.next(0);
     }
