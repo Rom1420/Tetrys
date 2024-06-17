@@ -3,6 +3,8 @@ const manageAllErrors = require("../utils/routes/manageAllErrors")
 const Config = require("./configModel")
 const Difficulties = require('./difficultyModel')
 const Words = require('./words/wordRoute')
+const StudentRouter = require('./students')
+const StatsRouter = require('./stats')
 
 const router = new Router()
 router.get('/status', (req, res) => {
@@ -16,5 +18,8 @@ router.get('/status', (req, res) => {
 router.use('/configs', Config);
 router.use('/difficulties', Difficulties)
 router.use('/words', Words)
+router.get('/status', (req, res) => res.status(200).json('ok'))
+router.use('/students', StudentRouter)
+router.use('/stats', StatsRouter)
 
 module.exports = router
