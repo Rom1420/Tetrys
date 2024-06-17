@@ -4,7 +4,7 @@ export class StudentFixture extends E2EComponentFixture {
     async getNameStudent(index: number) {
         const allTitles = await this.getAllNames();
         if (index >= allTitles.length) {
-          throw new Error("Wrong Title Quiz Index");
+          throw new Error("Wrong Name Index");
         }
         return allTitles[index];
     }
@@ -16,11 +16,11 @@ export class StudentFixture extends E2EComponentFixture {
     getAllNames(){
         return this.page.$$('student p');
     }
-    getDelButton(){
-        return this.page.getByTestId('closeButton');
+    getDelButton(index: number){
+        return this.page.getByTestId('closeButton').nth(index);
     }
-    clickDelButton(){
-        return this.getDelButton().click();
+    clickDelButton(index: number){
+        return this.getDelButton(index).click();
     }
     async getIndexOfName(name: string) {
         const names = await this.getAllNames();

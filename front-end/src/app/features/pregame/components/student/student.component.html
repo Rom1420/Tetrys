@@ -3,8 +3,8 @@
         <img [attr.src]="profilePicture">
     </div>
     <p>{{student.name}}</p>
-    <div data-testid='closeButton' class="close-button-container">
-        <div (click)="openDPopup()" (click)="updateSelectedStudentIdToDelete(student)" class="close-button">
+    <div class="close-button-container">
+        <div data-testid='closeButton' (click)="openDPopup()" (click)="updateSelectedStudentIdToDelete(student)" class="close-button">
             <span></span>
             <span></span>
         </div>
