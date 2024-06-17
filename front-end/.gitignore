@@ -8,6 +8,10 @@
 /bazel-out
 /.angular/
 
+#pour les rapports de tests
+/playwright-report
+/test-results
+
 # dependencies
 /node_modules
 
