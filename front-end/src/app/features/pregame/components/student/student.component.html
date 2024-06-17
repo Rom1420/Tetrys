@@ -1,9 +1,9 @@
-<div class="student" *ngIf="student" (click)="onSelectStudent(student)" [ngClass]="{'selected': student.isSelected}">
+<div data-testid='selectButton' class="student" *ngIf="student" (click)="onSelectStudent(student)" [ngClass]="{'selected': student.isSelected}">
     <div class="container">
         <img [attr.src]="profilePicture">
     </div>
     <p>{{student.name}}</p>
-    <div class="close-button-container">
+    <div data-testid='closeButton' class="close-button-container">
         <div (click)="openDPopup()" (click)="updateSelectedStudentIdToDelete(student)" class="close-button">
             <span></span>
             <span></span>
