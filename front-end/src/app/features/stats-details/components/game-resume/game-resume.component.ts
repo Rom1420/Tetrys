@@ -27,6 +27,7 @@ export class GameResumeComponent {
   }
 
   private updateGameResume(selectedPlayerId: number, selectedGameId: number): void {
-    this.gameResume = this.gameResumeService.getGameResume(selectedPlayerId, selectedGameId);
+    this.gameResume = this.gameResumeService.getGameResumesOfPlayer(selectedPlayerId);
+    //this.gameResume = this.gameResumeService.getGameResume(selectedPlayerId, selectedGameId);
   }
 }

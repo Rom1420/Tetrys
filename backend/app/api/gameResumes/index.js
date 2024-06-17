@@ -14,23 +14,29 @@ router.get('/',(req,res)=>{
     }
 })
 
-router.get('/:gameresumeId', (req, res) =>{
+router.get('students/:idJoueur/gameResumes/', (req, res) =>{
     try{
-        const gameresume = GameResume.getById(req.params.gameresumeId)
-        res.status(200).json(gameresume)
+        const idJoueur = parseInt(req.params.idJoueur, 10)
+        const studentHistory = GameResume.find(h => h.idJoueur === idJoueur)
+        res.status(200).json(studentHistory)
     } catch (err) {
         manageAllErrors(res, err)
     }
 })
 
-router.post('/',(req,res)=>{
+router.post('/students/:idJoueur/gameResumes', (req, res) => {
     try {
-        const gameResume = GameResume.create({...req.body})
-        res.status(201).json(gameresume)
+        const idJoueur = parseInt(req.params.idJoueur, 10);
+        const newGameResume = {
+            idJoueur: idJoueur,
+            ...req.body
+        };
+        const createdGameResume = GameResume.create(newGameResume);
+        res.status(201).json(createdGameResume);
     } catch (err) {
-        manageAllErrors(res,err)
+        manageAllErrors(res, err);
     }
-})
+});
 
 router.put('/:gameresumeId', (req,res) => {
     try {
