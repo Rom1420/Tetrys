@@ -45,7 +45,10 @@ export class StatGraphComponent implements OnChanges {
     const gameMode = this.selectedGameMode;
   
     if (playerId !== null && gameMode) {
-      this.statsAvancee = this.statsAvanceeService.getStatAvancee(playerId, gameMode);
+      //this.statsAvancee = this.statsAvanceeService.getStatAvancee(playerId, gameMode);
+      this.statsAvanceeService.getStatAvancee(playerId, gameMode, (stat: StatAvancee) => {
+        this.statsAvancee = stat; //DONC this.statsAvancee n'est pas instantanément changée
+      });
     }
   }
 

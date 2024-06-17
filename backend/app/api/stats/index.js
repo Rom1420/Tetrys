@@ -2,6 +2,7 @@ const { Router } = require('express')
 
 const { Stats } = require('../../models')
 const manageAllErrors = require('../../utils/routes/error-management')
+const { getStatsOfStudentIdAndGameMode } = require('./manager')
 
 const router = new Router()
 
@@ -19,6 +20,16 @@ router.get('/:statsId', (req, res) => {
         res.status(200).json(Stats.getById(req.params.statsId))
     }
     catch (err) {
+        manageAllErrors(res, err)
+    }
+})
+
+router.get('/:studentId/:gameMode', (req, res) => {
+    try {
+        const stat = getStatsOfStudentIdAndGameMode(req.params.studentId, req.params.gameMode)
+        res.status(200).json(stat)
+    }
+    catch(err) {
         manageAllErrors(res, err)
     }
 })
