@@ -1,12 +1,13 @@
 .difficulty-detail-component{
+  position: relative;
   width: auto;
-  height: 20vw;
+  height: auto;
   padding: 20px;
-  padding-top: 30px;
+  padding-top: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #4a5d83;
+  background: linear-gradient(to bottom, var(--background) 0%, var(--cyan-light) 100%);
   border-radius: 20px;
   text-align: center;
   margin-right: 50px;
@@ -30,7 +31,7 @@
   }
 
   h1{
-    margin: 5px 10px 15px;
+    margin: -35px 10px 15px;
     padding:20px;
     border-radius: 91% 9% 82% 18% / 14% 80% 20% 86% ;
     font-weight: 900;
@@ -39,19 +40,19 @@
 
     &.debutant{
       background-color: #39b739;
-      box-shadow: 0px 1px 2px 2px #0c5f0c;
+      box-shadow: 0px 5px 2px 2px #0c5f0c;
     }
     &.intermediaire{
       background-color: #F27F1B;
-      box-shadow: 0px 1px 2px 2px #8b4304;
+      box-shadow: 0px 5px 2px 2px #8b4304;
     }
     &.avance{
       background-color: #bf3124;
-      box-shadow: 0px 1px 2px 2px rgb(132, 20, 10);
+      box-shadow: 0px 5px 2px 2px rgb(132, 20, 10);
     }
     &.perso{
       background-color: #6bccf2;
-      box-shadow: 0px 1px 2px 2px rgb(1, 77, 107);
+      box-shadow: 0px 5px 2px 2px rgb(1, 77, 107);
     }
   }
 

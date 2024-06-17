@@ -18,7 +18,7 @@ export class DifficultyButtonComponent implements OnInit {
     constructor( public configFormResultService:ConfigFormResultService, private router:Router) {}
 
 
-    ngOnInit(): void {}
+     ngOnInit(): void {}
 
     ngOnChanges(changes: SimpleChanges): void {
         if ('selectedPlayerId' in changes && changes['selectedPlayerId'].currentValue !== null) {
@@ -48,16 +48,14 @@ export class DifficultyButtonComponent implements OnInit {
         }
     }
 
-    setConfig(){
-      if (this.difficulty.difficultyId != 4){
-        this.configFormResultService.startGameWithConfiguration(this.difficulty.config)
-      }
+    setConfig(): void {
+        if (this.difficulty.difficultyId !== 4) {
+            this.configFormResultService.setConfig(this.difficulty.config);  // Met à jour la configuration
+            this.configFormResultService.startGameWithConfiguration(this.difficulty.config); // Navigue vers le jeu
+        }
     }
 
     onHover(): void {
         this.hover.emit(this.difficulty);
     }
-
-
-
 }

@@ -14,6 +14,7 @@ import { PopupDComponent } from './components/popup-delete-profil/popup-delete-p
 import { DifficultyDetailComponent } from './components/difficulty-detail/difficulty-detail.component';
 import { ConfigCreationComponent } from './components/config-creation/config-creation.component';
 import { ConfigListComponent } from './components/config-list/config-list.component';
+import { SharedModule } from 'src/app/core/shared.module';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ConfigListComponent } from './components/config-list/config-list.compon
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
   exports: [
     DifficultyListComponent,

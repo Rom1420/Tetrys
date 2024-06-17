@@ -247,7 +247,7 @@ input.input-custom{
   font-size: 1vw;
   padding: 17px 30px;
   border-radius: 20px;
-  background-color: #304673;
+  background: linear-gradient(to bottom, var(--cyan-light) 0%, var(--background) 100%);
   color: #fff;
   border: transparent ;
   transition: transform 0.3s ease-in-out;

@@ -1,6 +1,11 @@
 <div class="blocks-words">
     <ng-container *ngFor="let word of words; let i = index">
         <div class="block-word-container">
+            <div class="blur-effect"></div>
+            <div class="shine-overlay">
+                <div class="horizontal"></div>
+                <div class="vertical"></div>
+            </div>
             <div class="block-container">
                 <block [shape]="blocks[i].shape" [id]="blocks[i].id"></block>    
             </div>

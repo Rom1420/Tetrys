@@ -10,6 +10,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BlockComponent } from './components/block/block.component';
 import { BlockWordComponent } from './components/block-word/block-word.component';
 import { StatsDetailsModule } from '../stats-details/stats-details.module';
+import { SharedModule } from 'src/app/core/shared.module';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { StatsDetailsModule } from '../stats-details/stats-details.module';
         ReactiveFormsModule,
         FormsModule,
         StatsDetailsModule,
-    ],
+        SharedModule,
+      ],
   exports: [
     GameComponent,
     WordComponent,
