@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from 'src/app/core/components/services/student.service';
+
 import { StatsAvanceeService } from './services/stats-avancee.service';
+import { StudentService } from 'src/app/core/components/services/student.service';
 
 @Component({
   selector: 'stats-game',
@@ -10,7 +11,7 @@ import { StatsAvanceeService } from './services/stats-avancee.service';
 
 export class StatsComponent implements OnInit {
   selectedPlayerId: number | null = null; 
-  selectedGameMode: String | undefined = "Général";
+  selectedGameMode: String  = "Général";
   selectedStudentIdToDelete: number | null = null;
 
   constructor(private studentService: StudentService,
@@ -30,14 +31,18 @@ export class StatsComponent implements OnInit {
     this.studentService.selectedStudentId$.subscribe((studentId: number | null) => {
       if (studentId) {
         this.selectedPlayerId = studentId; 
+        this.statsAvanceeService.updateStatsForStudent(studentId, this.selectedGameMode);
+        console.log("change student to : ",this.selectedPlayerId);
       } else {
         this.selectedPlayerId = null;
       }
     });
     
     this.statsAvanceeService.selectedGameMode$.subscribe((gameMode : String) => {
-      if(gameMode){
+      if(gameMode && this.selectedPlayerId){
         this.selectedGameMode = gameMode;
+        console.log("change mode to : ",this.selectedGameMode);
+        this.statsAvanceeService.updateStatsForStudent(this.selectedPlayerId, gameMode);
       }
     });
   }

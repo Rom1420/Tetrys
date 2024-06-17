@@ -2,9 +2,9 @@ import {StatAvancee} from "../models/stat-avancee.model";
 
 export const STATS_AVANCEES_LIST: StatAvancee[] = [
   // Joueur 1
-  { idJoueur: 1, mode: "general", wpm: 53, scoreMoyen: 44, pourcentageErreur: 16 },
-  { idJoueur: 1, mode: "debutant", wpm: 57, scoreMoyen: 39, pourcentageErreur: 20 },
-  { idJoueur: 1, mode: "intermediaire", wpm: 51, scoreMoyen: 46, pourcentageErreur: 14 },
+  { idJoueur: 1718615517760, mode: "general", wpm: 53, scoreMoyen: 44, pourcentageErreur: 16 },
+  { idJoueur: 1718615517760, mode: "debutant", wpm: 57, scoreMoyen: 39, pourcentageErreur: 20 },
+  { idJoueur: 1718615517760, mode: "intermediaire", wpm: 51, scoreMoyen: 46, pourcentageErreur: 14 },
   { idJoueur: 1, mode: "avance", wpm: 49, scoreMoyen: 45, pourcentageErreur: 14.75 },
   { idJoueur: 1, mode: "perso", wpm: 55, scoreMoyen: 43, pourcentageErreur: 16.5 },
 

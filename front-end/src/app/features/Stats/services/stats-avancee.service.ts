@@ -11,13 +11,16 @@ import { HttpClient } from '@angular/common/http';
 
 
 export class StatsAvanceeService {
+
+  public studentId: number = 0;
+  
   public selectedGameModeSubject$: BehaviorSubject<String> = 
             new BehaviorSubject<String>("");
   public selectedGameMode$ = 
           this.selectedGameModeSubject$.asObservable();
 
-  private statByStudentIdAndGameMode: StatAvancee | undefined;
-  private statByStudentIdAndGameMode$: BehaviorSubject<StatAvancee> = new BehaviorSubject<StatAvancee>(STATS_AVANCEES_LIST[0]);
+  private statByStudentIdAndGameMode: StatAvancee;
+  public statByStudentIdAndGameMode$: BehaviorSubject<StatAvancee> = new BehaviorSubject<StatAvancee>(STATS_AVANCEES_LIST[0]);
 
   private statAvanceeSubject: BehaviorSubject<StatAvancee[]> = new BehaviorSubject<StatAvancee[]>([]);
 
@@ -26,6 +29,11 @@ export class StatsAvanceeService {
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient){
+    this.statByStudentIdAndGameMode = { idJoueur: 0,
+                                        mode: 'general',
+                                        wpm: 0,
+                                        scoreMoyen: 0,
+                                        pourcentageErreur: 0};
     this.statAvanceeSubject.next([]);
   }
 
@@ -33,11 +41,22 @@ export class StatsAvanceeService {
     this.selectedGameModeSubject$.next(gameMode);
   }
 
-  getStatAvancee(idJoueur: number, gameMode: String, callback: (stat: StatAvancee) => void): void {
-    const requestUrl = this.statsUrl + '/' + idJoueur + '/' + gameMode;
-    
-    this.http.get<StatAvancee>(requestUrl).subscribe((stat) => {
-      callback(stat);
-    });
+  setStatAvancee( gameMode: String) {
+    const requestUrl = this.statsUrl + '/' + this.studentId + '/' + gameMode;
+    console.log("route :" + requestUrl);
+    this.http.get<StatAvancee>(requestUrl).subscribe((statAvancee) => {
+      this.statByStudentIdAndGameMode = statAvancee;
+      this.statByStudentIdAndGameMode$.next(this.statByStudentIdAndGameMode);
+  });
+  console.log(gameMode);
+    /*this.http.get<StatAvancee>(requestUrl).subscribe((stat) => {
+      callback(stat
+    });*/
   }
+
+  updateStatsForStudent(studentId: number, gameMode: String) {
+    this.studentId = studentId;
+    this.setStatAvancee(gameMode);
+  }
+
 }

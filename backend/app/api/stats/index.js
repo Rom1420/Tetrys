@@ -8,7 +8,7 @@ const router = new Router()
 
 router.get('/', (req, res) => {
     try {
-        res.status(200).json(Stats.get)
+        res.status(200).json(Stats.get())
     }
     catch (err) {
         manageAllErrors(res, err)

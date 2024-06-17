@@ -1,6 +1,7 @@
 import {Component, Input, input, OnChanges, OnInit, SimpleChanges} from "@angular/core";
 import {StatsAvanceeService} from "../../services/stats-avancee.service";
 import {StatAvancee} from "../../models/stat-avancee.model";
+
 @Component({
   selector:'stat-graph',
   templateUrl: './stat-graph.component.html',
@@ -10,7 +11,7 @@ export class StatGraphComponent implements OnChanges {
   @Input() selectedPlayerId: number | null = 0;
   @Input() selectedGameMode: String | undefined = 'general';
 
-  statsAvancee : StatAvancee | null = null;
+  statsAvancee : StatAvancee | undefined;
 
   constructor(private statsAvanceeService: StatsAvanceeService) {}
 
@@ -45,10 +46,16 @@ export class StatGraphComponent implements OnChanges {
     const gameMode = this.selectedGameMode;
   
     if (playerId !== null && gameMode) {
-      //this.statsAvancee = this.statsAvanceeService.getStatAvancee(playerId, gameMode);
-      this.statsAvanceeService.getStatAvancee(playerId, gameMode, (stat: StatAvancee) => {
+
+      this.statsAvanceeService.statByStudentIdAndGameMode$.subscribe((statAvancee) =>{
+        this.statsAvancee = statAvancee;
+        console.log("bonne stat :",statAvancee);
+      })
+
+      //this.statsAvancee = this.statsAvanceeService.
+      /*this.statsAvanceeService.getStatAvancee(playerId, gameMode, (stat: StatAvancee) => {
         this.statsAvancee = stat; //DONC this.statsAvancee n'est pas instantanément changée
-      });
+      });*/
     }
   }
 
