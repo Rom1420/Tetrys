@@ -8,7 +8,7 @@ export class StudentFixture extends E2EComponentFixture {
         }
         return allTitles[index];
     }
-    
+
     async getContentNameStudent(index: number) {
         const name = await this.getNameStudent(index);
         return name.textContent();
@@ -33,14 +33,17 @@ export class StudentFixture extends E2EComponentFixture {
         return indexOfCard;
     }
     async selectStudent(name: string){
-        const selector = `div:has-text("${name}")`;
+        /*const selector = `div:has-text("${name}")`;
         const allSelectors = await this.page.$$(selector);
         const indexOfStudent = await this.getIndexOfName(name);
 
         if(indexOfStudent>=allSelectors.length){
             throw new Error(`Wrong Student Name`);
         }
-        await allSelectors[indexOfStudent].click()
+        await allSelectors[indexOfStudent].click()*/
+
+      const student = this.page.getByText(""+name)
+      await student.click()
 
     }
 }
