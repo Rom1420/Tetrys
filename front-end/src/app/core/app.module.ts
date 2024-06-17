@@ -39,7 +39,6 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
         AngularSvgIconModule.forRoot(),
         HttpClientModule
     ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,8 +12,9 @@ import { PregameComponent } from './pregame.component';
 import { PopupComponent } from './components/popup-add-profil/popup-add-profil.component';
 import { PopupDComponent } from './components/popup-delete-profil/popup-delete-profil.component';
 import { DifficultyDetailComponent } from './components/difficulty-detail/difficulty-detail.component';
-import { ConfigCreationComponent } from './components/config/config-creation.component';
+import { ConfigCreationComponent } from './components/config-creation/config-creation.component';
 import { ConfigListComponent } from './components/config-list/config-list.component';
+import { SharedModule } from 'src/app/core/shared.module';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ConfigListComponent } from './components/config-list/config-list.compon
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
   exports: [
     DifficultyListComponent,

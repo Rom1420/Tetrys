@@ -1,0 +1,58 @@
+<div class="popup-container" >
+  <div class="popup">
+    <div class="popup-content">
+      <div class="popup-header">
+        <h2>Nouvelle configuration</h2>
+      </div>
+      <form [formGroup]="configForm" (ngSubmit)="onSubmit()" autocomplete="off">
+        <div class="config-container">
+          <div class="form-cell">
+            <div class="input-container">
+              <input class="input-custom" type="text" id="name" formControlName="name" placeholder="Nom de la config">
+            </div>
+          </div>
+          <div class="time-and-length-container">
+            <div class="form-cell">
+              <div class="input-container">
+                <input class="input-custom" type="text" id="time" formControlName="time" placeholder="Temps par caractère">
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="input-container">
+                <input class="input-custom" type="text" id="length"  formControlName="length" placeholder="Longueur max de mot">
+              </div>
+            </div>
+          </div>
+          <div class="form-cell">
+            <div class="error-container">
+              <label for="radioOui"> Droit à l'erreur :</label>
+              <div class="radiosButtons">
+                <label> <input type="radio" id="radioOui" formControlName="errorAllowed" [value]="true"> <span>oui</span> </label>
+                <label> <input type="radio" id="radioNon" formControlName="errorAllowed" [value]="false"> <span>non</span> </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-cell">
+            <div class="add-words-config">
+              <label for="wordList">Mots supplémentaires (optionnel)</label>
+              <textarea class="text-zone" formControlName="wordList" id="wordList" name="add-words" rows="4" cols="30" placeholder="Entrez vos nouveaux mots ici..."></textarea>
+            </div>
+          </div>
+          <div class="form-cell">
+            <div class="error-container">
+              <label for="radioOui">Exclusivement mots perso :</label>
+              <div class="radiosButtons">
+                <label> <input type="radio" id="onlyWordsListYes" formControlName="onlyWordsList" [value]="true"> <span>oui</span> </label>
+                <label> <input type="radio" id="onlyWordsListNo" formControlName="onlyWordsList" [value]="false"> <span>non</span> </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="start-button">
+        <button class="play-button" (click)="onSubmit(); navigateToGame()" [disabled]="!isConfigFormValid()" role="button">Jouer</button>
+        <span class="disabling-text">Formulaire non complet</span>
+      </div>
+    </div>
+  </div>
+</div>

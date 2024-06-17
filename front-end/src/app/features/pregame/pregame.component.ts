@@ -17,9 +17,9 @@ export class PregameComponent {
   selectedPlayerId: number | null = null;
   selectedStudentIdToDelete: number | null = null;
   selectedDifficulty: Difficulty | null = null;
-  
 
-  constructor(private studentService: StudentService, 
+
+  constructor(private studentService: StudentService,
     public popupService: PopupService){
     this.studentService.selectedStudentIdToDelete$.subscribe((studentId: number | null) => {
       if(studentId){
@@ -34,11 +34,11 @@ export class PregameComponent {
   ngOnInit(): void {
     this.studentService.selectedStudentId$.subscribe((studentId: number | null) => {
       if (studentId) {
-        this.selectedPlayerId = studentId; 
+        this.selectedPlayerId = studentId;
       } else {
         this.selectedPlayerId = null;
       }
-    }); 
+    });
   }
 
   onMidContainerHover(): void {
@@ -53,8 +53,8 @@ export class PregameComponent {
     this.isHovering = true;
     if(this.selectedPlayerId != null){
       this.selectedDifficulty = difficulty;
-    } 
-    this.showConfig = difficulty.id == 4;
+    }
+    this.showConfig = difficulty.difficultyId == 4;
     if (this.showConfig && this.selectedPlayerId != null){
       this.selectedDifficulty = null;
     }

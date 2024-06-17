@@ -4,6 +4,7 @@
     width: 100vw;
     height: 92vh;
     display: flex;
+    background: linear-gradient(to bottom, var(--background) 0%, var(--cyan-brighter) 100%);
 }
 
 .side-container{
@@ -17,7 +18,7 @@ stats-profil{
     display: flex;
     width: 100%;
     height: 100%;
-    background-color: var(--box-color);
+    background: linear-gradient(to top, var(--cyan-light) -50%, var(--background) 80%);
     box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
     border-radius: 15px;
     justify-content: flex-start;
@@ -56,7 +57,7 @@ game-evolution{
     }
   }
 
-  @media screen and (max-height: 700px) {
+  @media screen and (max-height: 500px) {
     game-evolution{
         display: none;
     }

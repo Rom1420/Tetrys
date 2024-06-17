@@ -6,6 +6,8 @@ import {Word} from "./models/word.model";
 import {GameFormService} from "./services/game-form.service";
 import {GameManagerService} from "./services/game-manager.service";
 import {ConfigModel} from "./models/config.model";
+import {GameEngine} from "./services/game-engine";
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -13,37 +15,43 @@ import {ConfigModel} from "./models/config.model";
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
 })
-export class GameComponent implements OnInit, AfterViewInit{
+export class GameComponent implements OnInit, AfterViewInit {
 
     public wordForm: FormGroup;
-    private actualWords: Word[] = [{name: ""}];
+    private actualWords: Word[] = [{text: "", size : 0, listId : 0, studentId : 0}];
     public actualWordForm: string = "";
     public time: number = 0;
     public allTimer: any[] = [];
     private isWordValid: boolean = false;
     public endGameDisplay: boolean = false;
     @ViewChild('word') wordFormToggle!: ElementRef;
+    @ViewChild('textInput') textInput!: ElementRef;
     public config: ConfigModel;
     public show2ndChance = false;
     public errorsAllowed:number = 0;
+    private configSubscription!: Subscription;
 
-    constructor(private gameManagerService:GameManagerService, private configFormResult: ConfigFormResultService, private gameFormService: GameFormService, public wordService:WordsServices, public formBuilder: FormBuilder) {
+    constructor(private gameManagerService:GameManagerService, private configFormResult: ConfigFormResultService, private gameFormService: GameFormService, public wordService:WordsServices, public formBuilder: FormBuilder, private gameEngine: GameEngine) {
         this.wordForm = this.formBuilder.group({
               word: [''],
               isValid: this.isWordValid,
               error: this.errorsAllowed
           });
-        this.config = this.configFormResult.getLastConfig()
+        this.config = this.configFormResult.getConfig()
         this.configFormResult.configActual$.subscribe((actualConfig) => {
-          this.config = actualConfig[actualConfig.length - 1]
-          console.log(this.config)
+          console.log("actualConfig", actualConfig);
+          this.config = actualConfig
         })
+        this.gameEngine.secondError.subscribe((value) => {
+          this.show2ndChance = value
+        })
+
     }
 
     ngAfterViewInit(): void {
       this.wordForm.addControl('isValid', this.formBuilder.control((this.isWordValid)))
       this.wordForm.addControl('error', this.formBuilder.control((this.errorsAllowed)))
-      this.wordService.words$.subscribe((newWords) => {
+      this.wordService.actualWords$.subscribe((newWords) => {
         this.actualWords = newWords;
         this.wordForm.get('word')?.enable();
         this.wordFormToggle.nativeElement.focus();
@@ -55,8 +63,12 @@ export class GameComponent implements OnInit, AfterViewInit{
 
     }
     ngOnInit(){
-        this.actualWords = this.wordService.getActualWords();
-        this.resetTimer();
+      this.gameEngine.resetGame();
+      this.configSubscription = this.configFormResult.configActual$.subscribe((actualConfig) => {
+        this.config = actualConfig;
+      });
+      this.actualWords = this.wordService.getActualWords();
+      this.resetTimer();
     }
 
 
@@ -65,7 +77,7 @@ export class GameComponent implements OnInit, AfterViewInit{
         if(this.actualWordForm.length == 1){
           this.startTimer();
         }
-        this.isWordValid = this.actualWords.some(word => word.name == this.actualWordForm);
+        this.isWordValid = this.actualWords.some(word => word.text == this.actualWordForm);
         this.wordForm.patchValue({'isValid': this.isWordValid.toString()});
         if(this.isWordValid){
           this.onSubmit();
@@ -75,8 +87,8 @@ export class GameComponent implements OnInit, AfterViewInit{
 
     resetTimer(){
       this.time = this.actualWords.reduce((motCourant, motSuivant) => {
-        return motSuivant.name.length > motCourant.name.length ? motSuivant: motCourant;
-      }, {name: ""}).name.length;
+        return motSuivant.text.length > motCourant.text.length ? motSuivant: motCourant;
+      }, {text: ""}).text.length;
       this.time = this.time * this.config.time;    //ratio par caractere
       this.time = Number(this.time.toFixed(1));   //on arrondi au dixieme de secondes
       this.startTimer();
@@ -88,7 +100,6 @@ export class GameComponent implements OnInit, AfterViewInit{
         if (this.time > 0) {
           this.time = Math.max(0, Number((this.time - 0.1).toFixed(1)));
         } else {
-          console.log(this.isWordValid)
           this.onSubmit();
         }
       }, 100);
@@ -109,14 +120,12 @@ export class GameComponent implements OnInit, AfterViewInit{
       if (!this.isWordValid && this.config.errorAllowed){
         this.errorsAllowed = 1;
         this.wordForm.patchValue({'error': this.errorsAllowed});
-        console.log(this.wordForm.value)
         this.gameFormService.addResult(this.wordForm.value)
         console.log(this.gameFormService.getResults());
         this.errorsAllowed = 0;
         this.wordForm.reset();
       } else {
         this.wordForm.patchValue({'error': this.errorsAllowed});
-        console.log(this.wordForm.value)
         this.gameFormService.addResult(this.wordForm.value)
         this.wordForm.get('word')?.disable();
         console.log(this.gameFormService.getResults());
@@ -124,4 +133,11 @@ export class GameComponent implements OnInit, AfterViewInit{
         this.wordForm.reset();
       }
     }
+    ngOnDestroy() {
+      this.configSubscription.unsubscribe();
+  }
+
+  endGame() {
+    this.gameManagerService.endGame$.next(true);
+  }
 }

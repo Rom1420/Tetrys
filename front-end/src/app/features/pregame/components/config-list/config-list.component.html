@@ -4,16 +4,16 @@
       <div class="caracteristics-bar">
         <div class="item-caract">Nom</div>
         <div class="item-caract">Temps</div>
-        <div class="item-caract">Long max</div>
-        <div class="item-caract">Erreur</div>
+        <div class="item-caract">Longueur max</div>
+        <div class="item-caract">Droit à l'erreur</div>
         <div class="item-caract"></div>
       </div>
-      <div (click)="startGameWithConfig(config)" class="config" *ngFor="let config of configList">
-        <div class="config-caract">{{config.name}}</div>
-        <div class="config-caract">{{config.time}}</div>
-        <div class="config-caract">{{config.length}}</div>
-        <div class="config-caract">{{config.errorAllowed}}</div>
-        <div class="config-caract" (click)="deleteConfig(config)"><img src="../../../assets/trash.png" alt="trash_icon"></div>
+      <div class="config" *ngFor="let config of configList">
+        <div (click)="startGameWithConfig(config)" class="config-caract">{{config.name}}</div>
+        <div (click)="startGameWithConfig(config)" class="config-caract">{{config.time}}</div>
+        <div (click)="startGameWithConfig(config)" class="config-caract">{{config.length}}</div>
+        <div (click)="startGameWithConfig(config)" class="config-caract">{{config.errorAllowed ? "oui":"non"}}</div>
+        <div class="config-del" (click)="deleteConfig(config)"><img src="../../../assets/trash.png" alt="trash_icon"></div>
       </div>
     </div>
   </div>

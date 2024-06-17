@@ -20,6 +20,11 @@ export class StudentListComponent implements OnInit {
 
     ngOnInit() {}
 
-    
+    getProfilePicture(index: number): string {
+        const baseUrl = './assets/profiles-pic/'; 
+        const imageIndex = (index % 7) + 1; 
+        const url = `${baseUrl}profile-pic-${imageIndex}.svg`;
+        return url;
+    }
 
 }
