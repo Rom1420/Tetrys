@@ -3,7 +3,7 @@
     width: 0;
     margin: 10px auto;
     padding: 0px;
-    background-color: #4a5d83;
+    background: linear-gradient(to top, var(--cyan-light) -50%, var(--background) 80);
     box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
     border-radius: 15px;
     overflow: hidden;
@@ -14,7 +14,7 @@
 .popup-body {
     max-width: 100%;
     padding: 0px 20px;
-    background-color: #4a5d83;
+    background: linear-gradient(to top, var(--cyan-light) -50%, var(--background) 80);
     display: flex;
     flex-direction: column;
     align-items: center;
