@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test';
 import { ConfigModel } from './models/config.model';
 
-export class GameComponentFixture {
+export class GameFixture {
 
   protected page: Page;
 
@@ -10,15 +10,15 @@ export class GameComponentFixture {
   }
 
   async navigateToPregame(){
-    await this.page.goto("https://localhost:4200/pregame");
+    await this.page.goto("http://localhost:4200");
   }
 
   async navigateToGame(){
-    await this.page.goto("https://localhost:4200/game");
+    await this.page.goto("http://localhost:4200/game");
   }
 
-  async getModeName() {
-    await this.page.locator(".mode-name span").textContent();
+  async getModeName() { 
+    return await this.page.locator(".mode-name span").textContent();
   }
 
   async enterWord(word: string) {
@@ -30,11 +30,7 @@ export class GameComponentFixture {
     await this.page.click('.end-game-button');
   }
 
-  async setConfig(mode: string) {
-   
-  }
-
   async isSecondChanceVisible() {
-      return await this.page.locator('.second-chance').isVisible();
+    return await this.page.locator('.second-chance').isVisible();
   }
 }

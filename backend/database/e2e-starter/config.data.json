@@ -77,16 +77,5 @@
     "onlyWordsList": false,
     "listId": 7,
     "id": 1718216216417
-  },
-  {
-    "name": "qsjdn",
-    "time": "1",
-    "length": "2",
-    "errorAllowed": true,
-    "wordList": " bonjour",
-    "userId": 1718610618291,
-    "onlyWordsList": false,
-    "listId": 8,
-    "id": 1718610637311
   }
 ]

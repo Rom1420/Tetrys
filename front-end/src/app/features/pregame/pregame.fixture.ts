@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test';
 
-export class PregameComponentFixture{
+export class PregameFixture{
     protected page: Page;
 
     constructor(page: Page) {

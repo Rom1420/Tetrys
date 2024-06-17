@@ -32,15 +32,8 @@ export class StudentFixture extends E2EComponentFixture {
         }
         return indexOfCard;
     }
-    async selectStudent(name: string){
-        const selector = `div:has-text("${name}")`;
-        const allSelectors = await this.page.$$(selector);
-        const indexOfStudent = await this.getIndexOfName(name);
 
-        if(indexOfStudent>=allSelectors.length){
-            throw new Error(`Wrong Student Name`);
-        }
-        await allSelectors[indexOfStudent].click()
-
+    async selectStudent(studentName: string){
+        await this.page.click(`[data-testid="student"]:has-text("${studentName}")`);
     }
 }
