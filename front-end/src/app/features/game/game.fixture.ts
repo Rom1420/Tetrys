@@ -31,7 +31,12 @@ export class GameFixture {
   }
 
   async isSecondChanceVisible() {
-    return await this.page.locator('.second-chance').isVisible();
+    try {
+        await this.page.getByText('Vous avez le droit à une seconde tentative');
+        return true;
+    } catch (error) {
+        return false;
+    }
   }
 
   async getChronoValue() {

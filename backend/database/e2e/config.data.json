@@ -87,7 +87,7 @@
     "userId": 1718626002462,
     "onlyWordsList": true,
     "listId": 8,
-    "id": 1718692246053
+    "id": 1718696493922
   },
   {
     "name": "configTest",
@@ -98,7 +98,7 @@
     "userId": 1718626002462,
     "onlyWordsList": true,
     "listId": 9,
-    "id": 1718693006730
+    "id": 1718696880071
   },
   {
     "name": "configTest",
@@ -109,94 +109,6 @@
     "userId": 1718626002462,
     "onlyWordsList": true,
     "listId": 10,
-    "id": 1718693296577
-  },
-  {
-    "name": "configTest",
-    "time": "0.6",
-    "length": "6",
-    "errorAllowed": true,
-    "wordList": "La dictée est l'opération par laquelle une personne lit à haute voix un texte cohérent selon un rythme qui permet à des auditeurs de le copier par écrit. ",
-    "userId": 1718693446317,
-    "onlyWordsList": true,
-    "listId": 11,
-    "id": 1718693458971
-  },
-  {
-    "name": "configTest",
-    "time": "0.6",
-    "length": "6",
-    "errorAllowed": true,
-    "wordList": "La dictée est l'opération par laquelle une personne lit à haute voix un texte cohérent selon un rythme qui permet à des auditeurs de le copier par écrit. ",
-    "userId": 1718693591342,
-    "onlyWordsList": true,
-    "listId": 12,
-    "id": 1718693611966
-  },
-  {
-    "name": "configTest",
-    "time": "0.6",
-    "length": "6",
-    "errorAllowed": true,
-    "wordList": "La dictée est l'opération par laquelle une personne lit à haute voix un texte cohérent selon un rythme qui permet à des auditeurs de le copier par écrit. ",
-    "userId": 1718693809787,
-    "onlyWordsList": true,
-    "listId": 13,
-    "id": 1718693830043
-  },
-  {
-    "name": "configTest",
-    "time": "0.6",
-    "length": "6",
-    "errorAllowed": true,
-    "wordList": "La dictée est l'opération par laquelle une personne lit à haute voix un texte cohérent selon un rythme qui permet à des auditeurs de le copier par écrit. ",
-    "userId": 1718694443886,
-    "onlyWordsList": true,
-    "listId": 14,
-    "id": 1718694456710
-  },
-  {
-    "name": "configTest",
-    "time": "0.6",
-    "length": "6",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": true,
-    "listId": 15,
-    "id": 1718694551217
-  },
-  {
-    "name": "configTest",
-    "time": "0.6",
-    "length": "6",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": true,
-    "listId": 16,
-    "id": 1718694717724
-  },
-  {
-    "name": "configTest",
-    "time": "0.6",
-    "length": "6",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": true,
-    "listId": 17,
-    "id": 1718695951326
-  },
-  {
-    "name": "configTest",
-    "time": "0.6",
-    "length": "6",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": true,
-    "listId": 18,
-    "id": 1718696057695
+    "id": 1718696951692
   }
 ]
