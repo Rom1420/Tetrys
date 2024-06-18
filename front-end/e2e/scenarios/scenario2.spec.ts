@@ -77,7 +77,17 @@ test.describe('Scénario 2', () => {
     expect(correctWords.length).toBeGreaterThan(0);
 
     await gameFixture.enterWord(correctWords[0]);
-  });
+
+    let newCorrectWords;
+    do {
+      await gameFixture.playTetris();
+      newCorrectWords = await gameFixture.getCorrectWords();
+    } while (correctWords.toString() === newCorrectWords.toString());
+
+    const gridIsEmpty = await gameFixture.isGridEmpty();
+    expect(gridIsEmpty).toBe(false);
+    expect(correctWords.toString() === newCorrectWords.toString()).toBe(false);
+});
 
   test('Delete a Student successfully', async ({page}) => {
     await page.goto(testUrl+"/pre-game");

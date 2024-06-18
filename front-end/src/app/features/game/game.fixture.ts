@@ -68,4 +68,18 @@ export class GameFixture {
     );
     return wordElements;
   }
+
+  async playTetris(): Promise<void>{
+    await this.page.keyboard.press('ArrowUp'); 
+    await this.page.keyboard.press('ArrowLeft'); 
+    await this.page.keyboard.press('ArrowRight'); 
+    await this.page.keyboard.press('ArrowDown');
+  }
+
+  async isGridEmpty(): Promise<boolean> {
+    const allCellsAreNull = await this.page.$$eval('.board .cell', cells =>
+      cells.every(cell => cell.classList.contains('block-null'))
+    );
+    return allCellsAreNull;
+  }
 }
