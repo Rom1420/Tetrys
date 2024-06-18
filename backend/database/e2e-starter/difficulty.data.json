@@ -1,0 +1,54 @@
+[
+  {
+    "difficultyId": 1,
+    "name": "Débutant",
+    "description": "Le mode pas trop dur",
+    "config": {
+      "name": "débutant",
+      "time": 1.5,
+      "length": 6,
+      "errorAllowed": true,
+      "userId": 0
+    },
+    "id": 1716208170550
+  },
+  {
+    "difficultyId": 2,
+    "name": "Intermédiaire",
+    "description": "Le mode un peu dur",
+    "config": {
+      "name": "intermediaire",
+      "time": 1,
+      "length": 10,
+      "errorAllowed": false,
+      "userId": 0
+    },
+    "id": 1716208217154
+  },
+  {
+    "difficultyId": 3,
+    "name": "Avancé",
+    "description": "Le mode dur",
+    "config": {
+      "name": "avancé",
+      "time": 0.6,
+      "length": 15,
+      "errorAllowed": false,
+      "userId": 0
+    },
+    "id": 1716208247295
+  },
+  {
+    "difficultyId": 4,
+    "name": "Personnalisé",
+    "description": "Le mode Perso",
+    "config": {
+      "name": "personnalisé",
+      "time": 0,
+      "length": 0,
+      "errorAllowed": false,
+      "userId": 0
+    },
+    "id": 1716208404199
+  }
+]

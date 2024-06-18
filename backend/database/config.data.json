@@ -79,14 +79,14 @@
     "id": 1718216216417
   },
   {
-    "name": "qsjdn",
-    "time": "1",
-    "length": "2",
-    "errorAllowed": true,
-    "wordList": " bonjour",
-    "userId": 1718610618291,
+    "name": "a",
+    "time": "7",
+    "length": "7",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1,
     "onlyWordsList": false,
     "listId": 8,
-    "id": 1718610637311
+    "id": 1718615345116
   }
 ]
