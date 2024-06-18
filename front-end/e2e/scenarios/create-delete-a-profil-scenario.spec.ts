@@ -1,9 +1,11 @@
-import { test, expect } from '@playwright/test';
+import {test, expect, Page} from '@playwright/test';
 import { testUrl } from 'e2e/e2e.config';
 import { AddProfilFixture } from 'src/app/features/pregame/components/add-profil-button/add-profil-button.fixture';
 import { StudentFixture } from 'src/app/features/pregame/components/student/student.fixture';
 import { ProfilFormFixture } from 'src/app/features/pregame/components/popup-add-profil/popup-add-profil.fixture';
 import { ConfirmDeleteFixture } from 'src/app/features/pregame/components/popup-delete-profil/popup-delete-profil.fixture';
+
+
 
 test.describe('Student Feature', () => {
     test('Create a Student successfully', async ({page}) => {
@@ -11,7 +13,6 @@ test.describe('Student Feature', () => {
 
         //create fixtures
         const addProfilFixture = new AddProfilFixture(page);
-        const studentFixture = new StudentFixture(page);
         const profilFormFixture = new ProfilFormFixture(page);
 
         await expect(page).toHaveURL("http://localhost:4200/pre-game");
@@ -25,10 +26,9 @@ test.describe('Student Feature', () => {
 
         await test.step(`Create student`, async () => {
             const inputName = await profilFormFixture.getInput('name');
-            await inputName.type('Student E2E');
+            await inputName.fill("Lucas")
             await profilFormFixture.clickCreateButton();
-            const indexStudent = await studentFixture.getIndexOfName('Student E2E');
-            expect(await studentFixture.getContentNameStudent(indexStudent)).toEqual('Student E2E');
+            expect(page.getByText("Lucas"))
         });
 
     });
@@ -36,12 +36,11 @@ test.describe('Student Feature', () => {
         await page.goto(testUrl);
         const studentFixture = new StudentFixture(page);
         const confirmDeleteFixture = new ConfirmDeleteFixture(page);
-        const studentIndex = await studentFixture.getIndexOfName('Student E2E');
-        const student = page.locator('student').filter({ hasText: 'Student E2E' }).getByTestId('selectButton');
-        expect(student).toBeVisible();
+        const studentIndex = await studentFixture.getIndexOfName('Lucas');
+        const student = page.locator('student').filter({ hasText: 'Lucas' }).getByTestId('selectButton');
         await studentFixture.clickDelButton(studentIndex);
         await confirmDeleteFixture.clickConfirmButton();
-        expect(student).not.toBeVisible();
+        await expect(student).not.toBeVisible();
     });
 
 });

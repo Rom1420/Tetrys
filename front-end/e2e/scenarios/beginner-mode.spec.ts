@@ -28,6 +28,8 @@ test.describe('Tests du Mode Débutant', () => {
 
     test("Doit afficher le message second chance", async() => {
         await gameFixture.enterWord("mauvaismot");
+        await gameFixture.waitForChronoToBeZero()
         const isSecondChanceVisible = await gameFixture.isSecondChanceVisible();
+        expect(isSecondChanceVisible).toBe(true);
     });
 })
