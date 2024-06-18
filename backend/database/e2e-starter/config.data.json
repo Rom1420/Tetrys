@@ -25,24 +25,25 @@
   },
   {
     "name": "config1",
-    "time": "0.5",
-    "length": "25",
+    "time": 0.5,
+    "length": 25,
     "errorAllowed": false,
     "wordList": " ",
     "userId": 1718626002462,
     "onlyWordsList": false,
-    "listId": 11,
-    "id": 1718626120249
+    "listId": 1,
+    "id": 1718712916318
   },
   {
     "name": "config2",
-    "time": "2",
-    "length": "45",
+    "time": 2,
+    "length": 45,
     "errorAllowed": true,
     "wordList": " ",
     "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 12,
-    "id": 1718626146557
+    "onlyWordsList": true,
+    "listId": 2,
+    "id": 1718714908526
   }
+
 ]
