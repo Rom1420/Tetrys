@@ -1,0 +1,92 @@
+[
+  {
+    "name": "débutant",
+    "time": 1.5,
+    "length": 6,
+    "errorAllowed": true,
+    "userId": 0,
+    "id": 1716197792316
+  },
+  {
+    "name": "intermediaire",
+    "time": 1,
+    "length": 10,
+    "errorAllowed": false,
+    "userId": 0,
+    "id": 1716197828156
+  },
+  {
+    "name": "avancé",
+    "time": 0.6,
+    "length": 15,
+    "errorAllowed": false,
+    "userId": 0,
+    "id": 1716197873858
+  },
+  {
+    "name": "Lucas",
+    "time": "1",
+    "length": "10",
+    "errorAllowed": false,
+    "wordList": " élément trop longtemps nouille fortement",
+    "userId": 4,
+    "onlyWordsList": true,
+    "listId": 2,
+    "id": 1717395134898
+  },
+  {
+    "name": "bite",
+    "time": "1",
+    "length": "10",
+    "errorAllowed": false,
+    "wordList": " grosse bite jul",
+    "userId": 4,
+    "onlyWordsList": true,
+    "listId": 4,
+    "id": 1717398733196
+  },
+  {
+    "name": "Dictée",
+    "time": "1",
+    "length": "8",
+    "errorAllowed": true,
+    "wordList": " Hauteur Test Poire",
+    "userId": 4,
+    "onlyWordsList": true,
+    "listId": 5,
+    "id": 1717401861157
+  },
+  {
+    "name": "a",
+    "time": "7",
+    "length": "7",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 3,
+    "onlyWordsList": false,
+    "listId": 6,
+    "id": 1718202728404
+  },
+  {
+    "name": "a",
+    "time": "0.1",
+    "length": "5",
+    "errorAllowed": true,
+    "wordList": " ",
+    "userId": 3,
+    "onlyWordsList": false,
+    "listId": 7,
+    "id": 1718216216417
+  },
+  {
+    "name": "qsjdn",
+    "time": "1",
+    "length": "2",
+    "errorAllowed": true,
+    "wordList": " bonjour",
+    "userId": 1718610618291,
+    "onlyWordsList": false,
+    "listId": 8,
+    "id": 1718610637311
+  }
+]
