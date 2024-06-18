@@ -17,7 +17,7 @@ test.describe('Tests du Mode Débutant', () => {
         studentFixture = new StudentFixture(page);
 
         await gameFixture.navigateToPregame();
-        await studentFixture.selectStudent("Romain");
+        await studentFixture.selectStudent("invite");
         await pregameFixture.selectDifficulty("débutant");
     });
 
