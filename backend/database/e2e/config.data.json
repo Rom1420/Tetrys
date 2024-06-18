@@ -79,58 +79,14 @@
     "id": 1718216216417
   },
   {
-    "name": "qsjdn",
-    "time": "1",
-    "length": "2",
+    "name": "configTest",
+    "time": "0.6",
+    "length": "6",
     "errorAllowed": true,
-    "wordList": " bonjour",
-    "userId": 1718610618291,
-    "onlyWordsList": false,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": true,
     "listId": 8,
-    "id": 1718610637311
-  },
-  {
-    "name": "oziiehr",
-    "time": "8",
-    "length": "1",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718610732752,
-    "onlyWordsList": false,
-    "listId": 9,
-    "id": 1718614836534
-  },
-  {
-    "name": "zelrkn",
-    "time": "7",
-    "length": "45",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718610732752,
-    "onlyWordsList": false,
-    "listId": 10,
-    "id": 1718614881155
-  },
-  {
-    "name": "config1",
-    "time": "0.5",
-    "length": "25",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 11,
-    "id": 1718626120249
-  },
-  {
-    "name": "config2",
-    "time": "2",
-    "length": "45",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 12,
-    "id": 1718626146557
+    "id": 1718692246053
   }
 ]
