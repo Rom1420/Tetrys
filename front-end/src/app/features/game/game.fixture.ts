@@ -61,4 +61,11 @@ export class GameFixture {
         await new Promise(resolve => setTimeout(resolve, 100));
     }
 }
+
+  async getCorrectWords() : Promise<string[]>{
+    const wordElements = await this.page.$$eval('.blocks-words .block-word-container .word-component p', elements =>
+      elements.map(element => element.textContent || '')
+    );
+    return wordElements;
+  }
 }

@@ -6,6 +6,7 @@ import {AddProfilFixture} from "../../src/app/features/pregame/components/add-pr
 import {StudentFixture} from "../../src/app/features/pregame/components/student/student.fixture";
 import {ProfilFormFixture} from "../../src/app/features/pregame/components/popup-add-profil/popup-add-profil.fixture";
 import {ConfirmDeleteFixture} from "../../src/app/features/pregame/components/popup-delete-profil/popup-delete-profil.fixture";
+import { GameFixture } from 'src/app/features/game/game.fixture';
 
 // https://playwright.dev/docs/locators
 test.describe('Scénario 2', () => {
@@ -65,6 +66,19 @@ test.describe('Scénario 2', () => {
     await game.fill("cuisine")
   });
 
+  test("Ecriture d'un mot correct et partie de Tetris", async ({page}) => {
+    await page.goto(testUrl+"/game")
+
+    const gameFixture = new GameFixture(page);
+
+    const correctWords = await gameFixture.getCorrectWords();
+
+    console.log('Mots corrects trouvés:', correctWords);
+    expect(correctWords.length).toBeGreaterThan(0);
+
+    await gameFixture.enterWord(correctWords[0]);
+  });
+
   test('Delete a Student successfully', async ({page}) => {
     await page.goto(testUrl+"/pre-game");
     const studentFixture = new StudentFixture(page);
@@ -76,6 +90,6 @@ test.describe('Scénario 2', () => {
     await expect(student).not.toBeVisible();
   });
 
-
+  
 
 });
