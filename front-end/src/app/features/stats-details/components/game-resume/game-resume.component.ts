@@ -27,7 +27,14 @@ export class GameResumeComponent {
   }
 
   private updateGameResume(selectedPlayerId: number, selectedGameId: number): void {
-    this.gameResume = this.gameResumeService.getGameResumesOfPlayer(selectedPlayerId);
-    //this.gameResume = this.gameResumeService.getGameResume(selectedPlayerId, selectedGameId);
+    this.gameResumeService.getGameResume(selectedPlayerId, selectedGameId)
+      .subscribe({
+        next: (resume: GameResume) => {
+          this.gameResume = resume;
+        },
+        error: () => {
+          console.error("Erreur lors de la récupération du résumé de jeu.");
+        }
+      });
   }
 }

@@ -14,7 +14,7 @@ router.get('/',(req,res)=>{
     }
 })
 
-router.get('students/:idJoueur/gameResumes/', (req, res) =>{
+router.get('students/:idJoueur/parties/', (req, res) =>{
     try{
         const idJoueur = parseInt(req.params.idJoueur, 10)
         const studentHistory = GameResume.find(h => h.idJoueur === idJoueur)
@@ -23,8 +23,17 @@ router.get('students/:idJoueur/gameResumes/', (req, res) =>{
         manageAllErrors(res, err)
     }
 })
+router.get('students/:idJoueur/parties/:idPartie', (req, res) =>{
+    try{
+        const idJoueur = parseInt(req.params.idJoueur, 10)
+        const studentHistory = GameResume.find(h => h.idJoueur === idJoueur && h.idPartie === idPartie)
+        res.status(200).json(studentHistory)
+    } catch (err) {
+        manageAllErrors(res, err)
+    }
+})
 
-router.post('/students/:idJoueur/gameResumes', (req, res) => {
+router.post('/students/:idJoueur/parties', (req, res) => {
     try {
         const idJoueur = parseInt(req.params.idJoueur, 10);
         const newGameResume = {
