@@ -36,6 +36,7 @@ export class GameResumeService {
     const url = `${this.gameResumeUrl}/students/${idJoueur}/parties/${idPartie}`;
     return this.http.get<GameResume>(url, this.httpOptions);
   }
+
   getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
     const url = `${this.gameResumeUrl}/students/${idJoueur}/parties`;
     return this.http.get<GameResume[]>(url, this.httpOptions).pipe(
