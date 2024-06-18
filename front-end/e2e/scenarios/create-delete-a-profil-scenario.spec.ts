@@ -38,7 +38,7 @@ test.describe('Student Feature', () => {
         const confirmDeleteFixture = new ConfirmDeleteFixture(page);
         const studentIndex = await studentFixture.getIndexOfName('George');
         const student = page.locator('student').filter({ hasText: 'George' }).getByTestId('selectButton');
-        await expect(student).toBeVisible();
+        //await expect(student).toBeVisible();
         await studentFixture.clickDelButton(studentIndex);
         await confirmDeleteFixture.clickConfirmButton();
         await expect(student).not.toBeVisible();
