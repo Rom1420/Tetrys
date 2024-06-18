@@ -44,6 +44,8 @@ export class StudentFixture extends E2EComponentFixture {
 
       const student = this.page.getByText(""+name)
       await student.click()
-
     }
+    /* async selectStudent(studentName: string){
+        await this.page.click(`[data-testid="student"]:has-text("${studentName}")`);
+    }*/
 }

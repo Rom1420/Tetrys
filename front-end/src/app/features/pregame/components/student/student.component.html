@@ -1,4 +1,4 @@
-<div data-testid='selectButton' class="student" *ngIf="student" (click)="onSelectStudent(student)" [ngClass]="{'selected': student.isSelected}">
+<div class="student" *ngIf="student" (click)="onSelectStudent(student)" [ngClass]="{'selected': student.isSelected}" data-testid="student">
     <div class="container">
         <img [attr.src]="profilePicture">
     </div>

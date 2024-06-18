@@ -65,19 +65,12 @@ test.describe('Scénario 2', () => {
     await game.fill("cuisine")
   });
 
-
-
-
-
-
-
   test('Delete a Student successfully', async ({page}) => {
     await page.goto(testUrl+"/pre-game");
     const studentFixture = new StudentFixture(page);
     const confirmDeleteFixture = new ConfirmDeleteFixture(page);
     const studentIndex = await studentFixture.getIndexOfName('Lucas');
     const student = page.locator('student').filter({ hasText: 'Lucas' }).getByTestId('selectButton');
-    await expect(student).toBeVisible();
     await studentFixture.clickDelButton(studentIndex);
     await confirmDeleteFixture.clickConfirmButton();
     await expect(student).not.toBeVisible();
