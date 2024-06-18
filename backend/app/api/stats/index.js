@@ -44,6 +44,17 @@ router.post('/', (req, res) => {
     }
 })
 
+router.post('/statList', (req, res) => {
+    try {
+        const stats = req.body;
+        const createdStats = createStats(stats);
+        res.status(201).json(createdStats);
+    } catch (err) {
+        console.error('Error adding stats:', err);
+        manageAllErrors(res, err);
+    }
+});
+
 router.put('/:statsId', (req, res) => {
     try{
         res.status(200).json(Stats.update(req.params.statsId, req.body))
