@@ -23,8 +23,20 @@ export class StatGraphComponent implements OnInit {
       } else {
         this.statsAvancee = statsAvancee;
       }
+
+    const titles = document.querySelectorAll(".title");
+    
+    titles.forEach(title => title.classList.add('hidden'));
+
+      setTimeout(() => {
+        titles.forEach(title => {
+          title.classList.remove('hidden');
+        });
+      }, 200);
       console.log("Stats Avancées reçues par StatGraphComponent :", this.statsAvancee);
     });
+
+    
   }
 
   getFormattedPourcentageErreur(pourcentageErreur : number | undefined): String {
