@@ -1,16 +1,24 @@
 import { test, expect } from '@playwright/test';
 import { testUrl } from 'e2e/e2e.config';
 import { AppFixture } from 'src/app/core/app.fixture';
+import {ConfigListFixture} from "../../src/app/features/pregame/components/config-list/config-list.fixture";
 
 // https://playwright.dev/docs/locators
 test.describe('Home page display', () => {
   test('Basic test', async ({ page }) => {
-    await page.goto(testUrl);
-    const appComponentFixture = new AppFixture(page);
+    await page.goto(testUrl+"/pre-game");
+    const appComponentFixture = new ConfigListFixture(page);
     // Using locators functions:
     // Using page element role: see the function declaration
-    //const title = await appComponentFixture.getByRole();
 
+    const student = await page.getByText("Matice")
+    await student.click()
+
+    await page.getByText("personnalisé").click();
+
+    const title = await appComponentFixture.getConfigWithName("config1");
+
+    /*
     // Search by text content. Partial and exact text.
     const description1 = await page.getByText('Start your');
 
@@ -20,12 +28,13 @@ test.describe('Home page display', () => {
     // Using page.locator
     const description3 = await page.locator(
       'div.description:has-text("Start your first app!")'
-    );
+    );*/
 
-   // expect(title).toBeVisible();
-    expect(description1).toBeVisible();
+    expect(title).toBeVisible();
+    await title.click();
+    //expect(description1).toBeVisible();
     //expect(description2).toBeVisible();
-    expect(description3).toBeVisible();
+    // expect(description3).toBeVisible();
 
     // Error case : uncomment the two lines below : "Starting" does not exist
     // const description4 = await page.getByText('Starting your first app');

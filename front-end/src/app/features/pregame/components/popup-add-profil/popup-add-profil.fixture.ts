@@ -9,7 +9,7 @@ export class ProfilFormFixture extends E2EComponentFixture {
         return this.page.waitForSelector(selector);
     }
     getCreateButton(){
-        return this.page.getByRole('button', {name: "&#10003;"});
+        return this.page.getByTestId('submitButton');
     }
     clickCreateButton() {
         return this.getCreateButton().click();

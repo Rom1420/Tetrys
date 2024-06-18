@@ -4,11 +4,11 @@ export class StudentFixture extends E2EComponentFixture {
     async getNameStudent(index: number) {
         const allTitles = await this.getAllNames();
         if (index >= allTitles.length) {
-          throw new Error("Wrong Title Quiz Index");
+          throw new Error("Wrong Name Index");
         }
         return allTitles[index];
     }
-    
+
     async getContentNameStudent(index: number) {
         const name = await this.getNameStudent(index);
         return name.textContent();
@@ -16,11 +16,11 @@ export class StudentFixture extends E2EComponentFixture {
     getAllNames(){
         return this.page.$$('student p');
     }
-    getDelButton(){
-        return this.page.getByTestId('closeButton');
+    getDelButton(index: number){
+        return this.page.getByTestId('closeButton').nth(index);
     }
-    clickDelButton(){
-        return this.getDelButton().click();
+    clickDelButton(index: number){
+        return this.getDelButton(index).click();
     }
     async getIndexOfName(name: string) {
         const names = await this.getAllNames();
@@ -32,8 +32,20 @@ export class StudentFixture extends E2EComponentFixture {
         }
         return indexOfCard;
     }
+    async selectStudent(name: string){
+        /*const selector = `div:has-text("${name}")`;
+        const allSelectors = await this.page.$$(selector);
+        const indexOfStudent = await this.getIndexOfName(name);
 
-    async selectStudent(studentName: string){
-        await this.page.click(`[data-testid="student"]:has-text("${studentName}")`);
+        if(indexOfStudent>=allSelectors.length){
+            throw new Error(`Wrong Student Name`);
+        }
+        await allSelectors[indexOfStudent].click()*/
+
+      const student = this.page.getByText(""+name)
+      await student.click()
     }
+    /* async selectStudent(studentName: string){
+        await this.page.click(`[data-testid="student"]:has-text("${studentName}")`);
+    }*/
 }
