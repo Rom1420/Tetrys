@@ -2,7 +2,7 @@ const { Router } = require('express')
 
 const { Stats } = require('../../models')
 const manageAllErrors = require('../../utils/routes/error-management')
-const { getStatsOfStudentIdAndGameMode } = require('./manager')
+const { getStatsOfStudentIdAndGameMode, createStats } = require('./manager')
 
 const router = new Router()
 
