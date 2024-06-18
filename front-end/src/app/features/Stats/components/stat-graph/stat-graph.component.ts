@@ -1,59 +1,61 @@
-import {Component, Input, input, OnChanges, OnInit, SimpleChanges} from "@angular/core";
+import {ChangeDetectorRef, Component, Input, input, OnChanges, OnInit, SimpleChanges} from "@angular/core";
 import {StatsAvanceeService} from "../../services/stats-avancee.service";
 import {StatAvancee} from "../../models/stat-avancee.model";
+
 @Component({
   selector:'stat-graph',
   templateUrl: './stat-graph.component.html',
   styleUrls:['./stat-graph.component.scss']
 })
-export class StatGraphComponent implements OnChanges {
+export class StatGraphComponent implements OnInit {
   @Input() selectedPlayerId: number | null = 0;
-  @Input() selectedGameMode: String | undefined = 'general';
+  @Input() selectedGameMode: String = 'general';
 
-  statsAvancee : StatAvancee | null = null;
+  statsAvancee: StatAvancee | null = null;
 
-  constructor(private statsAvanceeService: StatsAvanceeService) {}
-
-  ngOnChanges(changes: SimpleChanges): void {
-    const titles = document.querySelectorAll(".title");
-    const graphImg = document.querySelector('.graph-img');
-
-
-    if ('selectedPlayerId' in changes) {
-      titles.forEach(title => title.classList.add('hidden'));
-
-      setTimeout(() => {
-        titles.forEach(title => {
-          title.classList.remove('hidden');
-        });
-      }, 200);
-      this.selectedGameMode = 'general';
-      this.selectedPlayerId = changes['selectedPlayerId'].currentValue;
-    } else if ('selectedGameMode' in changes) {
-      titles.forEach(title => title.classList.add('hidden'));
-
-      setTimeout(() => {
-        titles.forEach(title => {
-          title.classList.remove('hidden');
-        });
-      }, 200);
-      this.selectedGameMode = changes['selectedGameMode'].currentValue;
-    }
+  constructor(private statsAvanceeService: StatsAvanceeService, private cdr : ChangeDetectorRef) {
     
-  
-    const playerId = this.selectedPlayerId;
-    const gameMode = this.selectedGameMode;
-  
-    if (playerId !== null && gameMode) {
-      //this.statsAvancee = this.statsAvanceeService.getStatAvancee(playerId, gameMode);
-      this.statsAvanceeService.getStatAvancee(playerId, gameMode, (stat: StatAvancee) => {
-        this.statsAvancee = stat; //DONC this.statsAvancee n'est pas instantanément changée
-      });
-    }
+  }
+  ngOnInit(): void {
+    this.statsAvanceeService.statsAvancee$.subscribe(statsAvancee => {
+      if (Array.isArray(statsAvancee)) {
+        this.statsAvancee = statsAvancee[0]; // Accéder au premier élément
+      } else {
+        this.statsAvancee = statsAvancee;
+      }
+
+    const titles = document.querySelectorAll(".title");
+    
+    titles.forEach(title => title.classList.add('hidden'));
+
+      setTimeout(() => {
+        titles.forEach(title => {
+          title.classList.remove('hidden');
+        });
+      }, 200);
+      console.log("Stats Avancées reçues par StatGraphComponent :", this.statsAvancee);
+    });
+
+    
   }
 
+  getFormattedPourcentageErreur(pourcentageErreur : number | undefined): String {
+    return pourcentageErreur != null ? `${pourcentageErreur}%` : '';
+  }
+
+  /*
+  forceUpdate(): void {
+    this.statsAvancee = {
+      idJoueur:1718633208890,
+      mode: "debutant",
+      pourcentageErreur: 75,
+      scoreMoyen: 86, 
+      wpm: 12
+    }
+  }*/
+
   updateGameMode(gameMode: String) {
-    this.statsAvanceeService.onSelectGameMode(gameMode);
+    this.statsAvanceeService.setGameMode(gameMode);
 
     const buttons = document.querySelectorAll('.mode-button');
     buttons.forEach(button => {
