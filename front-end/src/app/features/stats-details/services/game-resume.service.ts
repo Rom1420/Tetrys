@@ -13,7 +13,7 @@ import { StudentService } from 'src/app/core/components/services/student.service
 export class GameResumeService {
 
   private gameResumeList: GameResume[] = GAMERESUME_LIST;
-  private gameResumesSubject: BehaviorSubject<GameResume[]> = new BehaviorSubject<GameResume[]>([]);
+  private gameResumeList$: BehaviorSubject<GameResume[]> = new BehaviorSubject<GameResume[]>([]);
   private gameResumeUrl = serverUrl + '/gameResumes';
   private httpOptions = httpOptionsBase;
   private idJoueur: number | null = 0;
@@ -29,9 +29,33 @@ export class GameResumeService {
   retrieveGameResumes():void{
     this.http.get<GameResume[]>(this.gameResumeUrl).subscribe((list) => {
       this.gameResumeList = (list.filter((gameResume)=> gameResume.idJoueur == this.idJoueur));
+      this.gameResumeList$.next(this.gameResumeList);
     });
   }
 
+  // Ancien relier au mock
+  getGameResume(idJoueur: number, idPartie: number): GameResume | null {
+    const gameResume: GameResume | undefined = this.gameResumeList.find(resume => resume.idJoueur === idJoueur && resume.idPartie === idPartie);
+    if(gameResume) {
+      return gameResume;
+    }
+    else{
+      return null;
+    }
+  }   
+
+  getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
+    const gameResumes: GameResume[] = this.gameResumeList.filter(resume => resume.idJoueur === idJoueur);
+    if (gameResumes.length > 0) {
+      this.gameResumesSubject.next(gameResumes);
+    } else {
+      this.gameResumesSubject.next([]);
+    }
+    return this.gameResumesSubject.asObservable();
+  }
+
+
+  /* Le chat
   getGameResume(idJoueur: number, idPartie: number): Observable<GameResume> {
     const url = `${this.gameResumeUrl}/students/${idJoueur}/parties/${idPartie}`;
     return this.http.get<GameResume>(url, this.httpOptions);
@@ -57,10 +81,10 @@ export class GameResumeService {
         console.error('Error adding GameResume', err);
       }
     });
-  }
+  } /*
 
 
-  /*
+  /* Tentative Matthias
   getGameResume(idJoueur: number, idPartie: number):void{
     const url = `${this.gameResumeUrl}/students/${idJoueur}/parties/${idPartie}`;
       this.http.get<GameResume[]>(url).subscribe((list) =>{
@@ -87,24 +111,5 @@ export class GameResumeService {
     });
   }*/
 
-  /*
-  getGameResume(idJoueur: number, idPartie: number): GameResume | null {
-    const gameResume: GameResume | undefined = this.gameResumeList.find(resume => resume.idJoueur === idJoueur && resume.idPartie === idPartie);
-    if(gameResume) {
-      return gameResume;
-    }
-    else{
-      return null;
-    }
-  }   
-
-  getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
-    const gameResumes: GameResume[] = this.gameResumeList.filter(resume => resume.idJoueur === idJoueur);
-    if (gameResumes.length > 0) {
-      this.gameResumesSubject.next(gameResumes);
-    } else {
-      this.gameResumesSubject.next([]);
-    }
-    return this.gameResumesSubject.asObservable();
-  }*/
+  
 }
