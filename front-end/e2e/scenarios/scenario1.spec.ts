@@ -42,11 +42,31 @@ test.describe('Scénario1', () => {
 
     const game = page.getByPlaceholder("Tapez les Mots ici")
     await expect(game).toBeVisible()
-    await game.fill("cuisine")
+    await game.type("anticonstitutionnellement")
 
+    await page.waitForTimeout(9000);
+
+
+    await expect(page.getByText("Vous avez le droit à une seconde tentative")).toBeVisible()
+
+    await page.getByRole('button', {name:"FIN PARTIE"}).click()
+
+    await expect(page.getByRole('button', {name:"Rejouer"})).toBeVisible()
 
   });
 
+  test('lecture stats globales test', async ({ page }) => {
+
+    await page.goto(testUrl + "/stats");
+    const studentFixture = new StudentFixture(page)
+    await studentFixture.selectStudent("Thomas")
+
+    await page.getByRole('button', {name:"Débutant"}).click()
+    await page.getByRole('button', {name:"Intermédiaire"}).click()
+    await page.getByRole('button', {name:"Avancé"}).click()
+    await page.getByRole('button', {name:"Perso"}).click()
+
+  });
 
 
 

@@ -24,94 +24,6 @@
     "id": 1716197873858
   },
   {
-    "name": "Lucas",
-    "time": "1",
-    "length": "10",
-    "errorAllowed": false,
-    "wordList": " élément trop longtemps nouille fortement",
-    "userId": 4,
-    "onlyWordsList": true,
-    "listId": 2,
-    "id": 1717395134898
-  },
-  {
-    "name": "bite",
-    "time": "1",
-    "length": "10",
-    "errorAllowed": false,
-    "wordList": " grosse bite jul",
-    "userId": 4,
-    "onlyWordsList": true,
-    "listId": 4,
-    "id": 1717398733196
-  },
-  {
-    "name": "Dictée",
-    "time": "1",
-    "length": "8",
-    "errorAllowed": true,
-    "wordList": " Hauteur Test Poire",
-    "userId": 4,
-    "onlyWordsList": true,
-    "listId": 5,
-    "id": 1717401861157
-  },
-  {
-    "name": "a",
-    "time": "7",
-    "length": "7",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 3,
-    "onlyWordsList": false,
-    "listId": 6,
-    "id": 1718202728404
-  },
-  {
-    "name": "a",
-    "time": "0.1",
-    "length": "5",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 3,
-    "onlyWordsList": false,
-    "listId": 7,
-    "id": 1718216216417
-  },
-  {
-    "name": "qsjdn",
-    "time": "1",
-    "length": "2",
-    "errorAllowed": true,
-    "wordList": " bonjour",
-    "userId": 1718610618291,
-    "onlyWordsList": false,
-    "listId": 8,
-    "id": 1718610637311
-  },
-  {
-    "name": "oziiehr",
-    "time": "8",
-    "length": "1",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718610732752,
-    "onlyWordsList": false,
-    "listId": 9,
-    "id": 1718614836534
-  },
-  {
-    "name": "zelrkn",
-    "time": "7",
-    "length": "45",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718610732752,
-    "onlyWordsList": false,
-    "listId": 10,
-    "id": 1718614881155
-  },
-  {
     "name": "config1",
     "time": "0.5",
     "length": "25",
@@ -138,22 +50,22 @@
     "time": "0.6",
     "length": "6",
     "errorAllowed": true,
-    "wordList": " ",
-    "userId": 1718626002462,
+    "wordList": "La dictée est l'opération par laquelle une personne lit à haute voix un texte cohérent selon un rythme qui permet à des auditeurs de le copier par écrit. ",
+    "userId": 1718697046384,
     "onlyWordsList": true,
     "listId": 13,
-    "id": 1718635483488
+    "id": 1718697059077
   },
   {
     "name": "configTest",
     "time": "0.6",
     "length": "6",
     "errorAllowed": true,
-    "wordList": " ",
-    "userId": 1718626002462,
+    "wordList": "La dictée est l'opération par laquelle une personne lit à haute voix un texte cohérent selon un rythme qui permet à des auditeurs de le copier par écrit. ",
+    "userId": 1718697090027,
     "onlyWordsList": true,
     "listId": 14,
-    "id": 1718659834368
+    "id": 1718697103130
   },
   {
     "name": "configTest",
@@ -161,21 +73,10 @@
     "length": "6",
     "errorAllowed": true,
     "wordList": "La dictée est l'opération par laquelle une personne lit à haute voix un texte cohérent selon un rythme qui permet à des auditeurs de le copier par écrit. ",
-    "userId": 1718660213542,
-    "onlyWordsList": true,
-    "listId": 15,
-    "id": 1718660226346
-  },
-  {
-    "name": "configTest",
-    "time": "0.6",
-    "length": "6",
-    "errorAllowed": true,
-    "wordList": "La dictée est l'opération par laquelle une personne lit à haute voix un texte cohérent selon un rythme qui permet à des auditeurs de le copier par écrit. ",
-    "userId": 1718690934798,
+    "userId": 1718697267742,
     "onlyWordsList": true,
     "listId": 16,
-    "id": 1718690947407
+    "id": 1718697281357
   },
   {
     "name": "configTest",
@@ -183,9 +84,9 @@
     "length": "6",
     "errorAllowed": true,
     "wordList": "La dictée est l'opération par laquelle une personne lit à haute voix un texte cohérent selon un rythme qui permet à des auditeurs de le copier par écrit. ",
-    "userId": 1718691007495,
+    "userId": 1718710542065,
     "onlyWordsList": true,
     "listId": 17,
-    "id": 1718691020943
+    "id": 1718710556479
   }
 ]

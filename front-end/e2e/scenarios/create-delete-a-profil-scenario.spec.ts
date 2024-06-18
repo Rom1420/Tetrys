@@ -26,9 +26,9 @@ test.describe('Student Feature', () => {
 
         await test.step(`Create student`, async () => {
             const inputName = await profilFormFixture.getInput('name');
-            await inputName.fill("Lucas")
+            await inputName.fill("George")
             await profilFormFixture.clickCreateButton();
-            expect(page.getByText("Lucas"))
+            expect(page.getByText("George"))
         });
 
     });
@@ -36,8 +36,8 @@ test.describe('Student Feature', () => {
         await page.goto(testUrl);
         const studentFixture = new StudentFixture(page);
         const confirmDeleteFixture = new ConfirmDeleteFixture(page);
-        const studentIndex = await studentFixture.getIndexOfName('Lucas');
-        const student = page.locator('student').filter({ hasText: 'Lucas' }).getByTestId('selectButton');
+        const studentIndex = await studentFixture.getIndexOfName('George');
+        const student = page.locator('student').filter({ hasText: 'George' }).getByTestId('selectButton');
         await expect(student).toBeVisible();
         await studentFixture.clickDelButton(studentIndex);
         await confirmDeleteFixture.clickConfirmButton();
