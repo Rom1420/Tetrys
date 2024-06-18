@@ -2,9 +2,9 @@
   <cloud-background></cloud-background>
   <game-board></game-board>
   <div class="playable-zone">
-    <div class="mode-name" [ngClass]="{'green': config.name === 'débutant', 
-        'orange': config.name === 'intermediaire', 
-        'red': config.name === 'avancé', 
+    <div class="mode-name" [ngClass]="{'green': config.name === 'débutant',
+        'orange': config.name === 'intermediaire',
+        'red': config.name === 'avancé',
         'cyan': config.name === 'perso'}">
       <span> Mode {{config.name}} </span>
     </div>
@@ -15,14 +15,14 @@
     <div class="writing-space">
       <form [formGroup]="wordForm" autocomplete="off">
         <label for="word"></label>
-        <div class="blur-effect"></div>  
+        <div class="blur-effect"></div>
         <div class="end-game-button-container">
           <button class="end-game-button" (click)="endGame()">FIN PARTIE</button>
         </div>
         <div class="input-container">
-          <input type="text" id="word" #word formControlName="word" (input)="verifWord()" placeholder="Tapez les Mots ici">
+          <input type="text" id="word" #word formControlName="word" (input)="verifWord()" placeholder="Tapez les Mots ici" onkeydown="console.log(event.keyCode); if(event.keyCode == 13) {event.preventDefault();}">
         </div>
-        
+
       </form>
     </div>
     <div *ngIf="show2ndChance" class="second-chance">
