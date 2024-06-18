@@ -2,13 +2,13 @@ const { Router } = require('express')
 
 const { Stats } = require('../../models')
 const manageAllErrors = require('../../utils/routes/error-management')
-const { getStatsOfStudentIdAndGameMode } = require('./manager')
+const { getStatsOfStudentIdAndGameMode, createStats } = require('./manager')
 
 const router = new Router()
 
 router.get('/', (req, res) => {
     try {
-        res.status(200).json(Stats.get)
+        res.status(200).json(Stats.get())
     }
     catch (err) {
         manageAllErrors(res, err)
@@ -43,6 +43,17 @@ router.post('/', (req, res) => {
         manageAllErrors(res, err)
     }
 })
+
+router.post('/statList', (req, res) => {
+    try {
+        const stats = req.body;
+        const createdStats = createStats(stats);
+        res.status(201).json(createdStats);
+    } catch (err) {
+        console.error('Error adding stats:', err);
+        manageAllErrors(res, err);
+    }
+});
 
 router.put('/:statsId', (req, res) => {
     try{

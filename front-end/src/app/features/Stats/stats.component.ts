@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from 'src/app/core/components/services/student.service';
+
 import { StatsAvanceeService } from './services/stats-avancee.service';
+import { StudentService } from 'src/app/core/components/services/student.service';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'stats-game',
@@ -9,36 +11,30 @@ import { StatsAvanceeService } from './services/stats-avancee.service';
 })
 
 export class StatsComponent implements OnInit {
-  selectedPlayerId: number | null = null; 
-  selectedGameMode: String | undefined = "Général";
+  selectedPlayerId: number | null = null;
+  selectedGameMode: string = 'general';
   selectedStudentIdToDelete: number | null = null;
 
+  
   constructor(private studentService: StudentService,
     private statsAvanceeService: StatsAvanceeService
   ) {}
   
   ngOnInit(): void {
-
-    this.studentService.selectedStudentIdToDelete$.subscribe((studentId: number | null) => {
-      if(studentId){
-        this.selectedStudentIdToDelete = studentId;
-      }else{
-        this.selectedStudentIdToDelete = null;
-      }
+    this.studentService.selectedStudentIdToDelete$.subscribe(studentId => {
+      this.selectedStudentIdToDelete = studentId;
     });
 
-    this.studentService.selectedStudentId$.subscribe((studentId: number | null) => {
-      if (studentId) {
-        this.selectedPlayerId = studentId; 
-      } else {
-        this.selectedPlayerId = null;
+    this.studentService.selectedStudentId$.subscribe(studentId => {
+      this.selectedPlayerId = studentId;
+      if (studentId !== null) {
+        this.statsAvanceeService.fetchStatAvancee(studentId, 'general');
       }
     });
-    
-    this.statsAvanceeService.selectedGameMode$.subscribe((gameMode : String) => {
-      if(gameMode){
-        this.selectedGameMode = gameMode;
-      }
-    });
+  }
+
+  updateGameMode(gameMode: string): void {
+    this.selectedGameMode = gameMode;
+    this.statsAvanceeService.setGameMode(gameMode);
   }
 }

@@ -61,6 +61,7 @@ export class StudentService {
     }
 
     onSelectStudent(studentId: number) {
+        console.log('selected');
         this.selectedStudentIdSubject$.next(studentId);
       } 
 
