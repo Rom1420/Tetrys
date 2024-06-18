@@ -9,7 +9,7 @@ test.describe('Home page display', () => {
     const appComponentFixture = new AppFixture(page);
     // Using locators functions:
     // Using page element role: see the function declaration
-    const title = await appComponentFixture.getTitle();
+    const title = await appComponentFixture.getByRole();
 
     // Search by text content. Partial and exact text.
     const description1 = await page.getByText('Start your');
