@@ -2,8 +2,9 @@ import {Injectable} from "@angular/core";
 import {StatAvancee} from "../models/stat-avancee.model";
 import {STATS_AVANCEES_LIST} from "../mock/stats-avancee.mock";
 import {BehaviorSubject} from "rxjs";
-import { serverUrl, httpOptionsBase } from 'configs/server.config';
 import { HttpClient } from '@angular/common/http';
+import {backUrl} from "../../../../environnement/environnement";
+import {httpOptionsBase} from "../../../../configs/server.config";
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,9 @@ import { HttpClient } from '@angular/common/http';
 
 
 export class StatsAvanceeService {
-  public selectedGameModeSubject$: BehaviorSubject<String> = 
+  public selectedGameModeSubject$: BehaviorSubject<String> =
             new BehaviorSubject<String>("");
-  public selectedGameMode$ = 
+  public selectedGameMode$ =
           this.selectedGameModeSubject$.asObservable();
 
   private statByStudentIdAndGameMode: StatAvancee | undefined;
@@ -21,7 +22,7 @@ export class StatsAvanceeService {
 
   private statAvanceeSubject: BehaviorSubject<StatAvancee[]> = new BehaviorSubject<StatAvancee[]>([]);
 
-  private statsUrl = serverUrl + '/stats';
+  private statsUrl = backUrl + '/stats';
 
   private httpOptions = httpOptionsBase;
 
@@ -35,7 +36,7 @@ export class StatsAvanceeService {
 
   getStatAvancee(idJoueur: number, gameMode: String, callback: (stat: StatAvancee) => void): void {
     const requestUrl = this.statsUrl + '/' + idJoueur + '/' + gameMode;
-    
+
     this.http.get<StatAvancee>(requestUrl).subscribe((stat) => {
       callback(stat);
     });

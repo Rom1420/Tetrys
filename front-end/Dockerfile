@@ -1,0 +1,23 @@
+FROM node:20.11 AS node
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+RUN npm run build
+
+
+
+
+FROM nginx:alpine
+
+# Copie les fichiers statiques de la construction dans le répertoire par défaut de Nginx
+COPY --from=node /app/dist/front-end /usr/share/nginx/html
+
+
+# Expose le port sur lequel Nginx va tourner
+EXPOSE 80
+
+# Démarre Nginx
+CMD ["nginx", "-g", "daemon off;"]

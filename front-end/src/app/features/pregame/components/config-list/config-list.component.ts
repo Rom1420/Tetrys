@@ -3,6 +3,7 @@ import {ConfigFormResultService} from "../../../game/services/config-form-result
 import {ConfigModel} from "../../../game/models/config.model";
 import {HttpClient} from "@angular/common/http";
 import {StudentService} from "../../../../core/components/services/student.service";
+import {backUrl} from "../../../../../environnement/environnement";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class ConfigListComponent implements OnInit{
   public configList: ConfigModel[] = [];
   public showCreateConfig: boolean = false;
   public showConfigList: boolean = !this.showCreateConfig;
-  public configUrl: string = "http://localhost:9428/api/configs/";
+  public configUrl: string = backUrl+"configs/";
   private userId: number | null = 0;
 
 

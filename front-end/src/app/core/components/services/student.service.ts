@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import {Student} from '../../../features/pregame/models/student.model';
 import { STUDENT_LIST } from 'src/app/features/pregame/mock/student-list.mock'
-import { serverUrl, httpOptionsBase } from 'configs/server.config';
 import { HttpClient } from '@angular/common/http';
+import {backUrl} from "../../../../environnement/environnement";
+import {httpOptionsBase} from "../../../../configs/server.config";
 
 
 
@@ -12,18 +13,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StudentService {
     public students: Student[] = STUDENT_LIST;
-    public students$: BehaviorSubject<Student[]> = 
+    public students$: BehaviorSubject<Student[]> =
             new BehaviorSubject<Student[]>(STUDENT_LIST);
 
     private selectedStudentIdToDeleteSubject: BehaviorSubject<number | null> = new BehaviorSubject<number | null>(null);
     public selectedStudentIdToDelete$ = this.selectedStudentIdToDeleteSubject.asObservable();
 
-    public selectedStudentIdSubject$: BehaviorSubject<number | null> = 
+    public selectedStudentIdSubject$: BehaviorSubject<number | null> =
             new BehaviorSubject<number | null>(0);
-    public selectedStudentId$ = 
+    public selectedStudentId$ =
             this.selectedStudentIdSubject$.asObservable();
 
-    private studentUrl = serverUrl + '/students';
+    private studentUrl = backUrl + '/students';
 
     private httpOptions = httpOptionsBase;
 
@@ -56,13 +57,13 @@ export class StudentService {
             console.log(urlWithId);
             this.http.delete<Student>(urlWithId, this.httpOptions).subscribe(() => this.retrieveStudents());
         }
-        this.students$.next(this.students)  
+        this.students$.next(this.students)
         this.updateSelectedStudentIdToDelete(null);
     }
 
     onSelectStudent(studentId: number) {
         this.selectedStudentIdSubject$.next(studentId);
-      } 
+      }
 
     getStudentName(id: number): String | undefined {
         return STUDENT_LIST.find(student => student.id === id)?.name;
