@@ -13,19 +13,33 @@ import { StudentService } from 'src/app/core/components/services/student.service
 export class GameResumeService {
 
   private gameResumeList: GameResume[] = GAMERESUME_LIST;
-  private gameResumesSubject: BehaviorSubject<GameResume[]> = new BehaviorSubject<GameResume[]>([]);
+  private gameResumesSubject = new BehaviorSubject<GameResume |null>(null);
+  public gameResumes$ = this.gameResumesSubject.asObservable();
   private gameResumeUrl = serverUrl + '/gameResumes';
   private httpOptions = httpOptionsBase;
   private idJoueur: number | null = 0;
 
   constructor(private http:HttpClient, private studentService:StudentService) {
-    studentService.selectedStudentId$.subscribe((value) => {
-      this.idJoueur = value;
-    })
-    this.retrieveGameResumes();
+    this.studentService.selectedStudentId$.subscribe((value) => {
+      if(value){
+        this.fetchGameResume(value);
+      }
+    });
+  }
+  fetchGameResume(studentId: number):void {
+    const requestUrl =`${this.gameResumeUrl}/${studentId}`;
+    console.log("Requête vers : ", requestUrl);
+    console.log("param pour le fetch : ", studentId);
+    this.http.get<GameResume>(requestUrl).subscribe(
+      gameResume => {
+        console.log("Données récupérées:", gameResume);
+        this.gameResumesSubject.next(gameResume);
+      },
+      error => console.error("Erreur lors de la récupération des statistiques", error)
+    );
   }
 
-  
+  /*
   retrieveGameResumes():void{
     this.http.get<GameResume[]>(this.gameResumeUrl).subscribe((list) => {
       this.gameResumeList = (list.filter((gameResume)=> gameResume.idJoueur == this.idJoueur));
@@ -61,7 +75,7 @@ export class GameResumeService {
         console.error('Error adding GameResume', err);
       }
     });
-  }
+  }/*
 
 
   /*
