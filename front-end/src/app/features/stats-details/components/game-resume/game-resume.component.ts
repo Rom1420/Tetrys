@@ -26,6 +26,12 @@ export class GameResumeComponent {
     }
   }
 
+  /* ng OnInit
+  this.gameResumeService.gameResume.subscribe( gameResume => {
+    this.gameResume = gameResume;
+  })
+  */
+
   private updateGameResume(selectedPlayerId: number, selectedGameId: number): void {
     this.gameResumeService.getGameResume(selectedPlayerId, selectedGameId)
       .subscribe({

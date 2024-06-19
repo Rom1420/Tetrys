@@ -23,17 +23,18 @@ router.get('students/:idJoueur/parties/', (req, res) =>{
         manageAllErrors(res, err)
     }
 })
-router.get('students/:idJoueur/parties/:idPartie', (req, res) =>{
+router.get('/students/:idJoueur/parties/:idPartie', (req, res) =>{
     try{
-        const idJoueur = req.params.idJoueur
-        const studentHistory = GameResume.find(h => h.idJoueur === idJoueur && h.idPartie === idPartie)
+        const idJoueur = parseInt(req.params.idJoueur, 10)
+        const idPartie = parseInt(req.params.idPartie, 10)
+        const studentHistory = GameResume.get().find(gameResume => gameResume.idJoueur === idJoueur && gameResume.idPartie === idPartie)
         res.status(200).json(studentHistory)
     } catch (err) {
         manageAllErrors(res, err)
     }
 })
 
-router.post('/students/:idJoueur/parties', (req, res) => {
+router.post('/students/:idJoueur', (req, res) => {
     try {
         const idJoueur = parseInt(req.params.idJoueur, 10);
         const newGameResume = {
@@ -41,6 +42,8 @@ router.post('/students/:idJoueur/parties', (req, res) => {
             ...req.body
         };
         const createdGameResume = GameResume.create(newGameResume);
+        // ----------------------- = GameResumeManager.createResumeForStudent(newGameResume)
+        // dans createResumeForStudent tu modifies le newGameResume pour lui attribuer un id partie = get next id partie for student qui prrend en parametre le student
         res.status(201).json(createdGameResume);
     } catch (err) {
         manageAllErrors(res, err);

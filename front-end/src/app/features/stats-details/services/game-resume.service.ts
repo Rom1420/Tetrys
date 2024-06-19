@@ -32,10 +32,14 @@ export class GameResumeService {
     });
   }
 
+  // verifier les routes param et url
+
   getGameResume(idJoueur: number, idPartie: number): Observable<GameResume> {
     const url = `${this.gameResumeUrl}/students/${idJoueur}/parties/${idPartie}`;
+    console.log("Request get game resume with url : ", url )
     return this.http.get<GameResume>(url, this.httpOptions);
   }
+
   getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
     const url = `${this.gameResumeUrl}/students/${idJoueur}/parties`;
     return this.http.get<GameResume[]>(url, this.httpOptions).pipe(
