@@ -1,0 +1,52 @@
+services:
+  backend-e2e:
+    build: ./backend
+    container_name: backend-e2e
+    volumes:
+      - backendData:/app/database
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://backend-e2e:9428/api/status" ]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - app-network
+
+
+  frontend-e2e:
+    build:
+      context: ./front-end
+      args:
+        - ENVIRONNEMENT=e2e
+    depends_on:
+      backend-e2e:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://frontend-e2e:8080/" ]
+      interval: 90s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - app-network
+
+
+  playwright:
+    build: .
+    volumes:
+      - result:/app/test-results
+    depends_on:
+      - frontend-e2e
+    networks:
+      - app-network
+
+
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  backendData:
+  result:

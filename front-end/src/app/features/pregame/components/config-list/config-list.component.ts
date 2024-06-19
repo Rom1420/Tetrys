@@ -41,10 +41,27 @@ export class ConfigListComponent implements OnInit{
   startGameWithConfig(config: ConfigModel){
     this.configFormResultService.startGameWithConfiguration(config);
   }
-  deleteConfig(config: ConfigModel){
-    //this.configFormResultService.deleteConfiguration(config);
-    const urlID = this.configUrl + "/" + config.id;
-    this.http.delete<ConfigModel>(urlID).subscribe(() => this.retrieveConfigs())
-  }
+
+  deleteConfig(config: ConfigModel) {
+
+    if (!config || !config.id) {
+      console.error("Invalid config or missing id.");
+      return;
+    }
+
+    const urlID = `${this.configUrl}/${config.id}`;
+    console.log(`Deleting config at URL: ${urlID}`);
+
+    this.http.delete<ConfigModel>(urlID)
+      .subscribe({
+        next: () => {
+          console.log("Config deleted successfully.");
+          this.retrieveConfigs();
+        },
+        error: (err) => {
+          console.error("Error deleting config:", err);
+        }
+      });
+}
 
 }

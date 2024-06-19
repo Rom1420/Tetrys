@@ -5,7 +5,8 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-RUN npm run build
+ARG ENVIRONNEMENT
+RUN npm run build -- --configuration=$ENVIRONNEMENT
 
 
 

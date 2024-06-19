@@ -65,7 +65,6 @@ test.describe('Scénario1', () => {
     await page.getByRole('button', {name:"Intermédiaire"}).click()
     await page.getByRole('button', {name:"Avancé"}).click()
     await page.getByRole('button', {name:"Perso"}).click()
-
   });
 
 

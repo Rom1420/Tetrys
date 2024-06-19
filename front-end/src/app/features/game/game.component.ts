@@ -39,7 +39,6 @@ export class GameComponent implements OnInit, AfterViewInit {
           });
         this.config = this.configFormResult.getConfig()
         this.configFormResult.configActual$.subscribe((actualConfig) => {
-          console.log("actualConfig", actualConfig);
           this.config = actualConfig
         })
         this.gameEngine.secondError.subscribe((value) => {

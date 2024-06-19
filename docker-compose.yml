@@ -2,24 +2,37 @@ services:
   backend:
     build: ./backend
     container_name: backend
-    networks:
-      - app-network
+    volumes:
+      - backendData:/app/database
     ports:
       - "8081:9428"
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:9428/api" ]
+      test: [ "CMD", "curl", "-f", "http://localhost:9428/api/status" ]
       interval: 90s
       timeout: 10s
       retries: 3
       start_period: 30s
+    networks:
+      - app-network
 
 
   frontend:
-    build: ./front-end
-    networks:
-      - app-network
+    build:
+      context: ./front-end
+      args:
+        - ENVIRONNEMENT=docker
     ports:
       - "8080:80"
     depends_on:
       backend:
         condition: service_healthy
+    networks:
+      - app-network
+
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  backendData:

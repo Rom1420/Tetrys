@@ -43,12 +43,12 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "800kb",
                   "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
+                  "maximumWarning": "15kb",
                   "maximumError": "15kb"
                 }
               ],
@@ -61,6 +61,18 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "docker": {
+              "fileReplacements": [{
+                "replace": "src/environnement/environnement.ts",
+                "with": "src/environnement/environnement-docker.ts"
+              }]
+            },
+            "e2e": {
+              "fileReplacements": [{
+                "replace": "src/environnement/environnement.ts",
+                "with": "src/environnement/environnement-e2e.ts"
+              }]
             }
           },
           "defaultConfiguration": "production"
