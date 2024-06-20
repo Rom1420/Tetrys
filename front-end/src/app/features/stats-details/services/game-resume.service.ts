@@ -12,9 +12,8 @@ import { StudentService } from 'src/app/core/components/services/student.service
 })
 export class GameResumeService {
 
-  private gameResumeList: GameResume[] = GAMERESUME_LIST;
-  private gameResumesSubject = new BehaviorSubject<GameResume |null>(null);
-  public gameResumes$ = this.gameResumesSubject.asObservable();
+  public gameResumes: GameResume[] = GAMERESUME_LIST;
+  public gameResumes$: BehaviorSubject<GameResume[]> = new BehaviorSubject(this.gameResumes);
   private gameResumeUrl = serverUrl + '/gameResumes';
   private httpOptions = httpOptionsBase;
   private idJoueur: number | null = 0;
@@ -27,16 +26,35 @@ export class GameResumeService {
     });
   }
   fetchGameResume(studentId: number):void {
-    const requestUrl =`${this.gameResumeUrl}/${studentId}`;
+    const requestUrl =`${this.gameResumeUrl}/students/${studentId}`;
     console.log("Requête vers : ", requestUrl);
     console.log("param pour le fetch : ", studentId);
-    this.http.get<GameResume>(requestUrl).subscribe(
+    this.http.get<GameResume[]>(requestUrl).subscribe(
       gameResume => {
         console.log("Données récupérées:", gameResume);
-        this.gameResumesSubject.next(gameResume);
+        this.gameResumes=gameResume;
+        this.gameResumes$.next(this.gameResumes)
       },
-      error => console.error("Erreur lors de la récupération des statistiques", error)
+      error => console.error("Erreur lors de la récupération des gameResumes", error)
     );
+  }
+  getGameResume(idJoueur: number, idPartie: number): Observable<GameResume> {
+    const url = `${this.gameResumeUrl}/students/${idJoueur}/parties/${idPartie}`;
+    console.log('url de getgameResume',url);
+    const gameResume = this.http.get<GameResume>(url, this.httpOptions);
+    console.log('gameresume recup', gameResume);
+    return gameResume;
+  }   
+
+  getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
+    const gameResumes: GameResume[] = this.gameResumes.filter(resume => resume.idJoueur === idJoueur);
+    console.log('dqdkdsdksdk',gameResumes);
+    if (gameResumes.length > 0) {
+      this.gameResumes$.next(gameResumes);
+    } else {
+      this.gameResumes$.next([]);
+    }
+    return this.gameResumes$.asObservable();
   }
 
   /*
@@ -106,5 +124,6 @@ export class GameResumeService {
     });
   }*/
 
-  
+  /*
+  */
 }
