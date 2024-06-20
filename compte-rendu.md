@@ -165,7 +165,8 @@ L'objectif est de créer une application non seulement fonctionnelle mais égale
 	    </li>
 	    <li><strong>Back-end</strong>:
 		<ul>
-		    <li>Route gameResume (non terminé actuellement)</li>
+		    <li>Route gameResume et gameDetails</li>
+            <li>Gestion de la recuperation de certaines statistiques</li>
 		</ul>
 	    </li>
 	</ul>
