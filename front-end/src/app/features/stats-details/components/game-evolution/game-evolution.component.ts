@@ -30,7 +30,15 @@ export class GameEvolutionComponent {
       const gameId = changes['selectedGameId'].currentValue;
 
       if (playerId && gameId) {
-        this.selectedGameDetails = this.gameDetailsService.getGameDetails(playerId,gameId);
+        this.gameDetailsService.getGameDetails(playerId, gameId)
+        .subscribe({
+        next: (details: GameDetails) => {
+          this.selectedGameDetails = details;
+        },
+        error: () => {
+          console.error("Erreur lors de la récupération du détails de la partie.");
+        }
+      });
         this.selectedPlayerGameDetailsList = this.gameDetailsList.filter(student => student.idJoueur == playerId);
         this.updateGameEvolution();
       }

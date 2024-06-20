@@ -8,5 +8,15 @@
     "accentsPrecisionPercentage": 90,
     "idPartie": 1,
     "id": 1718875903266
+  },
+  {
+    "idJoueur": 1718610732752,
+    "precisionPercentage": 70,
+    "wordsPerMinute": 42,
+    "incorrectWordsNumber": 7,
+    "correctWordsNumber": 43,
+    "accentsPrecisionPercentage": 68,
+    "idPartie": 2,
+    "id": 1718878133785
   }
 ]

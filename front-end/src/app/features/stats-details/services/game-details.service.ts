@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { GAMEDETAILS_LIST } from '../mock/game-details.mock';
 import { GameDetails }from '../models/game-details.model';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { serverUrl, httpOptionsBase } from '../../../../configs/server.config';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { StudentService } from 'src/app/core/components/services/student.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +13,37 @@ import { GameDetails }from '../models/game-details.model';
 export class GameDetailsService {
 
   private gameDetailsList: GameDetails[] = GAMEDETAILS_LIST;
+  public gameDetailsList$: BehaviorSubject<GameDetails[]> = new BehaviorSubject<GameDetails[]>(this.gameDetailsList);
+  private gameDetailsUrl = serverUrl + '/gameDetails';
+  private httpOptions = httpOptionsBase;
 
 
-  getGameDetails(idJoueur: number, idPartie: number): GameDetails | null {
-    const gameDetail: GameDetails | undefined = this.gameDetailsList.find(resume => resume.idJoueur === idJoueur && resume.idPartie === idPartie);
-    if(gameDetail) {
-      return gameDetail;
-    }
-    else{
-      return null;
-    }
+  constructor(private http:HttpClient, private studentService:StudentService){
+    this.studentService.selectedStudentId$.subscribe((value) => {
+      if(value){
+        this.fetchGameDetails(value);
+      }
+    });
+  }
+
+  fetchGameDetails(studentId: number):void {
+    const requestUrl =`${this.gameDetailsUrl}/students/${studentId}`;
+    console.log("Requête vers : ", requestUrl);
+    console.log("param pour le fetch : ", studentId);
+    this.http.get<GameDetails[]>(requestUrl).subscribe(
+      gameDetailsList => {
+        console.log("Données récupérées:", gameDetailsList);
+        this.gameDetailsList=this.gameDetailsList;
+        this.gameDetailsList$.next(this.gameDetailsList)
+      },
+      error => console.error("Erreur lors de la récupération des gameResumes", error)
+    );
+  }
+
+
+  getGameDetails(idJoueur: number, idPartie: number): Observable<GameDetails> {
+    const url = `${this.gameDetailsUrl}/students/${idJoueur}/parties/${idPartie}`;
+    const gameResume = this.http.get<GameDetails>(url, this.httpOptions);
+    return gameResume;
   }   
 }
