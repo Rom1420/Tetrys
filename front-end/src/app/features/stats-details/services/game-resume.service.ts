@@ -13,19 +13,33 @@ import { StudentService } from 'src/app/core/components/services/student.service
 export class GameResumeService {
 
   private gameResumeList: GameResume[] = GAMERESUME_LIST;
-  private gameResumeList$: BehaviorSubject<GameResume[]> = new BehaviorSubject<GameResume[]>([]);
+  private gameResumesSubject = new BehaviorSubject<GameResume |null>(null);
+  public gameResumes$ = this.gameResumesSubject.asObservable();
   private gameResumeUrl = serverUrl + '/gameResumes';
   private httpOptions = httpOptionsBase;
   private idJoueur: number | null = 0;
 
   constructor(private http:HttpClient, private studentService:StudentService) {
-    studentService.selectedStudentId$.subscribe((value) => {
-      this.idJoueur = value;
-    })
-    this.retrieveGameResumes();
+    this.studentService.selectedStudentId$.subscribe((value) => {
+      if(value){
+        this.fetchGameResume(value);
+      }
+    });
+  }
+  fetchGameResume(studentId: number):void {
+    const requestUrl =`${this.gameResumeUrl}/${studentId}`;
+    console.log("Requête vers : ", requestUrl);
+    console.log("param pour le fetch : ", studentId);
+    this.http.get<GameResume>(requestUrl).subscribe(
+      gameResume => {
+        console.log("Données récupérées:", gameResume);
+        this.gameResumesSubject.next(gameResume);
+      },
+      error => console.error("Erreur lors de la récupération des statistiques", error)
+    );
   }
 
-  
+  /*
   retrieveGameResumes():void{
     this.http.get<GameResume[]>(this.gameResumeUrl).subscribe((list) => {
       this.gameResumeList = (list.filter((gameResume)=> gameResume.idJoueur == this.idJoueur));
@@ -33,33 +47,14 @@ export class GameResumeService {
     });
   }
 
-  // Ancien relier au mock
-  getGameResume(idJoueur: number, idPartie: number): GameResume | null {
-    const gameResume: GameResume | undefined = this.gameResumeList.find(resume => resume.idJoueur === idJoueur && resume.idPartie === idPartie);
-    if(gameResume) {
-      return gameResume;
-    }
-    else{
-      return null;
-    }
-  }   
+  // verifier les routes param et url
 
-  getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
-    const gameResumes: GameResume[] = this.gameResumeList.filter(resume => resume.idJoueur === idJoueur);
-    if (gameResumes.length > 0) {
-      this.gameResumesSubject.next(gameResumes);
-    } else {
-      this.gameResumesSubject.next([]);
-    }
-    return this.gameResumesSubject.asObservable();
-  }
-
-
-  /* Le chat
   getGameResume(idJoueur: number, idPartie: number): Observable<GameResume> {
     const url = `${this.gameResumeUrl}/students/${idJoueur}/parties/${idPartie}`;
+    console.log("Request get game resume with url : ", url )
     return this.http.get<GameResume>(url, this.httpOptions);
   }
+
   getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
     const url = `${this.gameResumeUrl}/students/${idJoueur}/parties`;
     return this.http.get<GameResume[]>(url, this.httpOptions).pipe(
@@ -81,7 +76,7 @@ export class GameResumeService {
         console.error('Error adding GameResume', err);
       }
     });
-  } /*
+  }/*
 
 
   /* Tentative Matthias
