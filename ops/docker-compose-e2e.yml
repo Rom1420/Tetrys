@@ -1,6 +1,6 @@
 services:
   backend-e2e:
-    build: ./backend
+    build: ../backend
     container_name: backend-e2e
     volumes:
       - backendData:/app/database
@@ -16,7 +16,7 @@ services:
 
   frontend-e2e:
     build:
-      context: ./front-end
+      context: ../front-end
       args:
         - ENVIRONNEMENT=e2e
     depends_on:
@@ -34,8 +34,8 @@ services:
 
   playwright:
     build:
-      context: ./front-end
-      dockerfile: Dockerfile-test
+      context: ../front-end
+      dockerfile: ../front-end/Dockerfile-test
     volumes:
       - result:/usr/local/app/test-results
     depends_on:
