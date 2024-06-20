@@ -72,6 +72,9 @@
               "fileReplacements": [{
                 "replace": "src/environnement/environnement.ts",
                 "with": "src/environnement/environnement-e2e.ts"
+              },{
+                "replace": "e2e/e2e.config.ts",
+                "with": "e2e/e2e.config.docker.ts"
               }]
             }
           },

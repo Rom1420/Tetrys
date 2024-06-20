@@ -44,5 +44,49 @@
     "onlyWordsList": true,
     "listId": 2,
     "id": 1718714908526
+  },
+  {
+    "name": "configTest",
+    "time": "0.6",
+    "length": "6",
+    "errorAllowed": true,
+    "wordList": "La dictée est l'opération par laquelle une personne lit à haute voix un texte cohérent selon un rythme qui permet à des auditeurs de le copier par écrit. ",
+    "userId": 1718868772807,
+    "onlyWordsList": true,
+    "listId": 12,
+    "id": 1718868786677
+  },
+  {
+    "name": "configTest",
+    "time": "0.6",
+    "length": "6",
+    "errorAllowed": true,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": true,
+    "listId": 13,
+    "id": 1718868791042
+  },
+  {
+    "name": "configTest",
+    "time": "0.6",
+    "length": "6",
+    "errorAllowed": true,
+    "wordList": "La dictée est l'opération par laquelle une personne lit à haute voix un texte cohérent selon un rythme qui permet à des auditeurs de le copier par écrit. ",
+    "userId": 1718868976276,
+    "onlyWordsList": true,
+    "listId": 14,
+    "id": 1718868989543
+  },
+  {
+    "name": "configTest",
+    "time": "0.6",
+    "length": "6",
+    "errorAllowed": true,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": true,
+    "listId": 15,
+    "id": 1718868994490
   }
 ]

@@ -1,5 +1,5 @@
 import { Page } from '@playwright/test';
-import { ConfigModel } from './models/config.model';
+import {testUrl} from "../../../../e2e/e2e.config";
 
 export class GameFixture {
 
@@ -10,14 +10,14 @@ export class GameFixture {
   }
 
   async navigateToPregame(){
-    await this.page.goto("http://localhost:4200");
+    await this.page.goto(testUrl);
   }
 
   async navigateToGame(){
-    await this.page.goto("http://localhost:4200/game");
+    await this.page.goto(testUrl + "/game");
   }
 
-  async getModeName() { 
+  async getModeName() {
     return await this.page.locator(".mode-name span").textContent();
   }
 
@@ -54,7 +54,7 @@ export class GameFixture {
         if (chronoValue === 0) {
             return;
         }
-        
+
         if (Date.now() - startTime > timeout) {
             throw new Error('Le chronomètre n\'a pas atteint zéro dans le délai imparti');
         }
@@ -70,9 +70,9 @@ export class GameFixture {
   }
 
   async playTetris(): Promise<void>{
-    await this.page.keyboard.press('ArrowUp'); 
-    await this.page.keyboard.press('ArrowLeft'); 
-    await this.page.keyboard.press('ArrowRight'); 
+    await this.page.keyboard.press('ArrowUp');
+    await this.page.keyboard.press('ArrowLeft');
+    await this.page.keyboard.press('ArrowRight');
     await this.page.keyboard.press('ArrowDown');
   }
 

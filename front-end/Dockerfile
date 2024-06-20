@@ -16,6 +16,7 @@ FROM nginx:alpine
 # Copie les fichiers statiques de la construction dans le répertoire par défaut de Nginx
 COPY --from=node /app/dist/front-end /usr/share/nginx/html
 
+COPY --from=node app/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose le port sur lequel Nginx va tourner
 EXPOSE 80

@@ -15,7 +15,7 @@ test.describe('Student Feature', () => {
         const addProfilFixture = new AddProfilFixture(page);
         const profilFormFixture = new ProfilFormFixture(page);
 
-        await expect(page).toHaveURL("http://localhost:4200/pre-game");
+        await expect(page).toHaveURL(testUrl + "/pre-game");
 
         await test.step(`Open Create Student Form`, async () =>{
             await addProfilFixture.clickOnAddButton();

@@ -33,9 +33,11 @@ services:
 
 
   playwright:
-    build: .
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile-test
     volumes:
-      - result:/app/test-results
+      - result:/usr/local/app/test-results
     depends_on:
       - frontend-e2e
     networks:
