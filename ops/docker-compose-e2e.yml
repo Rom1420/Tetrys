@@ -5,7 +5,7 @@ services:
     volumes:
       - backendData:/app/database
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://backend-e2e:9428/api/status" ]
+      test: [ "CMD", "wget", "-S", "http://backend-e2e:9428/api/status" ]
       interval: 10s
       timeout: 10s
       retries: 3
@@ -23,7 +23,7 @@ services:
       backend-e2e:
         condition: service_healthy
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://frontend-e2e:8080/" ]
+      test: [ "CMD", "wget", "-S", "http://frontend-e2e:8080/api/status" ]
       interval: 90s
       timeout: 10s
       retries: 3
