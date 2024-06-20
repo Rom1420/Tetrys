@@ -40,9 +40,7 @@ export class GameResumeService {
   }
   getGameResume(idJoueur: number, idPartie: number): Observable<GameResume> {
     const url = `${this.gameResumeUrl}/students/${idJoueur}/parties/${idPartie}`;
-    console.log('url de getgameResume',url);
     const gameResume = this.http.get<GameResume>(url, this.httpOptions);
-    console.log('gameresume recup', gameResume);
     return gameResume;
   }   
 
@@ -56,74 +54,4 @@ export class GameResumeService {
     }
     return this.gameResumes$.asObservable();
   }
-
-  /*
-  retrieveGameResumes():void{
-    this.http.get<GameResume[]>(this.gameResumeUrl).subscribe((list) => {
-      this.gameResumeList = (list.filter((gameResume)=> gameResume.idJoueur == this.idJoueur));
-      this.gameResumeList$.next(this.gameResumeList);
-    });
-  }
-
-  // verifier les routes param et url
-
-  getGameResume(idJoueur: number, idPartie: number): Observable<GameResume> {
-    const url = `${this.gameResumeUrl}/students/${idJoueur}/parties/${idPartie}`;
-    console.log("Request get game resume with url : ", url )
-    return this.http.get<GameResume>(url, this.httpOptions);
-  }
-
-  getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
-    const url = `${this.gameResumeUrl}/students/${idJoueur}/parties`;
-    return this.http.get<GameResume[]>(url, this.httpOptions).pipe(
-      tap((gameResumeList) => {
-        this.gameResumeList = gameResumeList;
-        this.gameResumesSubject.next(this.gameResumeList);
-      }),
-    );
-  }
-  addGameResumeForPlayer(idJoueur: number, gameResume: GameResume): void {
-    const url = `${this.gameResumeUrl}/students/${idJoueur}/parties`;
-    this.http.post<GameResume>(url, gameResume, this.httpOptions).subscribe({
-      next: (newGameResume) => {
-        this.gameResumeList.push(newGameResume);
-        this.gameResumesSubject.next(this.gameResumeList);
-        console.log('GameResume added', newGameResume);
-      },
-      error: (err) => {
-        console.error('Error adding GameResume', err);
-      }
-    });
-  }/*
-
-
-  /* Tentative Matthias
-  getGameResume(idJoueur: number, idPartie: number):void{
-    const url = `${this.gameResumeUrl}/students/${idJoueur}/parties/${idPartie}`;
-      this.http.get<GameResume[]>(url).subscribe((list) =>{
-      this.gameResumeList = list;
-      this.gameResumesSubject.next(this.gameResumeList);
-    });
-  }
-  getGameResumesOfPlayer(idJoueur: number): void {
-    const url = `${this.gameResumeUrl}/students/${idJoueur}/parties`;
-      this.http.get<GameResume[]>(url).subscribe((gameResumeList) =>{
-      this.gameResumeList = gameResumeList;
-      this.gameResumesSubject.next(this.gameResumeList);
-    });
-  }
-  addGameResumeForPlayer(idJoueur: number, gameResume: GameResume):void{
-    const url = `${this.gameResumeUrl}/students/${idJoueur}/gameResumes`;
-    this.http.post<GameResume>(url, gameResume).subscribe({
-      next: (gameResume) => {
-        console.log('gameResume added', gameResume);
-      },
-      error: (err) => {
-        console.error('Error adding gameResume', err);
-      }
-    });
-  }*/
-
-  /*
-  */
 }
