@@ -31,14 +31,11 @@ export class GameEngine {
         const length = wordResult.length;
         this.gameManagerService.captureEvents$.next(1);
         if (wordResult.at(wordResult.length - 1).isValid === "true") {
-          console.log("normal")
           this.playGame(wordResult[length - 1].word);
           this.secondError.next(false);
         } else if (wordResult.at(wordResult.length - 1).error == 0 || this.secondError.value) {
-          console.log("random")
           this.placeRandomPieceRandomly();
         } else {
-          console.log("1 erreur")
           this.error();
         }
       }
@@ -50,7 +47,6 @@ export class GameEngine {
   }
 
   resetGame(): void {
-    console.log('Réinitialisation du jeu');
     this.initGameEngine();
   }
 
@@ -218,7 +214,6 @@ export class GameEngine {
       }
       return true;
     } catch (e){
-      console.log('fin de partie');
       this.gameManagerService.endGame$.next(true);
       return false;
     }
@@ -333,7 +328,6 @@ export class GameEngine {
   error(){
     const gameEngineInstance = this;
     function avoid(){
-      console.log("salut")
       gameEngineInstance.secondError.next(true);
       gameEngineInstance.gameManagerService.resetWords();
       gameEngineInstance.gameManagerService.captureEvents$.next(0);

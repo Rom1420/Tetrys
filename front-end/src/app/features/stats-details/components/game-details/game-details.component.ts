@@ -21,7 +21,6 @@ export class GameDetailsComponent {
       } else {
         this.gameDetails = gameDetails;
       }
-      console.log("game details reçues par GameDetailsComponent :", this.gameDetails);
     });
   }
 

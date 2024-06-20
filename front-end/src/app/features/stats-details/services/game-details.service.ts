@@ -28,11 +28,8 @@ export class GameDetailsService {
 
   fetchGameDetails(studentId: number):void {
     const requestUrl =`${this.gameDetailsUrl}/students/${studentId}`;
-    console.log("Requête vers : ", requestUrl);
-    console.log("param pour le fetch : ", studentId);
     this.http.get<GameDetails[]>(requestUrl).subscribe(
       gameDetailsList => {
-        console.log("Données récupérées:", gameDetailsList);
         this.gameDetailsList=this.gameDetailsList;
         this.gameDetailsList$.next(this.gameDetailsList)
       },

@@ -35,7 +35,6 @@ class GameResumeManager {
         return createdGameResumes;
     }
     static getNextIdPartieForStudent(studentId) {
-        console.log("student id:",studentId)
         try{
             const lastGameDetails = GameDetails.findOne({ where: { idJoueur: studentId }, order: [['idPartie', 'DESC']] });
             return lastGameDetails ? lastGameDetails.idPartie + 1 : 1;

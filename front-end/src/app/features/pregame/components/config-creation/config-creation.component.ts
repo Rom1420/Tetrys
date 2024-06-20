@@ -75,7 +75,6 @@ export class ConfigCreationComponent implements OnInit{
         this.http.post<ConfigModel>(this.configUrl, configData).subscribe(() => {
           this.retrieveConfigs();
           this.addWords(listId);
-          console.log("configData on submit", configData);
           this.configFormResultService.setConfig(configData);
           this.configFormResultService.startGameWithConfiguration(this.configForm.value);
           this.configForm.reset();
@@ -87,7 +86,6 @@ export class ConfigCreationComponent implements OnInit{
   retrieveConfigs(){
     this.http.get<ConfigModel[]>(this.configUrl).subscribe((configList) => {
       this.configs = configList;
-      console.log(configList);
     });
   }
 

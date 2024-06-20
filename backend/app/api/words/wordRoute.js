@@ -15,7 +15,6 @@ router.get('/', (req, res) => {
         }
         res.status(200).json(words)
     } catch (err){
-        console.log(err)
         res.status(500).json(err)
     }
 })

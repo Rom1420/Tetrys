@@ -8,7 +8,6 @@ const router = new Router()
 router.post('/', (req, res) => {
     try {
         const newConfig = ConfigModel.create({...req.body});
-        console.log(newConfig)
         res.status(201).json(newConfig);
     }catch (err){
         manageAllErrors(res, err);
@@ -24,7 +23,6 @@ router.get('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     try{
-        console.log(req.params.id)
         res.status(200).json(ConfigModel.update(req.params.id, req.body))
     }catch (err){
         manageAllErrors(res, err)

@@ -6,7 +6,6 @@ class GameResumeManager {
     }
 
     static getGameResumeOfPlayer(idJoueur){
-        console.log("dans la fonction")
         return GameResume.get().filter(gameresume => gameresume.idJoueur == idJoueur);
     }
     static getGameResumeById(gameresumeId){
@@ -36,7 +35,6 @@ class GameResumeManager {
         return createdGameResumes;
     }
     static getNextIdPartieForStudent(studentId) {
-        console.log("student id:",studentId)
         try{
             const lastGameResume = GameResume.findOne({ where: { idJoueur: studentId }, order: [['idPartie', 'DESC']] });
             return lastGameResume ? lastGameResume.idPartie + 1 : 1;

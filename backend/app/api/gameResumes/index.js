@@ -43,9 +43,7 @@ router.post('/students/:idJoueur', (req, res) => {
             idJoueur: idJoueur,
             ...req.body
         };
-        console.log("avant create",newGameResume)
         const createdGameResume = createResumeForStudent(newGameResume,newGameResume.idJoueur);
-        console.log("apres create",newGameResume)
         res.status(201).json(createdGameResume);
     } catch (err) {
         manageAllErrors(res, err);

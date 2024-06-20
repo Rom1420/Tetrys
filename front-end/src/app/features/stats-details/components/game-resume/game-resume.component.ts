@@ -21,7 +21,6 @@ export class GameResumeComponent implements OnInit{
       } else {
         this.gameResume = gameResume;
       }
-      console.log("game resumes reçues par GameResumeComponent :", this.gameResume);
     });
   }
   

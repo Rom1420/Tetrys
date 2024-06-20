@@ -25,7 +25,6 @@ class WordManager {
             return null;
         }
         if (this.isInWordsList(text, listId)) {
-            console.log('Word already exists:', text);
             return null; 
         }
 

@@ -27,11 +27,8 @@ export class GameResumeService {
   }
   fetchGameResume(studentId: number):void {
     const requestUrl =`${this.gameResumeUrl}/students/${studentId}`;
-    console.log("Requête vers : ", requestUrl);
-    console.log("param pour le fetch : ", studentId);
     this.http.get<GameResume[]>(requestUrl).subscribe(
       gameResume => {
-        console.log("Données récupérées:", gameResume);
         this.gameResumes=gameResume;
         this.gameResumes$.next(this.gameResumes)
       },
@@ -46,7 +43,6 @@ export class GameResumeService {
 
   getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
     const gameResumes: GameResume[] = this.gameResumes.filter(resume => resume.idJoueur === idJoueur);
-    console.log('dqdkdsdksdk',gameResumes);
     if (gameResumes.length > 0) {
       this.gameResumes$.next(gameResumes);
     } else {

@@ -31,11 +31,8 @@ export class StatsAvanceeService {
 
   fetchStatAvancee(studentId: number, gameMode: String): void {
     const requestUrl = `${this.statsUrl}/${studentId}/${gameMode}`;
-    console.log("Requête vers : ", requestUrl);
-    console.log("param pour le fetch : ", studentId, "; "+ gameMode)
     this.http.get<StatAvancee>(requestUrl).subscribe(
       statAvancee => {
-        console.log("Données récupérées :", statAvancee); 
         this.statsAvanceeSubject.next(statAvancee);
       },
       error => console.error("Erreur lors de la récupération des statistiques", error)
