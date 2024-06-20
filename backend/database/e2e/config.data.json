@@ -88,5 +88,16 @@
     "onlyWordsList": false,
     "listId": 8,
     "id": 1718610637311
+  },
+  {
+    "name": "perso1",
+    "time": "0.4",
+    "length": "12",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718633208890,
+    "onlyWordsList": false,
+    "listId": 9,
+    "id": 1718889979686
   }
 ]
