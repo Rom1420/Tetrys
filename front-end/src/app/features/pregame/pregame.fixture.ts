@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test';
 import {testUrl} from "../../../../e2e/e2e.config";
 
-export class PregameComponentFixture{
+export class PregameFixture{
     protected page: Page;
 
     constructor(page: Page) {

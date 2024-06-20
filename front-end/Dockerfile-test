@@ -1,0 +1,7 @@
+FROM mcr.microsoft.com/playwright:v1.44.1
+WORKDIR /usr/local/app
+
+COPY . /usr/local/app
+
+RUN npm install
+CMD npx playwright test
