@@ -24,7 +24,7 @@ export class GameResumeComponent implements OnInit{
       console.log("game resumes reçues par GameResumeComponent :", this.gameResume);
     });
   }
-  /*
+  
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['selectedPlayerId'] && changes['selectedGameId']) {
       
@@ -35,9 +35,9 @@ export class GameResumeComponent implements OnInit{
         this.updateGameResume(playerId, gameId);
       }
     }
-  }*/
+  }
 
-/*
+
   private updateGameResume(selectedPlayerId: number, selectedGameId: number): void {
     this.gameResumeService.getGameResume(selectedPlayerId, selectedGameId)
       .subscribe({
@@ -48,5 +48,5 @@ export class GameResumeComponent implements OnInit{
           console.error("Erreur lors de la récupération du résumé de jeu.");
         }
       });
-  }*/
+  }
 }
