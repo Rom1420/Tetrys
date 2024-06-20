@@ -3,6 +3,7 @@ const DifficultyModel = require('./difficulty.model.js')
 const WordModel = require('./word.model.js')
 const Student = require("./student.model.js")
 const Stats = require("./stats.model.js")
+const GameDetails = require("./gameDetails.model.js")
 const GameResume = require('./gameResume.model.js')
 
 module.exports = {
@@ -12,4 +13,5 @@ module.exports = {
   Student,
   Stats,
   GameResume,
+  GameDetails,
 }

@@ -6,6 +6,7 @@ const Words = require('./words/wordRoute')
 const StudentRouter = require('./students')
 const StatsRouter = require('./stats')
 const GameResumeRouter = require('./gameResumes')
+const GameDetailsRouter = require('./gameDetails')
 
 const router = new Router()
 router.get('/status', (req, res) => {
@@ -23,5 +24,6 @@ router.get('/status', (req, res) => res.status(200).json('ok'))
 router.use('/students', StudentRouter)
 router.use('/stats', StatsRouter)
 router.use('/gameResumes', GameResumeRouter)
+router.use('/gameDetails',GameDetailsRouter)
 
 module.exports = router
