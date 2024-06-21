@@ -10,6 +10,7 @@ import {WordsServices} from "../../../game/services/words.service";
 import { ConfigListComponent } from '../config-list/config-list.component';
 import {StudentService} from "../../../../core/components/services/student.service";
 import { Observable, map } from 'rxjs';
+import {backUrl} from "../../../../../environnement/environnement";
 
 @Component({
   selector: 'app-config-creation',
@@ -23,7 +24,7 @@ export class ConfigCreationComponent implements OnInit{
   public url: string = "";
   public configForm: FormGroup;
   private userId: number | null = 0;
-  private configUrl: string = "http://localhost:9428/api/configs/";
+  private configUrl: string = backUrl+"/configs/";
   public words: Word[] = [];
   private configs: ConfigModel[] = [];
 
@@ -104,13 +105,13 @@ export class ConfigCreationComponent implements OnInit{
       })
     );
   }
-  
+
   addWords(listId: number) {
     let newWords: string = this.configForm.getRawValue().wordList;
     if (newWords && this.userId) {
       let wordArray = newWords.split(' ')
-                              .map(word => word.trim().replace(/,$/, '')) 
-                              .filter(word => word.length > 0); 
+                              .map(word => word.trim().replace(/,$/, ''))
+                              .filter(word => word.length > 0);
 
       this.wordsService.addWordsListOfStudent(wordArray, this.userId, listId);
     }

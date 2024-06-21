@@ -3,9 +3,10 @@ import { BehaviorSubject, forkJoin } from "rxjs";
 import {Word} from "../models/word.model";
 
 import { HttpClient } from '@angular/common/http';
-import { serverUrl, httpOptionsBase } from '../../../../configs/server.config';
+import { httpOptionsBase } from '../../../../configs/server.config';
 import { ConfigModel } from "../models/config.model";
 import { ConfigFormResultService } from "./config-form-result.service";
+import {backUrl} from "../../../../environnement/environnement";
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class WordsServices{
   private actualWords: Word[] = []; // Contient les 3 mots actuellement joués
   public actualWords$: BehaviorSubject<Word[]> = new BehaviorSubject(this.actualWords);
   public config$: BehaviorSubject<ConfigModel | null> = new BehaviorSubject<ConfigModel | null>(null);
-  
-  private wordUrl = serverUrl + '/words/';
+
+  private wordUrl = backUrl + '/words/';
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient, private configFormResultService: ConfigFormResultService){
@@ -71,7 +72,7 @@ export class WordsServices{
       }
     });
   }
-  
+
   getRandomWords(words: Word[], count: number): Word[] {
     const shuffled = words.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
@@ -80,7 +81,7 @@ export class WordsServices{
   setConfig(config: ConfigModel) {
     this.config$.next(config);
   }
-    
+
   setWords(words: Word[]){
     this.words = words;
   }

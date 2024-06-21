@@ -44,7 +44,7 @@
 
 - **Situation**: Lucas, dyslexique, a une dictée prévue la semaine prochaine. Pour s'entraîner, l’ergothérapeute crée une partie avec une config personnalisée avec des caractéristiques proches du mode intermédiaire mais avec une liste de mots personnalisée en plus.
 - **Consignes**:
-  - Sélectionner le profil de Lucas
+  - Créer/sélectionner le profil de Lucas
   - Lire les caractéristiques du mode intermédiaire
   - Créer une config perso avec les mêmes caractéristiques que le mode intermédiaire
   - Ajouter une liste de mots

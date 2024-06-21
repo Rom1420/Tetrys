@@ -1,0 +1,7 @@
+backend
+maquette
+.gitmodules
+compte-rendu.md
+ops/docker-compose.yml
+ops/livrable_temps_plein.md
+front-end/angular.json

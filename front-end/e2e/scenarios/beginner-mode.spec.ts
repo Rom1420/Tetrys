@@ -1,28 +1,35 @@
 import { test, expect, Page } from '@playwright/test';
-import { GameComponentFixture } from 'src/app/features/game/game-component.fixture';
+import { GameFixture } from 'src/app/features/game/game.fixture';
+import { StudentFixture } from 'src/app/features/pregame/components/student/student.fixture';
+import { PregameFixture } from 'src/app/features/pregame/pregame.fixture';
+
 
 test.describe('Tests du Mode Débutant', () => {
-    let gameComponentFixture: GameComponentFixture;
-    let pregameComponentFixture: PregameComponentFixture;
-    let studentComponentFixture: StudentComponentFixture;
+    let gameFixture: GameFixture;
+    let pregameFixture: PregameFixture;
+    let studentFixture: StudentFixture;
+
+
 
     test.beforeEach(async ({page}) => {
-        gameComponentFixture = new GameComponentFixture(page);
-        pregameComponentFixture = new PregameComponentFixture(page);
-        studentComponentFixture = new StudentComponentFixture(page);
+        gameFixture = new GameFixture(page);
+        pregameFixture = new PregameFixture(page);
+        studentFixture = new StudentFixture(page);
 
-        await gameComponentFixture.navigateToPregame();
-        await studentComponentFixture.selectStudent("1");
-        await pregameComponentFixture.selectDifficulty("débutant");
+        await gameFixture.navigateToPregame();
+        await studentFixture.selectStudent("Romain");
+        await pregameFixture.selectDifficulty("débutant");
     });
 
     test("Doit afficher mode 'débutant'", async() => {
-        const modeName = await gameComponentFixture.getModeName();
-        expect(modeName).toBe("débutant");
+        const modeName = await gameFixture.getModeName();
+        expect(modeName).toBe(" Mode débutant ");
     });
 
     test("Doit afficher le message second chance", async() => {
-        await gameComponentFixture.enterWord("mauvaismot");
-        const isSecondChanceVisible = await gameComponentFixture.isSecondChanceVisible();
+        await gameFixture.enterWord("mauvaismot");
+        await gameFixture.waitForChronoToBeZero()
+        const isSecondChanceVisible = await gameFixture.isSecondChanceVisible();
+        expect(isSecondChanceVisible).toBe(true);
     });
 })
