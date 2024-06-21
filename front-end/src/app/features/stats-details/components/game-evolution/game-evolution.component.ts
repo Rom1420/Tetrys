@@ -98,5 +98,6 @@ export class GameEvolutionComponent {
       this.precisionLastGameEvolution = 0;
       this.speedLastGameEvolution = 0;
     }
+    
   }
 }
