@@ -14,6 +14,16 @@ export class GameDetailsComponent {
   
   constructor(private gameDetailsService: GameDetailsService) {}
 
+  ngOnInit(): void {
+    this.gameDetailsService.gameDetailsList$.subscribe(gameDetails => {
+      if(Array.isArray(gameDetails)){
+        this.gameDetails = gameDetails[0];
+      } else {
+        this.gameDetails = gameDetails;
+      }
+    });
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['selectedPlayerId'] && changes['selectedGameId']) {
       
@@ -27,7 +37,15 @@ export class GameDetailsComponent {
   }
 
   private updateGameDetails(selectedPlayerId: number, selectedGameId: number): void {
-    this.gameDetails = this.gameDetailsService.getGameDetails(selectedPlayerId, selectedGameId);
+    this.gameDetailsService.getGameDetails(selectedPlayerId, selectedGameId)
+      .subscribe({
+        next: (details: GameDetails) => {
+          this.gameDetails = details;
+        },
+        error: () => {
+          console.error("Erreur lors de la récupération du détails de la partie.");
+        }
+      });
   }
 
   

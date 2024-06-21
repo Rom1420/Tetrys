@@ -29,7 +29,6 @@ export class WordsServices{
   }
 
   retrieveWords():void{
-    console.log(this.wordUrl)
     this.http.get<Word[]>(this.wordUrl).subscribe((words) => {
       this.words = words;
       this.words$.next(this.words);
@@ -38,14 +37,12 @@ export class WordsServices{
 
   get3Words(): void {
     this.config$.subscribe(config => {
-      console.log(config);
       if (config) {
         const { listId, onlyWordsList, length } = config;
 
         const filterByLength = (words: Word[]) => words.filter(word => word.size <= length);
 
         if (onlyWordsList && listId !== 0) {
-          console.log("voici le listId", listId);
           const url = `${this.wordUrl}listId/${listId}`;
           this.http.get<Word[]>(url).subscribe((words) => {
             const filteredWords = filterByLength(words);
@@ -82,7 +79,6 @@ export class WordsServices{
   }
 
   setConfig(config: ConfigModel) {
-    console.log("config before set", config);
     this.config$.next(config);
   }
 
@@ -104,14 +100,11 @@ export class WordsServices{
   }
 
   addWordsListOfStudent(wordsList: string[], studentId: number, listId: number): void {
-  console.log('wordList', wordsList, "de ", wordsList.length);
 
   for (const wordText of wordsList) {
     const newWord = this.createWord(wordText, studentId, listId);
-    console.log('newWord', newWord);
 
     if (!this.words.some(word => word.text === newWord.text && word.listId === newWord.listId)) {
-      console.log(this.words.length)
       this.http.post<Word>(this.wordUrl, newWord).subscribe({
         next: (word) => {
           console.log('Word added', word);

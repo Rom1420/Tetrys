@@ -54,7 +54,6 @@ export class StudentService {
         }
         if(studentToDelete?.id){
             const urlWithId = this.studentUrl + '/' + studentToDelete.id;
-            console.log(urlWithId);
             this.http.delete<Student>(urlWithId, this.httpOptions).subscribe(() => this.retrieveStudents());
         }
         this.students$.next(this.students)
@@ -62,11 +61,10 @@ export class StudentService {
     }
 
     onSelectStudent(studentId: number) {
-        console.log('selected');
         this.selectedStudentIdSubject$.next(studentId);
       }
 
     getStudentName(id: number): String | undefined {
-        return STUDENT_LIST.find(student => student.id === id)?.name;
+        return this.students.find(student => student.id === id)?.name;
     }
 }
