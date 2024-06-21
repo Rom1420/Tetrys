@@ -1,0 +1,32 @@
+[
+  {
+    "idJoueur": 1718610732752,
+    "precisionPercentage": 80,
+    "wordsPerMinute": 50,
+    "incorrectWordsNumber": 10,
+    "correctWordsNumber": 40,
+    "accentsPrecisionPercentage": 90,
+    "idPartie": 1,
+    "id": 1718875903266
+  },
+  {
+    "idJoueur": 1718610732752,
+    "precisionPercentage": 70,
+    "wordsPerMinute": 42,
+    "incorrectWordsNumber": 7,
+    "correctWordsNumber": 43,
+    "accentsPrecisionPercentage": 68,
+    "idPartie": 2,
+    "id": 1718878133785
+  },
+  {
+    "idJoueur": 1718610732752,
+    "precisionPercentage": 100,
+    "wordsPerMinute": 10,
+    "incorrectWordsNumber": 5,
+    "correctWordsNumber": 40,
+    "accentsPrecisionPercentage": 100,
+    "idPartie": 3,
+    "id": 1718953398654
+  }
+]

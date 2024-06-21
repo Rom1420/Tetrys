@@ -1,43 +1,53 @@
 import { Injectable } from '@angular/core';
 import { GAMERESUME_LIST } from '../mock/game-resume.mock';
 import { GameResume }from '../models/game-resume.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { serverUrl, httpOptionsBase } from '../../../../configs/server.config';
+import { StudentService } from 'src/app/core/components/services/student.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameResumeService {
 
-  private gameResumeList: GameResume[] = GAMERESUME_LIST;
-  private gameResumesSubject: BehaviorSubject<GameResume[]> = new BehaviorSubject<GameResume[]>([]);
+  public gameResumes: GameResume[] = GAMERESUME_LIST;
+  public gameResumes$: BehaviorSubject<GameResume[]> = new BehaviorSubject(this.gameResumes);
+  private gameResumeUrl = serverUrl + '/gameResumes';
+  private httpOptions = httpOptionsBase;
+  private idJoueur: number | null = 0;
 
-  constructor() {
-    this.gameResumesSubject.next([]);
+  constructor(private http:HttpClient, private studentService:StudentService) {
+    this.studentService.selectedStudentId$.subscribe((value) => {
+      if(value){
+        this.fetchGameResume(value);
+      }
+    });
   }
-
-  /**
-   * Cette fonction récupère le résumé de jeu d'un joueur pour une partie spécifique
-   * @param idJoueur L'identifiant du joueur
-   * @param idPartie L'identifiant de la partie
-   * @returns Le résumé de jeu du joueur pour la partie spécifiée ou une erreur si aucun résumé n'est trouvé
-   */
-  getGameResume(idJoueur: number, idPartie: number): GameResume | null {
-    const gameResume: GameResume | undefined = this.gameResumeList.find(resume => resume.idJoueur === idJoueur && resume.idPartie === idPartie);
-    if(gameResume) {
-      return gameResume;
-    }
-    else{
-      return null;
-    }
+  fetchGameResume(studentId: number):void {
+    const requestUrl =`${this.gameResumeUrl}/students/${studentId}`;
+    this.http.get<GameResume[]>(requestUrl).subscribe(
+      gameResume => {
+        this.gameResumes=gameResume;
+        this.gameResumes$.next(this.gameResumes)
+      },
+      error => console.error("Erreur lors de la récupération des gameResumes", error)
+    );
+  }
+  getGameResume(idJoueur: number, idPartie: number): Observable<GameResume> {
+    const url = `${this.gameResumeUrl}/students/${idJoueur}/parties/${idPartie}`;
+    const gameResume = this.http.get<GameResume>(url, this.httpOptions);
+    return gameResume;
   }   
 
   getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
-    const gameResumes: GameResume[] = this.gameResumeList.filter(resume => resume.idJoueur === idJoueur);
+    const gameResumes: GameResume[] = this.gameResumes.filter(resume => resume.idJoueur === idJoueur);
     if (gameResumes.length > 0) {
-      this.gameResumesSubject.next(gameResumes);
+      this.gameResumes$.next(gameResumes);
     } else {
-      this.gameResumesSubject.next([]);
+      this.gameResumes$.next([]);
     }
-    return this.gameResumesSubject.asObservable();
+    return this.gameResumes$.asObservable();
   }
 }
