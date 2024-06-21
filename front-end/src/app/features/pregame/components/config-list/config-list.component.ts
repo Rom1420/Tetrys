@@ -41,6 +41,7 @@ export class ConfigListComponent implements OnInit{
 
   startGameWithConfig(config: ConfigModel){
     this.configFormResultService.startGameWithConfiguration(config);
+    console.log("config avec laquelle on essaye de lancer dans le component config list", config)
   }
 
   deleteConfig(config: ConfigModel) {

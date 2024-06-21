@@ -47,72 +47,6 @@
   },
   {
     "name": "a",
-    "time": "7",
-    "length": "7",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 12,
-    "id": 1718954863253
-  },
-  {
-    "name": "veve",
-    "time": "7",
-    "length": "7",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 13,
-    "id": 1718954872853
-  },
-  {
-    "name": "a",
-    "time": "0.1",
-    "length": "4",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 14,
-    "id": 1718957596059
-  },
-  {
-    "name": "z",
-    "time": "0.1",
-    "length": "3",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 15,
-    "id": 1718957785828
-  },
-  {
-    "name": "a",
-    "time": "0.1",
-    "length": "3",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 16,
-    "id": 1718957869435
-  },
-  {
-    "name": "a",
-    "time": "5",
-    "length": "5",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 17,
-    "id": 1718957906757
-  },
-  {
-    "name": "a",
     "time": "0.1",
     "length": "4",
     "errorAllowed": false,
@@ -121,17 +55,6 @@
     "onlyWordsList": false,
     "listId": 18,
     "id": 1718957925645
-  },
-  {
-    "name": "a",
-    "time": "0.1",
-    "length": "5",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 19,
-    "id": 1718960993582
   },
   {
     "name": "s",
@@ -143,27 +66,5 @@
     "onlyWordsList": false,
     "listId": 20,
     "id": 1718961029500
-  },
-  {
-    "name": "a",
-    "time": "0.2",
-    "length": "7",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 21,
-    "id": 1718961052874
-  },
-  {
-    "name": "a",
-    "time": "0.1",
-    "length": "5",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718626002462,
-    "onlyWordsList": false,
-    "listId": 22,
-    "id": 1718961078393
   }
 ]
