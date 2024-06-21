@@ -24,47 +24,25 @@
     "id": 1716197873858
   },
   {
-    "name": "config1",
-    "time": "0.5",
-    "length": "25",
+    "name": "rapide",
+    "time": "0.4",
+    "length": "10",
     "errorAllowed": false,
     "wordList": " ",
     "userId": 1718626002462,
     "onlyWordsList": false,
-    "listId": 11,
-    "id": 1718626120249
+    "listId": 1,
+    "id": 1718957406223
   },
   {
-    "name": "config2",
-    "time": "2",
-    "length": "45",
-    "errorAllowed": true,
-    "wordList": " ",
+    "name": "dictée",
+    "time": "0.7",
+    "length": "17",
+    "errorAllowed": false,
+    "wordList": " Un moustique s’approcha d’un lion et lui dit : \"Je n’ai pas peur de toi, et tu n’es pas plus puissant que moi. Si tu veux, je te provoque même au combat\". Et, sonnant de la trompe, le moustique fondit sur lui, mordant le museau dépourvu de poil autour des narines. Quant au lion, il se déchirait de ses propres griffes, jusqu’à ce qu’il renonce au combat. Le moustique, ayant vaincu le lion, sonna de la trompe, entonna un chant de victoire, et prit son envol. Mais il s’empêtra dans une toile d’araignée : tandis qu’elle le dévorait, il se lamentait d’être tué par un vulgaire animal, une araignée, lui qui avait combattu les plus puissants animaux",
     "userId": 1718626002462,
     "onlyWordsList": true,
     "listId": 2,
-    "id": 1718714908526
-  },
-  {
-    "name": "a",
-    "time": "0.1",
-    "length": "4",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718626054562,
-    "onlyWordsList": false,
-    "listId": 18,
-    "id": 1718957925645
-  },
-  {
-    "name": "s",
-    "time": "0.1",
-    "length": "5",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1718868976780,
-    "onlyWordsList": false,
-    "listId": 20,
-    "id": 1718961029500
+    "id": 1718957467852
   }
 ]

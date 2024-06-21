@@ -1,32 +1,162 @@
 [
   {
-    "idJoueur": 1718610732752,
+    "idJoueur": 1718626002462,
     "precisionPercentage": 80,
     "wordsPerMinute": 50,
     "incorrectWordsNumber": 10,
     "correctWordsNumber": 40,
     "accentsPrecisionPercentage": 90,
     "idPartie": 1,
-    "id": 1718875903266
+    "id": 1718971293647
   },
   {
-    "idJoueur": 1718610732752,
-    "precisionPercentage": 70,
-    "wordsPerMinute": 42,
-    "incorrectWordsNumber": 7,
-    "correctWordsNumber": 43,
-    "accentsPrecisionPercentage": 68,
+    "idJoueur": 1718626002462,
+    "precisionPercentage": 85,
+    "wordsPerMinute": 60,
+    "incorrectWordsNumber": 15,
+    "correctWordsNumber": 45,
+    "accentsPrecisionPercentage": 85,
     "idPartie": 2,
-    "id": 1718878133785
+    "id": 1718971346720
   },
   {
-    "idJoueur": 1718610732752,
-    "precisionPercentage": 100,
-    "wordsPerMinute": 10,
-    "incorrectWordsNumber": 5,
-    "correctWordsNumber": 40,
-    "accentsPrecisionPercentage": 100,
+    "idJoueur": 1718626002462,
+    "precisionPercentage": 75,
+    "wordsPerMinute": 55,
+    "incorrectWordsNumber": 20,
+    "correctWordsNumber": 35,
+    "accentsPrecisionPercentage": 88,
     "idPartie": 3,
-    "id": 1718953398654
+    "id": 1718971367928
+  },
+  {
+    "idJoueur": 1718626002462,
+    "precisionPercentage": 70,
+    "wordsPerMinute": 45,
+    "incorrectWordsNumber": 25,
+    "correctWordsNumber": 40,
+    "accentsPrecisionPercentage": 85,
+    "idPartie": 4,
+    "id": 1718971397467
+  },
+  {
+    "idJoueur": 1718626002462,
+    "precisionPercentage": 78,
+    "wordsPerMinute": 55,
+    "incorrectWordsNumber": 12,
+    "correctWordsNumber": 43,
+    "accentsPrecisionPercentage": 87,
+    "idPartie": 5,
+    "id": 1718971436248
+  },
+  {
+    "idJoueur": 1718626041815,
+    "precisionPercentage": 78,
+    "wordsPerMinute": 50,
+    "incorrectWordsNumber": 12,
+    "correctWordsNumber": 38,
+    "accentsPrecisionPercentage": 90,
+    "idPartie": 1,
+    "id": 1718971565425
+  },
+  {
+    "idJoueur": 1718626041815,
+    "precisionPercentage": 82,
+    "wordsPerMinute": 55,
+    "incorrectWordsNumber": 8,
+    "correctWordsNumber": 47,
+    "accentsPrecisionPercentage": 92,
+    "idPartie": 2,
+    "id": 1718971590801
+  },
+  {
+    "idJoueur": 1718626049402,
+    "precisionPercentage": 85,
+    "wordsPerMinute": 60,
+    "incorrectWordsNumber": 10,
+    "correctWordsNumber": 50,
+    "accentsPrecisionPercentage": 95,
+    "idPartie": 1,
+    "id": 1718971846539
+  },
+  {
+    "idJoueur": 1718626049402,
+    "precisionPercentage": 72,
+    "wordsPerMinute": 45,
+    "incorrectWordsNumber": 18,
+    "correctWordsNumber": 27,
+    "accentsPrecisionPercentage": 80,
+    "idPartie": 2,
+    "id": 1718971868057
+  },
+  {
+    "idJoueur": 1718626049402,
+    "precisionPercentage": 76,
+    "wordsPerMinute": 53,
+    "incorrectWordsNumber": 15,
+    "correctWordsNumber": 38,
+    "accentsPrecisionPercentage": 86,
+    "idPartie": 3,
+    "id": 1718971885898
+  },
+  {
+    "idJoueur": 1718626049402,
+    "precisionPercentage": 80,
+    "wordsPerMinute": 58,
+    "incorrectWordsNumber": 12,
+    "correctWordsNumber": 46,
+    "accentsPrecisionPercentage": 88,
+    "idPartie": 4,
+    "id": 1718971902541
+  },
+  {
+    "idJoueur": 1718626054562,
+    "precisionPercentage": 78,
+    "wordsPerMinute": 52,
+    "incorrectWordsNumber": 14,
+    "correctWordsNumber": 38,
+    "accentsPrecisionPercentage": 85,
+    "idPartie": 1,
+    "id": 1718972180542
+  },
+  {
+    "idJoueur": 1718626054562,
+    "precisionPercentage": 83,
+    "wordsPerMinute": 58,
+    "incorrectWordsNumber": 10,
+    "correctWordsNumber": 48,
+    "accentsPrecisionPercentage": 90,
+    "idPartie": 2,
+    "id": 1718972206076
+  },
+  {
+    "idJoueur": 1718626054562,
+    "precisionPercentage": 77,
+    "wordsPerMinute": 51,
+    "incorrectWordsNumber": 16,
+    "correctWordsNumber": 35,
+    "accentsPrecisionPercentage": 88,
+    "idPartie": 3,
+    "id": 1718972268472
+  },
+  {
+    "idJoueur": 1718626054562,
+    "precisionPercentage": 79,
+    "wordsPerMinute": 54,
+    "incorrectWordsNumber": 11,
+    "correctWordsNumber": 43,
+    "accentsPrecisionPercentage": 86,
+    "idPartie": 4,
+    "id": 1718972291941
+  },
+  {
+    "idJoueur": 1718626054562,
+    "precisionPercentage": 84,
+    "wordsPerMinute": 59,
+    "incorrectWordsNumber": 9,
+    "correctWordsNumber": 50,
+    "accentsPrecisionPercentage": 92,
+    "idPartie": 5,
+    "id": 1718972322267
   }
 ]
