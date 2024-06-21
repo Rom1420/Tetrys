@@ -1,0 +1,38 @@
+[
+  {
+    "idJoueur": 1718610732752,
+    "idPartie": 1,
+    "gameMode": "Débutant",
+    "gameScore": 350,
+    "gameStars": 4,
+    "date": "10/03/24",
+    "id": 1718716889567
+  },
+  {
+    "idJoueur": 1718610732752,
+    "gameMode": "Débutant",
+    "gameScore": 56,
+    "gameStars": 1,
+    "date": "10/03/24",
+    "idPartie": 2,
+    "id": 1718787365833
+  },
+  {
+    "idJoueur": 1718610732752,
+    "gameMode": "Intermédiaire",
+    "gameScore": 348,
+    "gameStars": 1,
+    "date": "10/03/24",
+    "idPartie": 3,
+    "id": 1718787408575
+  },
+  {
+    "idJoueur": 55,
+    "gameMode": "Intermédiaire",
+    "gameScore": 348,
+    "gameStars": 1,
+    "date": "10/03/24",
+    "idPartie": 1,
+    "id": 1718787433868
+  }
+]

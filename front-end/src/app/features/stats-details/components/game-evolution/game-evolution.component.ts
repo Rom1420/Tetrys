@@ -1,7 +1,9 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
 import { GAMEDETAILS_LIST } from '../../mock/game-details.mock';
 import { GameDetailsService } from '../../services/game-details.service';
+import { StudentService } from 'src/app/core/components/services/student.service';
 import { GameDetails } from '../../models/game-details.model';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Component({
   selector: 'game-evolution',
@@ -21,27 +23,55 @@ export class GameEvolutionComponent {
   precisionLastGameEvolution: number | null = null;
   speedLastGameEvolution: number | null = null;
 
-  constructor(public gameDetailsService: GameDetailsService) {}
+  constructor(public gameDetailsService: GameDetailsService, public studentService: StudentService) {}
   
-  ngOnChanges(changes: SimpleChanges){
-    if (changes['selectedPlayerId'] && changes['selectedGameId']) {
-      
-      const playerId = changes['selectedPlayerId'].currentValue;
-      const gameId = changes['selectedGameId'].currentValue;
-
-      if (playerId && gameId) {
-        this.selectedGameDetails = this.gameDetailsService.getGameDetails(playerId,gameId);
-        this.selectedPlayerGameDetailsList = this.gameDetailsList.filter(student => student.idJoueur == playerId);
-        this.updateGameEvolution();
+  ngOnInit(): void {
+    this.gameDetailsService.getAllGameDetails()
+    .subscribe({
+      next: (details: GameDetails[]) => {
+        this.gameDetailsList = details;
+      },
+      error: () => {
+        console.error("Erreur lors de la récupération du détails de la partie.");
       }
-    }
+    });
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    this.gameDetailsService.getAllGameDetails()
+    .subscribe({
+      next: (details: GameDetails[]) => {
+        this.gameDetailsList = details;
+        if (changes['selectedPlayerId'] && changes['selectedGameId']) {
+      
+          const playerId = changes['selectedPlayerId'].currentValue;
+          const gameId = changes['selectedGameId'].currentValue;
+    
+          if (playerId && gameId) {
+            this.gameDetailsService.getGameDetails(playerId, gameId)
+            .subscribe({
+            next: (details: GameDetails) => {
+              this.selectedGameDetails = details;
+              this.selectedPlayerGameDetailsList = this.gameDetailsList.filter(student => student.idJoueur == playerId);
+              this.updateGameEvolution();
+            },
+            error: () => {
+              console.error("Erreur lors de la récupération du détails de la partie.");
+            }
+          });
+          }
+        }
+      },
+      error: () => {
+        console.error("Erreur lors de la récupération du détails de la partie.");
+      }
+    });
   }
 
   updateGameEvolution() {
     if (!this.selectedPlayerId || !this.selectedGameId || !this.selectedPlayerGameDetailsList || !this.selectedGameDetails) {
       return;
     }
-
     const totalGames = this.selectedPlayerGameDetailsList.length;
   
     const aggregateStats = this.selectedPlayerGameDetailsList.reduce((accumulator, game) => {
@@ -59,6 +89,7 @@ export class GameEvolutionComponent {
     this.speedGlobalEvolution = Math.round(((this.selectedGameDetails.wordsPerMinute - averageWordsPerMinute) / averageWordsPerMinute) * 100);
     
     if (totalGames > 1) {
+      this.selectedPlayerGameDetailsList.reverse();
       const lastGame = this.selectedPlayerGameDetailsList[totalGames - 1];
       this.precisionLastGameEvolution = Math.round(((this.selectedGameDetails.precisionPercentage - lastGame.precisionPercentage) / lastGame.precisionPercentage) * 100);
       this.speedLastGameEvolution = Math.round(((this.selectedGameDetails.wordsPerMinute - lastGame.wordsPerMinute) / lastGame.wordsPerMinute) * 100);
@@ -67,6 +98,5 @@ export class GameEvolutionComponent {
       this.precisionLastGameEvolution = 0;
       this.speedLastGameEvolution = 0;
     }
-    console.log("evolutionGlobale",this.precisionGlobalEvolution)
   }
 }

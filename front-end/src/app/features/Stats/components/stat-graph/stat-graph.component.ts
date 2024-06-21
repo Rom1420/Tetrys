@@ -33,7 +33,6 @@ export class StatGraphComponent implements OnInit {
           title.classList.remove('hidden');
         });
       }, 200);
-      console.log("Stats Avancées reçues par StatGraphComponent :", this.statsAvancee);
     });
 
     

@@ -226,7 +226,6 @@ export class GameEngine {
       }
       return true;
     } catch (e){
-      console.log('fin de partie');
       this.gameManagerService.endGame$.next(true);
       return false;
     }
@@ -341,7 +340,6 @@ export class GameEngine {
   error(){
     const gameEngineInstance = this;
     function avoid(){
-      console.log("salut")
       gameEngineInstance.secondError.next(true);
       gameEngineInstance.gameManagerService.resetWords();
       gameEngineInstance.gameManagerService.captureEvents$.next(0);

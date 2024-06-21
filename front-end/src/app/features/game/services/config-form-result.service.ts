@@ -17,7 +17,6 @@ export class ConfigFormResultService {
   }
 
   setConfig(config: ConfigModel) {
-    console.log(config);
     this.formResults.next(config);
   }
 
