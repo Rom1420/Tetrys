@@ -1,6 +1,5 @@
-# Projet Tetris pour Jeunes Atteints de Troubles Dys
-
 <div align="center">
+        <h1 style="font-size: 9vh; margin: 5px">Tetrys</h1>
     <img src="https://wallpapercave.com/wp/wp2675347.jpg" width="60%">
 </div>
 
@@ -67,9 +66,9 @@ Ce projet Tetris est conçu pour aider les jeunes atteints de troubles dys (dysl
     ```bash
     cd 2023-2024-ps6-tetrys/ops/
     ```
-3. Lancez le script `run.sh` :
+4. Lancez le script `run.sh` :
     ```bash
-    docker-compose up
+    ./script.sh
     ```
 5. Ouvrez votre navigateur à `http://localhost:4200`.
 
