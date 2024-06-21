@@ -3,12 +3,13 @@
   <game-board></game-board>
   <div class="playable-zone">
     <div class="score-container">
-        <span> Score : {{score}} </span>
+        <span> Score <span class="score-style">{{score}}</span> </span>
       </div>
     <div class="mode-name" [ngClass]="{'green': config.name === 'débutant',
         'orange': config.name === 'intermediaire',
         'red': config.name === 'avancé',
-        'cyan': config.name === 'perso'}">
+        'cyan': config.name === 'perso',
+        'default': config.name !== 'débutant' && config.name !== 'intermediaire' && config.name !== 'avancé' && config.name !== 'perso'}">
       <span> Mode {{config.name}} </span>
     </div>
     <div class="blocks-words-component">

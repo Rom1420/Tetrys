@@ -3,7 +3,6 @@ import { GAMEDETAILS_LIST } from '../../mock/game-details.mock';
 import { GameDetailsService } from '../../services/game-details.service';
 import { StudentService } from 'src/app/core/components/services/student.service';
 import { GameDetails } from '../../models/game-details.model';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Component({
   selector: 'game-evolution',
@@ -98,5 +97,6 @@ export class GameEvolutionComponent {
       this.precisionLastGameEvolution = 0;
       this.speedLastGameEvolution = 0;
     }
+    
   }
 }

@@ -21,6 +21,7 @@ export class ConfigFormResultService {
   }
 
   startGameWithConfiguration(config:ConfigModel){
+    this.setConfig(config);
     this.router.navigate(["/game"]).catch(error => {
       console.error('Erreur de navigation :', error);});
   }
