@@ -5,4 +5,4 @@ COPY ./package*.json ./
 RUN npm install
 COPY . .
 EXPOSE 9428
-ENTRYPOINT ["npm", "run", "start"]
+ENTRYPOINT ["npm", "run", "start:e2e"]

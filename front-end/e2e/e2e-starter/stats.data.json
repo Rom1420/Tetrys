@@ -1,26 +1,162 @@
 [
   {
-    "idJoueur": 1716794358140,
-    "mode": "debutant",
-    "wpm": 15,
-    "scoreMoyen": 156,
-    "pourcentageErreur": 22,
-    "id": 1716801419253
-  },
-  {
-    "idJoueur": 1716794358140,
-    "mode": "intermediaire",
-    "wpm": 18,
-    "scoreMoyen": 216,
-    "pourcentageErreur": 30,
-    "id": 1716801454297
-  },
-  {
-    "idJoueur": 1716794358140,
-    "mode": "avance",
+    "idJoueur": 1718626002462,
+    "mode": "general",
     "wpm": 12,
     "scoreMoyen": 86,
+    "pourcentageErreur": 75,
+    "id": 1718714775350
+  },
+  {
+    "idJoueur": 1718626002462,
+    "mode": "debutant",
+    "wpm": 11,
+    "scoreMoyen": 70,
+    "pourcentageErreur": 30,
+    "id": 1718714775350
+  },
+  {
+    "idJoueur": 1718626002462,
+    "mode": "intermediaire",
+    "wpm": 20,
+    "scoreMoyen": 100,
+    "pourcentageErreur": 45,
+    "id": 1718714775351
+  },
+  {
+    "idJoueur": 1718626002462,
+    "mode": "avance",
+    "wpm": 13,
+    "scoreMoyen": 67,
+    "pourcentageErreur": 75,
+    "id": 1718714775351
+  },
+  {
+    "idJoueur": 1718626002462,
+    "mode": "perso",
+    "wpm": 13,
+    "scoreMoyen": 70,
+    "pourcentageErreur": 58,
+    "id": 1718714775351
+  },
+  {
+    "idJoueur": 1718626041815,
+    "mode": "general",
+    "wpm": 11,
+    "scoreMoyen": 70,
+    "pourcentageErreur": 65,
+    "id": 1718715028495
+  },
+  {
+    "idJoueur": 1718626041815,
+    "mode": "debutant",
+    "wpm": 20,
+    "scoreMoyen": 70,
+    "pourcentageErreur": 28,
+    "id": 1718715028495
+  },
+  {
+    "idJoueur": 1718626041815,
+    "mode": "intermediaire",
+    "wpm": 20,
+    "scoreMoyen": 89,
+    "pourcentageErreur": 37,
+    "id": 1718715028496
+  },
+  {
+    "idJoueur": 1718626041815,
+    "mode": "avance",
+    "wpm": 11,
+    "scoreMoyen": 56,
+    "pourcentageErreur": 87,
+    "id": 1718715028497
+  },
+  {
+    "idJoueur": 1718626041815,
+    "mode": "perso",
+    "wpm": 18,
+    "scoreMoyen": 65,
+    "pourcentageErreur": 58,
+    "id": 1718715028497
+  },
+  {
+    "idJoueur": 1718626049402,
+    "mode": "general",
+    "wpm": 11,
+    "scoreMoyen": 70,
+    "pourcentageErreur": 65,
+    "id": 1718715206703
+  },
+  {
+    "idJoueur": 1718626049402,
+    "mode": "debutant",
+    "wpm": 18,
+    "scoreMoyen": 56,
+    "pourcentageErreur": 30,
+    "id": 1718715206703
+  },
+  {
+    "idJoueur": 1718626049402,
+    "mode": "intermediaire",
+    "wpm": 21,
+    "scoreMoyen": 68,
+    "pourcentageErreur": 43,
+    "id": 1718715206704
+  },
+  {
+    "idJoueur": 1718626049402,
+    "mode": "avance",
+    "wpm": 27,
+    "scoreMoyen": 75,
+    "pourcentageErreur": 67,
+    "id": 1718715206704
+  },
+  {
+    "idJoueur": 1718626049402,
+    "mode": "perso",
+    "wpm": 22,
+    "scoreMoyen": 64,
+    "pourcentageErreur": 68,
+    "id": 1718715206706
+  },
+  {
+    "idJoueur": 1718626054562,
+    "mode": "general",
+    "wpm": 15,
+    "scoreMoyen": 46,
+    "pourcentageErreur": 60,
+    "id": 1718715281837
+  },
+  {
+    "idJoueur": 1718626054562,
+    "mode": "debutant",
+    "wpm": 24,
+    "scoreMoyen": 57,
+    "pourcentageErreur": 37,
+    "id": 1718715281837
+  },
+  {
+    "idJoueur": 1718626054562,
+    "mode": "intermediaire",
+    "wpm": 20,
+    "scoreMoyen": 69,
+    "pourcentageErreur": 42,
+    "id": 1718715281838
+  },
+  {
+    "idJoueur": 1718626054562,
+    "mode": "avance",
+    "wpm": 16,
+    "scoreMoyen": 46,
     "pourcentageErreur": 72,
-    "id": 1716801474913
+    "id": 1718715281838
+  },
+  {
+    "idJoueur": 1718626054562,
+    "mode": "perso",
+    "wpm": 20,
+    "scoreMoyen": 90,
+    "pourcentageErreur": 58,
+    "id": 1718715281838
   }
 ]
