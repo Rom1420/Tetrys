@@ -28,7 +28,6 @@ export class ConfigListComponent implements OnInit{
 
   retrieveConfigs(){
     this.http.get<ConfigModel[]>(this.configUrl).subscribe((list) => {
-      console.log(list)
       this.configList = (list.filter((config) => config.userId == this.userId));
     });
   }
@@ -51,12 +50,10 @@ export class ConfigListComponent implements OnInit{
     }
 
     const urlID = `${this.configUrl}/${config.id}`;
-    console.log(`Deleting config at URL: ${urlID}`);
 
     this.http.delete<ConfigModel>(urlID)
       .subscribe({
         next: () => {
-          console.log("Config deleted successfully.");
           this.retrieveConfigs();
         },
         error: (err) => {

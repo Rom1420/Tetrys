@@ -43,7 +43,6 @@ export class GameComponent implements OnInit, AfterViewInit {
         this.config = this.configFormResult.getConfig()
         this.configFormResult.configActual$.subscribe((actualConfig) => {
           this.config = actualConfig
-          console.log(this.config);
         })
         this.gameEngine.secondError.subscribe((value) => {
           this.show2ndChance = value
@@ -125,14 +124,12 @@ export class GameComponent implements OnInit, AfterViewInit {
       this.errorsAllowed = 1;
       this.wordForm.patchValue({ 'error': this.errorsAllowed });
       this.gameFormService.addResult(this.wordForm.value);
-      console.log(this.gameFormService.getResults());
       this.errorsAllowed = 0;
       this.wordForm.reset();
     } else {
       this.wordForm.patchValue({ 'error': this.errorsAllowed });
       this.gameFormService.addResult(this.wordForm.value);
       this.wordForm.get('word')?.disable();
-      console.log(this.gameFormService.getResults());
       this.errorsAllowed = 0;
       this.wordForm.reset();
     }

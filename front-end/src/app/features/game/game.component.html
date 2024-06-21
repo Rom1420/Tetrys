@@ -23,7 +23,7 @@
           <button class="end-game-button" (click)="endGame()">FIN PARTIE</button>
         </div>
         <div class="input-container">
-          <input type="text" id="word" #word formControlName="word" (input)="verifWord()" placeholder="Tapez les Mots ici" onkeydown="console.log(event.keyCode); if(event.keyCode == 13) {event.preventDefault();}">
+          <input type="text" id="word" #word formControlName="word" (input)="verifWord()" placeholder="Tapez les Mots ici" onkeydown="if(event.keyCode == 13) {event.preventDefault();}">
         </div>
 
       </form>

@@ -28,7 +28,7 @@ export class GameEngine {
     if (this.resultWordGame) {
       this.resultWordGame.unsubscribe();
     }
-    
+
     this.resultWordGame = this.gameFormService.results$.subscribe((wordResult) => {
       if (wordResult && wordResult.length > 0) {
         const length = wordResult.length;
@@ -47,14 +47,13 @@ export class GameEngine {
         }
       }
     });
-    
+
     this.gameState = [];
     this.currentPiece = this.initializePiece(this.getRandomPieceType(), { row: 0, col: 4 });
     this.initGameState();
   }
 
   resetGame(): void {
-    console.log('Réinitialisation du jeu');
     this.score = 0;
     this.errors = 1;
     this.stars = 4;
@@ -406,6 +405,5 @@ export class GameEngine {
     if(this.errors % 5 === 0 && this.stars > 1){
       this.stars -= 1;
     }
-    console.log("Stars updated",this.stars)
   }
 }

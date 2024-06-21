@@ -73,7 +73,6 @@ test.describe('Scénario 2', () => {
 
     const correctWords = await gameFixture.getCorrectWords();
 
-    console.log('Mots corrects trouvés:', correctWords);
     expect(correctWords.length).toBeGreaterThan(0);
 
     await gameFixture.enterWord(correctWords[0]);
@@ -100,6 +99,6 @@ test.describe('Scénario 2', () => {
     await expect(student).not.toBeVisible();
   });
 
-  
+
 
 });

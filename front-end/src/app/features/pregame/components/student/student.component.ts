@@ -13,14 +13,14 @@ export class StudentComponent {
   public studentList: Student[] = [];
 
     @Input()student: Student | undefined;
-    @Input() profilePicture: string | undefined; 
+    @Input() profilePicture: string | undefined;
 
     constructor(public popupService: PopupService, private studentService: StudentService) {
         this.studentService.students$.subscribe((studentList) => {
             this.studentList = studentList;
           });
     }
-    
+
     maximumId() : number {
       let x : number = 0;
       for(let student of this.studentList){
@@ -36,7 +36,7 @@ export class StudentComponent {
     openDPopup(){
         if(!this.popupService.isOpen){
             this.popupService.openDPopup();
-        }   
+        }
     }
 
     updateSelectedStudentIdToDelete(student : Student | null){
@@ -52,20 +52,19 @@ export class StudentComponent {
         }
         if(this.student){
           this.student.isSelected = !this.student.isSelected;
-          console.log(this.student);
         }
       }
-  
+
       getSelect() : boolean{
         if(this.student)
           return this.student.isSelected;
         else
           return false;
       }
-  
+
       onSelectStudent(student: Student): void {
-        this.studentList.forEach(s => s.isSelected = false); 
-        student.isSelected = true; 
+        this.studentList.forEach(s => s.isSelected = false);
+        student.isSelected = true;
         this.studentService.onSelectStudent(student.id);
       }
-} 
+}

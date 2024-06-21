@@ -106,9 +106,7 @@ export class WordsServices{
 
     if (!this.words.some(word => word.text === newWord.text && word.listId === newWord.listId)) {
       this.http.post<Word>(this.wordUrl, newWord).subscribe({
-        next: (word) => {
-          console.log('Word added', word);
-        },
+        next: (word) => {},
         error: (err) => {
           console.error('Error adding word', err);
         }
