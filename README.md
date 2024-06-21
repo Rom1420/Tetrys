@@ -67,9 +67,9 @@ Ce projet Tetris est conçu pour aider les jeunes atteints de troubles dys (dysl
     ```bash
     cd 2023-2024-ps6-tetrys/ops/
     ```
-3. Lancez le script `run.sh` :
+4. Lancez le script `run.sh` :
     ```bash
-    docker-compose up
+    ./script.sh
     ```
 5. Ouvrez votre navigateur à `http://localhost:4200`.
 
