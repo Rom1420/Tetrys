@@ -59,12 +59,6 @@ export class GameEvolutionComponent {
               console.error("Erreur lors de la récupération du détails de la partie.");
             }
           });
-          /*
-            console.log('plaayerID',playerId)
-            console.log('la liste de con de merde',this.gameDetailsList);
-            this.selectedPlayerGameDetailsList = this.gameDetailsList.filter(student => student.idJoueur == playerId);
-            console.log('carotte',this.selectedPlayerGameDetailsList);
-            this.updateGameEvolution();*/
           }
         }
       },
@@ -79,7 +73,6 @@ export class GameEvolutionComponent {
       return;
     }
     const totalGames = this.selectedPlayerGameDetailsList.length;
-    console.log('TOTAAL',totalGames);
   
     const aggregateStats = this.selectedPlayerGameDetailsList.reduce((accumulator, game) => {
       if (game.idPartie !== this.selectedGameDetails?.idPartie) {
@@ -88,12 +81,9 @@ export class GameEvolutionComponent {
       }
       return accumulator;
     }, { precisionPercentage: 0, wordsPerMinute: 0 });
-    console.log('agreagreagrreee',aggregateStats);
 
     const averagePrecisionPercentage = aggregateStats.precisionPercentage / totalGames;
-    console.log('moyenne de la precision',averagePrecisionPercentage);
     const averageWordsPerMinute = aggregateStats.wordsPerMinute / totalGames;
-    console.log('moyenne des mots par min',averageWordsPerMinute);
   
     this.precisionGlobalEvolution = Math.round(((this.selectedGameDetails.precisionPercentage - averagePrecisionPercentage) / averagePrecisionPercentage) * 100);
     this.speedGlobalEvolution = Math.round(((this.selectedGameDetails.wordsPerMinute - averageWordsPerMinute) / averageWordsPerMinute) * 100);
