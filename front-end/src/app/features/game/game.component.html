@@ -2,6 +2,9 @@
   <cloud-background></cloud-background>
   <game-board></game-board>
   <div class="playable-zone">
+    <div class="score-container">
+        <span> Score : {{score}} </span>
+      </div>
     <div class="mode-name" [ngClass]="{'green': config.name === 'débutant',
         'orange': config.name === 'intermediaire',
         'red': config.name === 'avancé',
@@ -28,18 +31,20 @@
     <div *ngIf="show2ndChance" class="second-chance">
       <p>Vous avez le droit à une seconde tentative</p>
     </div>
-    <div class="chrono-container">
-      <p> {{time}}</p>
-    </div>
+      <div class="chrono-container">
+        <p> {{time}}</p>
+      </div>
   </div>
   <game-event></game-event>
   <div *ngIf="endGameDisplay" class="endGameStats">
     <div class="end-stat-content">
       <div class="horizontal-bar">
-        <h1 class="score-text">Score : 253</h1>
+        <h1 class="score-text">Score : {{score}}</h1>
           <span class="star-rating">
-              <star *ngFor="let _ of [1, 2, 3]" [isEndGame]="true"></star>
-          </span>
+          <ng-container *ngFor="let _ of [].constructor(stars)">
+            <star [isEndGame]="true"></star>
+          </ng-container>
+        </span>
       </div>
       <div class="vertical-bar">
         <div class="replay-button-container">

@@ -30,6 +30,9 @@ export class GameComponent implements OnInit, AfterViewInit {
     public show2ndChance = false;
     public errorsAllowed:number = 0;
     private configSubscription!: Subscription;
+    score : number = 0;
+    errors : number = 0;
+    stars : number = 4;
 
     constructor(private gameManagerService:GameManagerService, private configFormResult: ConfigFormResultService, private gameFormService: GameFormService, public wordService:WordsServices, public formBuilder: FormBuilder, private gameEngine: GameEngine) {
         this.wordForm = this.formBuilder.group({
@@ -63,6 +66,9 @@ export class GameComponent implements OnInit, AfterViewInit {
     }
     ngOnInit(){
       this.gameEngine.resetGame();
+      this.score = 0;
+      this.errors = 0;
+      this.stars = 5;
       this.configSubscription = this.configFormResult.configActual$.subscribe((actualConfig) => {
         this.config = actualConfig;
       });
@@ -123,6 +129,9 @@ export class GameComponent implements OnInit, AfterViewInit {
         console.log(this.gameFormService.getResults());
         this.errorsAllowed = 0;
         this.wordForm.reset();
+        this.score = this.gameEngine.score;
+        this.errors = this.gameEngine.errors;
+        this.stars = this.gameEngine.stars;
       } else {
         this.wordForm.patchValue({'error': this.errorsAllowed});
         this.gameFormService.addResult(this.wordForm.value)
@@ -130,13 +139,20 @@ export class GameComponent implements OnInit, AfterViewInit {
         console.log(this.gameFormService.getResults());
         this.errorsAllowed = 0;
         this.wordForm.reset();
+        this.score = this.gameEngine.score;
+        this.errors = this.gameEngine.errors;
+        this.stars = this.gameEngine.stars;
       }
     }
-    ngOnDestroy() {
-      this.configSubscription.unsubscribe();
+
+  ngOnDestroy() {
+    this.configSubscription.unsubscribe();
   }
 
   endGame() {
+    this.score = this.gameEngine.score;
+    this.errors = this.gameEngine.errors;
+    this.stars = this.gameEngine.stars;
     this.gameManagerService.endGame$.next(true);
   }
 }

@@ -15,6 +15,9 @@ export class GameEngine {
   currentPiece!: { id: number; shape: boolean[][]; position: { row: number; col: number; }; };
   resultWordGame!: Subscription;
   secondError = new BehaviorSubject(false);
+  score : number = 0;
+  errors : number = 1;
+  stars: number = 4;
 
   constructor(private gameFormService: GameFormService, private gameManagerService: GameManagerService) {
     this.initGameEngine();
@@ -30,15 +33,16 @@ export class GameEngine {
       if (wordResult && wordResult.length > 0) {
         const length = wordResult.length;
         this.gameManagerService.captureEvents$.next(1);
-        if (wordResult.at(wordResult.length - 1).isValid === "true") {
-          console.log("normal")
-          this.playGame(wordResult[length - 1].word);
+        const latestResult = wordResult[length - 1];
+        if (latestResult.isValid === "true") {
+          this.playGame(latestResult.word);
+          this.updateScoreAndErrors(latestResult.word, latestResult.error);
           this.secondError.next(false);
-        } else if (wordResult.at(wordResult.length - 1).error == 0 || this.secondError.value) {
-          console.log("random")
+        } else if (latestResult.error == 0 || this.secondError.value) {
+          this.errors += 1;
+          this.updateStars();
           this.placeRandomPieceRandomly();
         } else {
-          console.log("1 erreur")
           this.error();
         }
       }
@@ -51,6 +55,8 @@ export class GameEngine {
 
   resetGame(): void {
     console.log('Réinitialisation du jeu');
+    this.score = 0;
+    this.errors = 1;
     this.initGameEngine();
   }
 
@@ -378,5 +384,28 @@ export class GameEngine {
     }
   }
 
+  calculateScore(word: string, error: number): number {
+    const score = word.length * 2;
+    if ( error > 0){
+      return score - error * 2;
+    }
+    return score;
+  }
 
+  updateScoreAndErrors(word: string, error: number): void {
+    const score = this.calculateScore(word, error);
+    this.score += score;
+    this.errors += error;
+    this.updateStars();
+  }
+
+  updateStars(){
+    if(this.errors == 0){
+      return;
+    }
+    if(this.errors % 5 === 0 && this.stars > 1){
+      this.stars -= 1;
+    }
+    console.log("Stars updated",this.stars)
+  }
 }

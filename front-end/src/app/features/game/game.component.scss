@@ -245,18 +245,18 @@ button.end-game-button:active {
 }
 
 .chrono-container{
-  width: 30%;
+  width: 25%;
   text-align: center;
   background: linear-gradient(to bottom, var(--cyan-brighter) 0%, var(--background) 80%);
   box-shadow: 0px 0px 20px #baebff;
-  border-radius: 82% 18% 87% 13% / 12% 86% 14% 88% ;
+  border-radius: 82% 18% 87% 13% / 12% 86% 14% 88%;
 }
 
 .chrono-container p{
   font-family: "Digital Font", serif;
   color: #fff;
-  font-size: 15vh;
-  margin: 0;
+  font-size: 12vh;
+  margin: 10px 15px;
 }
 
 
@@ -433,7 +433,7 @@ button.end-game-button:active {
   font-size: 1.8em;
   color: white;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  box-shadow: -5px -5px 2px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 5px -5px 2px rgba(0, 0, 0, 0.4) inset;
   padding: 3vh 2.5vw;
   border-radius: 91% 9% 82% 18% / 14% 80% 20% 86%;
   margin-bottom: 5%;
@@ -489,4 +489,32 @@ app-pregame{
 }
 .cyan{
   background-color: var(--cyan);
+}
+
+.top-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.score-container{
+  position: absolute;
+  font-size: 1.8em;
+  color: white;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  box-shadow: 5px -5px 2px rgba(0, 0, 0, 0.4) inset;
+  padding: 3vh 2.5vw;
+  border-radius: 91% 9% 82% 18% / 14% 80% 20% 86%;
+  margin-bottom: 5%;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  margin-top: 45px;
+  letter-spacing: 1.5px;
+  word-spacing: 8px;
+  background: linear-gradient(to bottom, var(--cyan-brighter) 0%, var(--background) 80%);
+  top: 0;
+  left: 0;
 }
