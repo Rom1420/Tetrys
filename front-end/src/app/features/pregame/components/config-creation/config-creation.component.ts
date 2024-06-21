@@ -77,7 +77,7 @@ export class ConfigCreationComponent implements OnInit{
           this.retrieveConfigs();
           this.addWords(listId);
           this.configFormResultService.setConfig(configData);
-          this.configFormResultService.startGameWithConfiguration(this.configForm.value);
+          this.configFormResultService.startGameWithConfiguration2(this.configForm.value);
           this.configForm.reset();
         });
       });

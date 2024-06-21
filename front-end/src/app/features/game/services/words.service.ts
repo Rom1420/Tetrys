@@ -102,18 +102,15 @@ export class WordsServices{
   addWordsListOfStudent(wordsList: string[], studentId: number, listId: number): void {
 
   for (const wordText of wordsList) {
-    if (wordText.length > 3) {
-      const newWord = this.createWord(wordText, studentId, listId);
+    const newWord = this.createWord(wordText, studentId, listId);
 
-      if (!this.words.some(word => word.text === newWord.text && word.listId === newWord.listId)) {
-        this.http.post<Word>(this.wordUrl, newWord).subscribe({
-          next: (word) => {
-          },
-          error: (err) => {
-            console.error('Error adding word', err);
-          }
-        });
-      }
+    if (!this.words.some(word => word.text === newWord.text && word.listId === newWord.listId)) {
+      this.http.post<Word>(this.wordUrl, newWord).subscribe({
+        next: (word) => {},
+        error: (err) => {
+          console.error('Error adding word', err);
+        }
+      });
     }
   }
 }

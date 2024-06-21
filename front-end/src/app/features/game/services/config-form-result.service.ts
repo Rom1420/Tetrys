@@ -25,4 +25,9 @@ export class ConfigFormResultService {
     this.router.navigate(["/game"]).catch(error => {
       console.error('Erreur de navigation :', error);});
   }
+
+  startGameWithConfiguration2(config:ConfigModel){
+    this.router.navigate(["/game"]).catch(error => {
+      console.error('Erreur de navigation :', error);});
+  }
 }
