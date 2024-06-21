@@ -57,6 +57,8 @@ export class GameEngine {
     console.log('Réinitialisation du jeu');
     this.score = 0;
     this.errors = 1;
+    this.stars = 4;
+    this.initGameState();
     this.initGameEngine();
   }
 
