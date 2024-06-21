@@ -1,4 +1,4 @@
-# Projet Tetris pour Jeunes Atteints de Troubles Dys
+# Tetrys
 
 <div align="center">
     <img src="https://wallpapercave.com/wp/wp2675347.jpg" width="60%">
