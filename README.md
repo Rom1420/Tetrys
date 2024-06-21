@@ -1,6 +1,6 @@
 <div align="center">
-        <h1 style="font-size: 9vh; margin: 5px">Tetrys</h1>
-    <img src="https://wallpapercave.com/wp/wp2675347.jpg" width="60%">
+        <h1>Tetrys</h1>
+        <img src="https://wallpapercave.com/wp/wp2675347.jpg" width="60%">
 </div>
 
 ## Table des Matières
