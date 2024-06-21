@@ -15,7 +15,7 @@ export class ConfigListComponent implements OnInit{
   public configList: ConfigModel[] = [];
   public showCreateConfig: boolean = false;
   public showConfigList: boolean = !this.showCreateConfig;
-  public configUrl: string = backUrl+"configs/";
+  public configUrl: string = backUrl+"/configs/";
   private userId: number | null = 0;
 
 
@@ -28,6 +28,7 @@ export class ConfigListComponent implements OnInit{
 
   retrieveConfigs(){
     this.http.get<ConfigModel[]>(this.configUrl).subscribe((list) => {
+      console.log(list)
       this.configList = (list.filter((config) => config.userId == this.userId));
     });
   }
