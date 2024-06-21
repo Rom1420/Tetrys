@@ -6,8 +6,8 @@ const config: PlaywrightTestConfig = {
     headless: true,
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
-    video: 'retain-on-failure',
-    screenshot: 'only-on-failure',
+    video: 'on',
+    screenshot: 'on',
     launchOptions: {
       slowMo: 1000,
     }
