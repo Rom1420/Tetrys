@@ -44,5 +44,38 @@
     "onlyWordsList": true,
     "listId": 2,
     "id": 1718957467852
+  },
+  {
+    "name": "dictée",
+    "time": "1",
+    "length": "10",
+    "errorAllowed": false,
+    "wordList": " Un moustique s’approcha d’un lion et lui dit : \"Je n’ai pas peur de toi, et tu n’es pas plus puissant que moi. Si tu veux, je te provoque même au combat\". Et, sonnant de la trompe, le moustique fondit sur lui, mordant le museau dépourvu de poil autour des narines. Quant au lion, il se déchirait de ses propres griffes, jusqu’à ce qu’il renonce au combat. Le moustique, ayant vaincu le lion, sonna de la trompe, entonna un chant de victoire, et prit son envol. Mais il s’empêtra dans une toile d’araignée : tandis qu’elle le dévorait, il se lamentait d’être tué par un vulgaire animal, une araignée, lui qui avait combattu les plus puissants animaux",
+    "userId": 1718980131991,
+    "onlyWordsList": true,
+    "listId": 3,
+    "id": 1718980271481
+  },
+  {
+    "name": "oojfe",
+    "time": "1",
+    "length": "10",
+    "errorAllowed": false,
+    "wordList": " qu'il y'aplus con.",
+    "userId": 1718980131991,
+    "onlyWordsList": true,
+    "listId": 4,
+    "id": 1718980588121
+  },
+  {
+    "name": "dictee2",
+    "time": "1",
+    "length": "15",
+    "errorAllowed": false,
+    "wordList": " Un moustique s’approcha d’un lion et lui dit : \"Je n’ai pas peur de toi, et tu n’es pas plus puissant que moi. Si tu veux, je te provoque même au combat\". Et, sonnant de la trompe, le moustique fondit sur lui, mordant le museau dépourvu de poil autour des narines. Quant au lion, il se déchirait de ses propres griffes, jusqu’à ce qu’il renonce au combat. Le moustique, ayant vaincu le lion, sonna de la trompe, entonna un chant de victoire, et prit son envol. Mais il s’empêtra dans une toile d’araignée : tandis qu’elle le dévorait, il se lamentait d’être tué par un vulgaire animal, une araignée, lui qui avait combattu les plus puissants animaux.",
+    "userId": 1718980131991,
+    "onlyWordsList": true,
+    "listId": 5,
+    "id": 1718980650958
   }
 ]
