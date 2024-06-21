@@ -30,6 +30,9 @@ export class GameComponent implements OnInit, AfterViewInit {
     public show2ndChance = false;
     public errorsAllowed:number = 0;
     private configSubscription!: Subscription;
+    score : number = 0;
+    errors : number = 0;
+    stars : number = 4;
 
     constructor(private gameManagerService:GameManagerService, private configFormResult: ConfigFormResultService, private gameFormService: GameFormService, public wordService:WordsServices, public formBuilder: FormBuilder, private gameEngine: GameEngine) {
         this.wordForm = this.formBuilder.group({
@@ -40,6 +43,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         this.config = this.configFormResult.getConfig()
         this.configFormResult.configActual$.subscribe((actualConfig) => {
           this.config = actualConfig
+          console.log(this.config);
         })
         this.gameEngine.secondError.subscribe((value) => {
           this.show2ndChance = value
@@ -61,14 +65,15 @@ export class GameComponent implements OnInit, AfterViewInit {
       })
 
     }
-    ngOnInit(){
-      this.gameEngine.resetGame();
-      this.configSubscription = this.configFormResult.configActual$.subscribe((actualConfig) => {
-        this.config = actualConfig;
-      });
-      this.actualWords = this.wordService.getActualWords();
-      this.resetTimer();
-    }
+    ngOnInit() {
+    this.config = this.configFormResult.getConfig();
+    this.configSubscription = this.configFormResult.configActual$.subscribe((actualConfig) => {
+      this.config = actualConfig;
+    });
+    this.actualWords = this.wordService.getActualWords();
+    this.resetTimer();
+    this.startNewGame();
+  }
 
 
     verifWord(): boolean{
@@ -114,29 +119,49 @@ export class GameComponent implements OnInit, AfterViewInit {
 
 
 
-    onSubmit(){
-      this.pauseTimer()
-      if (!this.isWordValid && this.config.errorAllowed){
-        this.errorsAllowed = 1;
-        this.wordForm.patchValue({'error': this.errorsAllowed});
-        this.gameFormService.addResult(this.wordForm.value)
-        console.log(this.gameFormService.getResults());
-        this.errorsAllowed = 0;
-        this.wordForm.reset();
-      } else {
-        this.wordForm.patchValue({'error': this.errorsAllowed});
-        this.gameFormService.addResult(this.wordForm.value)
-        this.wordForm.get('word')?.disable();
-        console.log(this.gameFormService.getResults());
-        this.errorsAllowed = 0;
-        this.wordForm.reset();
-      }
+    onSubmit() {
+    this.pauseTimer();
+    if (!this.isWordValid && this.config.errorAllowed) {
+      this.errorsAllowed = 1;
+      this.wordForm.patchValue({ 'error': this.errorsAllowed });
+      this.gameFormService.addResult(this.wordForm.value);
+      console.log(this.gameFormService.getResults());
+      this.errorsAllowed = 0;
+      this.wordForm.reset();
+    } else {
+      this.wordForm.patchValue({ 'error': this.errorsAllowed });
+      this.gameFormService.addResult(this.wordForm.value);
+      this.wordForm.get('word')?.disable();
+      console.log(this.gameFormService.getResults());
+      this.errorsAllowed = 0;
+      this.wordForm.reset();
     }
-    ngOnDestroy() {
-      this.configSubscription.unsubscribe();
+    this.score = this.gameEngine.score;
+    this.errors = this.gameEngine.errors;
+    this.stars = this.gameEngine.stars;
+  }
+
+  startNewGame() {
+    this.gameEngine.resetGame();
+    this.score = 0;
+    this.errors = 0;
+    this.stars = 5;
+    this.config = this.configFormResult.getConfig();
+  }
+
+  ngOnDestroy() {
+    this.configSubscription.unsubscribe();
   }
 
   endGame() {
+    this.score = this.gameEngine.score;
+    this.errors = this.gameEngine.errors;
+    this.stars = this.gameEngine.stars;
     this.gameManagerService.endGame$.next(true);
+  }
+
+  replayGame(){
+    this.startNewGame();
+    this.endGameDisplay = false;
   }
 }
