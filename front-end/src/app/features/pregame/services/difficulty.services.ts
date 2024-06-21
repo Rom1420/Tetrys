@@ -2,13 +2,14 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { Difficulty } from "src/app/features/pregame/models/difficulty.model";
 import {HttpClient} from "@angular/common/http";
+import {backUrl} from "../../../../environnement/environnement";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DifficultyServices {
 
-  public configUrl: string = "http://localhost:9428/api/difficulties/";
+  public configUrl: string = backUrl+"/difficulties/";
 
   private difficulties: Difficulty[] = [];
 

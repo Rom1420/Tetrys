@@ -3540,5 +3540,530 @@
     "listId": 8,
     "studentId": 1718610618291,
     "id": 1718610637408
+  },
+  {
+    "text": "La",
+    "size": 2,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275065
+  },
+  {
+    "text": "dictée",
+    "size": 6,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275080
+  },
+  {
+    "text": "l'opération",
+    "size": 11,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275106
+  },
+  {
+    "text": "est",
+    "size": 3,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275126
+  },
+  {
+    "text": "par",
+    "size": 3,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275157
+  },
+  {
+    "text": "laquelle",
+    "size": 8,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275176
+  },
+  {
+    "text": "personne",
+    "size": 8,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275198
+  },
+  {
+    "text": "voix",
+    "size": 4,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275227
+  },
+  {
+    "text": "une",
+    "size": 3,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275259
+  },
+  {
+    "text": "un",
+    "size": 2,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275275
+  },
+  {
+    "text": "lit",
+    "size": 3,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275309
+  },
+  {
+    "text": "selon",
+    "size": 5,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275395
+  },
+  {
+    "text": "à",
+    "size": 1,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275425
+  },
+  {
+    "text": "texte",
+    "size": 5,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275441
+  },
+  {
+    "text": "cohérent",
+    "size": 8,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275459
+  },
+  {
+    "text": "rythme",
+    "size": 6,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275480
+  },
+  {
+    "text": "permet",
+    "size": 6,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275500
+  },
+  {
+    "text": "haute",
+    "size": 5,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275538
+  },
+  {
+    "text": "qui",
+    "size": 3,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275816
+  },
+  {
+    "text": "des",
+    "size": 3,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275831
+  },
+  {
+    "text": "auditeurs",
+    "size": 9,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275881
+  },
+  {
+    "text": "de",
+    "size": 2,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275904
+  },
+  {
+    "text": "le",
+    "size": 2,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275942
+  },
+  {
+    "text": "écrit.",
+    "size": 6,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715275964
+  },
+  {
+    "text": "copier",
+    "size": 6,
+    "listId": 3,
+    "studentId": 1718715257977,
+    "id": 1718715276016
+  },
+  {
+    "text": "La",
+    "size": 2,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786759
+  },
+  {
+    "text": "dictée",
+    "size": 6,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786765
+  },
+  {
+    "text": "est",
+    "size": 3,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786774
+  },
+  {
+    "text": "par",
+    "size": 3,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786780
+  },
+  {
+    "text": "laquelle",
+    "size": 8,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786787
+  },
+  {
+    "text": "l'opération",
+    "size": 11,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786796
+  },
+  {
+    "text": "une",
+    "size": 3,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786801
+  },
+  {
+    "text": "lit",
+    "size": 3,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786810
+  },
+  {
+    "text": "à",
+    "size": 1,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786821
+  },
+  {
+    "text": "haute",
+    "size": 5,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786829
+  },
+  {
+    "text": "voix",
+    "size": 4,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786837
+  },
+  {
+    "text": "personne",
+    "size": 8,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786846
+  },
+  {
+    "text": "un",
+    "size": 2,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786853
+  },
+  {
+    "text": "texte",
+    "size": 5,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786862
+  },
+  {
+    "text": "cohérent",
+    "size": 8,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786870
+  },
+  {
+    "text": "selon",
+    "size": 5,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786879
+  },
+  {
+    "text": "rythme",
+    "size": 6,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786892
+  },
+  {
+    "text": "qui",
+    "size": 3,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786897
+  },
+  {
+    "text": "permet",
+    "size": 6,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786906
+  },
+  {
+    "text": "des",
+    "size": 3,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786915
+  },
+  {
+    "text": "auditeurs",
+    "size": 9,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786924
+  },
+  {
+    "text": "de",
+    "size": 2,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786930
+  },
+  {
+    "text": "le",
+    "size": 2,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786937
+  },
+  {
+    "text": "copier",
+    "size": 6,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786943
+  },
+  {
+    "text": "écrit.",
+    "size": 6,
+    "listId": 12,
+    "studentId": 1718868772807,
+    "id": 1718868786951
+  },
+  {
+    "text": "La",
+    "size": 2,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989582
+  },
+  {
+    "text": "dictée",
+    "size": 6,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989589
+  },
+  {
+    "text": "est",
+    "size": 3,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989594
+  },
+  {
+    "text": "l'opération",
+    "size": 11,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989598
+  },
+  {
+    "text": "laquelle",
+    "size": 8,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989603
+  },
+  {
+    "text": "par",
+    "size": 3,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989609
+  },
+  {
+    "text": "personne",
+    "size": 8,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989614
+  },
+  {
+    "text": "à",
+    "size": 1,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989618
+  },
+  {
+    "text": "haute",
+    "size": 5,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989626
+  },
+  {
+    "text": "une",
+    "size": 3,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989630
+  },
+  {
+    "text": "lit",
+    "size": 3,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989634
+  },
+  {
+    "text": "voix",
+    "size": 4,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989641
+  },
+  {
+    "text": "un",
+    "size": 2,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989645
+  },
+  {
+    "text": "texte",
+    "size": 5,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989649
+  },
+  {
+    "text": "cohérent",
+    "size": 8,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989654
+  },
+  {
+    "text": "selon",
+    "size": 5,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989659
+  },
+  {
+    "text": "rythme",
+    "size": 6,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989665
+  },
+  {
+    "text": "qui",
+    "size": 3,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989669
+  },
+  {
+    "text": "permet",
+    "size": 6,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989675
+  },
+  {
+    "text": "des",
+    "size": 3,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989679
+  },
+  {
+    "text": "auditeurs",
+    "size": 9,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989683
+  },
+  {
+    "text": "de",
+    "size": 2,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989686
+  },
+  {
+    "text": "le",
+    "size": 2,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989692
+  },
+  {
+    "text": "copier",
+    "size": 6,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989696
+  },
+  {
+    "text": "écrit.",
+    "size": 6,
+    "listId": 14,
+    "studentId": 1718868976276,
+    "id": 1718868989702
   }
 ]

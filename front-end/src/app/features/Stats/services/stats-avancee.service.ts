@@ -1,10 +1,9 @@
 import {Injectable} from "@angular/core";
 import {StatAvancee} from "../models/stat-avancee.model";
-import {STATS_AVANCEES_LIST} from "../mock/stats-avancee.mock";
 import {BehaviorSubject, Observable, combineLatest} from "rxjs";
-import { serverUrl, httpOptionsBase } from 'configs/server.config';
 import { HttpClient } from '@angular/common/http';
 import { StudentService } from "src/app/core/components/services/student.service";
+import {backUrl} from "../../../../environnement/environnement";
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +11,9 @@ import { StudentService } from "src/app/core/components/services/student.service
 
 export class StatsAvanceeService {
 
- private statsUrl = `${serverUrl}/stats`;
-
   private statsAvanceeSubject = new BehaviorSubject<StatAvancee | null>(null);
   public statsAvancee$ = this.statsAvanceeSubject.asObservable();
+  private statsUrl = backUrl + '/stats';
 
   private selectedGameModeSubject = new BehaviorSubject<String>('general');
   selectedGameMode$ = this.selectedGameModeSubject.asObservable();
@@ -35,7 +33,7 @@ export class StatsAvanceeService {
     console.log("param pour le fetch : ", studentId, "; "+ gameMode)
     this.http.get<StatAvancee>(requestUrl).subscribe(
       statAvancee => {
-        console.log("Données récupérées :", statAvancee); 
+        console.log("Données récupérées :", statAvancee);
         this.statsAvanceeSubject.next(statAvancee);
       },
       error => console.error("Erreur lors de la récupération des statistiques", error)

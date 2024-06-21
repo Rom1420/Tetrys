@@ -1,0 +1,6 @@
+.angular
+playwright-report
+test-results
+.vscode
+.gitignore
+README.md

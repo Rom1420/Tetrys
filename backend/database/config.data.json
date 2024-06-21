@@ -24,113 +24,25 @@
     "id": 1716197873858
   },
   {
-    "name": "Lucas",
-    "time": "1",
-    "length": "10",
-    "errorAllowed": false,
-    "wordList": " élément trop longtemps nouille fortement",
-    "userId": 4,
-    "onlyWordsList": true,
-    "listId": 2,
-    "id": 1717395134898
-  },
-  {
-    "name": "bite",
-    "time": "1",
-    "length": "10",
-    "errorAllowed": false,
-    "wordList": " grosse bite jul",
-    "userId": 4,
-    "onlyWordsList": true,
-    "listId": 4,
-    "id": 1717398733196
-  },
-  {
-    "name": "Dictée",
-    "time": "1",
-    "length": "8",
-    "errorAllowed": true,
-    "wordList": " Hauteur Test Poire",
-    "userId": 4,
-    "onlyWordsList": true,
-    "listId": 5,
-    "id": 1717401861157
-  },
-  {
-    "name": "a",
-    "time": "7",
-    "length": "7",
+    "name": "config1",
+    "time": "0.5",
+    "length": "25",
     "errorAllowed": false,
     "wordList": " ",
-    "userId": 3,
-    "onlyWordsList": false,
-    "listId": 6,
-    "id": 1718202728404
-  },
-  {
-    "name": "a",
-    "time": "0.1",
-    "length": "5",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 3,
-    "onlyWordsList": false,
-    "listId": 7,
-    "id": 1718216216417
-  },
-  {
-    "name": "a",
-    "time": "7",
-    "length": "7",
-    "errorAllowed": false,
-    "wordList": " ",
-    "userId": 1,
-    "onlyWordsList": false,
-    "listId": 8,
-    "id": 1718615345116
-  },
-  {
-    "name": "a",
-    "time": "20",
-    "length": "5",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 1718798576979,
-    "onlyWordsList": false,
-    "listId": 9,
-    "id": 1718800990864
-  },
-  {
-    "name": "Perso",
-    "time": "10",
-    "length": "5",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 1718803517791,
-    "onlyWordsList": false,
-    "listId": 10,
-    "id": 1718803723692
-  },
-  {
-    "name": "speciale",
-    "time": "10",
-    "length": "5",
-    "errorAllowed": true,
-    "wordList": " ",
-    "userId": 1718804969963,
+    "userId": 1718626002462,
     "onlyWordsList": false,
     "listId": 11,
-    "id": 1718805005388
+    "id": 1718626120249
   },
   {
-    "name": "a",
-    "time": "10",
-    "length": "5",
+    "name": "config2",
+    "time": "2",
+    "length": "45",
     "errorAllowed": true,
     "wordList": " ",
-    "userId": 1718806191070,
-    "onlyWordsList": false,
-    "listId": 12,
-    "id": 1718806217605
+    "userId": 1718626002462,
+    "onlyWordsList": true,
+    "listId": 2,
+    "id": 1718714908526
   }
 ]

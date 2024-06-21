@@ -1,4 +1,5 @@
 import { Page } from '@playwright/test';
+import {testUrl} from "../../../../e2e/e2e.config";
 
 export class PregameComponentFixture{
     protected page: Page;
@@ -8,11 +9,11 @@ export class PregameComponentFixture{
     }
 
     async navigateToPregame(){
-        await this.page.goto("https://localhost:4200/pregame");
+        await this.page.goto(testUrl + "/pre-game");
     }
 
     async navigateToGame(){
-        await this.page.goto("https://localhost:4200/game");
+        await this.page.goto(testUrl + "/game");
     }
 
     async selectDifficulty(difficulty: string){

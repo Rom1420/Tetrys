@@ -38,45 +38,5 @@
     "scoreMoyen": 86,
     "pourcentageErreur": 20,
     "id": 1718665844118
-  },
-  {
-    "idJoueur": 1718665581393,
-    "mode": "general",
-    "wpm": 12,
-    "scoreMoyen": 86,
-    "pourcentageErreur": 75,
-    "id": 1718695291072
-  },
-  {
-    "idJoueur": 1718665581393,
-    "mode": "debutant",
-    "wpm": 11,
-    "scoreMoyen": 70,
-    "pourcentageErreur": 30,
-    "id": 1718695291079
-  },
-  {
-    "idJoueur": 1718665581393,
-    "mode": "intermediaire",
-    "wpm": 20,
-    "scoreMoyen": 100,
-    "pourcentageErreur": 45,
-    "id": 1718695291080
-  },
-  {
-    "idJoueur": 1718665581393,
-    "mode": "avance",
-    "wpm": 13,
-    "scoreMoyen": 67,
-    "pourcentageErreur": 75,
-    "id": 1718695291082
-  },
-  {
-    "idJoueur": 1718665581393,
-    "mode": "perso",
-    "wpm": 13,
-    "scoreMoyen": 70,
-    "pourcentageErreur": 58,
-    "id": 1718695291083
   }
 ]
