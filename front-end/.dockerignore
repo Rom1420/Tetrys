@@ -3,4 +3,5 @@ playwright-report
 test-results
 .vscode
 .gitignore
+dist
 README.md

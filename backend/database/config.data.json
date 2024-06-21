@@ -24,13 +24,20 @@
     "id": 1716197873858
   },
   {
+<<<<<<< HEAD
     "name": "rapide",
     "time": "0.4",
     "length": "10",
+=======
+    "name": "config1",
+    "time": "0.5",
+    "length": "25",
+>>>>>>> fda5c2e24d45fa1957f06556dbb21b1ae76bf476
     "errorAllowed": false,
     "wordList": " ",
     "userId": 1718626002462,
     "onlyWordsList": false,
+<<<<<<< HEAD
     "listId": 1,
     "id": 1718957406223
   },
@@ -44,5 +51,141 @@
     "onlyWordsList": true,
     "listId": 2,
     "id": 1718957467852
+=======
+    "listId": 11,
+    "id": 1718626120249
+  },
+  {
+    "name": "config2",
+    "time": "2",
+    "length": "45",
+    "errorAllowed": true,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": true,
+    "listId": 2,
+    "id": 1718714908526
+  },
+  {
+    "name": "a",
+    "time": "7",
+    "length": "7",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": false,
+    "listId": 12,
+    "id": 1718954863253
+  },
+  {
+    "name": "veve",
+    "time": "7",
+    "length": "7",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": false,
+    "listId": 13,
+    "id": 1718954872853
+  },
+  {
+    "name": "a",
+    "time": "0.1",
+    "length": "4",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": false,
+    "listId": 14,
+    "id": 1718957596059
+  },
+  {
+    "name": "z",
+    "time": "0.1",
+    "length": "3",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": false,
+    "listId": 15,
+    "id": 1718957785828
+  },
+  {
+    "name": "a",
+    "time": "0.1",
+    "length": "3",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": false,
+    "listId": 16,
+    "id": 1718957869435
+  },
+  {
+    "name": "a",
+    "time": "5",
+    "length": "5",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": false,
+    "listId": 17,
+    "id": 1718957906757
+  },
+  {
+    "name": "a",
+    "time": "0.1",
+    "length": "4",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718626054562,
+    "onlyWordsList": false,
+    "listId": 18,
+    "id": 1718957925645
+  },
+  {
+    "name": "a",
+    "time": "0.1",
+    "length": "5",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": false,
+    "listId": 19,
+    "id": 1718960993582
+  },
+  {
+    "name": "s",
+    "time": "0.1",
+    "length": "5",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718868976780,
+    "onlyWordsList": false,
+    "listId": 20,
+    "id": 1718961029500
+  },
+  {
+    "name": "a",
+    "time": "0.2",
+    "length": "7",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": false,
+    "listId": 21,
+    "id": 1718961052874
+  },
+  {
+    "name": "a",
+    "time": "0.1",
+    "length": "5",
+    "errorAllowed": false,
+    "wordList": " ",
+    "userId": 1718626002462,
+    "onlyWordsList": false,
+    "listId": 22,
+    "id": 1718961078393
+>>>>>>> fda5c2e24d45fa1957f06556dbb21b1ae76bf476
   }
 ]
