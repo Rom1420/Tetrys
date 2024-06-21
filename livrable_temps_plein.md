@@ -1,17 +1,22 @@
 # Stratégie de Test
 
+<p align="center">
+    <img src="./front-end/src/assets/image-livrable.png" width="35%">
+</p>
+
 ## Table des Matières
 
 1. [Introduction](#introduction)
-2. [Critères de Priorisation des Tests](#criteres-de-priorisation-des-tests)
-3. [Scénarios de Test](#scenarios-de-test)
-   - [Scénario 1](#scenario-1)
-   - [Scénario 2](#scenario-2)
-   - [Scénario 3](#scenario-3)
+2. [Critères de Priorisation des Tests](#critères-de-priorisation-des-tests)
+3. [Scénarios de Test](#scénarios-de-test)
+   - [Scénario 1](#scénario-1)
+   - [Scénario 2](#scénario-2)
+   - [Scénario 3](#scénario-3)
 4. [Justifications et Explications](#justifications-et-explications)
    - [Justification des Tests](#justification-des-tests)
    - [Explication des Tests](#explication-des-tests)
-5. [Annexes](#annexes)
+5. [Ops](#ops)
+6. [Annexes](#annexes)
 
 ---
 
@@ -103,6 +108,8 @@ Nous avons défini les critères suivants pour prioriser nos tests :
    - **Attendu** : Assurance que les données de progression sont correctement collectées et affichées.
 
 ---
+
+## Ops
 
 ## Annexes
 
