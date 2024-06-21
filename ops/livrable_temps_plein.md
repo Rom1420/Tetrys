@@ -63,7 +63,6 @@ Nous avons défini les critères suivants pour prioriser nos tests :
   1. Aller dans l’onglet Statistiques.
   2. Voir les stats globales de Lucas.
   3. Voir les stats du mode intermédiaire.
-  4. Consulter les statistiques de quelques parties en mode intermédiaire.
 
 ---
 
