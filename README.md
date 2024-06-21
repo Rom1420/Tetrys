@@ -70,7 +70,7 @@ Ce projet Tetris est conçu pour aider les jeunes atteints de troubles dys (dysl
     ```bash
     ./script.sh
     ```
-5. Ouvrez votre navigateur à `http://localhost:4200`.
+5. Ouvrez votre navigateur à `http://localhost:8080`.
 
 ---
 
