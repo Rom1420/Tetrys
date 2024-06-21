@@ -36,6 +36,11 @@ export class GameDetailsService {
       error => console.error("Erreur lors de la récupération des gameResumes", error)
     );
   }
+  getAllGameDetails(): Observable<GameDetails[]>{
+    const url=`${this.gameDetailsUrl}/`
+    const gameDetailsL=this.http.get<GameDetails[]>(url, this.httpOptions);
+    return gameDetailsL;
+  }
 
 
   getGameDetails(idJoueur: number, idPartie: number): Observable<GameDetails> {
