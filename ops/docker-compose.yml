@@ -1,6 +1,7 @@
 services:
   backend:
-    build: ../backend
+    build:
+      context: ../backend
     container_name: backend
     volumes:
       - backendData:/app/database
