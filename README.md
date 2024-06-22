@@ -60,15 +60,15 @@ Ce projet Tetris est conçu pour aider les jeunes atteints de troubles dys (dysl
 
 1. Clonez le dépôt :
     ```bash
-    git clone https://github.com/2019-2020-ps6/2023-2024-ps6-tetrys/
+    $ git clone https://github.com/2019-2020-ps6/2023-2024-ps6-tetrys/
     ```
 2. Accédez au répertoire `/ops` :
     ```bash
-    cd 2023-2024-ps6-tetrys/ops/
+    $ cd 2023-2024-ps6-tetrys/ops/
     ```
 4. Lancez le script `run.sh` :
     ```bash
-    sh run.sh
+    $ sh run.sh
     ```
 5. Ouvrez votre navigateur à `http://localhost:8080`.
 
