@@ -142,50 +142,5 @@
     "date": "14/03/24",
     "idPartie": 5,
     "id": 1718963498151
-  },
-  {
-    "idJoueur": 1718626041815,
-    "gameMode": "débutant",
-    "gameScore": 44,
-    "gameStars": 4,
-    "date": "22/06/24",
-    "idPartie": 4,
-    "id": 1719054295578
-  },
-  {
-    "idJoueur": 1718626002462,
-    "gameMode": "débutant",
-    "gameScore": 12,
-    "gameStars": 4,
-    "date": "22/06/24",
-    "idPartie": 6,
-    "id": 1719055232686
-  },
-  {
-    "idJoueur": 1718626002462,
-    "gameMode": "débutant",
-    "gameScore": 12,
-    "gameStars": 4,
-    "date": "22/06/24",
-    "idPartie": 7,
-    "id": 1719055232689
-  },
-  {
-    "idJoueur": 1718626041815,
-    "gameMode": "intermediaire",
-    "gameScore": 12,
-    "gameStars": 4,
-    "date": "22/06/24",
-    "idPartie": 4,
-    "id": 1719055359767
-  },
-  {
-    "idJoueur": 1718626041815,
-    "gameMode": "avancé",
-    "gameScore": 78,
-    "gameStars": 4,
-    "date": "22/06/24",
-    "idPartie": 5,
-    "id": 1719055444372
   }
 ]

@@ -59,10 +59,4 @@ export class GameResumeService {
   getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
     return this.gameResumes$.asObservable(); 
   }
-
-  forceReloadGameResumes(idJoueur: number): void {
-    if (idJoueur > 0) {
-      this.fetchAndBroadcastGameResume(idJoueur); 
-    }
-  }
 }

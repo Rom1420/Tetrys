@@ -176,7 +176,7 @@ export class GameComponent implements OnInit, AfterViewInit {
 
   createGameResume() {
     console.log('GameComponent: createGameResume called.');
-    const gameMode = this.config.name || 'debutant';
+    const gameMode = this.config.name.toUpperCase() || 'DÉBUTANT';
     const gameScore = this.score;
     const gameStars = this.stars;
     const dateObj = new Date();

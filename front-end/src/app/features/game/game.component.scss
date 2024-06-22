@@ -288,7 +288,7 @@ button.end-game-button:active {
   margin: -2px auto 0;
   width: 150px;
   border-radius: 5px;
-  background-color: #4a5d83;
+  background-color: var(--cyan-brighter);
   height: 130px;
   display: flex;
   justify-content: center;
@@ -385,7 +385,7 @@ button.end-game-button:active {
 .horizontal-bar {
   z-index: 2;
   height: 130px;
-  background-color: #4a5d83;
+  background-color: var(--cyan-brighter);
   width: 80%;
   margin: 80px auto 0;
   display: flex;
