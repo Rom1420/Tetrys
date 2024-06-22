@@ -3,6 +3,7 @@ import { TetrisBlockId, TetrisBlocks } from '../mock/block.mock';
 import {GameFormService} from "./game-form.service";
 import {BehaviorSubject, Subscription} from "rxjs";
 import {GameManagerService} from "./game-manager.service";
+import { GameComponent } from '../game.component';
 
 
 @Injectable({
@@ -59,6 +60,11 @@ export class GameEngine {
     this.stars = 4;
     this.initGameState();
     this.initGameEngine();
+  }
+
+  notifyEndGame(): void {
+    console.log('GameEngine: notifyEndGame called.');
+    this.gameManagerService.endGame$.next(true);
   }
 
   getGameState(): (number | null)[][] {

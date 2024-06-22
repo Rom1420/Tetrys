@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { serverUrl, httpOptionsBase } from '../../../../configs/server.config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { StudentService } from 'src/app/core/components/services/student.service';
+import {backUrl} from "../../../../environnement/environnement";
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class GameDetailsService {
 
   private gameDetailsList: GameDetails[] = GAMEDETAILS_LIST;
   public gameDetailsList$: BehaviorSubject<GameDetails[]> = new BehaviorSubject<GameDetails[]>(this.gameDetailsList);
-  private gameDetailsUrl = serverUrl + '/gameDetails';
+  private gameDetailsUrl = backUrl + '/gameDetails';
   private httpOptions = httpOptionsBase;
 
 
@@ -47,5 +48,5 @@ export class GameDetailsService {
     const url = `${this.gameDetailsUrl}/students/${idJoueur}/parties/${idPartie}`;
     const gameResume = this.http.get<GameDetails>(url, this.httpOptions);
     return gameResume;
-  }   
+  }
 }

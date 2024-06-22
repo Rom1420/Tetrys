@@ -65,6 +65,10 @@
     &.cyan{
         background-color: var(--cyan);
     }
+
+    &.default{
+        background-color: var(--cyan-brighter);
+    }
 }
 
 .star-rating{
