@@ -6,13 +6,14 @@ import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { serverUrl, httpOptionsBase } from '../../../../configs/server.config';
 import { StudentService } from 'src/app/core/components/services/student.service';
+import {backUrl} from "../../../../environnement/environnement";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameResumeService {
   public gameResumes$: BehaviorSubject<GameResume[]> = new BehaviorSubject<GameResume[]>([]);
-  private gameResumeUrl = `${serverUrl}/gameResumes`;
+  private gameResumeUrl = `${backUrl}/gameResumes`;
   private httpOptions = httpOptionsBase;
   private idJoueur: number | null = 0;
 
@@ -27,12 +28,12 @@ export class GameResumeService {
   }
 
   private fetchAndBroadcastGameResume(studentId: number): void {
-    if (studentId > 0) { 
+    if (studentId > 0) {
       const requestUrl = `${this.gameResumeUrl}/students/${studentId}`;
       console.log(`Fetching GameResumes for studentId: ${studentId} from ${requestUrl}`);
       this.http.get<GameResume[]>(requestUrl).subscribe(
         gameResumes => {
-          this.gameResumes$.next(gameResumes); 
+          this.gameResumes$.next(gameResumes);
         },
         error => console.error('Erreur lors de la récupération des gameResumes', error)
       );
@@ -57,6 +58,6 @@ export class GameResumeService {
   }
 
   getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
-    return this.gameResumes$.asObservable(); 
+    return this.gameResumes$.asObservable();
   }
 }
