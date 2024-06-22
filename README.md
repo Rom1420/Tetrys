@@ -8,13 +8,13 @@
 - [Description](#description)
 - [Fonctionnalités](#fonctionnalités)
   - [Jeu de Tetris Adapté](#1-jeu-de-tetris-adapté)
-  - [Partie Statistiques](#2-partie-statistiques)
+  - [Statistiques](#2-statistiques)
   - [Configurations Personnalisées](#3-configurations-personnalisées)
 - [Installation](#installation)
   - [Prérequis](#prérequis)
   - [Étapes](#étapes)
 - [Utilisation](#utilisation)
-  - [Lancer une Partie](#lancer-une-partie)
+  - [Jouer une Partie](#jouer-une-partie)
   - [Exemple](#exemple)
   - [Commandes](#commandes)
   - [Configuration du Jeu](#configuration-du-jeu)
@@ -35,7 +35,7 @@ Ce projet Tetris est conçu pour aider les jeunes atteints de troubles dys (dysl
 - **Zone de texte** : Une zone de texte permet aux utilisateurs de saisir les mots affichés.
 
 
-### 2. Partie Statistiques
+### 2. Statistiques
 
 - **Suivi des progrès** : Permet aux ergothérapeutes de suivre les progrès des jeunes en visualisant les statistiques.
 - **Détails des sessions** : Visualisation des statistiques globales et des détails pour chaque session de jeu.
@@ -60,15 +60,15 @@ Ce projet Tetris est conçu pour aider les jeunes atteints de troubles dys (dysl
 
 1. Clonez le dépôt :
     ```bash
-    git clone https://github.com/2019-2020-ps6/2023-2024-ps6-tetrys/
+    $ git clone https://github.com/2019-2020-ps6/2023-2024-ps6-tetrys/
     ```
 2. Accédez au répertoire `/ops` :
     ```bash
-    cd 2023-2024-ps6-tetrys/ops/
+    $ cd 2023-2024-ps6-tetrys/ops/
     ```
 4. Lancez le script `run.sh` :
     ```bash
-    ./script.sh
+    $ sh run.sh
     ```
 5. Ouvrez votre navigateur à `http://localhost:8080`.
 
@@ -76,8 +76,7 @@ Ce projet Tetris est conçu pour aider les jeunes atteints de troubles dys (dysl
 
 ## Utilisation
 
-### Lancer une Partie
-
+### Jouer une Partie
 1. **Sélectionnez un mot** : Choisissez un des trois mots affichés en le tapant dans la zone de texte.
 2. **Jeu de Tetris** : Le bloc associé au mot choisi apparaîtra sur le plateau de jeu. Jouez à Tetris comme d'habitude pour positionner les blocs.
 3. **Statistiques** : À la fin de chaque partie, vous pouvez consulter les statistiques pour voir vos performances.
@@ -115,9 +114,9 @@ Le jeu Tetris utilise les touches fléchées pour contrôler les blocs. Voici le
 
 ### Configuration du Jeu
 
-1. **Accéder aux configurations** : Allez dans le menu des configurations.
-2. **Créer une nouvelle configuration** : Ajoutez une nouvelle configuration en définissant les paramètres souhaités.
-3. **Ajouter des mots personnalisés** : Ajoutez des mots personnalisés à utiliser pendant le jeu ou les dictées.
+1. **Accéder aux configurations** : Survolez le mode **`PERSONNALISÉ`**.
+2. **Créer une nouvelle configuration** : Cliquez sur le bouton **`AJOUTER CONFIGURATION`** et paramétrez votre nouvelle configuration comme vous le souhaitez.
+3. **Ajouter des mots personnalisés** : Ajoutez des mots personnalisés à utiliser pendant le jeu.
 
 ---
 

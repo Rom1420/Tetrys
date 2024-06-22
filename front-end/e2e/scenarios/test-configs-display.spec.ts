@@ -43,8 +43,8 @@ test.describe('Config display', () => {
     const listeConfigs = (await page.$$(selector));
     expect (listeConfigs).toHaveLength(2);
 
-    const config1 = appComponentFixture.getConfigWithName("config1");
-    const config2 = appComponentFixture.getConfigWithName("config2");
+    const config1 = appComponentFixture.getConfigWithName("rapide");
+    const config2 = appComponentFixture.getConfigWithName("dictée");
 
     await expect(config1).toBeVisible();
     await expect(config2).toBeVisible();
