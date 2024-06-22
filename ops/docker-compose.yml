@@ -8,7 +8,7 @@ services:
     ports:
       - "8081:9428"
     healthcheck:
-      test: [ "CMD", "wget", "-S", "http://localhost:9428/api/status" ]
+      test: [ "CMD", "wget", "--spider", "http://localhost:9428/api/status" ]
       interval: 10s
       timeout: 10s
       retries: 3
