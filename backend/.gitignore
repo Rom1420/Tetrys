@@ -2,6 +2,6 @@
 .idea/
 node_modules/
 
-/database/
+database/
 /database/e2e/*
 /database/e2e-starter/
