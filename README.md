@@ -68,7 +68,7 @@ Ce projet Tetris est conçu pour aider les jeunes atteints de troubles dys (dysl
     ```
 4. Lancez le script `run.sh` :
     ```bash
-    ./script.sh
+    sh run.sh
     ```
 5. Ouvrez votre navigateur à `http://localhost:8080`.
 
