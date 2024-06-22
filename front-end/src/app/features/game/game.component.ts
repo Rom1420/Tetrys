@@ -70,7 +70,6 @@ export class GameComponent implements OnInit, AfterViewInit {
       this.gameManagerService.endGame$.subscribe((value) => {
         if (value) {
           console.log('GameComponent: endGame$ received true.');
-          this.createGameResume();
           this.endGameDisplay = value;
         }
       });

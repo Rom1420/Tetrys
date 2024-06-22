@@ -27,12 +27,12 @@ export class GameResumeService {
   }
 
   private fetchAndBroadcastGameResume(studentId: number): void {
-    if (studentId > 0) { // Only make request if studentId is valid
+    if (studentId > 0) { 
       const requestUrl = `${this.gameResumeUrl}/students/${studentId}`;
       console.log(`Fetching GameResumes for studentId: ${studentId} from ${requestUrl}`);
       this.http.get<GameResume[]>(requestUrl).subscribe(
         gameResumes => {
-          this.gameResumes$.next(gameResumes); // Directly broadcast the fetched data
+          this.gameResumes$.next(gameResumes); 
         },
         error => console.error('Erreur lors de la récupération des gameResumes', error)
       );
@@ -57,12 +57,12 @@ export class GameResumeService {
   }
 
   getGameResumesOfPlayer(idJoueur: number): Observable<GameResume[]> {
-    return this.gameResumes$.asObservable(); // Only return the observable, no fetching here
+    return this.gameResumes$.asObservable(); 
   }
 
   forceReloadGameResumes(idJoueur: number): void {
     if (idJoueur > 0) {
-      this.fetchAndBroadcastGameResume(idJoueur); // Manually trigger the fetch and broadcast
+      this.fetchAndBroadcastGameResume(idJoueur); 
     }
   }
 }
