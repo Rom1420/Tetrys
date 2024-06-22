@@ -6,7 +6,7 @@ services:
     volumes:
       - backendData:/app/database
     healthcheck:
-      test: [ "CMD", "wget", "-S", "http://backend-e2e:9428/api/status" ]
+      test: [ "CMD", "wget", "--spider", "http://backend-e2e:9428/api/status" ]
       interval: 10s
       timeout: 10s
       retries: 3
