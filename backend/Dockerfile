@@ -5,4 +5,4 @@ COPY ./package*.json ./
 RUN npm install
 COPY . .
 EXPOSE 9428
-ENTRYPOINT ["npm", "run", "dev"]
+ENTRYPOINT npm run dev
