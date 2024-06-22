@@ -142,5 +142,41 @@
     "date": "14/03/24",
     "idPartie": 5,
     "id": 1718963498151
+  },
+  {
+    "idJoueur": 1718626002462,
+    "gameMode": "débutant",
+    "gameScore": 32,
+    "gameStars": 4,
+    "date": "2024-06-21",
+    "idPartie": 6,
+    "id": 1718994883485
+  },
+  {
+    "idJoueur": 1718626002462,
+    "gameMode": "débutant",
+    "gameScore": 32,
+    "gameStars": 4,
+    "date": "2024-06-21",
+    "idPartie": 7,
+    "id": 1718994883491
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "débutant",
+    "gameScore": 44,
+    "gameStars": 4,
+    "date": "22/06/24",
+    "idPartie": 3,
+    "id": 1719054295574
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "débutant",
+    "gameScore": 44,
+    "gameStars": 4,
+    "date": "22/06/24",
+    "idPartie": 4,
+    "id": 1719054295578
   }
 ]

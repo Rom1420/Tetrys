@@ -8,6 +8,7 @@ import {GameManagerService} from "./services/game-manager.service";
 import {ConfigModel} from "./models/config.model";
 import {GameEngine} from "./services/game-engine";
 import { Subscription } from 'rxjs';
+import { GameResumeService } from '../stats-details/services/game-resume.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ import { Subscription } from 'rxjs';
 export class GameComponent implements OnInit, AfterViewInit {
 
     public wordForm: FormGroup;
-    private actualWords: Word[] = [{text: "", size : 0, listId : 0, studentId : 0}];
+    private actualWords: Word[] = [{text: "", size: 0, listId: 0, studentId: 0}];
     public actualWordForm: string = "";
     public time: number = 0;
     public allTimer: any[] = [];
@@ -28,26 +29,33 @@ export class GameComponent implements OnInit, AfterViewInit {
     @ViewChild('textInput') textInput!: ElementRef;
     public config: ConfigModel;
     public show2ndChance = false;
-    public errorsAllowed:number = 0;
+    public errorsAllowed: number = 0;
     private configSubscription!: Subscription;
-    score : number = 0;
-    errors : number = 0;
-    stars : number = 4;
+    score: number = 0;
+    errors: number = 0;
+    stars: number = 4;
 
-    constructor(private gameManagerService:GameManagerService, private configFormResult: ConfigFormResultService, private gameFormService: GameFormService, public wordService:WordsServices, public formBuilder: FormBuilder, private gameEngine: GameEngine) {
-        this.wordForm = this.formBuilder.group({
-              word: [''],
-              isValid: this.isWordValid,
-              error: this.errorsAllowed
-          });
-        this.config = this.configFormResult.getConfig()
-        this.configFormResult.configActual$.subscribe((actualConfig) => {
-          this.config = actualConfig
-        })
-        this.gameEngine.secondError.subscribe((value) => {
-          this.show2ndChance = value
-        })
-
+    constructor(
+      private gameManagerService: GameManagerService,
+      private configFormResult: ConfigFormResultService,
+      private gameFormService: GameFormService,
+      public wordService: WordsServices,
+      public formBuilder: FormBuilder,
+      private gameEngine: GameEngine,
+      private gameResumeService: GameResumeService 
+    ) {
+      this.wordForm = this.formBuilder.group({
+            word: [''],
+            isValid: this.isWordValid,
+            error: this.errorsAllowed
+        });
+      this.config = this.configFormResult.getConfig()
+      this.configFormResult.configActual$.subscribe((actualConfig) => {
+        this.config = actualConfig
+      })
+      this.gameEngine.secondError.subscribe((value) => {
+        this.show2ndChance = value
+      })
     }
 
     ngAfterViewInit(): void {
@@ -60,8 +68,12 @@ export class GameComponent implements OnInit, AfterViewInit {
         this.resetTimer();
       });
       this.gameManagerService.endGame$.subscribe((value) => {
-        this.endGameDisplay = value;
-      })
+        if (value) {
+          console.log('GameComponent: endGame$ received true.');
+          this.createGameResume();
+          this.endGameDisplay = value;
+        }
+      });
 
     }
     ngOnInit() {
@@ -119,24 +131,24 @@ export class GameComponent implements OnInit, AfterViewInit {
 
 
     onSubmit() {
-    this.pauseTimer();
-    if (!this.isWordValid && this.config.errorAllowed) {
-      this.errorsAllowed = 1;
-      this.wordForm.patchValue({ 'error': this.errorsAllowed });
-      this.gameFormService.addResult(this.wordForm.value);
-      this.errorsAllowed = 0;
-      this.wordForm.reset();
-    } else {
-      this.wordForm.patchValue({ 'error': this.errorsAllowed });
-      this.gameFormService.addResult(this.wordForm.value);
-      this.wordForm.get('word')?.disable();
-      this.errorsAllowed = 0;
-      this.wordForm.reset();
+      this.pauseTimer();
+      if (!this.isWordValid && this.config.errorAllowed) {
+        this.errorsAllowed = 1;
+        this.wordForm.patchValue({ 'error': this.errorsAllowed });
+        this.gameFormService.addResult(this.wordForm.value);
+        this.errorsAllowed = 0;
+        this.wordForm.reset();
+      } else {
+        this.wordForm.patchValue({ 'error': this.errorsAllowed });
+        this.gameFormService.addResult(this.wordForm.value);
+        this.wordForm.get('word')?.disable();
+        this.errorsAllowed = 0;
+        this.wordForm.reset();
+      }
+      this.score = this.gameEngine.score;
+      this.errors = this.gameEngine.errors;
+      this.stars = this.gameEngine.stars;
     }
-    this.score = this.gameEngine.score;
-    this.errors = this.gameEngine.errors;
-    this.stars = this.gameEngine.stars;
-  }
 
   startNewGame() {
     this.gameEngine.resetGame();
@@ -154,11 +166,30 @@ export class GameComponent implements OnInit, AfterViewInit {
     this.score = this.gameEngine.score;
     this.errors = this.gameEngine.errors;
     this.stars = this.gameEngine.stars;
+    this.createGameResume(); 
     this.gameManagerService.endGame$.next(true);
   }
 
   replayGame(){
     this.startNewGame();
     this.endGameDisplay = false;
+  }
+
+  createGameResume() {
+    console.log('GameComponent: createGameResume called.');
+    const gameMode = this.config.name || 'debutant';
+    const gameScore = this.score;
+    const gameStars = this.stars;
+    const dateObj = new Date();
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0'); 
+    const year = String(dateObj.getFullYear()).substring(2);
+
+    const date = `${day}/${month}/${year}`;
+
+    this.gameResumeService.createGameResume(gameMode, gameScore, gameStars, date).subscribe({
+      next: (res) => console.log('GameResume saved:', res),
+      error: (err) => console.error('Error saving GameResume:', err)
+    });
   }
 }
