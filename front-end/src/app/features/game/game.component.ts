@@ -9,6 +9,7 @@ import {ConfigModel} from "./models/config.model";
 import {GameEngine} from "./services/game-engine";
 import { Subscription } from 'rxjs';
 import { GameResumeService } from '../stats-details/services/game-resume.service';
+import {GameDetailsService} from "../stats-details/services/game-details.service";
 
 
 @Component({
@@ -22,6 +23,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     private actualWords: Word[] = [{text: "", size: 0, listId: 0, studentId: 0}];
     public actualWordForm: string = "";
     public time: number = 0;
+    public initialTime = 0
     public allTimer: any[] = [];
     private isWordValid: boolean = false;
     public endGameDisplay: boolean = false;
@@ -42,12 +44,14 @@ export class GameComponent implements OnInit, AfterViewInit {
       public wordService: WordsServices,
       public formBuilder: FormBuilder,
       private gameEngine: GameEngine,
-      private gameResumeService: GameResumeService 
+      private gameResumeService: GameResumeService,
+      private gameDetailsService: GameDetailsService
     ) {
       this.wordForm = this.formBuilder.group({
             word: [''],
             isValid: this.isWordValid,
-            error: this.errorsAllowed
+            error: this.errorsAllowed,
+            time: 0
         });
       this.config = this.configFormResult.getConfig()
       this.configFormResult.configActual$.subscribe((actualConfig) => {
@@ -105,6 +109,7 @@ export class GameComponent implements OnInit, AfterViewInit {
       }, {text: ""}).text.length;
       this.time = this.time * this.config.time;    //ratio par caractere
       this.time = Number(this.time.toFixed(1));   //on arrondi au dixieme de secondes
+      this.initialTime = this.time
       this.startTimer();
       this.pauseTimer();
     }
@@ -131,6 +136,7 @@ export class GameComponent implements OnInit, AfterViewInit {
 
     onSubmit() {
       this.pauseTimer();
+      this.wordForm.patchValue({'time': Number(this.initialTime - this.time).toFixed(1)});
       if (!this.isWordValid && this.config.errorAllowed) {
         this.errorsAllowed = 1;
         this.wordForm.patchValue({ 'error': this.errorsAllowed });
@@ -143,6 +149,7 @@ export class GameComponent implements OnInit, AfterViewInit {
         this.wordForm.get('word')?.disable();
         this.errorsAllowed = 0;
         this.wordForm.reset();
+        console.log(this.gameFormService.getResults())
       }
       this.score = this.gameEngine.score;
       this.errors = this.gameEngine.errors;
@@ -165,7 +172,8 @@ export class GameComponent implements OnInit, AfterViewInit {
     this.score = this.gameEngine.score;
     this.errors = this.gameEngine.errors;
     this.stars = this.gameEngine.stars;
-    this.createGameResume(); 
+    this.createGameResume();
+    this.createGameDetails();
     this.gameManagerService.endGame$.next(true);
   }
 
@@ -181,7 +189,7 @@ export class GameComponent implements OnInit, AfterViewInit {
     const gameStars = this.stars;
     const dateObj = new Date();
     const day = String(dateObj.getDate()).padStart(2, '0');
-    const month = String(dateObj.getMonth() + 1).padStart(2, '0'); 
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
     const year = String(dateObj.getFullYear()).substring(2);
 
     const date = `${day}/${month}/${year}`;
@@ -190,5 +198,33 @@ export class GameComponent implements OnInit, AfterViewInit {
       next: (res) => console.log('GameResume saved:', res),
       error: (err) => console.error('Error saving GameResume:', err)
     });
+  }
+
+
+  createGameDetails() {
+    console.log('GameComponent: createGameDetails called.');
+    const accentRegex = /[àáâäãåçèéêëìíîïñòóôöõùúûüýÿÀÁÂÄÃÅÇÈÉÊËÌÍÎÏÑÒÓÔÖÕÙÚÛÜÝ]/;
+
+    const stats = this.gameFormService.getResults()
+
+    const precisionPercentage = Math.round(stats.filter((stat) => stat.isValid == "true").length / stats.length * 100);
+
+    let sumTime = 0;
+    stats.forEach((stat) => sumTime += parseInt(stat.time))
+    console.log(sumTime)
+    const wpm = Number(Math.round(stats.length / sumTime * 60));
+    console.log(wpm)
+    const correctWords = stats.filter((stat) => stat.isValid == "true").length
+    const incorrectWords = stats.filter((stat) => stat.isValid == "false").length
+    let accentPrecision = 100
+    if(stats.filter((stat) => accentRegex.test(stat.word)).length > 0){
+      accentPrecision = Math.round(stats.filter((stat) => stat.isValid == "true" && accentRegex.test(stat.word)).length / stats.filter((stat) => accentRegex.test(stat.word)).length * 100);
+    }
+
+    this.gameDetailsService.createGameDetails(precisionPercentage, wpm, correctWords, incorrectWords, accentPrecision).subscribe({
+      next: (res) => console.log('GameDetails saved:', res),
+      error: (err) => console.error('Error saving GameDetails:', err)
+    });
+
   }
 }

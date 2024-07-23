@@ -18,15 +18,16 @@ export class GameResumeComponent implements OnInit{
     this.gameResumeService.gameResumes$.subscribe(gameResume => {
       if(Array.isArray(gameResume)){
         this.gameResume = gameResume[0];
+        console.log(this.gameResume)
       } else {
         this.gameResume = gameResume;
       }
     });
   }
-  
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['selectedPlayerId'] && changes['selectedGameId']) {
-      
+
       const playerId = changes['selectedPlayerId'].currentValue;
       const gameId = changes['selectedGameId'].currentValue;
 
@@ -42,6 +43,7 @@ export class GameResumeComponent implements OnInit{
       .subscribe({
         next: (resume: GameResume) => {
           this.gameResume = resume;
+          console.log("gameResume" + this.gameResume)
         },
         error: () => {
           console.error("Erreur lors de la récupération du résumé de jeu.");

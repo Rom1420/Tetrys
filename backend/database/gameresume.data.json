@@ -144,12 +144,12 @@
     "id": 1718963498151
   },
   {
-    "idJoueur": 1718626002462,
-    "gameMode": "DICTÉE",
-    "gameScore": 64,
+    "idJoueur": 1718626041815,
+    "gameMode": "INTERMEDIAIRE",
+    "gameScore": 68,
     "gameStars": 4,
-    "date": "22/06/24",
-    "idPartie": 6,
-    "id": 1719078890054
+    "date": "22/07/24",
+    "idPartie": 3,
+    "id": 1721668671676
   }
 ]

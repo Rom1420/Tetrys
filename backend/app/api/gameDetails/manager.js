@@ -6,10 +6,10 @@ class GameResumeManager {
     }
 
     static getGameDetailsOfPlayer(idJoueur){
-        return GameDetails.get().filter(gamedetails => gamedetails.idJoueur == idJoueur);
+        return GameDetails.get().filter(gamedetails => gamedetails.idJoueur === idJoueur);
     }
     static getGameDetailsById(gamedetailsId){
-        return GameDetails.get().filter(gamedetails => gamedetails.id == gamedetailsId);
+        return GameDetails.get().filter(gamedetails => gamedetails.id === gamedetailsId);
     }
     static async createGameDetail({idJoueur,idPartie,precisionPercentage,wordsPerMinute,incorrectwordsNumber,correctWordsNumber,accentsPrecisionPercentage}){
         try {
@@ -46,12 +46,13 @@ class GameResumeManager {
     }
     static createDetailsForStudent(newGameDetails,studentId) {
         const listgamedetailsofstudent = GameDetails.get().filter(gamedetails => gamedetails.idJoueur == studentId);
-        var maxIdPartie=1;
+        let maxIdPartie= 1;
         for(const gamedetails of listgamedetailsofstudent){
-            maxIdPartie=maxIdPartie+1;
+            maxIdPartie = maxIdPartie + 1;
         }
         const idPartie = maxIdPartie;
         newGameDetails.idPartie = idPartie;
+        console.log("id partie")
         return GameDetails.create(newGameDetails);
     }
     

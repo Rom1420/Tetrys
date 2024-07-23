@@ -38,6 +38,7 @@ router.get('/students/:idJoueur/parties/:idPartie', (req, res) =>{
 
 router.post('/students/:idJoueur', (req, res) => {
     try {
+        console.log(req)
         const idJoueur = parseInt(req.params.idJoueur, 10);
         const newGameDetails = {
             idJoueur: idJoueur,

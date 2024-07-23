@@ -48,7 +48,7 @@ export class GameResumeService {
   createGameResume(gameMode: string, gameScore: number, gameStars: number, date: string): Observable<GameResume> {
     const url = `${this.gameResumeUrl}/students/${this.idJoueur}`;
     const gameResume = { gameMode, gameScore, gameStars, date };
-
+    console.log(gameResume)
     return this.http.post<GameResume>(url, gameResume, this.httpOptions).pipe(
       catchError(error => {
         console.error('Erreur lors de la création du gameResume', error);
