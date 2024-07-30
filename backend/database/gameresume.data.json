@@ -151,5 +151,14 @@
     "date": "22/06/24",
     "idPartie": 6,
     "id": 1719078890054
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "INTERMEDIAIRE",
+    "gameScore": 52,
+    "gameStars": 4,
+    "date": "05/07/24",
+    "idPartie": 3,
+    "id": 1720195188926
   }
 ]

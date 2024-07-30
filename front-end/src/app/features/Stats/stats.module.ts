@@ -10,12 +10,14 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../../core/app-routing.module';
 
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { GraphComponent } from './components/graph/graph.component';
 
 @NgModule({
   declarations: [
     StatGameComponent,
     StatGraphComponent,
-    StatsComponent
+    StatsComponent,
+    GraphComponent
   ],
   imports: [
     AppRoutingModule,
