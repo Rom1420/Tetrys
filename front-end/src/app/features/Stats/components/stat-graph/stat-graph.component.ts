@@ -13,7 +13,7 @@ export class StatGraphComponent implements OnInit {
 
   statsAvancee: StatAvancee | null = null;
 
-  constructor(private statsAvanceeService: StatsAvanceeService, private cdr : ChangeDetectorRef) {
+  constructor(private statsAvanceeService: StatsAvanceeService) {
     
   }
   ngOnInit(): void {
