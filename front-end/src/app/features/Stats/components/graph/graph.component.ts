@@ -1,65 +1,156 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Chart, registerables } from 'node_modules/chart.js'
-Chart.register(...registerables)
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Chart, registerables } from 'chart.js';
+import { GameResume } from 'src/app/features/stats-details/models/game-resume.model';
+import { GraphService } from '../../services/graph.service';
+import { Subscription } from 'rxjs';
+import { StatsAvanceeService } from '../../services/stats-avancee.service';
 
+Chart.register(...registerables);
 @Component({
   selector: 'graph',
   templateUrl: './graph.component.html',
   styleUrl: './graph.component.scss'
 })
 
-export class GraphComponent implements OnChanges {
-  
-  @Input() selectedGameMode: String = 'general';
+export class GraphComponent implements OnInit, OnDestroy {
+  selectedGameMode: String = 'general';
+  gameResumes: GameResume[] = [];
   chart: Chart | undefined;
+  private gameResumesSubscription: Subscription | undefined;
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['selectedGameMode']) {
-      console.log("changes")
-      this.renderChart();
-    }
-  }
+  constructor(private graphService: GraphService, private statAvanceeService : StatsAvanceeService) {}
 
   ngOnInit(): void {
     this.renderChart();
+    this.subscribeToGameResumes();
   }
 
+  ngOnDestroy(): void {
+    if (this.gameResumesSubscription) {
+      this.gameResumesSubscription.unsubscribe();
+    }
+  }
 
+  private subscribeToGameResumes(): void {
+    this.gameResumesSubscription = this.graphService.gameResumes$.subscribe(
+      gameResumes => {
+        this.gameResumes = gameResumes;
+        this.renderChart();
+      },
+      error => console.error('Error observing game resumes:', error)
+    );
 
-  renderChart(){
+    this.statAvanceeService.selectedGameMode$.subscribe((gameMode) => {
+      this.selectedGameMode = gameMode;
+      this.renderChart();
+    })
+  }
+
+  renderChart(): void {
     if (this.chart) {
       this.chart.destroy();
     }
-    this.chart = new Chart("piechart", {
+
+    const dataForGameMode = this.getDataForGameMode(this.selectedGameMode);
+
+
+    this.chart = new Chart('piechart', {
       type: 'line',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: dataForGameMode.labels,
         datasets: [{
-          label: `Votes for ${this.selectedGameMode}`,
-          data: this.getDataForGameMode(this.selectedGameMode),
-          borderWidth: 1
+          label: `Score moyen`,
+          data: dataForGameMode.data,
+          borderColor: 'rgb(0, 183, 255)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgb(0, 183, 255)',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgb(0, 183, 255)',
         }]
       },
       options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false,
+            labels: {
+              font: {
+                family: 'Arial', // Customize font family
+                size: 14, // Customize font size
+                style: 'italic', // Customize font style
+                weight: 'bold'
+              },
+              color: 'rgb(255, 255, 255)' // Customize legend text color
+            }
+          },
+          tooltip: {
+            enabled: true,
+            backgroundColor: 'rgba(0, 0, 0, 0.7)', // Customize tooltip background color
+            titleFont: {
+              family: 'Arial',
+              size: 16,
+              style: 'normal',
+              weight: 'bold'
+            },
+            bodyFont: {
+              family: 'Arial',
+              size: 14,
+              style: 'normal',
+              weight: 'normal'
+            },
+            cornerRadius: 3
+          }
+        },
         scales: {
           y: {
-            beginAtZero: true
+            beginAtZero: true,
+            grid: {
+              color: 'rgba(200, 200, 200, 0)' // Customize grid line color
+            },
+            ticks: {
+              color: 'rgba(255, 255, 255, 1)', // Customize y-axis tick color
+              font: {
+                family: 'Arial',
+                size: 12
+              }
+            }
+          },
+          x: {
+            grid: {
+              color: 'rgba(200, 200, 200, 0)' // Customize grid line color
+            },
+            ticks: {
+              color: 'rgba(255, 255, 255, 1)', // Customize x-axis tick color
+              font: {
+                family: 'Arial',
+                size: 12
+              },
+              autoSkip: true, 
+              maxRotation: 45,
+              minRotation: 0,
+              maxTicksLimit: 7
+            }
           }
         }
       }
     });
   }
 
-  getDataForGameMode(gameMode: String): number[] {
-    switch (gameMode) {
-      case 'general':
-        return [12, 19, 3, 5, 2, 3];
-      case 'debutant':
-        return [5, 10, 15, 20, 25, 30];
-      case 'mode2':
-        return [3, 6, 9, 12, 15, 18];
-      default:
-        return [0, 0, 0, 0, 0, 0];
-    }
+  getDataForGameMode(gameMode: String): { labels: string[], data: number[] } {
+
+    const normalizedGameMode = this.normalizeString(gameMode.toLowerCase());
+    const filteredResumes = this.gameResumes.filter(gr => this.normalizeString(gr.gameMode.toLowerCase()) === normalizedGameMode);
+
+    const labels: string[] = filteredResumes.map(gr => gr.date).reverse();
+    const data: number[] = filteredResumes.map(gr => gr.gameScore).reverse();
+
+
+
+    return { labels, data };
+  }
+
+  normalizeString(str: String): String {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
   }
 }

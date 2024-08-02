@@ -9,7 +9,7 @@ import {StatAvancee} from "../../models/stat-avancee.model";
 })
 export class StatGraphComponent implements OnInit {
   @Input() selectedPlayerId: number | null = 0;
-  @Input() selectedGameMode: String = 'general';
+  selectedGameMode: String = 'general';
 
   statsAvancee: StatAvancee | null = null;
 

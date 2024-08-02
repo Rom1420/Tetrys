@@ -33,7 +33,6 @@ export class StatGameComponent implements OnChanges, OnInit {
       switchMap(id => this.gameResumeService.getGameResumesOfPlayer(id))
     ).subscribe({
       next: (resumes: GameResume[]) => {
-        console.log('StatGameComponent: GameResumes loaded:', resumes);
         this.gameResumes = resumes;
         this.gameResumes.reverse();
       },
@@ -49,7 +48,6 @@ export class StatGameComponent implements OnChanges, OnInit {
   }
 
   selectGame(id: any) {
-    console.log(`StatGameComponent: selectGame called with id ${id}`);
     this.statsDetailsService.selectedGameId(id);
   }
 }

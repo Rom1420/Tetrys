@@ -12,7 +12,7 @@ import { Observable, Subscription } from 'rxjs';
 
 export class StatsComponent implements OnInit {
   selectedPlayerId: number | null = null;
-  selectedGameMode: string = 'general';
+  selectedGameMode: String = 'general';
   selectedStudentIdToDelete: number | null = null;
 
   
@@ -33,7 +33,7 @@ export class StatsComponent implements OnInit {
     });
   }
 
-  updateGameMode(gameMode: string): void {
+  updateGameMode(gameMode: String): void {
     this.selectedGameMode = gameMode;
     this.statsAvanceeService.setGameMode(gameMode);
   }

@@ -1,0 +1,16 @@
+.graph-container{
+    background-color: rgba(179, 179, 179, 0.221);
+    padding: 1rem;
+    border-radius: 10px;
+    
+
+    & h2{
+        text-transform: uppercase;
+    }
+
+    & p{
+        text-align: center;
+        margin-top: 0;
+        color: rgba(255, 255, 255, 0.7);
+    }
+}

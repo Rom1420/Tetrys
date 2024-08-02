@@ -160,5 +160,68 @@
     "date": "05/07/24",
     "idPartie": 3,
     "id": 1720195188926
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "INTERMEDIAIRE",
+    "gameScore": 34,
+    "gameStars": 4,
+    "date": "02/08/24",
+    "idPartie": 4,
+    "id": 1722611644198
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "INTERMEDIAIRE",
+    "gameScore": 26,
+    "gameStars": 4,
+    "date": "02/08/24",
+    "idPartie": 5,
+    "id": 1722611655191
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "INTERMEDIAIRE",
+    "gameScore": 48,
+    "gameStars": 4,
+    "date": "02/08/24",
+    "idPartie": 6,
+    "id": 1722611701723
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "INTERMEDIAIRE",
+    "gameScore": 18,
+    "gameStars": 4,
+    "date": "02/08/24",
+    "idPartie": 7,
+    "id": 1722612873310
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "INTERMEDIAIRE",
+    "gameScore": 22,
+    "gameStars": 4,
+    "date": "02/08/24",
+    "idPartie": 8,
+    "id": 1722612887665
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "INTERMEDIAIRE",
+    "gameScore": 48,
+    "gameStars": 4,
+    "date": "02/08/24",
+    "idPartie": 9,
+    "id": 1722612959894
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "INTERMEDIAIRE",
+    "gameScore": 10,
+    "gameStars": 4,
+    "date": "02/08/24",
+    "idPartie": 10,
+    "id": 1722613189382
   }
 ]
