@@ -3,6 +3,7 @@ import { Chart, registerables } from 'chart.js';
 import { GameResume } from 'src/app/features/stats-details/models/game-resume.model';
 import { GraphService } from '../../services/graph.service';
 import { Subscription } from 'rxjs';
+import 'chartjs-adapter-date-fns';
 import { StatsAvanceeService } from '../../services/stats-avancee.service';
 
 Chart.register(...registerables);
@@ -52,9 +53,13 @@ export class GraphComponent implements OnInit, OnDestroy {
     }
 
     const dataForGameMode = this.getDataForGameMode(this.selectedGameMode);
+    console.log('Data for Game Mode:', dataForGameMode);
 
+    const canvas = document.getElementById('piechart') as HTMLCanvasElement;
+    const ctx = canvas?.getContext('2d');
 
-    this.chart = new Chart('piechart', {
+    if (ctx) {
+      this.chart = new Chart(ctx, {
       type: 'line',
       data: {
         labels: dataForGameMode.labels,
@@ -117,6 +122,10 @@ export class GraphComponent implements OnInit, OnDestroy {
             }
           },
           x: {
+            type: 'time',
+              time: {
+                unit: 'day'
+              },
             grid: {
               color: 'rgba(200, 200, 200, 0)' // Customize grid line color
             },
@@ -127,7 +136,7 @@ export class GraphComponent implements OnInit, OnDestroy {
                 size: 12
               },
               autoSkip: true, 
-              maxRotation: 45,
+              maxRotation: 0,
               minRotation: 0,
               maxTicksLimit: 7
             }
@@ -135,17 +144,28 @@ export class GraphComponent implements OnInit, OnDestroy {
         }
       }
     });
+    }
   }
 
-  getDataForGameMode(gameMode: String): { labels: string[], data: number[] } {
-
+  getDataForGameMode(gameMode: String): { labels: String[], data: number[] } {
     const normalizedGameMode = this.normalizeString(gameMode.toLowerCase());
-    const filteredResumes = this.gameResumes.filter(gr => this.normalizeString(gr.gameMode.toLowerCase()) === normalizedGameMode);
 
-    const labels: string[] = filteredResumes.map(gr => gr.date).reverse();
-    const data: number[] = filteredResumes.map(gr => gr.gameScore).reverse();
+    let filteredResumes: GameResume[] = [];
 
+    if (normalizedGameMode === 'general') {
+      filteredResumes = this.gameResumes;
+    } else if (normalizedGameMode === 'perso') {
+      filteredResumes = this.gameResumes.filter(gr => {
+        const mode = this.normalizeString(gr.gameMode.toLowerCase());
+        return mode !== 'debutant' && mode !== 'intermediaire' && mode !== 'avance';
+      });
+    } else {
+      filteredResumes = this.gameResumes.filter(gr => this.normalizeString(gr.gameMode.toLowerCase()) === normalizedGameMode);
+    }
 
+    
+    const labels: string[] = filteredResumes.map(gr => gr.date);
+    const data: number[] = filteredResumes.map(gr => gr.gameScore);
 
     return { labels, data };
   }
