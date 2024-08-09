@@ -122,10 +122,6 @@ export class GraphComponent implements OnInit, OnDestroy {
             }
           },
           x: {
-            type: 'time',
-              time: {
-                unit: 'day'
-              },
             grid: {
               color: 'rgba(200, 200, 200, 0)' // Customize grid line color
             },
@@ -167,10 +163,35 @@ export class GraphComponent implements OnInit, OnDestroy {
     const labels: string[] = filteredResumes.map(gr => gr.date);
     const data: number[] = filteredResumes.map(gr => gr.gameScore);
 
-    return { labels, data };
+    if(this.compareDates(labels[0] , labels[labels.length -1]) <= 0){
+      return { labels, data }; 
+    }
+    else{
+      return {labels: labels.reverse(), data: data.reverse()}
+    }
   }
 
   normalizeString(str: String): String {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
   }
+
+  compareDates(date1: string, date2: string): number {
+    if (!date1 || !date2) {
+        return 0; 
+    }
+  
+    const [day1, month1, year1] = date1.split('/').map(Number);
+    const [day2, month2, year2] = date2.split('/').map(Number);
+
+    const d1 = new Date(year1, month1 - 1, day1);
+    const d2 = new Date(year2, month2 - 1, day2);
+
+    if (d1 < d2) {
+        return -1;
+    } else if (d1 > d2) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
 }

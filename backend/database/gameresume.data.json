@@ -223,5 +223,59 @@
     "date": "02/08/24",
     "idPartie": 10,
     "id": 1722613189382
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "DÉBUTANT",
+    "gameScore": 210,
+    "gameStars": 4,
+    "date": "09/08/24",
+    "idPartie": 11,
+    "id": 1723219711089
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "DICTÉE",
+    "gameScore": 46,
+    "gameStars": 4,
+    "date": "09/08/24",
+    "idPartie": 12,
+    "id": 1723219847990
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "DICTÉE SEPTEMBRE",
+    "gameScore": 0,
+    "gameStars": 4,
+    "date": "09/08/24",
+    "idPartie": 13,
+    "id": 1723219952544
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "DICTÉE",
+    "gameScore": 32,
+    "gameStars": 4,
+    "date": "09/08/24",
+    "idPartie": 14,
+    "id": 1723219978444
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "DÉBUTANT",
+    "gameScore": 30,
+    "gameStars": 4,
+    "date": "09/08/24",
+    "idPartie": 15,
+    "id": 1723220165992
+  },
+  {
+    "idJoueur": 1718626041815,
+    "gameMode": "DÉBUTANT",
+    "gameScore": 42,
+    "gameStars": 4,
+    "date": "09/08/24",
+    "idPartie": 16,
+    "id": 1723220184209
   }
 ]
