@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,6 +38,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
         BrowserAnimationsModule, 
         StatsDetailsModule,
         AngularSvgIconModule.forRoot(),
+        RouterModule.forRoot([]),
         HttpClientModule
     ],
   bootstrap: [AppComponent]
