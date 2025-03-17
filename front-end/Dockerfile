@@ -5,7 +5,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-ARG ENVIRONNEMENT
+ARG ENVIRONNEMENT=production
 RUN npm run build -- --configuration=$ENVIRONNEMENT
 
 

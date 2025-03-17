@@ -22,6 +22,7 @@
             "outputPath": "dist/front-end",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "baseHref": "/Tetrys/",
             "polyfills": [
               "zone.js"
             ],
