@@ -7,10 +7,12 @@
     align-items: center;
 
     h1{
+        position: absolute;
         font-weight: 900;
         color: #ACF2EB;
         font-size: 65px;
         margin: 0;
+        top: 15%;
     }
 }
 
@@ -25,7 +27,7 @@
 
 .tetrys-logo img {
     width: fit-content;
-    height: auto;
+    height: 70vh;
     display: flex;
     margin: 10px;
     pointer-events: none;

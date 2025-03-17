@@ -5122,5 +5122,138 @@
     "listId": 6,
     "studentId": 1719070893230,
     "id": 1719070906497
+  },
+  {
+    "text": "loup",
+    "size": 4,
+    "listId": 8,
+    "studentId": 1718626041815,
+    "id": 1723219822939
+  },
+  {
+    "text": "rivage",
+    "size": 6,
+    "listId": 8,
+    "studentId": 1718626041815,
+    "id": 1723219822948
+  },
+  {
+    "text": "grange",
+    "size": 6,
+    "listId": 8,
+    "studentId": 1718626041815,
+    "id": 1723219822958
+  },
+  {
+    "text": "météo",
+    "size": 5,
+    "listId": 8,
+    "studentId": 1718626041815,
+    "id": 1723219822968
+  },
+  {
+    "text": "animaux",
+    "size": 7,
+    "listId": 8,
+    "studentId": 1718626041815,
+    "id": 1723219822975
+  },
+  {
+    "text": "terre",
+    "size": 5,
+    "listId": 8,
+    "studentId": 1718626041815,
+    "id": 1723219822981
+  },
+  {
+    "text": "fleurs",
+    "size": 6,
+    "listId": 8,
+    "studentId": 1718626041815,
+    "id": 1723219822993
+  },
+  {
+    "text": "pluie",
+    "size": 5,
+    "listId": 8,
+    "studentId": 1718626041815,
+    "id": 1723219822998
+  },
+  {
+    "text": "plantes",
+    "size": 7,
+    "listId": 8,
+    "studentId": 1718626041815,
+    "id": 1723219823007
+  },
+  {
+    "text": "garage",
+    "size": 6,
+    "listId": 8,
+    "studentId": 1718626041815,
+    "id": 1723219823015
+  },
+  {
+    "text": "voiture",
+    "size": 7,
+    "listId": 8,
+    "studentId": 1718626041815,
+    "id": 1723219823021
+  },
+  {
+    "text": "nourriture",
+    "size": 10,
+    "listId": 9,
+    "studentId": 1718626041815,
+    "id": 1723219943397
+  },
+  {
+    "text": "avion",
+    "size": 5,
+    "listId": 9,
+    "studentId": 1718626041815,
+    "id": 1723219943406
+  },
+  {
+    "text": "télévision",
+    "size": 10,
+    "listId": 9,
+    "studentId": 1718626041815,
+    "id": 1723219943413
+  },
+  {
+    "text": "clavier",
+    "size": 7,
+    "listId": 9,
+    "studentId": 1718626041815,
+    "id": 1723219943420
+  },
+  {
+    "text": "souris",
+    "size": 6,
+    "listId": 9,
+    "studentId": 1718626041815,
+    "id": 1723219943425
+  },
+  {
+    "text": "webcam",
+    "size": 6,
+    "listId": 9,
+    "studentId": 1718626041815,
+    "id": 1723219943431
+  },
+  {
+    "text": "nice-sophia",
+    "size": 11,
+    "listId": 9,
+    "studentId": 1718626041815,
+    "id": 1723219943439
+  },
+  {
+    "text": "écran",
+    "size": 5,
+    "listId": 9,
+    "studentId": 1718626041815,
+    "id": 1723219943447
   }
 ]

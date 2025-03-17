@@ -19,8 +19,7 @@ export class GameResumeService {
 
   constructor(private http: HttpClient, private studentService: StudentService) {
     this.studentService.selectedStudentId$.subscribe((value) => {
-      console.log("selectedstudentid", value);
-      if (value && value > 0) { // Fetch only if value is greater than 0
+      if (value && value > 0) { 
         this.fetchAndBroadcastGameResume(value);
       }
       this.idJoueur = value;
@@ -30,7 +29,6 @@ export class GameResumeService {
   private fetchAndBroadcastGameResume(studentId: number): void {
     if (studentId > 0) {
       const requestUrl = `${this.gameResumeUrl}/students/${studentId}`;
-      console.log(`Fetching GameResumes for studentId: ${studentId} from ${requestUrl}`);
       this.http.get<GameResume[]>(requestUrl).subscribe(
         gameResumes => {
           this.gameResumes$.next(gameResumes);

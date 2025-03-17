@@ -7,11 +7,11 @@
     <div class="resume-stat">
     <h1 class="mode-value" 
         [ngClass]="{
-            'green': (gameResume?.gameMode | uppercase) === 'DÉBUTANT', 
-            'orange': (gameResume?.gameMode | uppercase) === 'INTERMÉDIAIRE' || 'INTERMEDIAIRE', 
-            'red': (gameResume?.gameMode | uppercase) === 'AVANCÉ', 
-            'cyan': (gameResume?.gameMode | uppercase) === 'PERSO',
-            'default': !['DÉBUTANT', 'INTERMÉDIAIRE', 'AVANCÉ', 'PERSO'].includes((gameResume?.gameMode || '').toUpperCase())
+            'green': normalizeAndUppercase(gameResume?.gameMode) === 'DEBUTANT', 
+            'orange': normalizeAndUppercase(gameResume?.gameMode) === 'INTERMEDIAIRE',
+            'red': normalizeAndUppercase(gameResume?.gameMode) === 'AVANCE', 
+            'cyan': normalizeAndUppercase(gameResume?.gameMode) === 'PERSO',
+            'default': !['DEBUTANT', 'INTERMEDIAIRE', 'AVANCE', 'PERSO'].includes(normalizeAndUppercase(gameResume?.gameMode) || '')
         }">
         {{ gameResume?.gameMode | uppercase}}
         </h1>

@@ -99,5 +99,16 @@
     "onlyWordsList": true,
     "listId": 7,
     "id": 1719070910116
+  },
+  {
+    "name": "Dictée",
+    "time": "1",
+    "length": "10",
+    "errorAllowed": true,
+    "wordList": " loup, rivage, grange, météo, animaux, terre, pluie, plantes, fleurs, garage, voiture",
+    "userId": 1718626041815,
+    "onlyWordsList": true,
+    "listId": 8,
+    "id": 1723219822873
   }
 ]

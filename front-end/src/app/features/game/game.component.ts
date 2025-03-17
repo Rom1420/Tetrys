@@ -69,7 +69,6 @@ export class GameComponent implements OnInit, AfterViewInit {
       });
       this.gameManagerService.endGame$.subscribe((value) => {
         if (value) {
-          console.log('GameComponent: endGame$ received true.');
           this.endGameDisplay = value;
         }
       });
@@ -175,7 +174,6 @@ export class GameComponent implements OnInit, AfterViewInit {
   }
 
   createGameResume() {
-    console.log('GameComponent: createGameResume called.');
     const gameMode = this.config.name.toUpperCase() || 'DÉBUTANT';
     const gameScore = this.score;
     const gameStars = this.stars;

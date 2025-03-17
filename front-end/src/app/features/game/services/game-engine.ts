@@ -63,7 +63,6 @@ export class GameEngine {
   }
 
   notifyEndGame(): void {
-    console.log('GameEngine: notifyEndGame called.');
     this.gameManagerService.endGame$.next(true);
   }
 

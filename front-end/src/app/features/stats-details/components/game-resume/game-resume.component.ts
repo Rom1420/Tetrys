@@ -48,4 +48,9 @@ export class GameResumeComponent implements OnInit{
         }
       });
   }
+
+  normalizeAndUppercase(mode: string | undefined): string {
+    if (!mode) return '';
+    return mode.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+}
 }

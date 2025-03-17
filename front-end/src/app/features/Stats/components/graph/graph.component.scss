@@ -1,0 +1,21 @@
+.graph-container {
+  background-color: rgba(168, 235, 255, 0.212);
+  padding: 1rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgba(168, 235, 255, 0.300);
+  }
+    
+
+    & h2{
+        text-transform: uppercase;
+    }
+
+    & p{
+        text-align: center;
+        margin-top: 0;
+        color: rgba(255, 255, 255, 0.7);
+    }
+}
