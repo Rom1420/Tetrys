@@ -22,7 +22,7 @@
             "outputPath": "dist/front-end",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "/Tetrys/",
+            "baseHref": "/",
             "polyfills": [
               "zone.js"
             ],
@@ -41,6 +41,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environnement/environnement.ts",
+                  "with": "src/environnement/environnement-prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
